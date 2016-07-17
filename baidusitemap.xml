@@ -3,38 +3,48 @@
 
 
     
-    
-    
-    
+  <url>
+    <loc>https://utihbi.github.io/2016/07/17/hello-world/</loc>
+    <lastmod>2016-07-17T08:32:57.608Z</lastmod>
+    <data>
+        <display>
+        <title>Hello Hexo</title>
+        <pubTime>2016-07-17T00:10:32.994Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="https://utihbi.github.io/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
     
   <url>
     <loc>https://utihbi.github.io/2016/07/17/Hello-Hexo/</loc>
-    <lastmod>2016-07-17T01:48:25.667Z</lastmod>
+    <lastmod>2016-07-17T07:57:28.049Z</lastmod>
     <data>
         <display>
-        <title>Hello Hexo</title>
+        <title>Hexo 总结</title>
         <pubTime>2016-07-17T01:43:06.000Z</pubTime>
         
+        <tag>hexo</tag>
+         
          
            
+             
+              <breadCrumb title="hexo" url="https://utihbi.github.io/categories/hexo/"/>
+          
         </display>
     </data>
     </url>
 
     
-  <url>
-    <loc>https://utihbi.github.io/2016/07/17/hello-world/</loc>
-    <lastmod>2016-07-17T00:10:32.994Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2016-07-17T00:10:32.994Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
+    
+    
+    
 </urlset>

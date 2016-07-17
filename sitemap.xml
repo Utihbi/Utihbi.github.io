@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://utihbi.github.io/2016/07/17/hello-world/</loc>
+    
+    <lastmod>2016-07-17T08:32:57.608Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://utihbi.github.io/about/index.html</loc>
+    
+    <lastmod>2016-07-17T08:28:01.322Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://utihbi.github.io/2016/07/17/Hello-Hexo/</loc>
+    
+    <lastmod>2016-07-17T07:57:28.049Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://utihbi.github.io/categories/index.html</loc>
     
     <lastmod>2016-07-17T06:38:20.524Z</lastmod>
@@ -16,13 +37,6 @@
   </url>
   
   <url>
-    <loc>https://utihbi.github.io/about/index.html</loc>
-    
-    <lastmod>2016-07-17T06:37:15.677Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://utihbi.github.io/baidu_verify_KyTAU7wLb6.html</loc>
     
     <lastmod>2016-07-17T04:52:02.771Z</lastmod>
@@ -33,20 +47,6 @@
     <loc>https://utihbi.github.io/google27910dd17bef0612.html</loc>
     
     <lastmod>2016-07-17T04:47:27.225Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://utihbi.github.io/2016/07/17/Hello-Hexo/</loc>
-    
-    <lastmod>2016-07-17T01:48:25.667Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://utihbi.github.io/2016/07/17/hello-world/</loc>
-    
-    <lastmod>2016-07-17T00:10:32.994Z</lastmod>
     
   </url>
   
