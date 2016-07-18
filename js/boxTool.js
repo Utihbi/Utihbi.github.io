@@ -1,5 +1,5 @@
 /**
- * Created by lipeng6 on 2016/05/06.
+ * Created by lloogeoustc on 2016/05/06.
  */
 
 		//BOX组件
@@ -79,12 +79,6 @@
 		
 		BOX.APPS.BUTTONS.INIT = function(){
 			
-//			$("#url").mouseover(function(){
-//				$("#resp").val("跨域时尝试点击！");
-//			});
-//			$("#url").mouseleave(function(){
-//				$("#clearRight").click();
-//			});
 			$("#url").click(function(e){
 				window.open(BOX.APPS.FUNCTIONS.getJsonpUrl(),"_blank");
 			});
