@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>菜鸟生活</title>
+  <subtitle>菜鸟也有梦想！</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://utihbi.github.io/"/>
+  <updated>2016-07-18T09:58:38.858Z</updated>
+  <id>https://utihbi.github.io/</id>
+  
+  <author>
+    <name>Emerson</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>插入排序</title>
+    <link href="https://utihbi.github.io/2016/07/18/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
+    <id>https://utihbi.github.io/2016/07/18/插入排序/</id>
+    <published>2016-07-18T09:40:19.180Z</published>
+    <updated>2016-07-18T09:58:38.858Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;插入排序&quot;&gt;&lt;a href=&quot;#插入排序&quot; class=&quot;headerlink&quot; title=&quot;插入排序&quot;&gt;&lt;/a&gt;插入排序&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思想&lt;/strong&gt;：一堆数据，前面部分有序，后面无序；遍历无序的这部分数据，并在前面有序数据中寻找合适的位置插入，并将插入点后的数据后移，使插入后的前面数据仍然有序；&lt;br&gt;应用场景：适用于少量数据排序，是&lt;font color=&quot;red&quot;&gt;原址排序&lt;/font&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原址排序：如果排序数组中仅有常数个元素需要在排序过程中存储在数组之外，则称排序算法是原址的。除了插入排序 ，还有堆排序和快排。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;直接插入排序&lt;/li&gt;
+&lt;li&gt;折半插入排序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;情景     时间复杂度&lt;br&gt;  理想     O(n)&lt;br&gt;  最坏     O(n^2)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;45&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;46&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;47&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;48&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;49&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;50&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;52&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;53&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//java code&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;insertSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] array)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; len = array.length;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; ;j&amp;lt;len;j++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; key = array[j];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;comment&quot;&gt;//比较一个，移动一个&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;( i &amp;gt;=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &amp;amp;&amp;amp; key&amp;lt;array[i])&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;			   &lt;span class=&quot;comment&quot;&gt;// key&amp;lt;array[i] &amp;amp;&amp;amp; i &amp;gt;=0  数组会越界抛异常&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;			   array[i+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = array[i--];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;comment&quot;&gt;//插入（当一个for或while循环按通常的方式[即由于循环头中的测试]退出时，执行测试的次数比执行循环体的次数多1，故插入点为array[i+1]）&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   array[i+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = key;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//比较次数减少，移动次数不变&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;binaryInsertSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] array)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; len = array.length;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; ; j&amp;lt;len; j++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; key = array[j];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;comment&quot;&gt;//location 是 key 刚好 &amp;gt;= value的地方&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; location = binarySearch(array,&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,i,key);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;comment&quot;&gt;//通过二分查找找到插入点，将插入点后数据整体移动；&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(;i&amp;gt;=location;i--)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;			   array[i+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = array[i];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   array[i+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = key;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;binarySearch&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] array,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; start,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; end,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; obj)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; left = start;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; right = end;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; mid = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(left &amp;lt;= right)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   	    mid = (left + right )/&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   	   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(obj &amp;gt;= array[mid])&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            left = mid + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            right = mid - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; left;&lt;span class=&quot;comment&quot;&gt;//注意返回left，寻找的&amp;lt;=obj的位置；&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;插入排序&quot;&gt;&lt;a href=&quot;#插入排序&quot; class=&quot;headerlink&quot; title=&quot;插入排序&quot;&gt;&lt;/a&gt;插入排序&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思想&lt;/strong&gt;：一堆数据，前面部分有序，后面无序；遍历无序的这部分数据，并在前面有序数据中寻找合适的
+    
+    </summary>
+    
+      <category term="算法" scheme="https://utihbi.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="排序" scheme="https://utihbi.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 总结</title>
+    <link href="https://utihbi.github.io/2016/07/17/Hello-Hexo/"/>
+    <id>https://utihbi.github.io/2016/07/17/Hello-Hexo/</id>
+    <published>2016-07-17T01:43:06.000Z</published>
+    <updated>2016-07-17T07:57:28.049Z</updated>
+    
+    <content type="html">&lt;p&gt;Hello,world ! Hello Hexo !&lt;/p&gt;
+&lt;p&gt;最近生活状态：&lt;br&gt;辞职大半个月了，论文也没写一个字；&lt;br&gt;整日闲逛各种论坛，社区，有时还要喝点鸡汤；&lt;br&gt;如此颓废，心有不甘，遂决定搭建个人博客，聊以慰藉；&lt;/p&gt;
+&lt;p&gt;搭建步骤网上很多，这里就不细说了。&lt;br&gt;我主要参考了&lt;a href=&quot;http://tengj.top/tags/hexo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;嘟爷&lt;/a&gt;的博客，在这里特别感谢嘟爷。&lt;/p&gt;
+&lt;p&gt;说下遇到的问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装git时，由于本人选择了windows console，所以后面在 Git bash中运行类似npm的命令时执行失败。解决：干脆就不用Git bash了，把Git的环境变量配置好，直接在dos里玩就好了。&lt;/li&gt;
+&lt;li&gt;配置ssh时，找不到路径（os:windows），配置失败。解决：手动设置路径即可(/usr/.ssh/id_rsa)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ ssh-keygen -t rsa -C &amp;quot;yourMail@qq.com&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Generating public/private rsa key pair.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Enter file in which to save the key (%HOMEDRIVE%%HOMEPATH%/.ssh/id_rsa): /usr/.ssh/id_rsa&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Enter passphrase (empty for no passphrase):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Enter same passphrase again:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Your identification has been saved in /usr/.ssh/id_rsa.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Your public key has been saved in /usr/.ssh/id_rsa.pub.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;The key fingerprint is:&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;往github发布时即&lt;code&gt;hexo d&lt;/code&gt; 会出现发布失败。由于账号密码会出现连接超时导致，解决：重试几次即可。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;好了，总的来说，搭建这个博客还算顺利，没有遇到太多的bug。接下来就按照自己风格整理博客吧。&lt;/p&gt;
+&lt;p&gt;疯了半个月了，自己也该收心写论文了。祝自己论文撰写顺利吧。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hello,world ! Hello Hexo !&lt;/p&gt;
+&lt;p&gt;最近生活状态：&lt;br&gt;辞职大半个月了，论文也没写一个字；&lt;br&gt;整日闲逛各种论坛，社区，有时还要喝点鸡汤；&lt;br&gt;如此颓废，心有不甘，遂决定搭建个人博客，聊以慰藉；&lt;/p&gt;
+&lt;p&gt;搭建步骤网上很多，这里就不
+    
+    </summary>
+    
+      <category term="hexo" scheme="https://utihbi.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://utihbi.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello Hexo</title>
+    <link href="https://utihbi.github.io/2016/07/17/hello-world/"/>
+    <id>https://utihbi.github.io/2016/07/17/hello-world/</id>
+    <published>2016-07-17T00:10:32.994Z</published>
+    <updated>2016-07-17T08:32:57.608Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+      <category term="hexo" scheme="https://utihbi.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://utihbi.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
