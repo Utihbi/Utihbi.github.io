@@ -1,5 +1,5 @@
 /**
- * Created by lipeng6 on 2016/05/10.
+ * Created by Emerson on 2016/05/10.
  * 	//示例：
  *	$_NAMES = ["boxExample1","boxExample2"];
  *	$_URLS = ["http://boxExample.com","http://boxExample.org"];
