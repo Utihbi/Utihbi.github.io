@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-20T03:12:45.193Z</updated>
+  <updated>2016-07-20T03:43:15.855Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://utihbi.github.io/2016/07/20/UML%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86/"/>
     <id>https://utihbi.github.io/2016/07/20/UML之面向对象处理/</id>
     <published>2016-07-20T03:03:06.000Z</published>
-    <updated>2016-07-20T03:12:45.193Z</updated>
+    <updated>2016-07-20T03:43:15.855Z</updated>
     
     <content type="html">&lt;h1 id=&quot;名词解释&quot;&gt;&lt;a href=&quot;#名词解释&quot; class=&quot;headerlink&quot; title=&quot;名词解释&quot;&gt;&lt;/a&gt;名词解释&lt;/h1&gt;&lt;p&gt;RUP(Rational Unifined Process)统一过程。&lt;br&gt;XP(Extreme programming)极限编程&lt;/p&gt;
 &lt;p&gt;UML 是 语言；类比于音乐理论&lt;br&gt;RUP 是 方法；类比于五线谱&lt;/p&gt;
@@ -50,8 +50,7 @@
 &lt;h3 id=&quot;实施视图：&quot;&gt;&lt;a href=&quot;#实施视图：&quot; class=&quot;headerlink&quot; title=&quot;实施视图：&quot;&gt;&lt;/a&gt;实施视图：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;$列举实施模型中的所有子系统；
 $描述子系统如何组织为层次和分层结构的构件图；
 $描述子系统间导入依赖关系的图解。
-简言之，建模公式中的那些&amp;quot;人&amp;quot;、&amp;quot;事&amp;quot;、&amp;quot;物&amp;quot;、&amp;quot;规则&amp;quot;是如何构成系统的“零部件”，我们 
-如何组织人力生产和组装这些零部件。
+简言之，建模公式中的那些&amp;quot;人&amp;quot;、&amp;quot;事&amp;quot;、&amp;quot;物&amp;quot;、&amp;quot;规则&amp;quot;是如何构成系统的“零部件”，我们如何组织人力生产和组装这些零部件。
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：《Tinking in UML》(大象书)&lt;/p&gt;
 </content>
     
