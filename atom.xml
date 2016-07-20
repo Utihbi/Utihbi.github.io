@@ -73,7 +73,7 @@ $描述子系统间导入依赖关系的图解。
     <link href="https://utihbi.github.io/2016/07/20/%E7%BB%86%E8%AF%B4UML%E6%A0%B8%E5%BF%83%E5%85%83%E7%B4%A0/"/>
     <id>https://utihbi.github.io/2016/07/20/细说UML核心元素/</id>
     <published>2016-07-20T01:48:06.000Z</published>
-    <updated>2016-07-20T02:58:53.065Z</updated>
+    <updated>2016-07-20T03:36:37.687Z</updated>
     
     <content type="html">&lt;h2 id=&quot;基本知识&quot;&gt;&lt;a href=&quot;#基本知识&quot; class=&quot;headerlink&quot; title=&quot;基本知识&quot;&gt;&lt;/a&gt;基本知识&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;功能性需求、非功能性需求&lt;/p&gt;
@@ -107,7 +107,7 @@ $描述子系统间导入依赖关系的图解。
 &lt;li&gt;&lt;p&gt;用例和功能区别：&lt;br&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;用例：从人的角度；面向对象
 
-功能：从计算机角度；面向过程；其描述缺乏上下午环境，一些功能根本没有人会用到；
+功能：从计算机角度；面向过程；其描述缺乏上下文环境，一些功能根本没有人会用到；
 
 对于不存在的事物，我们无法从结构和功能上描述，只能用使用者的观点来描述；
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
@@ -128,13 +128,12 @@ Eg：电视
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;业务用例：&quot;&gt;&lt;a href=&quot;#业务用例：&quot; class=&quot;headerlink&quot; title=&quot;业务用例：&quot;&gt;&lt;/a&gt;业务用例：&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;用于需求阶段的业务建模。(客户业务视角)&lt;/li&gt;
-&lt;li&gt;业务用例实现(业务用例实例)：&lt;/li&gt;
+&lt;li&gt;用于需求阶段的业务建模。(客户业务视角)&lt;h3 id=&quot;业务用例实现-业务用例实例-：&quot;&gt;&lt;a href=&quot;#业务用例实现-业务用例实例-：&quot; class=&quot;headerlink&quot; title=&quot;业务用例实现(业务用例实例)：&quot;&gt;&lt;/a&gt;业务用例实现(业务用例实例)：&lt;/h3&gt;&lt;/li&gt;
 &lt;li&gt;业务用例的一种实现方式。 类比于编程中类和接口的关系，同一个接口可以有多个实现类。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;概念用例：&quot;&gt;&lt;a href=&quot;#概念用例：&quot; class=&quot;headerlink&quot; title=&quot;概念用例：&quot;&gt;&lt;/a&gt;概念用例：&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;概念用例用来获取业务用例中的核心业务逻辑。&lt;/li&gt;
-&lt;li&gt;概念用例是业务用例到系统用例（即我们天天挂在嘴边的用例）过度时非常重要的指导。&lt;h3 id=&quot;系统-用例：&quot;&gt;&lt;a href=&quot;#系统-用例：&quot; class=&quot;headerlink&quot; title=&quot;[系统]用例：&quot;&gt;&lt;/a&gt;[系统]用例：&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;概念用例是业务用例到系统用例（即我们天天挂在嘴边的用例）过渡时非常重要的指导。&lt;h3 id=&quot;系统-用例：&quot;&gt;&lt;a href=&quot;#系统-用例：&quot; class=&quot;headerlink&quot; title=&quot;[系统]用例：&quot;&gt;&lt;/a&gt;[系统]用例：&lt;/h3&gt;&lt;/li&gt;
 &lt;li&gt;即我们天天挂在嘴边的用例;&lt;/li&gt;
 &lt;li&gt;用来定义系统范围，获取功能需求的；&lt;/li&gt;
 &lt;li&gt;简言之，软件系统开发的全部范围，我们得到的最终需求。(系统视角)&lt;/li&gt;
@@ -155,7 +154,7 @@ Eg：电视
 简言之，属性，方法很多，我们只关心特殊场景(用例)下与这个场景直接关联的属性和方法。
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;br&gt;&lt;strong&gt;简言之，参与者代表人，用例代表事，业务实例代表物；&lt;/strong&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;h2 id=&quot;包&quot;&gt;&lt;a href=&quot;#包&quot; class=&quot;headerlink&quot; title=&quot;包&quot;&gt;&lt;/a&gt;包&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;一种容器，如何文件夹，将信息分类，形成逻辑单元。&lt;/li&gt;
+&lt;li&gt;一种容器，如文件夹，将信息分类，形成逻辑单元。&lt;/li&gt;
 &lt;li&gt;可以容纳任何UML元素；&lt;br&gt;Eg:用例、业务实体、类图、子包；&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;分包的好(高内聚低耦合)坏(双向依赖和循环依赖)评判标准是包之间的依赖关系；&lt;/p&gt;
 &lt;/li&gt;
@@ -166,9 +165,9 @@ Eg：电视
 &lt;h3 id=&quot;子系统&quot;&gt;&lt;a href=&quot;#子系统&quot; class=&quot;headerlink&quot; title=&quot;子系统&quot;&gt;&lt;/a&gt;子系统&lt;/h3&gt;&lt;p&gt;分类系统内逻辑对象并形成子系统&lt;/p&gt;
 &lt;h3 id=&quot;组织结构&quot;&gt;&lt;a href=&quot;#组织结构&quot; class=&quot;headerlink&quot; title=&quot;组织结构&quot;&gt;&lt;/a&gt;组织结构&lt;/h3&gt;&lt;p&gt;分类业务领域中组织结构&lt;/p&gt;
 &lt;h3 id=&quot;层&quot;&gt;&lt;a href=&quot;#层&quot; class=&quot;headerlink&quot; title=&quot;层&quot;&gt;&lt;/a&gt;层&lt;/h3&gt;&lt;p&gt;分类软件中的层次&lt;/p&gt;
-&lt;h2 id=&quot;分析类&quot;&gt;&lt;a href=&quot;#分析类&quot; class=&quot;headerlink&quot; title=&quot;分析类&quot;&gt;&lt;/a&gt;分析类&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&quot;分析类-架构角度&quot;&gt;&lt;a href=&quot;#分析类-架构角度&quot; class=&quot;headerlink&quot; title=&quot;分析类(架构角度)&quot;&gt;&lt;/a&gt;分析类(架构角度)&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;分析类代表系统中主要“职责簇”。简言之，是从功能性需求向计算机实现转化过程中的“第一个关口“&lt;/li&gt;
-&lt;li&gt;可以产生系统是设计类和子系统。简言之，系统可以通过某种途径“产生出来”，不是拍脑袋拍出来的。&lt;/li&gt;
+&lt;li&gt;可以产生系统的设计类和子系统。简言之，系统可以通过某种途径“产生出来”，不是拍脑袋拍出来的。&lt;/li&gt;
 &lt;li&gt;简言之，跨越需求阶段到设计实现的桥梁。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;特点：&lt;/p&gt;
@@ -183,25 +182,25 @@ Eg：电视
 &lt;h2 id=&quot;设计类&quot;&gt;&lt;a href=&quot;#设计类&quot; class=&quot;headerlink&quot; title=&quot;设计类&quot;&gt;&lt;/a&gt;设计类&lt;/h2&gt;&lt;p&gt;对应的对象取决于编程语言；&lt;br&gt;简言之，就是编程语言中具体的类；&lt;/p&gt;
 &lt;h2 id=&quot;关系&quot;&gt;&lt;a href=&quot;#关系&quot; class=&quot;headerlink&quot; title=&quot;关系&quot;&gt;&lt;/a&gt;关系&lt;/h2&gt;&lt;h3 id=&quot;关联&quot;&gt;&lt;a href=&quot;#关联&quot; class=&quot;headerlink&quot; title=&quot;关联&quot;&gt;&lt;/a&gt;关联&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;静态关系，由“常识”、“规则”、“法律”等因素决定&lt;/li&gt;
-&lt;li&gt;A——B，双方都知道对方的存在&lt;/li&gt;
+&lt;li&gt;A————————B，双方都知道对方的存在&lt;/li&gt;
 &lt;li&gt;特别的，用例模型中，参与者——&amp;gt;用例&lt;/li&gt;
 &lt;li&gt;体现在代码里：实例变量(成员变量)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;依赖&quot;&gt;&lt;a href=&quot;#依赖&quot; class=&quot;headerlink&quot; title=&quot;依赖&quot;&gt;&lt;/a&gt;依赖&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;临时，动态关系&lt;/li&gt;
-&lt;li&gt;A—–&amp;gt;B  (A依赖于B)&lt;/li&gt;
+&lt;li&gt;A- - - - -&amp;gt;B  (A依赖于B)&lt;/li&gt;
 &lt;li&gt;体现在代码里：类构造方法、类方法等的传入参数；&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;扩展&quot;&gt;&lt;a href=&quot;#扩展&quot; class=&quot;headerlink&quot; title=&quot;扩展&quot;&gt;&lt;/a&gt;扩展&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;A——————-&amp;gt;B  ( A扩展出B)&lt;/li&gt;
+&lt;li&gt;A– – – – – – – - -&amp;gt;B  ( A扩展出B)&lt;/li&gt;
 &lt;li&gt;用于在用例中项目基本用例中的某个扩展点插入扩展用例；&lt;/li&gt;
 &lt;li&gt;可选；&lt;/li&gt;
 &lt;li&gt;特定条件下发生；&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;包含&quot;&gt;&lt;a href=&quot;#包含&quot; class=&quot;headerlink&quot; title=&quot;包含&quot;&gt;&lt;/a&gt;包含&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;&amp;lt;include&amp;gt;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;A——————-&amp;gt;B  ( A包含B)&lt;/li&gt;
+&lt;li&gt;A– – — – – – – -&amp;gt;B  ( A包含B)&lt;/li&gt;
 &lt;li&gt;分解出两个或更多个用例共有的行为。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;扩展，包含区别：&lt;/strong&gt;&lt;/p&gt;
@@ -210,12 +209,12 @@ Eg：电视
 * 没有包含用例，基本用例不完整；
 * 没有基本用例，扩展用例和包含用例均不能单独存在；
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; title=&quot;实现&quot;&gt;&lt;/a&gt;实现&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;A————▷B (A实现B)&lt;/li&gt;
+&lt;li&gt;A– – – – – –▷B (A实现B)&lt;/li&gt;
 &lt;li&gt;用例和用例实现间用这种关系；&lt;br&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/relizeRelationUml.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;精化&quot;&gt;&lt;a href=&quot;#精化&quot; class=&quot;headerlink&quot; title=&quot;精化&quot;&gt;&lt;/a&gt;精化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;&amp;lt;refine&amp;gt;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;A——————-&amp;gt;B  ( A精化了B)&lt;/li&gt;
+&lt;li&gt;A– – – – – – – –&amp;gt;B  ( A精化了B)&lt;/li&gt;
 &lt;li&gt;设计类精化了分析类&lt;/li&gt;
 &lt;li&gt;基本用例可以分解出许多更小的关键精化用例，这些精化用例更细致展现了基本用例的核心业务；&lt;br&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/refineRelationUml.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
 &lt;/ul&gt;

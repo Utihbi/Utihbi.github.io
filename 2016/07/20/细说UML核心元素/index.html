@@ -53,7 +53,7 @@
 执行结果对参与者来说有意义，可观测。">
 <meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/relizeRelationUml.png">
 <meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/refineRelationUml.png">
-<meta property="og:updated_time" content="2016-07-20T02:58:53.065Z">
+<meta property="og:updated_time" content="2016-07-20T03:36:37.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="细说UML核心元素">
 <meta name="twitter:description" content="基本知识
@@ -150,7 +150,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本知识"><span class="toc-number">1.</span> <span class="toc-text">基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用例"><span class="toc-number">2.</span> <span class="toc-text">用例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#业务用例："><span class="toc-number">2.1.</span> <span class="toc-text">业务用例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概念用例："><span class="toc-number">2.2.</span> <span class="toc-text">概念用例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统-用例："><span class="toc-number">2.3.</span> <span class="toc-text">[系统]用例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统-用例实现："><span class="toc-number">2.4.</span> <span class="toc-text">[系统]用例实现：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#业务实体"><span class="toc-number">3.</span> <span class="toc-text">业务实体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包"><span class="toc-number">4.</span> <span class="toc-text">包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#领域包"><span class="toc-number">4.1.</span> <span class="toc-text">领域包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子系统"><span class="toc-number">4.2.</span> <span class="toc-text">子系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组织结构"><span class="toc-number">4.3.</span> <span class="toc-text">组织结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#层"><span class="toc-number">4.4.</span> <span class="toc-text">层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析类"><span class="toc-number">5.</span> <span class="toc-text">分析类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#边界类"><span class="toc-number">5.1.</span> <span class="toc-text">边界类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制类"><span class="toc-number">5.2.</span> <span class="toc-text">控制类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实体类"><span class="toc-number">5.3.</span> <span class="toc-text">实体类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计类"><span class="toc-number">6.</span> <span class="toc-text">设计类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关系"><span class="toc-number">7.</span> <span class="toc-text">关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关联"><span class="toc-number">7.1.</span> <span class="toc-text">关联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖"><span class="toc-number">7.2.</span> <span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展"><span class="toc-number">7.3.</span> <span class="toc-text">扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包含"><span class="toc-number">7.4.</span> <span class="toc-text">包含</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-number">7.5.</span> <span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#精化"><span class="toc-number">7.6.</span> <span class="toc-text">精化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#泛化"><span class="toc-number">7.7.</span> <span class="toc-text">泛化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#聚合"><span class="toc-number">7.8.</span> <span class="toc-text">聚合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组合"><span class="toc-number">7.9.</span> <span class="toc-text">组合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件"><span class="toc-number">8.</span> <span class="toc-text">组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特征"><span class="toc-number">8.1.</span> <span class="toc-text">特征</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#节点"><span class="toc-number">9.</span> <span class="toc-text">节点</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本知识"><span class="toc-number">1.</span> <span class="toc-text">基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用例"><span class="toc-number">2.</span> <span class="toc-text">用例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#业务用例："><span class="toc-number">2.1.</span> <span class="toc-text">业务用例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#业务用例实现-业务用例实例-："><span class="toc-number">2.2.</span> <span class="toc-text">业务用例实现(业务用例实例)：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概念用例："><span class="toc-number">2.3.</span> <span class="toc-text">概念用例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统-用例："><span class="toc-number">2.4.</span> <span class="toc-text">[系统]用例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统-用例实现："><span class="toc-number">2.5.</span> <span class="toc-text">[系统]用例实现：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#业务实体"><span class="toc-number">3.</span> <span class="toc-text">业务实体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包"><span class="toc-number">4.</span> <span class="toc-text">包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#领域包"><span class="toc-number">4.1.</span> <span class="toc-text">领域包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子系统"><span class="toc-number">4.2.</span> <span class="toc-text">子系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组织结构"><span class="toc-number">4.3.</span> <span class="toc-text">组织结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#层"><span class="toc-number">4.4.</span> <span class="toc-text">层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析类-架构角度"><span class="toc-number">5.</span> <span class="toc-text">分析类(架构角度)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#边界类"><span class="toc-number">5.1.</span> <span class="toc-text">边界类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制类"><span class="toc-number">5.2.</span> <span class="toc-text">控制类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实体类"><span class="toc-number">5.3.</span> <span class="toc-text">实体类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计类"><span class="toc-number">6.</span> <span class="toc-text">设计类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关系"><span class="toc-number">7.</span> <span class="toc-text">关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关联"><span class="toc-number">7.1.</span> <span class="toc-text">关联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖"><span class="toc-number">7.2.</span> <span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展"><span class="toc-number">7.3.</span> <span class="toc-text">扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包含"><span class="toc-number">7.4.</span> <span class="toc-text">包含</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-number">7.5.</span> <span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#精化"><span class="toc-number">7.6.</span> <span class="toc-text">精化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#泛化"><span class="toc-number">7.7.</span> <span class="toc-text">泛化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#聚合"><span class="toc-number">7.8.</span> <span class="toc-text">聚合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组合"><span class="toc-number">7.9.</span> <span class="toc-text">组合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件"><span class="toc-number">8.</span> <span class="toc-text">组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特征"><span class="toc-number">8.1.</span> <span class="toc-text">特征</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#节点"><span class="toc-number">9.</span> <span class="toc-text">节点</span></a></li></ol>
 		
 		</div>
 		
@@ -186,7 +186,7 @@
 <li><p>用例和功能区别：<br></p>
 <pre><code>用例：从人的角度；面向对象
 
-功能：从计算机角度；面向过程；其描述缺乏上下午环境，一些功能根本没有人会用到；
+功能：从计算机角度；面向过程；其描述缺乏上下文环境，一些功能根本没有人会用到；
 
 对于不存在的事物，我们无法从结构和功能上描述，只能用使用者的观点来描述；
 </code></pre></li>
@@ -207,13 +207,12 @@ Eg：电视
 </code></pre></li>
 </ul>
 <h3 id="业务用例："><a href="#业务用例：" class="headerlink" title="业务用例："></a>业务用例：</h3><ul>
-<li>用于需求阶段的业务建模。(客户业务视角)</li>
-<li>业务用例实现(业务用例实例)：</li>
+<li>用于需求阶段的业务建模。(客户业务视角)<h3 id="业务用例实现-业务用例实例-："><a href="#业务用例实现-业务用例实例-：" class="headerlink" title="业务用例实现(业务用例实例)："></a>业务用例实现(业务用例实例)：</h3></li>
 <li>业务用例的一种实现方式。 类比于编程中类和接口的关系，同一个接口可以有多个实现类。</li>
 </ul>
 <h3 id="概念用例："><a href="#概念用例：" class="headerlink" title="概念用例："></a>概念用例：</h3><ul>
 <li>概念用例用来获取业务用例中的核心业务逻辑。</li>
-<li>概念用例是业务用例到系统用例（即我们天天挂在嘴边的用例）过度时非常重要的指导。<h3 id="系统-用例："><a href="#系统-用例：" class="headerlink" title="[系统]用例："></a>[系统]用例：</h3></li>
+<li>概念用例是业务用例到系统用例（即我们天天挂在嘴边的用例）过渡时非常重要的指导。<h3 id="系统-用例："><a href="#系统-用例：" class="headerlink" title="[系统]用例："></a>[系统]用例：</h3></li>
 <li>即我们天天挂在嘴边的用例;</li>
 <li>用来定义系统范围，获取功能需求的；</li>
 <li>简言之，软件系统开发的全部范围，我们得到的最终需求。(系统视角)</li>
@@ -234,7 +233,7 @@ Eg：电视
 简言之，属性，方法很多，我们只关心特殊场景(用例)下与这个场景直接关联的属性和方法。
 </code></pre><p><font color="red"><br><strong>简言之，参与者代表人，用例代表事，业务实例代表物；</strong><br></font></p>
 <h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><ul>
-<li>一种容器，如何文件夹，将信息分类，形成逻辑单元。</li>
+<li>一种容器，如文件夹，将信息分类，形成逻辑单元。</li>
 <li>可以容纳任何UML元素；<br>Eg:用例、业务实体、类图、子包；</li>
 <li><p>分包的好(高内聚低耦合)坏(双向依赖和循环依赖)评判标准是包之间的依赖关系；</p>
 </li>
@@ -245,9 +244,9 @@ Eg：电视
 <h3 id="子系统"><a href="#子系统" class="headerlink" title="子系统"></a>子系统</h3><p>分类系统内逻辑对象并形成子系统</p>
 <h3 id="组织结构"><a href="#组织结构" class="headerlink" title="组织结构"></a>组织结构</h3><p>分类业务领域中组织结构</p>
 <h3 id="层"><a href="#层" class="headerlink" title="层"></a>层</h3><p>分类软件中的层次</p>
-<h2 id="分析类"><a href="#分析类" class="headerlink" title="分析类"></a>分析类</h2><ul>
+<h2 id="分析类-架构角度"><a href="#分析类-架构角度" class="headerlink" title="分析类(架构角度)"></a>分析类(架构角度)</h2><ul>
 <li>分析类代表系统中主要“职责簇”。简言之，是从功能性需求向计算机实现转化过程中的“第一个关口“</li>
-<li>可以产生系统是设计类和子系统。简言之，系统可以通过某种途径“产生出来”，不是拍脑袋拍出来的。</li>
+<li>可以产生系统的设计类和子系统。简言之，系统可以通过某种途径“产生出来”，不是拍脑袋拍出来的。</li>
 <li>简言之，跨越需求阶段到设计实现的桥梁。</li>
 </ul>
 <p>特点：</p>
@@ -262,25 +261,25 @@ Eg：电视
 <h2 id="设计类"><a href="#设计类" class="headerlink" title="设计类"></a>设计类</h2><p>对应的对象取决于编程语言；<br>简言之，就是编程语言中具体的类；</p>
 <h2 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h2><h3 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h3><ul>
 <li>静态关系，由“常识”、“规则”、“法律”等因素决定</li>
-<li>A——B，双方都知道对方的存在</li>
+<li>A————————B，双方都知道对方的存在</li>
 <li>特别的，用例模型中，参与者——&gt;用例</li>
 <li>体现在代码里：实例变量(成员变量)</li>
 </ul>
 <h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><ul>
 <li>临时，动态关系</li>
-<li>A—–&gt;B  (A依赖于B)</li>
+<li>A- - - - -&gt;B  (A依赖于B)</li>
 <li>体现在代码里：类构造方法、类方法等的传入参数；</li>
 </ul>
 <h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><pre><code>&lt;&lt;extend&gt;&gt;
 </code></pre><ul>
-<li>A——————-&gt;B  ( A扩展出B)</li>
+<li>A– – – – – – – - -&gt;B  ( A扩展出B)</li>
 <li>用于在用例中项目基本用例中的某个扩展点插入扩展用例；</li>
 <li>可选；</li>
 <li>特定条件下发生；</li>
 </ul>
 <h3 id="包含"><a href="#包含" class="headerlink" title="包含"></a>包含</h3><pre><code>&lt;&lt;include&gt;&gt;
 </code></pre><ul>
-<li>A——————-&gt;B  ( A包含B)</li>
+<li>A– – — – – – – -&gt;B  ( A包含B)</li>
 <li>分解出两个或更多个用例共有的行为。</li>
 </ul>
 <p><strong>扩展，包含区别：</strong></p>
@@ -289,12 +288,12 @@ Eg：电视
 * 没有包含用例，基本用例不完整；
 * 没有基本用例，扩展用例和包含用例均不能单独存在；
 </code></pre><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
-<li>A————▷B (A实现B)</li>
+<li>A– – – – – –▷B (A实现B)</li>
 <li>用例和用例实现间用这种关系；<br><img src="http://oald9ve1g.bkt.clouddn.com/hexo/img/relizeRelationUml.png" alt=""></li>
 </ul>
 <h3 id="精化"><a href="#精化" class="headerlink" title="精化"></a>精化</h3><pre><code>&lt;&lt;refine&gt;&gt;
 </code></pre><ul>
-<li>A——————-&gt;B  ( A精化了B)</li>
+<li>A– – – – – – – –&gt;B  ( A精化了B)</li>
 <li>设计类精化了分析类</li>
 <li>基本用例可以分解出许多更小的关键精化用例，这些精化用例更细致展现了基本用例的核心业务；<br><img src="http://oald9ve1g.bkt.clouddn.com/hexo/img/refineRelationUml.png" alt=""></li>
 </ul>
@@ -412,7 +411,7 @@ Eg：电视
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本知识"><span class="toc-number">1.</span> <span class="toc-text">基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用例"><span class="toc-number">2.</span> <span class="toc-text">用例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#业务用例："><span class="toc-number">2.1.</span> <span class="toc-text">业务用例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概念用例："><span class="toc-number">2.2.</span> <span class="toc-text">概念用例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统-用例："><span class="toc-number">2.3.</span> <span class="toc-text">[系统]用例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统-用例实现："><span class="toc-number">2.4.</span> <span class="toc-text">[系统]用例实现：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#业务实体"><span class="toc-number">3.</span> <span class="toc-text">业务实体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包"><span class="toc-number">4.</span> <span class="toc-text">包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#领域包"><span class="toc-number">4.1.</span> <span class="toc-text">领域包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子系统"><span class="toc-number">4.2.</span> <span class="toc-text">子系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组织结构"><span class="toc-number">4.3.</span> <span class="toc-text">组织结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#层"><span class="toc-number">4.4.</span> <span class="toc-text">层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析类"><span class="toc-number">5.</span> <span class="toc-text">分析类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#边界类"><span class="toc-number">5.1.</span> <span class="toc-text">边界类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制类"><span class="toc-number">5.2.</span> <span class="toc-text">控制类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实体类"><span class="toc-number">5.3.</span> <span class="toc-text">实体类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计类"><span class="toc-number">6.</span> <span class="toc-text">设计类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关系"><span class="toc-number">7.</span> <span class="toc-text">关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关联"><span class="toc-number">7.1.</span> <span class="toc-text">关联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖"><span class="toc-number">7.2.</span> <span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展"><span class="toc-number">7.3.</span> <span class="toc-text">扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包含"><span class="toc-number">7.4.</span> <span class="toc-text">包含</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-number">7.5.</span> <span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#精化"><span class="toc-number">7.6.</span> <span class="toc-text">精化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#泛化"><span class="toc-number">7.7.</span> <span class="toc-text">泛化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#聚合"><span class="toc-number">7.8.</span> <span class="toc-text">聚合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组合"><span class="toc-number">7.9.</span> <span class="toc-text">组合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件"><span class="toc-number">8.</span> <span class="toc-text">组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特征"><span class="toc-number">8.1.</span> <span class="toc-text">特征</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#节点"><span class="toc-number">9.</span> <span class="toc-text">节点</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本知识"><span class="toc-number">1.</span> <span class="toc-text">基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用例"><span class="toc-number">2.</span> <span class="toc-text">用例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#业务用例："><span class="toc-number">2.1.</span> <span class="toc-text">业务用例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#业务用例实现-业务用例实例-："><span class="toc-number">2.2.</span> <span class="toc-text">业务用例实现(业务用例实例)：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概念用例："><span class="toc-number">2.3.</span> <span class="toc-text">概念用例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统-用例："><span class="toc-number">2.4.</span> <span class="toc-text">[系统]用例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统-用例实现："><span class="toc-number">2.5.</span> <span class="toc-text">[系统]用例实现：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#业务实体"><span class="toc-number">3.</span> <span class="toc-text">业务实体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包"><span class="toc-number">4.</span> <span class="toc-text">包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#领域包"><span class="toc-number">4.1.</span> <span class="toc-text">领域包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子系统"><span class="toc-number">4.2.</span> <span class="toc-text">子系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组织结构"><span class="toc-number">4.3.</span> <span class="toc-text">组织结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#层"><span class="toc-number">4.4.</span> <span class="toc-text">层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析类-架构角度"><span class="toc-number">5.</span> <span class="toc-text">分析类(架构角度)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#边界类"><span class="toc-number">5.1.</span> <span class="toc-text">边界类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制类"><span class="toc-number">5.2.</span> <span class="toc-text">控制类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实体类"><span class="toc-number">5.3.</span> <span class="toc-text">实体类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计类"><span class="toc-number">6.</span> <span class="toc-text">设计类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关系"><span class="toc-number">7.</span> <span class="toc-text">关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关联"><span class="toc-number">7.1.</span> <span class="toc-text">关联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖"><span class="toc-number">7.2.</span> <span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展"><span class="toc-number">7.3.</span> <span class="toc-text">扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包含"><span class="toc-number">7.4.</span> <span class="toc-text">包含</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-number">7.5.</span> <span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#精化"><span class="toc-number">7.6.</span> <span class="toc-text">精化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#泛化"><span class="toc-number">7.7.</span> <span class="toc-text">泛化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#聚合"><span class="toc-number">7.8.</span> <span class="toc-text">聚合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组合"><span class="toc-number">7.9.</span> <span class="toc-text">组合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件"><span class="toc-number">8.</span> <span class="toc-text">组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特征"><span class="toc-number">8.1.</span> <span class="toc-text">特征</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#节点"><span class="toc-number">9.</span> <span class="toc-text">节点</span></a></li></ol>
  
   </div>
 
