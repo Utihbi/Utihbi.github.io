@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-18T09:58:38.858Z</updated>
+  <updated>2016-07-20T03:12:45.193Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -14,6 +14,275 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UML之面向对象处理</title>
+    <link href="https://utihbi.github.io/2016/07/20/UML%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86/"/>
+    <id>https://utihbi.github.io/2016/07/20/UML之面向对象处理/</id>
+    <published>2016-07-20T03:03:06.000Z</published>
+    <updated>2016-07-20T03:12:45.193Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;名词解释&quot;&gt;&lt;a href=&quot;#名词解释&quot; class=&quot;headerlink&quot; title=&quot;名词解释&quot;&gt;&lt;/a&gt;名词解释&lt;/h1&gt;&lt;p&gt;RUP(Rational Unifined Process)统一过程。&lt;br&gt;XP(Extreme programming)极限编程&lt;/p&gt;
+&lt;p&gt;UML 是 语言；类比于音乐理论&lt;br&gt;RUP 是 方法；类比于五线谱&lt;/p&gt;
+&lt;p&gt;RUP&amp;lt;-&amp;gt;XP&lt;/p&gt;
+&lt;h1 id=&quot;面向对象处理&quot;&gt;&lt;a href=&quot;#面向对象处理&quot; class=&quot;headerlink&quot; title=&quot;面向对象处理&quot;&gt;&lt;/a&gt;面向对象处理&lt;/h1&gt;&lt;p&gt;不要决定通盘去考虑，而是找出问题领域包含的抽象角度。&lt;/p&gt;
+&lt;h2 id=&quot;建模基础&quot;&gt;&lt;a href=&quot;#建模基础&quot; class=&quot;headerlink&quot; title=&quot;建模基础&quot;&gt;&lt;/a&gt;建模基础&lt;/h2&gt;&lt;p&gt;建模：抽象角度很重要&lt;br&gt;具体讲：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1、做需求时，首要目标：是业务有多少参与者，每个参与者目标是什么(抽象角度)？-&amp;gt;用例！
+                      不是弄清楚业务是如何一步步完成的。 
+
+2、目标确立后，找出能够满足这个目标的事物。有趣的问题：我们找这些事物的过程不是面向对象的，而是过程化的。
+这是因为要达到一个目标，肯定是有 动作 附加在 静态事物 上，并产生了一定的 效果。（过程化）故我们要知道是 谁  发出了 动
+作，作用于什么 事物，产生了怎样的 后果。
+
+最终目的：找出场景当中贡献于场景目标的 事物，以及它们是如何贡献于这个场景的。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;总结：&lt;br&gt;        一个由抽象角度确定了的目标需要由静态事物加上特定的条件下产生的一个特定的场景来完成，&lt;br&gt;        即：&lt;br&gt;        静态的事物(物) + 特定的条件(规则) + 特定的动作(参与者的驱动) = 特定的场景(事件)&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;br&gt;&lt;strong&gt;建模公式：&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;问题领域 = ∑ (抽象角度)
+抽象角度 = 问题领域边界之外的参与者的业务目标 = 业务用例
+业务用例 = ∑ (特定场景)
+特定场景 = 静态的事物 + 特定的条件 + 特定的动作 or
+特定的事 = 特定的事物 + 特定的规则 + 特定的人的行为
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;用例驱动&quot;&gt;&lt;a href=&quot;#用例驱动&quot; class=&quot;headerlink&quot; title=&quot;用例驱动&quot;&gt;&lt;/a&gt;用例驱动&lt;/h2&gt;&lt;h3 id=&quot;逻辑视图：&quot;&gt;&lt;a href=&quot;#逻辑视图：&quot; class=&quot;headerlink&quot; title=&quot;逻辑视图：&quot;&gt;&lt;/a&gt;逻辑视图：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;system只有一个逻辑视图，以图形方式说明关键的用例实现、子系统、包和类。
+      简言之,建模公式中的&amp;quot;人&amp;quot;、&amp;quot;事&amp;quot;、&amp;quot;物&amp;quot;、&amp;quot;规则&amp;quot;是如何 分类组织 的。
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;进程-分析设计-视图：&quot;&gt;&lt;a href=&quot;#进程-分析设计-视图：&quot; class=&quot;headerlink&quot; title=&quot;进程(分析设计)视图：&quot;&gt;&lt;/a&gt;进程(分析设计)视图：&lt;/h3&gt;&lt;p&gt;system只有一个进程视图，以图形方式说明系统中进程的详细组织结构，包括类和子系统到进程和线程的映射。&lt;br&gt;            简言之，建模公式中的那些”人”、”事”、”物”、”规则”是如何 交互 的。&lt;/p&gt;
+&lt;h3 id=&quot;部署视图：&quot;&gt;&lt;a href=&quot;#部署视图：&quot; class=&quot;headerlink&quot; title=&quot;部署视图：&quot;&gt;&lt;/a&gt;部署视图：&lt;/h3&gt;&lt;p&gt;system只有一个部署视图，以图形方式说明了处理活动在系统中各节点的分布，包括进程和线程的物理分布。&lt;br&gt;          简言之，建模公式中的那些”人”、”事”、”物”、”规则”是如何部署在物理(主机、网络环境)节点上的。&lt;/p&gt;
+&lt;h3 id=&quot;实施视图：&quot;&gt;&lt;a href=&quot;#实施视图：&quot; class=&quot;headerlink&quot; title=&quot;实施视图：&quot;&gt;&lt;/a&gt;实施视图：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;$列举实施模型中的所有子系统；
+$描述子系统如何组织为层次和分层结构的构件图；
+$描述子系统间导入依赖关系的图解。
+简言之，建模公式中的那些&amp;quot;人&amp;quot;、&amp;quot;事&amp;quot;、&amp;quot;物&amp;quot;、&amp;quot;规则&amp;quot;是如何构成系统的“零部件”，我们 
+如何组织人力生产和组装这些零部件。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：《Tinking in UML》(大象书)&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;名词解释&quot;&gt;&lt;a href=&quot;#名词解释&quot; class=&quot;headerlink&quot; title=&quot;名词解释&quot;&gt;&lt;/a&gt;名词解释&lt;/h1&gt;&lt;p&gt;RUP(Rational Unifined Process)统一过程。&lt;br&gt;XP(Extreme programming)
+    
+    </summary>
+    
+      <category term="UML" scheme="https://utihbi.github.io/categories/UML/"/>
+    
+    
+      <category term="UML" scheme="https://utihbi.github.io/tags/UML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>细说UML核心元素</title>
+    <link href="https://utihbi.github.io/2016/07/20/%E7%BB%86%E8%AF%B4UML%E6%A0%B8%E5%BF%83%E5%85%83%E7%B4%A0/"/>
+    <id>https://utihbi.github.io/2016/07/20/细说UML核心元素/</id>
+    <published>2016-07-20T01:48:06.000Z</published>
+    <updated>2016-07-20T02:58:53.065Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;基本知识&quot;&gt;&lt;a href=&quot;#基本知识&quot; class=&quot;headerlink&quot; title=&quot;基本知识&quot;&gt;&lt;/a&gt;基本知识&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;功能性需求、非功能性需求&lt;/p&gt;
+&lt;p&gt;功能性需求：一定有参与者(主角)&lt;br&gt;非功能性需求：找不到参与者&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;涉众、参与者、用户&lt;/p&gt;
+&lt;p&gt;涉众：与要建设的这个系统有利益相关的一切人和事。&lt;/p&gt;
+&lt;p&gt;参与者是涉众的代表，用户是参与者的代表；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;角色：&lt;/p&gt;
+&lt;p&gt;参与者的职责，从众多参与者职责中抽象出相同的那部分，将其命名。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;用例&quot;&gt;&lt;a href=&quot;#用例&quot; class=&quot;headerlink&quot; title=&quot;用例&quot;&gt;&lt;/a&gt;用例&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;特征：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;相对独立，即不需要与其他用例交互而独自完成参与者的目的；
+执行结果对参与者来说有意义，可观测。Eg：登陆系统&amp;lt;-&amp;gt;填写密码;
+参与者发起；
+动宾短语；
+一个用例就是一个需求单、分析单元、设计单元、开发单元、测试单元、部署单元。【用例驱动】
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;粒度：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;业务建模阶段：可以说明一件完整的 事情 为宜；
+用例分析阶段(概念建模阶段)：可以描述一个完整的 事件流 为宜。
+                        简言之，可以描述一个完整业务中的一个 步骤；
+系统建模阶段：因视角是针对计算机的，故能够描述操作者与计算机的一次交互为宜；
+              简言之，一个操作界面或一个页面流。
+&lt;/code&gt;&lt;/pre&gt;&lt;font color=&quot;red&quot;&gt;                      &lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用例和功能区别：&lt;br&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;用例：从人的角度；面向对象
+
+功能：从计算机角度；面向过程；其描述缺乏上下午环境，一些功能根本没有人会用到；
+
+对于不存在的事物，我们无法从结构和功能上描述，只能用使用者的观点来描述；
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;总结：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;功能是脱离使用者愿望而存在的；
+
+功能是孤立的，给一个输入，通过计算就有一固定的输出；用例是系统性的工作，即谁在什么情况下通过什么方式做什么，
+结果(愿望)是什么；
+
+用例可以看成是 一系列功能组合来完成一个特定的目标，针对不同场景，组合方式不同。
+
+Eg：电视
+          功能：能开关，能显示，能调频道，调声音；
+          用例：我要看电视节目，要完成这个愿望：
+                                          1、开电视；
+                                          2、调频道；
+                                          3、声音不合适，可以调声音；
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;业务用例：&quot;&gt;&lt;a href=&quot;#业务用例：&quot; class=&quot;headerlink&quot; title=&quot;业务用例：&quot;&gt;&lt;/a&gt;业务用例：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;用于需求阶段的业务建模。(客户业务视角)&lt;/li&gt;
+&lt;li&gt;业务用例实现(业务用例实例)：&lt;/li&gt;
+&lt;li&gt;业务用例的一种实现方式。 类比于编程中类和接口的关系，同一个接口可以有多个实现类。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;概念用例：&quot;&gt;&lt;a href=&quot;#概念用例：&quot; class=&quot;headerlink&quot; title=&quot;概念用例：&quot;&gt;&lt;/a&gt;概念用例：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;概念用例用来获取业务用例中的核心业务逻辑。&lt;/li&gt;
+&lt;li&gt;概念用例是业务用例到系统用例（即我们天天挂在嘴边的用例）过度时非常重要的指导。&lt;h3 id=&quot;系统-用例：&quot;&gt;&lt;a href=&quot;#系统-用例：&quot; class=&quot;headerlink&quot; title=&quot;[系统]用例：&quot;&gt;&lt;/a&gt;[系统]用例：&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;即我们天天挂在嘴边的用例;&lt;/li&gt;
+&lt;li&gt;用来定义系统范围，获取功能需求的；&lt;/li&gt;
+&lt;li&gt;简言之，软件系统开发的全部范围，我们得到的最终需求。(系统视角)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;系统-用例实现：&quot;&gt;&lt;a href=&quot;#系统-用例实现：&quot; class=&quot;headerlink&quot; title=&quot;[系统]用例实现：&quot;&gt;&lt;/a&gt;[系统]用例实现：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;参照上面“业务用例实现”&lt;/li&gt;
+&lt;li&gt;连接起用例模型和系统实现之间的桥梁。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;业务实体&quot;&gt;&lt;a href=&quot;#业务实体&quot; class=&quot;headerlink&quot; title=&quot;业务实体&quot;&gt;&lt;/a&gt;业务实体&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;来自现实世界的；&lt;/li&gt;
+&lt;li&gt;业务用例场景中使用的事物；&lt;/li&gt;
+&lt;li&gt;类的版型，具有对象所有性质。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;业务实体属性：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;面向对象方法中抽象视角的体现
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;业务实体方法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;面向对象方法中抽象视角的体现，
+简言之，属性，方法很多，我们只关心特殊场景(用例)下与这个场景直接关联的属性和方法。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;br&gt;&lt;strong&gt;简言之，参与者代表人，用例代表事，业务实例代表物；&lt;/strong&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;h2 id=&quot;包&quot;&gt;&lt;a href=&quot;#包&quot; class=&quot;headerlink&quot; title=&quot;包&quot;&gt;&lt;/a&gt;包&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;一种容器，如何文件夹，将信息分类，形成逻辑单元。&lt;/li&gt;
+&lt;li&gt;可以容纳任何UML元素；&lt;br&gt;Eg:用例、业务实体、类图、子包；&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;分包的好(高内聚低耦合)坏(双向依赖和循环依赖)评判标准是包之间的依赖关系；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;包之间的关系也只有依赖关系；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;领域包&quot;&gt;&lt;a href=&quot;#领域包&quot; class=&quot;headerlink&quot; title=&quot;领域包&quot;&gt;&lt;/a&gt;领域包&lt;/h3&gt;&lt;p&gt;分类业务领域内的业务单元，每个包代表一个领域&lt;/p&gt;
+&lt;h3 id=&quot;子系统&quot;&gt;&lt;a href=&quot;#子系统&quot; class=&quot;headerlink&quot; title=&quot;子系统&quot;&gt;&lt;/a&gt;子系统&lt;/h3&gt;&lt;p&gt;分类系统内逻辑对象并形成子系统&lt;/p&gt;
+&lt;h3 id=&quot;组织结构&quot;&gt;&lt;a href=&quot;#组织结构&quot; class=&quot;headerlink&quot; title=&quot;组织结构&quot;&gt;&lt;/a&gt;组织结构&lt;/h3&gt;&lt;p&gt;分类业务领域中组织结构&lt;/p&gt;
+&lt;h3 id=&quot;层&quot;&gt;&lt;a href=&quot;#层&quot; class=&quot;headerlink&quot; title=&quot;层&quot;&gt;&lt;/a&gt;层&lt;/h3&gt;&lt;p&gt;分类软件中的层次&lt;/p&gt;
+&lt;h2 id=&quot;分析类&quot;&gt;&lt;a href=&quot;#分析类&quot; class=&quot;headerlink&quot; title=&quot;分析类&quot;&gt;&lt;/a&gt;分析类&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;分析类代表系统中主要“职责簇”。简言之，是从功能性需求向计算机实现转化过程中的“第一个关口“&lt;/li&gt;
+&lt;li&gt;可以产生系统是设计类和子系统。简言之，系统可以通过某种途径“产生出来”，不是拍脑袋拍出来的。&lt;/li&gt;
+&lt;li&gt;简言之，跨越需求阶段到设计实现的桥梁。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;高于设计实现：&lt;br&gt;不理会复杂的设计要求，Eg:设计模式、框架；&lt;/li&gt;
+&lt;li&gt;高于语言实现：&lt;br&gt;不理会编程语言；&lt;/li&gt;
+&lt;li&gt;高于实现方式：&lt;br&gt;不理会具体实现方式，Eg:安全认证，实现方式有：LDAP,CA,JAAC等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;边界类&quot;&gt;&lt;a href=&quot;#边界类&quot; class=&quot;headerlink&quot; title=&quot;边界类&quot;&gt;&lt;/a&gt;边界类&lt;/h3&gt;&lt;p&gt;用于展现层(架构角度)&lt;/p&gt;
+&lt;h3 id=&quot;控制类&quot;&gt;&lt;a href=&quot;#控制类&quot; class=&quot;headerlink&quot; title=&quot;控制类&quot;&gt;&lt;/a&gt;控制类&lt;/h3&gt;&lt;p&gt;用于业务逻辑层(架构角度)&lt;/p&gt;
+&lt;h3 id=&quot;实体类&quot;&gt;&lt;a href=&quot;#实体类&quot; class=&quot;headerlink&quot; title=&quot;实体类&quot;&gt;&lt;/a&gt;实体类&lt;/h3&gt;&lt;p&gt;用于持久层(架构角度)&lt;/p&gt;
+&lt;h2 id=&quot;设计类&quot;&gt;&lt;a href=&quot;#设计类&quot; class=&quot;headerlink&quot; title=&quot;设计类&quot;&gt;&lt;/a&gt;设计类&lt;/h2&gt;&lt;p&gt;对应的对象取决于编程语言；&lt;br&gt;简言之，就是编程语言中具体的类；&lt;/p&gt;
+&lt;h2 id=&quot;关系&quot;&gt;&lt;a href=&quot;#关系&quot; class=&quot;headerlink&quot; title=&quot;关系&quot;&gt;&lt;/a&gt;关系&lt;/h2&gt;&lt;h3 id=&quot;关联&quot;&gt;&lt;a href=&quot;#关联&quot; class=&quot;headerlink&quot; title=&quot;关联&quot;&gt;&lt;/a&gt;关联&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;静态关系，由“常识”、“规则”、“法律”等因素决定&lt;/li&gt;
+&lt;li&gt;A——B，双方都知道对方的存在&lt;/li&gt;
+&lt;li&gt;特别的，用例模型中，参与者——&amp;gt;用例&lt;/li&gt;
+&lt;li&gt;体现在代码里：实例变量(成员变量)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;依赖&quot;&gt;&lt;a href=&quot;#依赖&quot; class=&quot;headerlink&quot; title=&quot;依赖&quot;&gt;&lt;/a&gt;依赖&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;临时，动态关系&lt;/li&gt;
+&lt;li&gt;A—–&amp;gt;B  (A依赖于B)&lt;/li&gt;
+&lt;li&gt;体现在代码里：类构造方法、类方法等的传入参数；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;扩展&quot;&gt;&lt;a href=&quot;#扩展&quot; class=&quot;headerlink&quot; title=&quot;扩展&quot;&gt;&lt;/a&gt;扩展&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;A——————-&amp;gt;B  ( A扩展出B)&lt;/li&gt;
+&lt;li&gt;用于在用例中项目基本用例中的某个扩展点插入扩展用例；&lt;/li&gt;
+&lt;li&gt;可选；&lt;/li&gt;
+&lt;li&gt;特定条件下发生；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;包含&quot;&gt;&lt;a href=&quot;#包含&quot; class=&quot;headerlink&quot; title=&quot;包含&quot;&gt;&lt;/a&gt;包含&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;&amp;lt;include&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;A——————-&amp;gt;B  ( A包含B)&lt;/li&gt;
+&lt;li&gt;分解出两个或更多个用例共有的行为。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;扩展，包含区别：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;* 扩展“可选”，包含“必须”；
+* 没有扩展用例，基本用例完整；
+* 没有包含用例，基本用例不完整；
+* 没有基本用例，扩展用例和包含用例均不能单独存在；
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; title=&quot;实现&quot;&gt;&lt;/a&gt;实现&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;A————▷B (A实现B)&lt;/li&gt;
+&lt;li&gt;用例和用例实现间用这种关系；&lt;br&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/relizeRelationUml.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;精化&quot;&gt;&lt;a href=&quot;#精化&quot; class=&quot;headerlink&quot; title=&quot;精化&quot;&gt;&lt;/a&gt;精化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;&amp;lt;refine&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;A——————-&amp;gt;B  ( A精化了B)&lt;/li&gt;
+&lt;li&gt;设计类精化了分析类&lt;/li&gt;
+&lt;li&gt;基本用例可以分解出许多更小的关键精化用例，这些精化用例更细致展现了基本用例的核心业务；&lt;br&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/refineRelationUml.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;泛化&quot;&gt;&lt;a href=&quot;#泛化&quot; class=&quot;headerlink&quot; title=&quot;泛化&quot;&gt;&lt;/a&gt;泛化&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;A————————▷B  ( A继承了B)&lt;/li&gt;
+&lt;li&gt;建模过程中任意阶段均可使用；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;精化、泛化区别：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;* 精化表示由基本对象可以分解为更精确、精细的对象，这些子对象没有增加、减少、改变基本对象的行为和属性，只是更加细致和
+明确了；
+
+* 泛化表示由基本对象泛化的子对象继承了基本对象的所有特征，且可以增加、改变基本对象的行为和属性；
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;聚合&quot;&gt;&lt;a href=&quot;#聚合&quot; class=&quot;headerlink&quot; title=&quot;聚合&quot;&gt;&lt;/a&gt;聚合&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;A————————♢B  ( A聚合到B,B由A组成)&lt;/li&gt;
+&lt;li&gt;用于类图，特别表示实体对象间关系；&lt;/li&gt;
+&lt;li&gt;表达整体由部分构成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;组合&quot;&gt;&lt;a href=&quot;#组合&quot; class=&quot;headerlink&quot; title=&quot;组合&quot;&gt;&lt;/a&gt;组合&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;A————————♦B  ( A组合成B，B由A构成)&lt;/li&gt;
+&lt;li&gt;用于类图，特别表示实体对象间关系；&lt;/li&gt;
+&lt;li&gt;表达整体拥有部分&lt;/li&gt;
+&lt;li&gt;特别强调：Rose中用   &amp;lt;——————◇   表示；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;聚合、组合区别：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;* 聚合：整体部分 “弱依赖”，整体不存在了，部分仍然存在；Eg:部门撤销后，人员依然存在；
+* 组合，整体部分 “强依赖”，整体不存在了，部分将消亡  ；Eg:母公司解体，子公司也破产；
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;组件&quot;&gt;&lt;a href=&quot;#组件&quot; class=&quot;headerlink&quot; title=&quot;组件&quot;&gt;&lt;/a&gt;组件&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;组件是系统中实际存在可更换的部分，它实现特定的功能，符合一套接口标准并实现一组接口;&lt;/li&gt;
+&lt;li&gt;代表系统中一部分物理实施，包括软件代码(源代码、二进制代码)或其等价物(脚本或命令文件);&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;特征&quot;&gt;&lt;a href=&quot;#特征&quot; class=&quot;headerlink&quot; title=&quot;特征&quot;&gt;&lt;/a&gt;特征&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;完备性&lt;/p&gt;
+&lt;p&gt;  包含的一些类和接口，一个组件能独立完成一项特定的业务目标；&lt;br&gt;  从调用者观点出发：不需调用多个组件来完成一个业务请求；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;独立性&lt;/p&gt;
+&lt;p&gt;  组件间是松耦合的；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;逻辑性&lt;/p&gt;
+&lt;p&gt;  从软件构件设计的观点来定义的，并非从需求中可直接导出；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;透明性&lt;/p&gt;
+&lt;p&gt;  组件的修改应当涉及组件的定义以及组件中包含类的重新指定，而不应该导致类的修改；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;节点&quot;&gt;&lt;a href=&quot;#节点&quot; class=&quot;headerlink&quot; title=&quot;节点&quot;&gt;&lt;/a&gt;节点&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;至少有一个处理器、内存以及可能还带有其他设备的处理元素；&lt;/li&gt;
+&lt;li&gt;实际生活中，服务器、工作站、客户机都可以作为节点；&lt;/li&gt;
+&lt;li&gt;应用于部署视图&lt;/li&gt;
+&lt;li&gt;应用：分布式应用环境、多设备应用环境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考资料：《Tinking in UML》(大象书)&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;基本知识&quot;&gt;&lt;a href=&quot;#基本知识&quot; class=&quot;headerlink&quot; title=&quot;基本知识&quot;&gt;&lt;/a&gt;基本知识&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;功能性需求、非功能性需求&lt;/p&gt;
+&lt;p&gt;功能性需求：一定有参与者(主角)&lt;br&gt;非功能性需求：找不到参与者
+    
+    </summary>
+    
+      <category term="UML" scheme="https://utihbi.github.io/categories/UML/"/>
+    
+    
+      <category term="UML" scheme="https://utihbi.github.io/tags/UML/"/>
+    
+  </entry>
   
   <entry>
     <title>插入排序</title>
