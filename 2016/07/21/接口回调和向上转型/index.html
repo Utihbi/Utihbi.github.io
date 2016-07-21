@@ -4,38 +4,38 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hexo 总结 | 菜鸟生活</title>
+    <title>接口回调和向上转型 | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="Hello,world ! Hello Hexo !
-最近生活状态：辞职大半个月了，论文也没写一个字；整日闲逛各种论坛，社区，有时还要喝点鸡汤；如此颓废，心有不甘，遂决定搭建个人博客，聊以慰藉；
-搭建步骤网上很多，这里就不细说了。我主要参考了嘟爷的博客，在这里特别感谢嘟爷。
-说下遇到的问题：
+    <meta name="description" content="接口回调把implements某一接口的类创建的对象的引用赋给该接口声明的接口变量，那么该接口变量就可以调用被类实现
 
-安装git时，由于本人选择了windows console，所以后面在 Git bash中运行类似npm">
+的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程称为对象功能的
+
+接口回调。
+12345678910111213141516171819202122interface Animal&amp;#123;   void sleep();">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 总结">
-<meta property="og:url" content="https://utihbi.github.io/2016/07/17/Hello-Hexo/index.html">
+<meta property="og:title" content="接口回调和向上转型">
+<meta property="og:url" content="https://utihbi.github.io/2016/07/21/接口回调和向上转型/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="Hello,world ! Hello Hexo !
-最近生活状态：辞职大半个月了，论文也没写一个字；整日闲逛各种论坛，社区，有时还要喝点鸡汤；如此颓废，心有不甘，遂决定搭建个人博客，聊以慰藉；
-搭建步骤网上很多，这里就不细说了。我主要参考了嘟爷的博客，在这里特别感谢嘟爷。
-说下遇到的问题：
+<meta property="og:description" content="接口回调把implements某一接口的类创建的对象的引用赋给该接口声明的接口变量，那么该接口变量就可以调用被类实现
 
-安装git时，由于本人选择了windows console，所以后面在 Git bash中运行类似npm">
-<meta property="og:updated_time" content="2016-07-17T07:57:28.049Z">
+的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程称为对象功能的
+
+接口回调。
+12345678910111213141516171819202122interface Animal&amp;#123;   void sleep();">
+<meta property="og:updated_time" content="2016-07-21T06:33:11.333Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 总结">
-<meta name="twitter:description" content="Hello,world ! Hello Hexo !
-最近生活状态：辞职大半个月了，论文也没写一个字；整日闲逛各种论坛，社区，有时还要喝点鸡汤；如此颓废，心有不甘，遂决定搭建个人博客，聊以慰藉；
-搭建步骤网上很多，这里就不细说了。我主要参考了嘟爷的博客，在这里特别感谢嘟爷。
-说下遇到的问题：
+<meta name="twitter:title" content="接口回调和向上转型">
+<meta name="twitter:description" content="接口回调把implements某一接口的类创建的对象的引用赋给该接口声明的接口变量，那么该接口变量就可以调用被类实现
 
-安装git时，由于本人选择了windows console，所以后面在 Git bash中运行类似npm">
+的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程称为对象功能的
+
+接口回调。
+12345678910111213141516171819202122interface Animal&amp;#123;   void sleep();">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -95,14 +95,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/17/Hello-Hexo/" title="Hexo 总结" itemprop="url">Hexo 总结</a>
+      <a href="/2016/07/21/接口回调和向上转型/" title="接口回调和向上转型" itemprop="url">接口回调和向上转型</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-17T01:43:06.000Z" itemprop="datePublished"> 发表于 2016-07-17</time>
+    <time datetime="2016-07-21T06:03:06.000Z" itemprop="datePublished"> 发表于 2016-07-21</time>
     
   </p>
 </header>
@@ -111,24 +111,21 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口回调"><span class="toc-number">1.</span> <span class="toc-text">接口回调</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向上转型"><span class="toc-number">2.</span> <span class="toc-text">向上转型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二者联系："><span class="toc-number">3.</span> <span class="toc-text">二者联系：</span></a></li></ol>
 		
 		</div>
 		
-		<p>Hello,world ! Hello Hexo !</p>
-<p>最近生活状态：<br>辞职大半个月了，论文也没写一个字；<br>整日闲逛各种论坛，社区，有时还要喝点鸡汤；<br>如此颓废，心有不甘，遂决定搭建个人博客，聊以慰藉；</p>
-<p>搭建步骤网上很多，这里就不细说了。<br>我主要参考了<a href="http://tengj.top/tags/hexo/" target="_blank" rel="external">嘟爷</a>的博客，在这里特别感谢嘟爷。</p>
-<p>说下遇到的问题：</p>
-<ul>
-<li>安装git时，由于本人选择了windows console，所以后面在 Git bash中运行类似npm的命令时执行失败。解决：干脆就不用Git bash了，把Git的环境变量配置好，直接在dos里玩就好了。</li>
-<li>配置ssh时，找不到路径（os:windows），配置失败。解决：手动设置路径即可(/usr/.ssh/id_rsa)。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;yourMail@qq.com&quot;</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (%HOMEDRIVE%%HOMEPATH%/.ssh/id_rsa): /usr/.ssh/id_rsa</div><div class="line">Enter passphrase (empty for no passphrase):</div><div class="line">Enter same passphrase again:</div><div class="line">Your identification has been saved in /usr/.ssh/id_rsa.</div><div class="line">Your public key has been saved in /usr/.ssh/id_rsa.pub.</div><div class="line">The key fingerprint is:</div></pre></td></tr></table></figure>
-<ul>
-<li>往github发布时即<code>hexo d</code> 会出现发布失败。由于账号密码会出现连接超时导致，解决：重试几次即可。</li>
-</ul>
-<p>好了，总的来说，搭建这个博客还算顺利，没有遇到太多的bug。接下来就按照自己风格整理博客吧。</p>
-<p>疯了半个月了，自己也该收心写论文了。祝自己论文撰写顺利吧。</p>
+		<h3 id="接口回调"><a href="#接口回调" class="headerlink" title="接口回调"></a><strong>接口回调</strong></h3><pre><code>把implements某一接口的类创建的对象的引用赋给该接口声明的接口变量，那么该接口变量就可以调用被类实现
+
+的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程称为对象功能的
+
+接口回调。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">interface Animal&#123;</div><div class="line">   void sleep();</div><div class="line">&#125;</div><div class="line">class Cat implements Animal&#123;</div><div class="line">    public void sleep()&#123;</div><div class="line">        System.out.println(&quot;Cat sleep.&quot;)；</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">class Dog implements Animal&#123;</div><div class="line">    public void sleep()&#123;</div><div class="line">        System.out.println(&quot;Dog sleep.&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class Example&#123;</div><div class="line">    public static void main(String args[])&#123;</div><div class="line">        Animal a;       //声明接口变量</div><div class="line">        a=new Cat();    //实例化，接口变量中存放对象的引用</div><div class="line">        a.sleep();      //接口回调</div><div class="line">        a=new Dog();    //实例化，接口变量中存放对象的引用</div><div class="line">        a.sleep();      //接口回调</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a><strong>向上转型</strong></h3><pre><code>这个概念大家都不陌生，用在类间继承上,方便实现多态
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Father f = new Child();</div><div class="line">f.work();//Father中有work();Child覆写了work()；</div></pre></td></tr></table></figure>
+<h3 id="二者联系："><a href="#二者联系：" class="headerlink" title="二者联系："></a>二者联系：</h3><p>java中：</p>
+<p>使用接口回调，可向上转型为多个基类型，因为一个类可实现多个接口；注重回调</p>
+<p>向上转型 只能转为一个基类型，因一个类只能继承一个父类；注重多态</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -136,13 +133,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/hexo/">hexo</a>
+  <span></span> <a href="/tags/JAVA/">JAVA</a>
   </div>
 
 </div>
@@ -151,7 +148,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/07/17/Hello-Hexo/" data-title="Hexo 总结 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/07/21/接口回调和向上转型/" data-title="接口回调和向上转型 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -165,18 +162,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/07/18/插入排序/" title="插入排序">
+ <a href="/2016/07/21/漫谈接口和抽象类/" title="漫谈接口和抽象类">
   <strong>上一篇：</strong><br/>
   <span>
-  插入排序</span>
+  漫谈接口和抽象类</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/07/17/hello-world/"  title="Hello Hexo">
+<a href="/2016/07/20/UML之面向对象处理/"  title="UML之面向对象处理">
  <strong>下一篇：</strong><br/> 
- <span>Hello Hexo
+ <span>UML之面向对象处理
 </span>
 </a>
 </div>
@@ -185,7 +182,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/17/Hello-Hexo/" data-title="Hexo 总结" data-url="https://utihbi.github.io/2016/07/17/Hello-Hexo/"></div>
+	<div class="ds-thread" data-thread-key="2016/07/21/接口回调和向上转型/" data-title="接口回调和向上转型" data-url="https://utihbi.github.io/2016/07/21/接口回调和向上转型/"></div>
 </section>
 
 
@@ -195,7 +192,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口回调"><span class="toc-number">1.</span> <span class="toc-text">接口回调</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向上转型"><span class="toc-number">2.</span> <span class="toc-text">向上转型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二者联系："><span class="toc-number">3.</span> <span class="toc-text">二者联系：</span></a></li></ol>
  
   </div>
 

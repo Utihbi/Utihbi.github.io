@@ -4,38 +4,53 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hexo 总结 | 菜鸟生活</title>
+    <title>漫谈接口和抽象类 | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="Hello,world ! Hello Hexo !
-最近生活状态：辞职大半个月了，论文也没写一个字；整日闲逛各种论坛，社区，有时还要喝点鸡汤；如此颓废，心有不甘，遂决定搭建个人博客，聊以慰藉；
-搭建步骤网上很多，这里就不细说了。我主要参考了嘟爷的博客，在这里特别感谢嘟爷。
-说下遇到的问题：
+    <meta name="description" content="接口和抽象类接口的意义：- 规范
 
-安装git时，由于本人选择了windows console，所以后面在 Git bash中运行类似npm">
+    接口是用来规范类的，它可以避免类在设计上的不一致，这在多人合作的开发中犹为重要；
+
+    它是一种标准，每一个实现它的类都要遵守这个接口定义的规则，标准。
+
+- 扩展(解耦)
+
+    最大程度的解耦，方便以后项目扩展 
+
+        Eg:OOP的思想，底层定义了规范，上层来负责实现，打个比方说，jdbc中就是定义了数据库操作的接口，然后不同的数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 总结">
-<meta property="og:url" content="https://utihbi.github.io/2016/07/17/Hello-Hexo/index.html">
+<meta property="og:title" content="漫谈接口和抽象类">
+<meta property="og:url" content="https://utihbi.github.io/2016/07/21/漫谈接口和抽象类/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="Hello,world ! Hello Hexo !
-最近生活状态：辞职大半个月了，论文也没写一个字；整日闲逛各种论坛，社区，有时还要喝点鸡汤；如此颓废，心有不甘，遂决定搭建个人博客，聊以慰藉；
-搭建步骤网上很多，这里就不细说了。我主要参考了嘟爷的博客，在这里特别感谢嘟爷。
-说下遇到的问题：
+<meta property="og:description" content="接口和抽象类接口的意义：- 规范
 
-安装git时，由于本人选择了windows console，所以后面在 Git bash中运行类似npm">
-<meta property="og:updated_time" content="2016-07-17T07:57:28.049Z">
+    接口是用来规范类的，它可以避免类在设计上的不一致，这在多人合作的开发中犹为重要；
+
+    它是一种标准，每一个实现它的类都要遵守这个接口定义的规则，标准。
+
+- 扩展(解耦)
+
+    最大程度的解耦，方便以后项目扩展 
+
+        Eg:OOP的思想，底层定义了规范，上层来负责实现，打个比方说，jdbc中就是定义了数据库操作的接口，然后不同的数">
+<meta property="og:updated_time" content="2016-07-21T06:36:03.497Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 总结">
-<meta name="twitter:description" content="Hello,world ! Hello Hexo !
-最近生活状态：辞职大半个月了，论文也没写一个字；整日闲逛各种论坛，社区，有时还要喝点鸡汤；如此颓废，心有不甘，遂决定搭建个人博客，聊以慰藉；
-搭建步骤网上很多，这里就不细说了。我主要参考了嘟爷的博客，在这里特别感谢嘟爷。
-说下遇到的问题：
+<meta name="twitter:title" content="漫谈接口和抽象类">
+<meta name="twitter:description" content="接口和抽象类接口的意义：- 规范
 
-安装git时，由于本人选择了windows console，所以后面在 Git bash中运行类似npm">
+    接口是用来规范类的，它可以避免类在设计上的不一致，这在多人合作的开发中犹为重要；
+
+    它是一种标准，每一个实现它的类都要遵守这个接口定义的规则，标准。
+
+- 扩展(解耦)
+
+    最大程度的解耦，方便以后项目扩展 
+
+        Eg:OOP的思想，底层定义了规范，上层来负责实现，打个比方说，jdbc中就是定义了数据库操作的接口，然后不同的数">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -95,14 +110,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/17/Hello-Hexo/" title="Hexo 总结" itemprop="url">Hexo 总结</a>
+      <a href="/2016/07/21/漫谈接口和抽象类/" title="漫谈接口和抽象类" itemprop="url">漫谈接口和抽象类</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-17T01:43:06.000Z" itemprop="datePublished"> 发表于 2016-07-17</time>
+    <time datetime="2016-07-21T06:05:06.000Z" itemprop="datePublished"> 发表于 2016-07-21</time>
     
   </p>
 </header>
@@ -111,24 +126,77 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#接口和抽象类"><span class="toc-number">1.</span> <span class="toc-text">接口和抽象类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口的意义："><span class="toc-number">1.1.</span> <span class="toc-text">接口的意义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类的意义："><span class="toc-number">1.2.</span> <span class="toc-text">抽象类的意义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口和抽象类对比"><span class="toc-number">1.3.</span> <span class="toc-text">接口和抽象类对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附加知识点："><span class="toc-number">2.</span> <span class="toc-text">附加知识点：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象：就是抽去像的部分"><span class="toc-number">2.1.</span> <span class="toc-text">抽象：就是抽去像的部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开闭原则："><span class="toc-number">2.2.</span> <span class="toc-text">开闭原则：</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p>Hello,world ! Hello Hexo !</p>
-<p>最近生活状态：<br>辞职大半个月了，论文也没写一个字；<br>整日闲逛各种论坛，社区，有时还要喝点鸡汤；<br>如此颓废，心有不甘，遂决定搭建个人博客，聊以慰藉；</p>
-<p>搭建步骤网上很多，这里就不细说了。<br>我主要参考了<a href="http://tengj.top/tags/hexo/" target="_blank" rel="external">嘟爷</a>的博客，在这里特别感谢嘟爷。</p>
-<p>说下遇到的问题：</p>
-<ul>
-<li>安装git时，由于本人选择了windows console，所以后面在 Git bash中运行类似npm的命令时执行失败。解决：干脆就不用Git bash了，把Git的环境变量配置好，直接在dos里玩就好了。</li>
-<li>配置ssh时，找不到路径（os:windows），配置失败。解决：手动设置路径即可(/usr/.ssh/id_rsa)。</li>
+		<h2 id="接口和抽象类"><a href="#接口和抽象类" class="headerlink" title="接口和抽象类"></a>接口和抽象类</h2><h3 id="接口的意义："><a href="#接口的意义：" class="headerlink" title="接口的意义："></a>接口的意义：</h3><pre><code>- 规范
+
+    接口是用来规范类的，它可以避免类在设计上的不一致，这在多人合作的开发中犹为重要；
+
+    它是一种标准，每一个实现它的类都要遵守这个接口定义的规则，标准。
+
+- 扩展(解耦)
+
+    最大程度的解耦，方便以后项目扩展 
+
+        Eg:OOP的思想，底层定义了规范，上层来负责实现，打个比方说，jdbc中就是定义了数据库操作的接口，然后不同的数据
+
+        库服务厂商实现不同的数据库操作。
+
+- 接口[回调](https://utihbi.github.io/2016/07/21/接口回调和向上转型/)
+</code></pre><h3 id="抽象类的意义："><a href="#抽象类的意义：" class="headerlink" title="抽象类的意义："></a>抽象类的意义：</h3><pre><code>- 为其子类提供一个公共的类型；
+
+- 封装子类中的重复内容；
+
+- 定义了抽象方法，子类虽然有不同的实现，但定义是一致的。抽象类设计出来就是为了继承，实现多态。
+</code></pre><h3 id="接口和抽象类对比"><a href="#接口和抽象类对比" class="headerlink" title="接口和抽象类对比"></a>接口和抽象类对比</h3><ul>
+<li><p>接口用来定义两个对象间通信的契约；</p>
+<p>  抽象类用来封装对象间公用的行为；</p>
+</li>
+<li><p>接口适合为不相关的类提供通用功能；</p>
+<p>  抽象类主要应用于关系密切的对象间；</p>
+</li>
+<li><p>实际编程中：</p>
+<ol>
+<li><p>我们关心do what，但不关心 how to do，我们可以用接口；</p>
+<p>我们既关心 what，又关心 how时，选用类，但对象间对于某个what 时，how 却表现各异；当然，另一个what，又</p>
+<p>how的一致；</p>
+</li>
+<li><p>将来想加个通用方法，抽象类中直接添加即可，继承的subClass无需任何更改；【模板式设计】接口如果添加，那所</p>
+<p>有实现的类都需更改；【辐射式设计】</p>
+</li>
+<li><p>我们可能现有一堆类，后面才慢慢抽象出类的共同的方法，更多是重构产生的【自下而上】；接口是一开始就定义好</p>
+<p>的一些规范【自上而下】</p>
+</li>
+<li><p>从继承角度来讲，如果类已经继承了一个父类，那此时就应该把这部分功能定义接口，实现多个接口是没有问题的，</p>
+<p>但只能单继承；(java中)</p>
+</li>
+<li><p>扩展功能：将来某些具体类想扩展一项功能，如果直接在抽象类中添加该功能，那继承了该抽象类的另外一些具体类</p>
+<p>是不想要这些功能的，由于继承，却也给这些类这个功能；</p>
+<p>如果使用接口定义，那些类想扩展功能，哪些类就实现接口即可；</p>
+<p>好的接口定义应该是具有专一功能性的，而不是多功能的，否则造成接口污染。（如果一个类只是实现了这个接口的中</p>
+<p>一个功能，而不得不去实现接口中的其他方法，就叫接口污染）   </p>
+<p> Eg:java中的 比较接口</p>
+</li>
+<li><p>对一类事物进行抽象用抽象类，对行为进行抽象时用接口中。</p>
+</li>
+<li><p>java8中接口中方法可以有方法体，前提是 方法是 static；</p>
+</li>
+</ol>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;yourMail@qq.com&quot;</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (%HOMEDRIVE%%HOMEPATH%/.ssh/id_rsa): /usr/.ssh/id_rsa</div><div class="line">Enter passphrase (empty for no passphrase):</div><div class="line">Enter same passphrase again:</div><div class="line">Your identification has been saved in /usr/.ssh/id_rsa.</div><div class="line">Your public key has been saved in /usr/.ssh/id_rsa.pub.</div><div class="line">The key fingerprint is:</div></pre></td></tr></table></figure>
-<ul>
-<li>往github发布时即<code>hexo d</code> 会出现发布失败。由于账号密码会出现连接超时导致，解决：重试几次即可。</li>
-</ul>
-<p>好了，总的来说，搭建这个博客还算顺利，没有遇到太多的bug。接下来就按照自己风格整理博客吧。</p>
-<p>疯了半个月了，自己也该收心写论文了。祝自己论文撰写顺利吧。</p>
+<p>接口中 ：</p>
+<pre><code>变量默认是 public static final
+
+方法默认是 public abstract
+</code></pre><font color="red"><br>    注：默认可以省略，但不能改变；具体看代码：<br></font>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* </div><div class="line">* 接口的中的变量是所有实现类共有的，既然共有，肯定是不变的东西，因为变化的东西也不能够算共有。所以变量是不可变(final)类型，</div><div class="line">* 也就是常量了。</div><div class="line">*/</div><div class="line">interface TestIntf&#123;</div><div class="line">    public static final int a =2;</div><div class="line">    public abstract void getName();</div><div class="line">&#125;</div><div class="line">//这两段代码一致，我们平时为书写方便，多书写下面（懒，习惯少写）</div><div class="line">interface TestIntf&#123;</div><div class="line">    int a =2;</div><div class="line">    void getName();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="附加知识点："><a href="#附加知识点：" class="headerlink" title="附加知识点："></a>附加知识点：</h2><h3 id="抽象：就是抽去像的部分"><a href="#抽象：就是抽去像的部分" class="headerlink" title="抽象：就是抽去像的部分"></a>抽象：就是抽去像的部分</h3><h3 id="开闭原则："><a href="#开闭原则：" class="headerlink" title="开闭原则："></a>开闭原则：</h3><p>修改关闭，对扩展开放；</p>
+<p>通俗的讲，你认为是要变化的东西，就放在你自己的实现中，不能放在接口中去，接口只是对一类事物的属性和行为更高层</p>
+<p>次的抽象。对修改关闭，对扩展（不同的实现 implements）开放，接口是对开闭原则的一种体现。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -136,13 +204,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/hexo/">hexo</a>
+  <span></span> <a href="/tags/JAVA/">JAVA</a>
   </div>
 
 </div>
@@ -151,7 +219,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/07/17/Hello-Hexo/" data-title="Hexo 总结 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/07/21/漫谈接口和抽象类/" data-title="漫谈接口和抽象类 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -164,19 +232,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/07/18/插入排序/" title="插入排序">
-  <strong>上一篇：</strong><br/>
-  <span>
-  插入排序</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/07/17/hello-world/"  title="Hello Hexo">
+<a href="/2016/07/21/接口回调和向上转型/"  title="接口回调和向上转型">
  <strong>下一篇：</strong><br/> 
- <span>Hello Hexo
+ <span>接口回调和向上转型
 </span>
 </a>
 </div>
@@ -185,7 +245,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/17/Hello-Hexo/" data-title="Hexo 总结" data-url="https://utihbi.github.io/2016/07/17/Hello-Hexo/"></div>
+	<div class="ds-thread" data-thread-key="2016/07/21/漫谈接口和抽象类/" data-title="漫谈接口和抽象类" data-url="https://utihbi.github.io/2016/07/21/漫谈接口和抽象类/"></div>
 </section>
 
 
@@ -195,7 +255,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#接口和抽象类"><span class="toc-number">1.</span> <span class="toc-text">接口和抽象类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口的意义："><span class="toc-number">1.1.</span> <span class="toc-text">接口的意义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类的意义："><span class="toc-number">1.2.</span> <span class="toc-text">抽象类的意义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口和抽象类对比"><span class="toc-number">1.3.</span> <span class="toc-text">接口和抽象类对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附加知识点："><span class="toc-number">2.</span> <span class="toc-text">附加知识点：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象：就是抽去像的部分"><span class="toc-number">2.1.</span> <span class="toc-text">抽象：就是抽去像的部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开闭原则："><span class="toc-number">2.2.</span> <span class="toc-text">开闭原则：</span></a></li></ol></li></ol>
  
   </div>
 

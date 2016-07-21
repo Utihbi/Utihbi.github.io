@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-20T03:43:15.855Z</updated>
+  <updated>2016-07-21T06:36:03.497Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -14,6 +14,128 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>漫谈接口和抽象类</title>
+    <link href="https://utihbi.github.io/2016/07/21/%E6%BC%AB%E8%B0%88%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/"/>
+    <id>https://utihbi.github.io/2016/07/21/漫谈接口和抽象类/</id>
+    <published>2016-07-21T06:05:06.000Z</published>
+    <updated>2016-07-21T06:36:03.497Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;接口和抽象类&quot;&gt;&lt;a href=&quot;#接口和抽象类&quot; class=&quot;headerlink&quot; title=&quot;接口和抽象类&quot;&gt;&lt;/a&gt;接口和抽象类&lt;/h2&gt;&lt;h3 id=&quot;接口的意义：&quot;&gt;&lt;a href=&quot;#接口的意义：&quot; class=&quot;headerlink&quot; title=&quot;接口的意义：&quot;&gt;&lt;/a&gt;接口的意义：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;- 规范
+
+    接口是用来规范类的，它可以避免类在设计上的不一致，这在多人合作的开发中犹为重要；
+
+    它是一种标准，每一个实现它的类都要遵守这个接口定义的规则，标准。
+
+- 扩展(解耦)
+
+    最大程度的解耦，方便以后项目扩展 
+
+        Eg:OOP的思想，底层定义了规范，上层来负责实现，打个比方说，jdbc中就是定义了数据库操作的接口，然后不同的数据
+
+        库服务厂商实现不同的数据库操作。
+
+- 接口[回调](https://utihbi.github.io/2016/07/21/接口回调和向上转型/)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;抽象类的意义：&quot;&gt;&lt;a href=&quot;#抽象类的意义：&quot; class=&quot;headerlink&quot; title=&quot;抽象类的意义：&quot;&gt;&lt;/a&gt;抽象类的意义：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;- 为其子类提供一个公共的类型；
+
+- 封装子类中的重复内容；
+
+- 定义了抽象方法，子类虽然有不同的实现，但定义是一致的。抽象类设计出来就是为了继承，实现多态。
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;接口和抽象类对比&quot;&gt;&lt;a href=&quot;#接口和抽象类对比&quot; class=&quot;headerlink&quot; title=&quot;接口和抽象类对比&quot;&gt;&lt;/a&gt;接口和抽象类对比&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;接口用来定义两个对象间通信的契约；&lt;/p&gt;
+&lt;p&gt;  抽象类用来封装对象间公用的行为；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;接口适合为不相关的类提供通用功能；&lt;/p&gt;
+&lt;p&gt;  抽象类主要应用于关系密切的对象间；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;实际编程中：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;我们关心do what，但不关心 how to do，我们可以用接口；&lt;/p&gt;
+&lt;p&gt;我们既关心 what，又关心 how时，选用类，但对象间对于某个what 时，how 却表现各异；当然，另一个what，又&lt;/p&gt;
+&lt;p&gt;how的一致；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将来想加个通用方法，抽象类中直接添加即可，继承的subClass无需任何更改；【模板式设计】接口如果添加，那所&lt;/p&gt;
+&lt;p&gt;有实现的类都需更改；【辐射式设计】&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;我们可能现有一堆类，后面才慢慢抽象出类的共同的方法，更多是重构产生的【自下而上】；接口是一开始就定义好&lt;/p&gt;
+&lt;p&gt;的一些规范【自上而下】&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;从继承角度来讲，如果类已经继承了一个父类，那此时就应该把这部分功能定义接口，实现多个接口是没有问题的，&lt;/p&gt;
+&lt;p&gt;但只能单继承；(java中)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;扩展功能：将来某些具体类想扩展一项功能，如果直接在抽象类中添加该功能，那继承了该抽象类的另外一些具体类&lt;/p&gt;
+&lt;p&gt;是不想要这些功能的，由于继承，却也给这些类这个功能；&lt;/p&gt;
+&lt;p&gt;如果使用接口定义，那些类想扩展功能，哪些类就实现接口即可；&lt;/p&gt;
+&lt;p&gt;好的接口定义应该是具有专一功能性的，而不是多功能的，否则造成接口污染。（如果一个类只是实现了这个接口的中&lt;/p&gt;
+&lt;p&gt;一个功能，而不得不去实现接口中的其他方法，就叫接口污染）   &lt;/p&gt;
+&lt;p&gt; Eg:java中的 比较接口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对一类事物进行抽象用抽象类，对行为进行抽象时用接口中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;java8中接口中方法可以有方法体，前提是 方法是 static；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接口中 ：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;变量默认是 public static final
+
+方法默认是 public abstract
+&lt;/code&gt;&lt;/pre&gt;&lt;font color=&quot;red&quot;&gt;&lt;br&gt;    注：默认可以省略，但不能改变；具体看代码：&lt;br&gt;&lt;/font&gt;
+
+
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/*&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;* &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;* 接口的中的变量是所有实现类共有的，既然共有，肯定是不变的东西，因为变化的东西也不能够算共有。所以变量是不可变(final)类型，&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;* 也就是常量了。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;*/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;interface TestIntf&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    public static final int a =2;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    public abstract void getName();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//这两段代码一致，我们平时为书写方便，多书写下面（懒，习惯少写）&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;interface TestIntf&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    int a =2;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    void getName();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;附加知识点：&quot;&gt;&lt;a href=&quot;#附加知识点：&quot; class=&quot;headerlink&quot; title=&quot;附加知识点：&quot;&gt;&lt;/a&gt;附加知识点：&lt;/h2&gt;&lt;h3 id=&quot;抽象：就是抽去像的部分&quot;&gt;&lt;a href=&quot;#抽象：就是抽去像的部分&quot; class=&quot;headerlink&quot; title=&quot;抽象：就是抽去像的部分&quot;&gt;&lt;/a&gt;抽象：就是抽去像的部分&lt;/h3&gt;&lt;h3 id=&quot;开闭原则：&quot;&gt;&lt;a href=&quot;#开闭原则：&quot; class=&quot;headerlink&quot; title=&quot;开闭原则：&quot;&gt;&lt;/a&gt;开闭原则：&lt;/h3&gt;&lt;p&gt;修改关闭，对扩展开放；&lt;/p&gt;
+&lt;p&gt;通俗的讲，你认为是要变化的东西，就放在你自己的实现中，不能放在接口中去，接口只是对一类事物的属性和行为更高层&lt;/p&gt;
+&lt;p&gt;次的抽象。对修改关闭，对扩展（不同的实现 implements）开放，接口是对开闭原则的一种体现。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;接口和抽象类&quot;&gt;&lt;a href=&quot;#接口和抽象类&quot; class=&quot;headerlink&quot; title=&quot;接口和抽象类&quot;&gt;&lt;/a&gt;接口和抽象类&lt;/h2&gt;&lt;h3 id=&quot;接口的意义：&quot;&gt;&lt;a href=&quot;#接口的意义：&quot; class=&quot;headerlink&quot; titl
+    
+    </summary>
+    
+      <category term="JAVA" scheme="https://utihbi.github.io/categories/JAVA/"/>
+    
+    
+      <category term="JAVA" scheme="https://utihbi.github.io/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>接口回调和向上转型</title>
+    <link href="https://utihbi.github.io/2016/07/21/%E6%8E%A5%E5%8F%A3%E5%9B%9E%E8%B0%83%E5%92%8C%E5%90%91%E4%B8%8A%E8%BD%AC%E5%9E%8B/"/>
+    <id>https://utihbi.github.io/2016/07/21/接口回调和向上转型/</id>
+    <published>2016-07-21T06:03:06.000Z</published>
+    <updated>2016-07-21T06:33:11.333Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;接口回调&quot;&gt;&lt;a href=&quot;#接口回调&quot; class=&quot;headerlink&quot; title=&quot;接口回调&quot;&gt;&lt;/a&gt;&lt;strong&gt;接口回调&lt;/strong&gt;&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;把implements某一接口的类创建的对象的引用赋给该接口声明的接口变量，那么该接口变量就可以调用被类实现
+
+的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程称为对象功能的
+
+接口回调。
+&lt;/code&gt;&lt;/pre&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;interface Animal&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   void sleep();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;class Cat implements Animal&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    public void sleep()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        System.out.println(&amp;quot;Cat sleep.&amp;quot;)；&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;class Dog implements Animal&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    public void sleep()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        System.out.println(&amp;quot;Dog sleep.&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;public class Example&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    public static void main(String args[])&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        Animal a;       //声明接口变量&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        a=new Cat();    //实例化，接口变量中存放对象的引用&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        a.sleep();      //接口回调&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        a=new Dog();    //实例化，接口变量中存放对象的引用&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        a.sleep();      //接口回调&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型&quot;&gt;&lt;/a&gt;&lt;strong&gt;向上转型&lt;/strong&gt;&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;这个概念大家都不陌生，用在类间继承上,方便实现多态
+&lt;/code&gt;&lt;/pre&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Father f = new Child();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;f.work();//Father中有work();Child覆写了work()；&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;二者联系：&quot;&gt;&lt;a href=&quot;#二者联系：&quot; class=&quot;headerlink&quot; title=&quot;二者联系：&quot;&gt;&lt;/a&gt;二者联系：&lt;/h3&gt;&lt;p&gt;java中：&lt;/p&gt;
+&lt;p&gt;使用接口回调，可向上转型为多个基类型，因为一个类可实现多个接口；注重回调&lt;/p&gt;
+&lt;p&gt;向上转型 只能转为一个基类型，因一个类只能继承一个父类；注重多态&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;接口回调&quot;&gt;&lt;a href=&quot;#接口回调&quot; class=&quot;headerlink&quot; title=&quot;接口回调&quot;&gt;&lt;/a&gt;&lt;strong&gt;接口回调&lt;/strong&gt;&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;把implements某一接口的类创建的对象的引用赋给该接口声明的接口变量
+    
+    </summary>
+    
+      <category term="JAVA" scheme="https://utihbi.github.io/categories/JAVA/"/>
+    
+    
+      <category term="JAVA" scheme="https://utihbi.github.io/tags/JAVA/"/>
+    
+  </entry>
   
   <entry>
     <title>UML之面向对象处理</title>
