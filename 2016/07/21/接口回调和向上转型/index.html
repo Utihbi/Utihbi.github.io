@@ -13,9 +13,9 @@
     
     <meta name="description" content="接口回调把implements某一接口的类创建的对象的引用赋给该接口声明的接口变量，那么该接口变量就可以调用被类实现
 
-的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程称为对象功能的
+的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程
 
-接口回调。
+称为对象功能的接口回调。
 12345678910111213141516171819202122interface Animal&amp;#123;   void sleep();">
 <meta property="og:type" content="article">
 <meta property="og:title" content="接口回调和向上转型">
@@ -23,18 +23,18 @@
 <meta property="og:site_name" content="菜鸟生活">
 <meta property="og:description" content="接口回调把implements某一接口的类创建的对象的引用赋给该接口声明的接口变量，那么该接口变量就可以调用被类实现
 
-的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程称为对象功能的
+的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程
 
-接口回调。
+称为对象功能的接口回调。
 12345678910111213141516171819202122interface Animal&amp;#123;   void sleep();">
-<meta property="og:updated_time" content="2016-07-21T06:33:11.333Z">
+<meta property="og:updated_time" content="2016-07-21T06:54:01.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="接口回调和向上转型">
 <meta name="twitter:description" content="接口回调把implements某一接口的类创建的对象的引用赋给该接口声明的接口变量，那么该接口变量就可以调用被类实现
 
-的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程称为对象功能的
+的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程
 
-接口回调。
+称为对象功能的接口回调。
 12345678910111213141516171819202122interface Animal&amp;#123;   void sleep();">
 
     
@@ -117,14 +117,14 @@
 		
 		<h3 id="接口回调"><a href="#接口回调" class="headerlink" title="接口回调"></a><strong>接口回调</strong></h3><pre><code>把implements某一接口的类创建的对象的引用赋给该接口声明的接口变量，那么该接口变量就可以调用被类实现
 
-的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程称为对象功能的
+的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程
 
-接口回调。
+称为对象功能的接口回调。
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">interface Animal&#123;</div><div class="line">   void sleep();</div><div class="line">&#125;</div><div class="line">class Cat implements Animal&#123;</div><div class="line">    public void sleep()&#123;</div><div class="line">        System.out.println(&quot;Cat sleep.&quot;)；</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">class Dog implements Animal&#123;</div><div class="line">    public void sleep()&#123;</div><div class="line">        System.out.println(&quot;Dog sleep.&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class Example&#123;</div><div class="line">    public static void main(String args[])&#123;</div><div class="line">        Animal a;       //声明接口变量</div><div class="line">        a=new Cat();    //实例化，接口变量中存放对象的引用</div><div class="line">        a.sleep();      //接口回调</div><div class="line">        a=new Dog();    //实例化，接口变量中存放对象的引用</div><div class="line">        a.sleep();      //接口回调</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a><strong>向上转型</strong></h3><pre><code>这个概念大家都不陌生，用在类间继承上,方便实现多态
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Father f = new Child();</div><div class="line">f.work();//Father中有work();Child覆写了work()；</div></pre></td></tr></table></figure>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Father f = new Child();</div><div class="line">f.work();//Father中有work();Child覆写了work()；</div></pre></td></tr></table></figure>
 <h3 id="二者联系："><a href="#二者联系：" class="headerlink" title="二者联系："></a>二者联系：</h3><p>java中：</p>
-<p>使用接口回调，可向上转型为多个基类型，因为一个类可实现多个接口；注重回调</p>
+<p>使用接口回调，可向上转型为多个基类型，因为一个类可实现多个接口；</p>
 <p>向上转型 只能转为一个基类型，因一个类只能继承一个父类；注重多态</p>
   
 	</div>

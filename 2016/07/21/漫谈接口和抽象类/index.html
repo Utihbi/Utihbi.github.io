@@ -37,7 +37,7 @@
     最大程度的解耦，方便以后项目扩展 
 
         Eg:OOP的思想，底层定义了规范，上层来负责实现，打个比方说，jdbc中就是定义了数据库操作的接口，然后不同的数">
-<meta property="og:updated_time" content="2016-07-21T06:43:25.796Z">
+<meta property="og:updated_time" content="2016-07-21T06:51:43.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="漫谈接口和抽象类">
 <meta name="twitter:description" content="接口和抽象类接口的意义：- 规范
@@ -160,8 +160,8 @@
 <li><p>实际编程中：</p>
 <ol>
 <li><p>我们关心do what，但不关心 how to do，我们可以用接口；</p>
-<p>我们既关心 what，又关心 how时，选用类，但对象间对于某个what 时，how 却表现各异；当然，另一个what，又</p>
-<p>how的一致；</p>
+<p>我们既关心 what，又关心 how时，选用抽象类，但对象间对于某个what 时，how 却表现各异；当然，另一个what，</p>
+<p>又how的一致；</p>
 </li>
 <li><p>将来想加个通用方法，抽象类中直接添加即可，继承的subClass无需任何更改；【模板式设计】接口如果添加，那所</p>
 <p>有实现的类都需更改；【辐射式设计】</p>
@@ -174,12 +174,12 @@
 </li>
 <li><p>扩展功能：将来某些具体类想扩展一项功能，如果直接在抽象类中添加该功能，那继承了该抽象类的另外一些具体类</p>
 <p>是不想要这些功能的，由于继承，却也给这些类这个功能；</p>
-<p>如果使用接口定义，那些类想扩展功能，哪些类就实现接口即可；</p>
-<p>好的接口定义应该是具有专一功能性的，而不是多功能的，否则造成接口污染。（如果一个类只是实现了这个接口的中</p>
-<p>一个功能，而不得不去实现接口中的其他方法，就叫接口污染）   </p>
+<p>如果使用接口定义，哪些类想扩展功能，哪些类就实现接口即可；</p>
+<p>好的接口定义应该是具有专一功能性的，而不是多功能的，否则造成接口污染。（如果一个类只是实现了这个接口的</p>
+<p>中一个功能，而不得不去实现接口中的其他方法，就叫接口污染）   </p>
 <p> Eg:java中的 比较接口</p>
 </li>
-<li><p>对一类事物进行抽象用抽象类，对行为进行抽象时用接口中。</p>
+<li><p>对一类事物进行抽象用抽象类，对行为进行抽象时用接口。</p>
 </li>
 <li><p>java8中接口中方法可以有方法体，前提是 方法是 static；</p>
 </li>
@@ -194,7 +194,7 @@
 
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* </div><div class="line">* 接口的中的变量是所有实现类共有的，既然共有，肯定是不变的东西，因为变化的东西也不能够算共有。所以变量是不可变(final)类型，</div><div class="line">* 也就是常量了。</div><div class="line">*/</div><div class="line">interface TestIntf&#123;</div><div class="line">    public static final int a =2;</div><div class="line">    public abstract void getName();</div><div class="line">&#125;</div><div class="line">//这两段代码一致，我们平时为书写方便，多书写下面（懒，习惯少写）</div><div class="line">interface TestIntf&#123;</div><div class="line">    int a =2;</div><div class="line">    void getName();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="附加知识点："><a href="#附加知识点：" class="headerlink" title="附加知识点："></a>附加知识点：</h2><h3 id="抽象：就是抽去像的部分"><a href="#抽象：就是抽去像的部分" class="headerlink" title="抽象：就是抽去像的部分"></a>抽象：就是抽去像的部分</h3><h3 id="开闭原则："><a href="#开闭原则：" class="headerlink" title="开闭原则："></a>开闭原则：</h3><p>修改关闭，对扩展开放；</p>
+<h2 id="附加知识点："><a href="#附加知识点：" class="headerlink" title="附加知识点："></a>附加知识点：</h2><h3 id="抽象：就是抽去像的部分"><a href="#抽象：就是抽去像的部分" class="headerlink" title="抽象：就是抽去像的部分"></a>抽象：就是抽去像的部分</h3><h3 id="开闭原则："><a href="#开闭原则：" class="headerlink" title="开闭原则："></a>开闭原则：</h3><p>对修改关闭，对扩展开放；</p>
 <p>通俗的讲，你认为是要变化的东西，就放在你自己的实现中，不能放在接口中去，接口只是对一类事物的属性和行为更高层</p>
 <p>次的抽象。对修改关闭，对扩展（不同的实现 implements）开放，接口是对开闭原则的一种体现。</p>
   
