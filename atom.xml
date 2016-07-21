@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-21T06:36:03.497Z</updated>
+  <updated>2016-07-21T06:43:25.796Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://utihbi.github.io/2016/07/21/%E6%BC%AB%E8%B0%88%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/"/>
     <id>https://utihbi.github.io/2016/07/21/漫谈接口和抽象类/</id>
     <published>2016-07-21T06:05:06.000Z</published>
-    <updated>2016-07-21T06:36:03.497Z</updated>
+    <updated>2016-07-21T06:43:25.796Z</updated>
     
     <content type="html">&lt;h2 id=&quot;接口和抽象类&quot;&gt;&lt;a href=&quot;#接口和抽象类&quot; class=&quot;headerlink&quot; title=&quot;接口和抽象类&quot;&gt;&lt;/a&gt;接口和抽象类&lt;/h2&gt;&lt;h3 id=&quot;接口的意义：&quot;&gt;&lt;a href=&quot;#接口的意义：&quot; class=&quot;headerlink&quot; title=&quot;接口的意义：&quot;&gt;&lt;/a&gt;接口的意义：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;- 规范
 
@@ -36,7 +36,7 @@
 
         库服务厂商实现不同的数据库操作。
 
-- 接口[回调](https://utihbi.github.io/2016/07/21/接口回调和向上转型/)
+- 回调(参见下一篇文章)
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;抽象类的意义：&quot;&gt;&lt;a href=&quot;#抽象类的意义：&quot; class=&quot;headerlink&quot; title=&quot;抽象类的意义：&quot;&gt;&lt;/a&gt;抽象类的意义：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;- 为其子类提供一个公共的类型；
 
 - 封装子类中的重复内容；
