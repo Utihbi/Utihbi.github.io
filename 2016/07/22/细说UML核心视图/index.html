@@ -1,0 +1,711 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>细说UML核心视图 | 菜鸟生活</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Emerson">
+    
+
+    
+    <meta name="description" content="描述软件和现实一样，都需要描述
+
+系统的结构性特征(系统能做什么)———–静态视图
+
+系统运行时特征(系统怎么做)——–动态视图
+
+
+UML视图分类
+静态视图：用例图、类图、包图等
+
+动态视图：活动图、状态图、时序图、协作图等
+  注：动态视图不能独立存在，必须特指一个静态视图或UML元素，说明静态视图规定的事物结构下它们的动态行为。
+
+
+
+静态视图用例图业务用例视图展现了业务系统的功能性需求，如">
+<meta property="og:type" content="article">
+<meta property="og:title" content="细说UML核心视图">
+<meta property="og:url" content="https://utihbi.github.io/2016/07/22/细说UML核心视图/index.html">
+<meta property="og:site_name" content="菜鸟生活">
+<meta property="og:description" content="描述软件和现实一样，都需要描述
+
+系统的结构性特征(系统能做什么)———–静态视图
+
+系统运行时特征(系统怎么做)——–动态视图
+
+
+UML视图分类
+静态视图：用例图、类图、包图等
+
+动态视图：活动图、状态图、时序图、协作图等
+  注：动态视图不能独立存在，必须特指一个静态视图或UML元素，说明静态视图规定的事物结构下它们的动态行为。
+
+
+
+静态视图用例图业务用例视图展现了业务系统的功能性需求，如">
+<meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/bu_use.png">
+<meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/bu_use_re.png">
+<meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/cn_use.png">
+<meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/sys_use.png">
+<meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/sys_use_re.png">
+<meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/activity.png">
+<meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/status.png">
+<meta property="og:updated_time" content="2016-07-22T06:58:05.286Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="细说UML核心视图">
+<meta name="twitter:description" content="描述软件和现实一样，都需要描述
+
+系统的结构性特征(系统能做什么)———–静态视图
+
+系统运行时特征(系统怎么做)——–动态视图
+
+
+UML视图分类
+静态视图：用例图、类图、包图等
+
+动态视图：活动图、状态图、时序图、协作图等
+  注：动态视图不能独立存在，必须特指一个静态视图或UML元素，说明静态视图规定的事物结构下它们的动态行为。
+
+
+
+静态视图用例图业务用例视图展现了业务系统的功能性需求，如">
+<meta name="twitter:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/bu_use.png">
+
+    
+    <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="菜鸟生活" title="菜鸟生活"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="菜鸟生活">菜鸟生活</a></h1>
+				<h2 class="blog-motto">菜鸟也有梦想！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页|Home</a></li>
+					
+						<li><a href="/tool">工具|Tool</a></li>
+					
+						<li><a href="/about">简介|About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:utihbi.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/07/22/细说UML核心视图/" title="细说UML核心视图" itemprop="url">细说UML核心视图</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
+		
+  <p class="article-time">
+    <time datetime="2016-07-22T06:52:06.000Z" itemprop="datePublished"> 发表于 2016-07-22</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#UML视图分类"><span class="toc-number">1.</span> <span class="toc-text">UML视图分类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#静态视图"><span class="toc-number"></span> <span class="toc-text">静态视图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用例图"><span class="toc-number">1.</span> <span class="toc-text">用例图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#业务用例视图"><span class="toc-number">1.1.</span> <span class="toc-text">业务用例视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#业务用例实现视图"><span class="toc-number">1.2.</span> <span class="toc-text">业务用例实现视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概念用例视图"><span class="toc-number">1.3.</span> <span class="toc-text">概念用例视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统用例图"><span class="toc-number">1.4.</span> <span class="toc-text">系统用例图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统用例实现视图"><span class="toc-number">1.5.</span> <span class="toc-text">系统用例实现视图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类图"><span class="toc-number">2.</span> <span class="toc-text">类图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念层类图-业务建模阶段"><span class="toc-number">2.1.</span> <span class="toc-text">概念层类图(业务建模阶段)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明层类图-概念建模阶段"><span class="toc-number">2.2.</span> <span class="toc-text">说明层类图(概念建模阶段)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现层类图-设计建模阶段"><span class="toc-number">2.3.</span> <span class="toc-text">实现层类图(设计建模阶段)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包图"><span class="toc-number">3.</span> <span class="toc-text">包图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#动态视图"><span class="toc-number"></span> <span class="toc-text">动态视图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#活动图"><span class="toc-number">1.</span> <span class="toc-text">活动图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用例活动图"><span class="toc-number">1.1.</span> <span class="toc-text">用例活动图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象活动图"><span class="toc-number">1.2.</span> <span class="toc-text">对象活动图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态图"><span class="toc-number">2.</span> <span class="toc-text">状态图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时序图"><span class="toc-number">3.</span> <span class="toc-text">时序图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协作图"><span class="toc-number">4.</span> <span class="toc-text">协作图</span></a></li></ol>
+		
+		</div>
+		
+		<p>描述软件和现实一样，都需要描述</p>
+<ul>
+<li><p>系统的结构性特征(系统能做什么)———–静态视图</p>
+</li>
+<li><p>系统运行时特征(系统怎么做)——–动态视图</p>
+</li>
+</ul>
+<h2 id="UML视图分类"><a href="#UML视图分类" class="headerlink" title="UML视图分类"></a>UML视图分类</h2><ul>
+<li>静态视图：<pre><code>用例图、类图、包图等
+</code></pre></li>
+<li>动态视图：<pre><code>活动图、状态图、时序图、协作图等
+</code></pre><font color="red"><br>  注：动态视图不能独立存在，必须特指一个静态视图或UML元素，说明静态视图规定的事物结构下它们的动态行为。<br></font>
+
+</li>
+</ul>
+<h1 id="静态视图"><a href="#静态视图" class="headerlink" title="静态视图"></a>静态视图</h1><h2 id="用例图"><a href="#用例图" class="headerlink" title="用例图"></a>用例图</h2><h3 id="业务用例视图"><a href="#业务用例视图" class="headerlink" title="业务用例视图"></a>业务用例视图</h3><pre><code>展现了业务系统的功能性需求，如果要描述这些需求的实现路径，需要借助下面的业务用例实现视图
+</code></pre><center><img src="http://oald9ve1g.bkt.clouddn.com/hexo/img/bu_use.png" alt=""></center>
+
+<h3 id="业务用例实现视图"><a href="#业务用例实现视图" class="headerlink" title="业务用例实现视图"></a>业务用例实现视图</h3><pre><code>展现业务用例有哪些实现途径
+</code></pre><center><img src="http://oald9ve1g.bkt.clouddn.com/hexo/img/bu_use_re.png" alt=""></center>
+
+<h3 id="概念用例视图"><a href="#概念用例视图" class="headerlink" title="概念用例视图"></a>概念用例视图</h3><pre><code>从业务用例中经过分析分解出来的关键概念用例，并表示概念用例和业务用例直接的关系；
+
+一般来说，这些关系包括 扩展、包含、精化。
+
+以业务用例为单元展现，即视图名称命名为业务用例名称
+</code></pre><center><img src="http://oald9ve1g.bkt.clouddn.com/hexo/img/cn_use.png" alt=""></center>
+
+<h3 id="系统用例图"><a href="#系统用例图" class="headerlink" title="系统用例图"></a>系统用例图</h3><pre><code>展现系统范围，对业务用例进行分析后得到到系统用例展现出来；
+
+以业务用例为单元展现；
+</code></pre><center><img src="http://oald9ve1g.bkt.clouddn.com/hexo/img/sys_use.png" alt=""></center>
+
+<h3 id="系统用例实现视图"><a href="#系统用例实现视图" class="headerlink" title="系统用例实现视图"></a>系统用例实现视图</h3><pre><code>展现系统用例有哪些实现途径
+</code></pre><center><img src="http://oald9ve1g.bkt.clouddn.com/hexo/img/sys_use_re.png" alt=""></center>
+
+<h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><h3 id="概念层类图-业务建模阶段"><a href="#概念层类图-业务建模阶段" class="headerlink" title="概念层类图(业务建模阶段)"></a>概念层类图(业务建模阶段)</h3><ul>
+<li>独立于实现语言和实现方式；</li>
+<li><p>描述现实世界中问题领域的概念理解；</p>
+<p> 简言之，表达的类与现实世界问题领域有明显的对应关系；但与最终实现的类不一定有直接和明显的对应的关系</p>
+</li>
+</ul>
+<h3 id="说明层类图-概念建模阶段"><a href="#说明层类图-概念建模阶段" class="headerlink" title="说明层类图(概念建模阶段)"></a>说明层类图(概念建模阶段)</h3><ul>
+<li><p>考察类的接口不是实现</p>
+</li>
+<li><p>表达的类和类关系是对问题领域在接口层次的抽象描述；</p>
+<p>  简言之，不关心编程语言，设计模式等。</p>
+</li>
+<li>现实世界和最终实现之间的桥梁。</li>
+</ul>
+<h3 id="实现层类图-设计建模阶段"><a href="#实现层类图-设计建模阶段" class="headerlink" title="实现层类图(设计建模阶段)"></a>实现层类图(设计建模阶段)</h3><ul>
+<li><p>类是实现代码的描述；</p>
+</li>
+<li><p>要明确：编程语言、设计模式、通信标准等；</p>
+</li>
+</ul>
+<h2 id="包图"><a href="#包图" class="headerlink" title="包图"></a>包图</h2><pre><code>略
+</code></pre><h1 id="动态视图"><a href="#动态视图" class="headerlink" title="动态视图"></a>动态视图</h1><h2 id="活动图"><a href="#活动图" class="headerlink" title="活动图"></a>活动图</h2><p>描述了为了完成某一个目标需要做的活动以及这些活动的执行顺序。【面向过程的视图】</p>
+<p>实际建模过程中，活动图主要用来<em>业务场景建模</em>和<em>用例场景建模</em>。</p>
+<ul>
+<li>描述用例场景</li>
+<li>描述对象交互</li>
+</ul>
+<h3 id="用例活动图"><a href="#用例活动图" class="headerlink" title="用例活动图"></a>用例活动图</h3><pre><code>用例表达了参与者的一个目标，用例场景则描述了如何达到这个目标。
+
+用例活动图用来描述用例场景，即通常说的业务流程。
+
+业务流程通过多个活动按照一定的条件和顺序来推进。每个活动完成一个工作单元。
+</code></pre><center><img src="http://oald9ve1g.bkt.clouddn.com/hexo/img/activity.png" alt=""></center>
+
+<h3 id="对象活动图"><a href="#对象活动图" class="headerlink" title="对象活动图"></a>对象活动图</h3><pre><code>用于展示对象交互。
+
+可理解为对实现层类图实例化后对象交互的情况。
+</code></pre><h2 id="状态图"><a href="#状态图" class="headerlink" title="状态图"></a>状态图</h2><pre><code>显示一个状态机。状态机用于对模型元素的动态行为建模；
+
+换言之，对系统行为中受事件驱动的方面进行建模。
+
+通常用来说明业务角色或业务实体可能的状态————导致状态转换的事件和状态转换引起的操作。
+
+对于类的对象的所有状态，状态图都显示它可能接受的信息、将执行的操作和在此之后对象所处的状态。
+</code></pre><p><center><img src="http://oald9ve1g.bkt.clouddn.com/hexo/img/status.png" alt=""></center></p>
+<font color="red"><br>    状态图只用于描述单个对象的行为；<br><br>    对象间的交互采用时序图和协作图；<br></font>
+
+
+<h2 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h2><pre><code>描述按时间顺序排列的对象间的交互模式；
+
+按照参与交互的对象所具有的“生命线”和它们相互交互发送的消息来显示这些对象。
+
+实际中：
+        我们用时序图来描述用例实现
+
+使用时序图来描述用例实现是一种从现实世界到对象世界的一种映射方法。
+</code></pre><ul>
+<li><p>业务模型时序图(业务建模阶段)</p>
+<p>  对业务实体对象绘制(为业务实体交互建模，实现业务用例)</p>
+</li>
+<li><p>概念模型时序图(概念建模阶段)</p>
+<p>  对分析类对象绘制(已带有计算机的理解)</p>
+</li>
+<li><p>设计模型时序图(设计建模阶段)    </p>
+<p>  对设计类对象绘制（消息细致到方法级别）</p>
+</li>
+</ul>
+<h2 id="协作图"><a href="#协作图" class="headerlink" title="协作图"></a>协作图</h2><pre><code>描述了对象间交互的一种模式；
+
+通过对象间的连接和它们相互发送的消息来显示参与交互的对象。
+
+可以为用例事件流的每一个变化形式制作一个协作图。
+</code></pre><ul>
+<li><p>业务模型时序图(业务建模阶段)</p>
+<p>  对业务实体对象绘制(为业务实体交互建模，实现业务用例)</p>
+</li>
+<li><p>概念模型时序图(概念建模阶段)</p>
+<p>  对分析类对象绘制(已带有计算机的理解)</p>
+</li>
+<li><p>设计模型时序图(设计建模阶段)    </p>
+<p>  对设计类对象绘制（消息细致到方法级别）</p>
+</li>
+</ul>
+<font color="red"><br>注：<br><br>    1.  时序图和协作图式可以相互转化的；<font color="green">（rose中 F5 即可相互转化）</font><br><br>    2.  时序图强调消息事件发生的顺序，方便阐述事件流的过程，或方便调用过程的理解；<br><br>    3.  协作图来展现了对象间的关系，方便获得对对象结构的理解。<br></font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/UML/">UML</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/UML/">UML</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="https://utihbi.github.io/2016/07/22/细说UML核心视图/" data-title="细说UML核心视图 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/07/22/不同平台造成的文本换行符差异(CRLF)/"  title="不同平台造成的文本换行符差异(CRLF)">
+ <strong>下一篇：</strong><br/> 
+ <span>不同平台造成的文本换行符差异(CRLF)
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/07/22/细说UML核心视图/" data-title="细说UML核心视图" data-url="https://utihbi.github.io/2016/07/22/细说UML核心视图/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#UML视图分类"><span class="toc-number">1.</span> <span class="toc-text">UML视图分类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#静态视图"><span class="toc-number"></span> <span class="toc-text">静态视图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用例图"><span class="toc-number">1.</span> <span class="toc-text">用例图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#业务用例视图"><span class="toc-number">1.1.</span> <span class="toc-text">业务用例视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#业务用例实现视图"><span class="toc-number">1.2.</span> <span class="toc-text">业务用例实现视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概念用例视图"><span class="toc-number">1.3.</span> <span class="toc-text">概念用例视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统用例图"><span class="toc-number">1.4.</span> <span class="toc-text">系统用例图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统用例实现视图"><span class="toc-number">1.5.</span> <span class="toc-text">系统用例实现视图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类图"><span class="toc-number">2.</span> <span class="toc-text">类图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念层类图-业务建模阶段"><span class="toc-number">2.1.</span> <span class="toc-text">概念层类图(业务建模阶段)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明层类图-概念建模阶段"><span class="toc-number">2.2.</span> <span class="toc-text">说明层类图(概念建模阶段)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现层类图-设计建模阶段"><span class="toc-number">2.3.</span> <span class="toc-text">实现层类图(设计建模阶段)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包图"><span class="toc-number">3.</span> <span class="toc-text">包图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#动态视图"><span class="toc-number"></span> <span class="toc-text">动态视图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#活动图"><span class="toc-number">1.</span> <span class="toc-text">活动图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用例活动图"><span class="toc-number">1.1.</span> <span class="toc-text">用例活动图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象活动图"><span class="toc-number">1.2.</span> <span class="toc-text">对象活动图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态图"><span class="toc-number">2.</span> <span class="toc-text">状态图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时序图"><span class="toc-number">3.</span> <span class="toc-text">时序图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协作图"><span class="toc-number">4.</span> <span class="toc-text">协作图</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/CRLF/" style="font-size: 10px;">CRLF</a> <a href="/tags/JAVA/" style="font-size: 15px;">JAVA</a> <a href="/tags/UML/" style="font-size: 20px;">UML</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/排序/" style="font-size: 10px;">排序</a>
+    </div>
+  </div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://stackoverflow.com" target="_blank" title="stackoverflow">stackoverflow</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.tutorialspoint.com/" target="_blank" title="tutorialspoint">tutorialspoint</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.importnew.com/" target="_blank" title="importNew">importNew</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://hashnode.com/" target="_blank" title="HashNode">HashNode</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/xiaolingting" target="_blank" title="CSDN">CSDN</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.tuicool.com/" target="_blank" title="推酷">推酷</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.codeceo.com/" target="_blank" title="码农圈">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://bbs.lzqstd.net/" target="_blank" title="蓝之青">蓝之青</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://fstack.net/" target="_blank" title="全栈社区">全栈社区</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://toutiao.io" target="_blank" title="开发者头条">开发者头条</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://tech.meituan.com/" target="_blank" title="美团点评技术">美团点评技术</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 寒江已過春色，是孤舟，便該忍下滿帆的寂寞。 <br/>
+			Don’t worry if it doesn’t work right.  If everything did, you’d be out of a job.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/3165325583" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/Utihbi" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:loogeoustc@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Emerson">Emerson</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"utihbi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259925950'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1259925950' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  </body>
+</html>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-22T02:59:54.548Z</updated>
+  <updated>2016-07-22T06:58:05.286Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -14,6 +14,171 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>细说UML核心视图</title>
+    <link href="https://utihbi.github.io/2016/07/22/%E7%BB%86%E8%AF%B4UML%E6%A0%B8%E5%BF%83%E8%A7%86%E5%9B%BE/"/>
+    <id>https://utihbi.github.io/2016/07/22/细说UML核心视图/</id>
+    <published>2016-07-22T06:52:06.000Z</published>
+    <updated>2016-07-22T06:58:05.286Z</updated>
+    
+    <content type="html">&lt;p&gt;描述软件和现实一样，都需要描述&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;系统的结构性特征(系统能做什么)———–静态视图&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;系统运行时特征(系统怎么做)——–动态视图&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;UML视图分类&quot;&gt;&lt;a href=&quot;#UML视图分类&quot; class=&quot;headerlink&quot; title=&quot;UML视图分类&quot;&gt;&lt;/a&gt;UML视图分类&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;静态视图：&lt;pre&gt;&lt;code&gt;用例图、类图、包图等
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;动态视图：&lt;pre&gt;&lt;code&gt;活动图、状态图、时序图、协作图等
+&lt;/code&gt;&lt;/pre&gt;&lt;font color=&quot;red&quot;&gt;&lt;br&gt;  注：动态视图不能独立存在，必须特指一个静态视图或UML元素，说明静态视图规定的事物结构下它们的动态行为。&lt;br&gt;&lt;/font&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;静态视图&quot;&gt;&lt;a href=&quot;#静态视图&quot; class=&quot;headerlink&quot; title=&quot;静态视图&quot;&gt;&lt;/a&gt;静态视图&lt;/h1&gt;&lt;h2 id=&quot;用例图&quot;&gt;&lt;a href=&quot;#用例图&quot; class=&quot;headerlink&quot; title=&quot;用例图&quot;&gt;&lt;/a&gt;用例图&lt;/h2&gt;&lt;h3 id=&quot;业务用例视图&quot;&gt;&lt;a href=&quot;#业务用例视图&quot; class=&quot;headerlink&quot; title=&quot;业务用例视图&quot;&gt;&lt;/a&gt;业务用例视图&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;展现了业务系统的功能性需求，如果要描述这些需求的实现路径，需要借助下面的业务用例实现视图
+&lt;/code&gt;&lt;/pre&gt;&lt;center&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/bu_use.png&quot; alt=&quot;&quot;&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;业务用例实现视图&quot;&gt;&lt;a href=&quot;#业务用例实现视图&quot; class=&quot;headerlink&quot; title=&quot;业务用例实现视图&quot;&gt;&lt;/a&gt;业务用例实现视图&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;展现业务用例有哪些实现途径
+&lt;/code&gt;&lt;/pre&gt;&lt;center&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/bu_use_re.png&quot; alt=&quot;&quot;&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;概念用例视图&quot;&gt;&lt;a href=&quot;#概念用例视图&quot; class=&quot;headerlink&quot; title=&quot;概念用例视图&quot;&gt;&lt;/a&gt;概念用例视图&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;从业务用例中经过分析分解出来的关键概念用例，并表示概念用例和业务用例直接的关系；
+
+一般来说，这些关系包括 扩展、包含、精化。
+
+以业务用例为单元展现，即视图名称命名为业务用例名称
+&lt;/code&gt;&lt;/pre&gt;&lt;center&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/cn_use.png&quot; alt=&quot;&quot;&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;系统用例图&quot;&gt;&lt;a href=&quot;#系统用例图&quot; class=&quot;headerlink&quot; title=&quot;系统用例图&quot;&gt;&lt;/a&gt;系统用例图&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;展现系统范围，对业务用例进行分析后得到到系统用例展现出来；
+
+以业务用例为单元展现；
+&lt;/code&gt;&lt;/pre&gt;&lt;center&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/sys_use.png&quot; alt=&quot;&quot;&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;系统用例实现视图&quot;&gt;&lt;a href=&quot;#系统用例实现视图&quot; class=&quot;headerlink&quot; title=&quot;系统用例实现视图&quot;&gt;&lt;/a&gt;系统用例实现视图&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;展现系统用例有哪些实现途径
+&lt;/code&gt;&lt;/pre&gt;&lt;center&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/sys_use_re.png&quot; alt=&quot;&quot;&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;类图&quot;&gt;&lt;a href=&quot;#类图&quot; class=&quot;headerlink&quot; title=&quot;类图&quot;&gt;&lt;/a&gt;类图&lt;/h2&gt;&lt;h3 id=&quot;概念层类图-业务建模阶段&quot;&gt;&lt;a href=&quot;#概念层类图-业务建模阶段&quot; class=&quot;headerlink&quot; title=&quot;概念层类图(业务建模阶段)&quot;&gt;&lt;/a&gt;概念层类图(业务建模阶段)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;独立于实现语言和实现方式；&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;描述现实世界中问题领域的概念理解；&lt;/p&gt;
+&lt;p&gt; 简言之，表达的类与现实世界问题领域有明显的对应关系；但与最终实现的类不一定有直接和明显的对应的关系&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;说明层类图-概念建模阶段&quot;&gt;&lt;a href=&quot;#说明层类图-概念建模阶段&quot; class=&quot;headerlink&quot; title=&quot;说明层类图(概念建模阶段)&quot;&gt;&lt;/a&gt;说明层类图(概念建模阶段)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;考察类的接口不是实现&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;表达的类和类关系是对问题领域在接口层次的抽象描述；&lt;/p&gt;
+&lt;p&gt;  简言之，不关心编程语言，设计模式等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;现实世界和最终实现之间的桥梁。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;实现层类图-设计建模阶段&quot;&gt;&lt;a href=&quot;#实现层类图-设计建模阶段&quot; class=&quot;headerlink&quot; title=&quot;实现层类图(设计建模阶段)&quot;&gt;&lt;/a&gt;实现层类图(设计建模阶段)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;类是实现代码的描述；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;要明确：编程语言、设计模式、通信标准等；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;包图&quot;&gt;&lt;a href=&quot;#包图&quot; class=&quot;headerlink&quot; title=&quot;包图&quot;&gt;&lt;/a&gt;包图&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;略
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;动态视图&quot;&gt;&lt;a href=&quot;#动态视图&quot; class=&quot;headerlink&quot; title=&quot;动态视图&quot;&gt;&lt;/a&gt;动态视图&lt;/h1&gt;&lt;h2 id=&quot;活动图&quot;&gt;&lt;a href=&quot;#活动图&quot; class=&quot;headerlink&quot; title=&quot;活动图&quot;&gt;&lt;/a&gt;活动图&lt;/h2&gt;&lt;p&gt;描述了为了完成某一个目标需要做的活动以及这些活动的执行顺序。【面向过程的视图】&lt;/p&gt;
+&lt;p&gt;实际建模过程中，活动图主要用来&lt;em&gt;业务场景建模&lt;/em&gt;和&lt;em&gt;用例场景建模&lt;/em&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;描述用例场景&lt;/li&gt;
+&lt;li&gt;描述对象交互&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;用例活动图&quot;&gt;&lt;a href=&quot;#用例活动图&quot; class=&quot;headerlink&quot; title=&quot;用例活动图&quot;&gt;&lt;/a&gt;用例活动图&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;用例表达了参与者的一个目标，用例场景则描述了如何达到这个目标。
+
+用例活动图用来描述用例场景，即通常说的业务流程。
+
+业务流程通过多个活动按照一定的条件和顺序来推进。每个活动完成一个工作单元。
+&lt;/code&gt;&lt;/pre&gt;&lt;center&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/activity.png&quot; alt=&quot;&quot;&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;对象活动图&quot;&gt;&lt;a href=&quot;#对象活动图&quot; class=&quot;headerlink&quot; title=&quot;对象活动图&quot;&gt;&lt;/a&gt;对象活动图&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;用于展示对象交互。
+
+可理解为对实现层类图实例化后对象交互的情况。
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;状态图&quot;&gt;&lt;a href=&quot;#状态图&quot; class=&quot;headerlink&quot; title=&quot;状态图&quot;&gt;&lt;/a&gt;状态图&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;显示一个状态机。状态机用于对模型元素的动态行为建模；
+
+换言之，对系统行为中受事件驱动的方面进行建模。
+
+通常用来说明业务角色或业务实体可能的状态————导致状态转换的事件和状态转换引起的操作。
+
+对于类的对象的所有状态，状态图都显示它可能接受的信息、将执行的操作和在此之后对象所处的状态。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/status.png&quot; alt=&quot;&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;font color=&quot;red&quot;&gt;&lt;br&gt;    状态图只用于描述单个对象的行为；&lt;br&gt;&lt;br&gt;    对象间的交互采用时序图和协作图；&lt;br&gt;&lt;/font&gt;
+
+
+&lt;h2 id=&quot;时序图&quot;&gt;&lt;a href=&quot;#时序图&quot; class=&quot;headerlink&quot; title=&quot;时序图&quot;&gt;&lt;/a&gt;时序图&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;描述按时间顺序排列的对象间的交互模式；
+
+按照参与交互的对象所具有的“生命线”和它们相互交互发送的消息来显示这些对象。
+
+实际中：
+        我们用时序图来描述用例实现
+
+使用时序图来描述用例实现是一种从现实世界到对象世界的一种映射方法。
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;业务模型时序图(业务建模阶段)&lt;/p&gt;
+&lt;p&gt;  对业务实体对象绘制(为业务实体交互建模，实现业务用例)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;概念模型时序图(概念建模阶段)&lt;/p&gt;
+&lt;p&gt;  对分析类对象绘制(已带有计算机的理解)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;设计模型时序图(设计建模阶段)    &lt;/p&gt;
+&lt;p&gt;  对设计类对象绘制（消息细致到方法级别）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;协作图&quot;&gt;&lt;a href=&quot;#协作图&quot; class=&quot;headerlink&quot; title=&quot;协作图&quot;&gt;&lt;/a&gt;协作图&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;描述了对象间交互的一种模式；
+
+通过对象间的连接和它们相互发送的消息来显示参与交互的对象。
+
+可以为用例事件流的每一个变化形式制作一个协作图。
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;业务模型时序图(业务建模阶段)&lt;/p&gt;
+&lt;p&gt;  对业务实体对象绘制(为业务实体交互建模，实现业务用例)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;概念模型时序图(概念建模阶段)&lt;/p&gt;
+&lt;p&gt;  对分析类对象绘制(已带有计算机的理解)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;设计模型时序图(设计建模阶段)    &lt;/p&gt;
+&lt;p&gt;  对设计类对象绘制（消息细致到方法级别）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;font color=&quot;red&quot;&gt;&lt;br&gt;注：&lt;br&gt;&lt;br&gt;    1.  时序图和协作图式可以相互转化的；&lt;font color=&quot;green&quot;&gt;（rose中 F5 即可相互转化）&lt;/font&gt;&lt;br&gt;&lt;br&gt;    2.  时序图强调消息事件发生的顺序，方便阐述事件流的过程，或方便调用过程的理解；&lt;br&gt;&lt;br&gt;    3.  协作图来展现了对象间的关系，方便获得对对象结构的理解。&lt;br&gt;&lt;/font&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;描述软件和现实一样，都需要描述&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;系统的结构性特征(系统能做什么)———–静态视图&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;系统运行时特征(系统怎么做)——–动态视图&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;UML视图分类&quot;&gt;&lt;a href=
+    
+    </summary>
+    
+      <category term="UML" scheme="https://utihbi.github.io/categories/UML/"/>
+    
+    
+      <category term="UML" scheme="https://utihbi.github.io/tags/UML/"/>
+    
+  </entry>
   
   <entry>
     <title>不同平台造成的文本换行符差异(CRLF)</title>
