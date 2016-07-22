@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-22T07:05:20.890Z</updated>
+  <updated>2016-07-22T09:30:00.095Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -16,11 +16,57 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>String类为什么是final的</title>
+    <link href="https://utihbi.github.io/2016/07/22/String%E7%B1%BB%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AFfinal%E7%9A%84/"/>
+    <id>https://utihbi.github.io/2016/07/22/String类为什么是final的/</id>
+    <published>2016-07-22T09:28:06.000Z</published>
+    <updated>2016-07-22T09:30:00.095Z</updated>
+    
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别改掉；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;网络连接，DB连接中很容易被攻击。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;同步和并发问题：线程安全因此没有同步问题；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设计的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实例的引用的值也改变了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;类加载：String被用作类加载的参数，如果可以改变，那将加载错误的类或加载不到类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Hask Key：不可变实例非常适合做hash表的key。否则，hash表的值会出现丢失情况。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;长度是确定的，不会改变的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别改掉；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;网络连接，DB连接中很容易被攻击。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;同步和并发问题：线程安全因此没有同步问题；
+    
+    </summary>
+    
+      <category term="JAVA" scheme="https://utihbi.github.io/categories/JAVA/"/>
+    
+    
+      <category term="JAVA" scheme="https://utihbi.github.io/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>细说UML核心视图</title>
     <link href="https://utihbi.github.io/2016/07/22/%E7%BB%86%E8%AF%B4UML%E6%A0%B8%E5%BF%83%E8%A7%86%E5%9B%BE/"/>
     <id>https://utihbi.github.io/2016/07/22/细说UML核心视图/</id>
     <published>2016-07-22T06:52:06.000Z</published>
-    <updated>2016-07-22T07:05:20.890Z</updated>
+    <updated>2016-07-22T07:07:32.945Z</updated>
     
     <content type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;描述软件和现实一样，都需要描述&lt;/p&gt;
 &lt;ul&gt;
@@ -141,7 +187,7 @@
 &lt;p&gt;  对设计类对象绘制（消息细致到方法级别）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;font color=&quot;red&quot;&gt;&lt;br&gt;注：&lt;br&gt;&lt;br&gt;    1.  时序图和协作图式可以相互转化的；&lt;font color=&quot;green&quot;&gt;（rose中 F5 即可相互转化）&lt;/font&gt;&lt;br&gt;&lt;br&gt;    2.  时序图强调消息事件发生的顺序，方便阐述事件流的过程，或方便调用过程的理解；&lt;br&gt;&lt;br&gt;    3.  协作图来展现了对象间的关系，方便获得对对象结构的理解。&lt;br&gt;&lt;/font&gt;
+&lt;font color=&quot;red&quot;&gt;&lt;br&gt;注：&lt;br&gt;    1.  时序图和协作图式可以相互转化的；&lt;font color=&quot;green&quot;&gt;（rose中 F5 即可相互转化）&lt;/font&gt;&lt;br&gt;&lt;br&gt;    2.  时序图强调消息事件发生的顺序，方便阐述事件流的过程，或方便调用过程的理解；&lt;br&gt;&lt;br&gt;    3.  协作图来展现了对象间的关系，方便获得对对象结构的理解。&lt;br&gt;&lt;/font&gt;
 
 
 &lt;p&gt;参考资料：《Tinking in UML》(大象书)&lt;/p&gt;

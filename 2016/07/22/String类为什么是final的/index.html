@@ -4,38 +4,50 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>UML之面向对象处理 | 菜鸟生活</title>
+    <title>String类为什么是final的 | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="名词解释RUP(Rational Unifined Process)统一过程。XP(Extreme programming)极限编程
-UML 是 语言；类比于音乐理论RUP 是 方法；类比于五线谱
-RUP&amp;lt;-&amp;gt;XP
-面向对象处理不要决定通盘去考虑，而是找出问题领域包含的抽象角度。
-建模基础建模：抽象角度很重要具体讲：
-1、做需求时，首要目标：是业务有多少参与者，每个参与者目标是什么(抽">
+    <meta name="description" content="安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别改掉；
+
+网络连接，DB连接中很容易被攻击。
+
+同步和并发问题：线程安全因此没有同步问题；
+
+缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设计的。
+
+
+换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UML之面向对象处理">
-<meta property="og:url" content="https://utihbi.github.io/2016/07/20/UML之面向对象处理/index.html">
+<meta property="og:title" content="String类为什么是final的">
+<meta property="og:url" content="https://utihbi.github.io/2016/07/22/String类为什么是final的/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="名词解释RUP(Rational Unifined Process)统一过程。XP(Extreme programming)极限编程
-UML 是 语言；类比于音乐理论RUP 是 方法；类比于五线谱
-RUP&amp;lt;-&amp;gt;XP
-面向对象处理不要决定通盘去考虑，而是找出问题领域包含的抽象角度。
-建模基础建模：抽象角度很重要具体讲：
-1、做需求时，首要目标：是业务有多少参与者，每个参与者目标是什么(抽">
-<meta property="og:updated_time" content="2016-07-20T03:43:15.855Z">
+<meta property="og:description" content="安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别改掉；
+
+网络连接，DB连接中很容易被攻击。
+
+同步和并发问题：线程安全因此没有同步问题；
+
+缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设计的。
+
+
+换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实">
+<meta property="og:updated_time" content="2016-07-22T09:30:00.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UML之面向对象处理">
-<meta name="twitter:description" content="名词解释RUP(Rational Unifined Process)统一过程。XP(Extreme programming)极限编程
-UML 是 语言；类比于音乐理论RUP 是 方法；类比于五线谱
-RUP&amp;lt;-&amp;gt;XP
-面向对象处理不要决定通盘去考虑，而是找出问题领域包含的抽象角度。
-建模基础建模：抽象角度很重要具体讲：
-1、做需求时，首要目标：是业务有多少参与者，每个参与者目标是什么(抽">
+<meta name="twitter:title" content="String类为什么是final的">
+<meta name="twitter:description" content="安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别改掉；
+
+网络连接，DB连接中很容易被攻击。
+
+同步和并发问题：线程安全因此没有同步问题；
+
+缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设计的。
+
+
+换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -95,14 +107,14 @@ RUP&amp;lt;-&amp;gt;XP
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/20/UML之面向对象处理/" title="UML之面向对象处理" itemprop="url">UML之面向对象处理</a>
+      <a href="/2016/07/22/String类为什么是final的/" title="String类为什么是final的" itemprop="url">String类为什么是final的</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-20T03:03:06.000Z" itemprop="datePublished"> 发表于 2016-07-20</time>
+    <time datetime="2016-07-22T09:28:06.000Z" itemprop="datePublished"> 发表于 2016-07-22</time>
     
   </p>
 </header>
@@ -111,40 +123,29 @@ RUP&amp;lt;-&amp;gt;XP
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#名词解释"><span class="toc-number">1.</span> <span class="toc-text">名词解释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象处理"><span class="toc-number">2.</span> <span class="toc-text">面向对象处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#建模基础"><span class="toc-number">2.1.</span> <span class="toc-text">建模基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用例驱动"><span class="toc-number">2.2.</span> <span class="toc-text">用例驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑视图："><span class="toc-number">2.2.1.</span> <span class="toc-text">逻辑视图：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程-分析设计-视图："><span class="toc-number">2.2.2.</span> <span class="toc-text">进程(分析设计)视图：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署视图："><span class="toc-number">2.2.3.</span> <span class="toc-text">部署视图：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实施视图："><span class="toc-number">2.2.4.</span> <span class="toc-text">实施视图：</span></a></li></ol></li></ol></li></ol>
+			
 		
 		</div>
 		
-		<h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><p>RUP(Rational Unifined Process)统一过程。<br>XP(Extreme programming)极限编程</p>
-<p>UML 是 语言；类比于音乐理论<br>RUP 是 方法；类比于五线谱</p>
-<p>RUP&lt;-&gt;XP</p>
-<h1 id="面向对象处理"><a href="#面向对象处理" class="headerlink" title="面向对象处理"></a>面向对象处理</h1><p>不要决定通盘去考虑，而是找出问题领域包含的抽象角度。</p>
-<h2 id="建模基础"><a href="#建模基础" class="headerlink" title="建模基础"></a>建模基础</h2><p>建模：抽象角度很重要<br>具体讲：</p>
-<pre><code>1、做需求时，首要目标：是业务有多少参与者，每个参与者目标是什么(抽象角度)？-&gt;用例！
-                      不是弄清楚业务是如何一步步完成的。 
-
-2、目标确立后，找出能够满足这个目标的事物。有趣的问题：我们找这些事物的过程不是面向对象的，而是过程化的。
-这是因为要达到一个目标，肯定是有 动作 附加在 静态事物 上，并产生了一定的 效果。（过程化）故我们要知道是 谁  发出了 动
-作，作用于什么 事物，产生了怎样的 后果。
-
-最终目的：找出场景当中贡献于场景目标的 事物，以及它们是如何贡献于这个场景的。
-</code></pre><p>总结：<br>        一个由抽象角度确定了的目标需要由静态事物加上特定的条件下产生的一个特定的场景来完成，<br>        即：<br>        静态的事物(物) + 特定的条件(规则) + 特定的动作(参与者的驱动) = 特定的场景(事件)</p>
-<p><font color="red"><br><strong>建模公式：</strong></font></p>
-<pre><code>问题领域 = ∑ (抽象角度)
-抽象角度 = 问题领域边界之外的参与者的业务目标 = 业务用例
-业务用例 = ∑ (特定场景)
-特定场景 = 静态的事物 + 特定的条件 + 特定的动作 or
-特定的事 = 特定的事物 + 特定的规则 + 特定的人的行为
-</code></pre><p></p>
-<h2 id="用例驱动"><a href="#用例驱动" class="headerlink" title="用例驱动"></a>用例驱动</h2><h3 id="逻辑视图："><a href="#逻辑视图：" class="headerlink" title="逻辑视图："></a>逻辑视图：</h3><pre><code>system只有一个逻辑视图，以图形方式说明关键的用例实现、子系统、包和类。
-      简言之,建模公式中的&quot;人&quot;、&quot;事&quot;、&quot;物&quot;、&quot;规则&quot;是如何 分类组织 的。
-</code></pre><h3 id="进程-分析设计-视图："><a href="#进程-分析设计-视图：" class="headerlink" title="进程(分析设计)视图："></a>进程(分析设计)视图：</h3><p>system只有一个进程视图，以图形方式说明系统中进程的详细组织结构，包括类和子系统到进程和线程的映射。<br>            简言之，建模公式中的那些”人”、”事”、”物”、”规则”是如何 交互 的。</p>
-<h3 id="部署视图："><a href="#部署视图：" class="headerlink" title="部署视图："></a>部署视图：</h3><p>system只有一个部署视图，以图形方式说明了处理活动在系统中各节点的分布，包括进程和线程的物理分布。<br>          简言之，建模公式中的那些”人”、”事”、”物”、”规则”是如何部署在物理(主机、网络环境)节点上的。</p>
-<h3 id="实施视图："><a href="#实施视图：" class="headerlink" title="实施视图："></a>实施视图：</h3><pre><code>$列举实施模型中的所有子系统；
-$描述子系统如何组织为层次和分层结构的构件图；
-$描述子系统间导入依赖关系的图解。
-简言之，建模公式中的那些&quot;人&quot;、&quot;事&quot;、&quot;物&quot;、&quot;规则&quot;是如何构成系统的“零部件”，我们如何组织人力生产和组装这些零部件。
-</code></pre><p>参考资料：《Tinking in UML》(大象书)</p>
+		<ul>
+<li>安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别改掉；</li>
+</ul>
+<p>网络连接，DB连接中很容易被攻击。</p>
+<ul>
+<li><p>同步和并发问题：线程安全因此没有同步问题；</p>
+</li>
+<li><p>缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设计的。</p>
+</li>
+</ul>
+<p>换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实例的引用的值也改变了。</p>
+<ul>
+<li><p>类加载：String被用作类加载的参数，如果可以改变，那将加载错误的类或加载不到类。</p>
+</li>
+<li><p>Hask Key：不可变实例非常适合做hash表的key。否则，hash表的值会出现丢失情况。</p>
+</li>
+<li><p>长度是确定的，不会改变的。</p>
+</li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -152,13 +153,13 @@ $描述子系统间导入依赖关系的图解。
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/UML/">UML</a>
+  <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/UML/">UML</a>
+  <span></span> <a href="/tags/JAVA/">JAVA</a>
   </div>
 
 </div>
@@ -167,7 +168,7 @@ $描述子系统间导入依赖关系的图解。
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/07/20/UML之面向对象处理/" data-title="UML之面向对象处理 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/07/22/String类为什么是final的/" data-title="String类为什么是final的 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -180,19 +181,11 @@ $描述子系统间导入依赖关系的图解。
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/07/21/接口回调和向上转型/" title="接口回调和向上转型">
-  <strong>上一篇：</strong><br/>
-  <span>
-  接口回调和向上转型</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/07/20/细说UML核心元素/"  title="细说UML核心元素">
+<a href="/2016/07/22/细说UML核心视图/"  title="细说UML核心视图">
  <strong>下一篇：</strong><br/> 
- <span>细说UML核心元素
+ <span>细说UML核心视图
 </span>
 </a>
 </div>
@@ -201,7 +194,7 @@ $描述子系统间导入依赖关系的图解。
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/20/UML之面向对象处理/" data-title="UML之面向对象处理" data-url="https://utihbi.github.io/2016/07/20/UML之面向对象处理/"></div>
+	<div class="ds-thread" data-thread-key="2016/07/22/String类为什么是final的/" data-title="String类为什么是final的" data-url="https://utihbi.github.io/2016/07/22/String类为什么是final的/"></div>
 </section>
 
 
@@ -211,7 +204,7 @@ $描述子系统间导入依赖关系的图解。
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#名词解释"><span class="toc-number">1.</span> <span class="toc-text">名词解释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象处理"><span class="toc-number">2.</span> <span class="toc-text">面向对象处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#建模基础"><span class="toc-number">2.1.</span> <span class="toc-text">建模基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用例驱动"><span class="toc-number">2.2.</span> <span class="toc-text">用例驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑视图："><span class="toc-number">2.2.1.</span> <span class="toc-text">逻辑视图：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程-分析设计-视图："><span class="toc-number">2.2.2.</span> <span class="toc-text">进程(分析设计)视图：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署视图："><span class="toc-number">2.2.3.</span> <span class="toc-text">部署视图：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实施视图："><span class="toc-number">2.2.4.</span> <span class="toc-text">实施视图：</span></a></li></ol></li></ol></li></ol>
+ 
  
   </div>
 
