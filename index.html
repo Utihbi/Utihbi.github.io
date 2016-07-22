@@ -80,13 +80,11 @@
     <h1 itemprop="name">String类为什么是final的</h1>
     
      
-           <p itemprop="description" >安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别改掉；
-
-网络连接，DB连接中很容易被攻击。
+           <p itemprop="description" >安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。
 
 同步和并发问题：线程安全因此没有同步问题；
 
-缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个</p>
+缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引</p>
         
     
     <time datetime="2016-07-22T09:28:06.000Z" itemprop="datePublished">2016-07-22</time>

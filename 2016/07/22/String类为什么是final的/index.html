@@ -11,42 +11,39 @@
     
 
     
-    <meta name="description" content="安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别改掉；
-
-网络连接，DB连接中很容易被攻击。
+    <meta name="description" content="安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。
 
 同步和并发问题：线程安全因此没有同步问题；
 
-缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设计的。
+缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设
 
 
+计的。
 换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实">
 <meta property="og:type" content="article">
 <meta property="og:title" content="String类为什么是final的">
 <meta property="og:url" content="https://utihbi.github.io/2016/07/22/String类为什么是final的/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别改掉；
-
-网络连接，DB连接中很容易被攻击。
+<meta property="og:description" content="安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。
 
 同步和并发问题：线程安全因此没有同步问题；
 
-缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设计的。
+缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设
 
 
+计的。
 换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实">
-<meta property="og:updated_time" content="2016-07-22T09:30:00.095Z">
+<meta property="og:updated_time" content="2016-07-22T09:32:23.702Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String类为什么是final的">
-<meta name="twitter:description" content="安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别改掉；
-
-网络连接，DB连接中很容易被攻击。
+<meta name="twitter:description" content="安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。
 
 同步和并发问题：线程安全因此没有同步问题；
 
-缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设计的。
+缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设
 
 
+计的。
 换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实">
 
     
@@ -128,15 +125,14 @@
 		</div>
 		
 		<ul>
-<li>安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别改掉；</li>
-</ul>
-<p>网络连接，DB连接中很容易被攻击。</p>
-<ul>
+<li><p>安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。</p>
+</li>
 <li><p>同步和并发问题：线程安全因此没有同步问题；</p>
 </li>
-<li><p>缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设计的。</p>
+<li><p>缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设</p>
 </li>
 </ul>
+<p>计的。</p>
 <p>换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实例的引用的值也改变了。</p>
 <ul>
 <li><p>类加载：String被用作类加载的参数，如果可以改变，那将加载错误的类或加载不到类。</p>
