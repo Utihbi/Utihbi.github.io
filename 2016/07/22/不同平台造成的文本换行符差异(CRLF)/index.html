@@ -36,7 +36,7 @@
 <meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/notepad.png">
 <meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/beyond.png">
 <meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/gitbash_CTLF.png">
-<meta property="og:updated_time" content="2016-07-22T02:53:08.068Z">
+<meta property="og:updated_time" content="2016-07-22T02:59:54.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不同平台造成的文本换行符差异(CRLF)">
 <meta name="twitter:description" content="问题背景
@@ -124,7 +124,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题背景"><span class="toc-number">1.</span> <span class="toc-text">问题背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#涉及知识"><span class="toc-number">2.</span> <span class="toc-text">涉及知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">3.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附加知识点："><span class="toc-number">4.</span> <span class="toc-text">附加知识点：</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题背景"><span class="toc-number">1.</span> <span class="toc-text">问题背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#涉及知识"><span class="toc-number">2.</span> <span class="toc-text">涉及知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">3.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附加知识点"><span class="toc-number">4.</span> <span class="toc-text">附加知识点</span></a></li></ol>
 		
 		</div>
 		
@@ -152,7 +152,7 @@
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ul>
 <li><strong>命令式</strong></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/******************vi 中编辑：******* ***********/</div><div class="line">:set fileformat=unix</div><div class="line">:set fileformat=dos</div><div class="line">:set fileformat=mac</div><div class="line">//上面3个命令按需设置；</div><div class="line"></div><div class="line">/*******************linux/unix************ ******/</div><div class="line">dos2unix filename</div><div class="line">unix2dos filename</div><div class="line">//不啰嗦，一目了然</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/******************vi 中编辑：******************/</div><div class="line">:set fileformat=unix</div><div class="line">:set fileformat=dos</div><div class="line">:set fileformat=mac</div><div class="line">//上面3个命令按需设置；</div><div class="line"></div><div class="line">/*******************linux/unix******************/</div><div class="line">dos2unix filename</div><div class="line">unix2dos filename</div><div class="line">//不啰嗦，一目了然</div></pre></td></tr></table></figure>
 <ul>
 <li><strong>工具式</strong></li>
 </ul>
@@ -160,7 +160,7 @@
 <p><img src="http://oald9ve1g.bkt.clouddn.com/hexo/img/notepad.png" alt=""></p>
 <p>Beyond Compare：</p>
 <p><img src="http://oald9ve1g.bkt.clouddn.com/hexo/img/beyond.png" alt=""></p>
-<h2 id="附加知识点："><a href="#附加知识点：" class="headerlink" title="附加知识点："></a>附加知识点：</h2><ul>
+<h2 id="附加知识点"><a href="#附加知识点" class="headerlink" title="附加知识点"></a>附加知识点</h2><ul>
 <li><p>对于ASCII 文本格式，不同平台通过FTP传输时，有可能自动转换。<br>可以使用bin模式(二进制模式)传输文本来防止转换。</p>
 </li>
 <li><p>linux下通过命令<code>file yourfile</code> 查看文件 换行符；</p>
@@ -225,7 +225,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题背景"><span class="toc-number">1.</span> <span class="toc-text">问题背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#涉及知识"><span class="toc-number">2.</span> <span class="toc-text">涉及知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">3.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附加知识点："><span class="toc-number">4.</span> <span class="toc-text">附加知识点：</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题背景"><span class="toc-number">1.</span> <span class="toc-text">问题背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#涉及知识"><span class="toc-number">2.</span> <span class="toc-text">涉及知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">3.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附加知识点"><span class="toc-number">4.</span> <span class="toc-text">附加知识点</span></a></li></ol>
  
   </div>
 
