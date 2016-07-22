@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-21T06:51:43.177Z</updated>
+  <updated>2016-07-22T02:53:08.068Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>不同平台造成的文本换行符差异(CRLF)</title>
+    <link href="https://utihbi.github.io/2016/07/22/%E4%B8%8D%E5%90%8C%E5%B9%B3%E5%8F%B0%E9%80%A0%E6%88%90%E7%9A%84%E6%96%87%E6%9C%AC%E6%8D%A2%E8%A1%8C%E7%AC%A6%E5%B7%AE%E5%BC%82(CRLF)/"/>
+    <id>https://utihbi.github.io/2016/07/22/不同平台造成的文本换行符差异(CRLF)/</id>
+    <published>2016-07-22T02:40:06.000Z</published>
+    <updated>2016-07-22T02:53:08.068Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;问题背景&quot;&gt;&lt;a href=&quot;#问题背景&quot; class=&quot;headerlink&quot; title=&quot;问题背景&quot;&gt;&lt;/a&gt;问题背景&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;还记得自己之前提交代码(win-&amp;gt;linux),提交完后系统就奔溃了，笔者当时就懵逼了。到服务器上一看代码，每行代码末尾无端的了多了&lt;font color=&quot;red&quot;&gt; ^M  &lt;/font&gt;的字符。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;今天往Git上提交时，又遇到了&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;warning: LF will be replaced by CRLF in stuManager1/GitTest.txt.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当然，对于warning，您完全可以置之不理。&lt;/p&gt;
+&lt;p&gt;好了，到这里，我们可以说说上面问题的本质原因了。&lt;/p&gt;
+&lt;h2 id=&quot;涉及知识&quot;&gt;&lt;a href=&quot;#涉及知识&quot; class=&quot;headerlink&quot; title=&quot;涉及知识&quot;&gt;&lt;/a&gt;涉及知识&lt;/h2&gt;&lt;p&gt;对于文本处理，不同平台使用的换行操作符是不一样的。这也就是上述问题产生的原因了。&lt;/p&gt;
+&lt;p&gt;实际编程中，大家应该写过&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;\r\n&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//或者&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;\n&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;我们给这俩字符起个名字：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;\r //CR(Carriage Return,回车)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;\n //LF(Line Feed，换行)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Dos和Windows采用回车+换行CRLF表示下一行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;而UNIX/Linux采用换行符LF表示下一行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MAC OS系统采用回车符CR表示下一行&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;解决方案&quot;&gt;&lt;a href=&quot;#解决方案&quot; class=&quot;headerlink&quot; title=&quot;解决方案&quot;&gt;&lt;/a&gt;解决方案&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;命令式&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/******************vi 中编辑：******* ***********/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;:set fileformat=unix&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;:set fileformat=dos&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;:set fileformat=mac&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//上面3个命令按需设置；&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/*******************linux/unix************ ******/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dos2unix filename&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;unix2dos filename&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//不啰嗦，一目了然&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;工具式&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Notepad++ :&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/notepad.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Beyond Compare：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/beyond.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;附加知识点：&quot;&gt;&lt;a href=&quot;#附加知识点：&quot; class=&quot;headerlink&quot; title=&quot;附加知识点：&quot;&gt;&lt;/a&gt;附加知识点：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;对于ASCII 文本格式，不同平台通过FTP传输时，有可能自动转换。&lt;br&gt;可以使用bin模式(二进制模式)传输文本来防止转换。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;linux下通过命令&lt;code&gt;file yourfile&lt;/code&gt; 查看文件 换行符；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/gitbash_CTLF.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;问题背景&quot;&gt;&lt;a href=&quot;#问题背景&quot; class=&quot;headerlink&quot; title=&quot;问题背景&quot;&gt;&lt;/a&gt;问题背景&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;还记得自己之前提交代码(win-&amp;gt;linux),提交完后系统就奔溃了，笔者当时就懵逼了。到服务器上一
+    
+    </summary>
+    
+      <category term="linux" scheme="https://utihbi.github.io/categories/linux/"/>
+    
+    
+      <category term="CRLF" scheme="https://utihbi.github.io/tags/CRLF/"/>
+    
+  </entry>
   
   <entry>
     <title>漫谈接口和抽象类</title>
