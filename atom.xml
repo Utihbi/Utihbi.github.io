@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-22T06:58:05.286Z</updated>
+  <updated>2016-07-22T07:02:05.484Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -20,16 +20,16 @@
     <link href="https://utihbi.github.io/2016/07/22/%E7%BB%86%E8%AF%B4UML%E6%A0%B8%E5%BF%83%E8%A7%86%E5%9B%BE/"/>
     <id>https://utihbi.github.io/2016/07/22/细说UML核心视图/</id>
     <published>2016-07-22T06:52:06.000Z</published>
-    <updated>2016-07-22T06:58:05.286Z</updated>
+    <updated>2016-07-22T07:02:05.484Z</updated>
     
-    <content type="html">&lt;p&gt;描述软件和现实一样，都需要描述&lt;/p&gt;
+    <content type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;描述软件和现实一样，都需要描述&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;系统的结构性特征(系统能做什么)———–静态视图&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;系统运行时特征(系统怎么做)——–动态视图&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;UML视图分类&quot;&gt;&lt;a href=&quot;#UML视图分类&quot; class=&quot;headerlink&quot; title=&quot;UML视图分类&quot;&gt;&lt;/a&gt;UML视图分类&lt;/h2&gt;&lt;ul&gt;
+&lt;h1 id=&quot;UML视图分类&quot;&gt;&lt;a href=&quot;#UML视图分类&quot; class=&quot;headerlink&quot; title=&quot;UML视图分类&quot;&gt;&lt;/a&gt;UML视图分类&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;静态视图：&lt;pre&gt;&lt;code&gt;用例图、类图、包图等
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;动态视图：&lt;pre&gt;&lt;code&gt;活动图、状态图、时序图、协作图等
@@ -162,14 +162,11 @@
     
     <summary type="html">
     
-      &lt;p&gt;描述软件和现实一样，都需要描述&lt;/p&gt;
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;描述软件和现实一样，都需要描述&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;系统的结构性特征(系统能做什么)———–静态视图&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;系统运行时特征(系统怎么做)——–动态视图&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;UML视图分类&quot;&gt;&lt;a href=
+&lt;li
     
     </summary>
     
