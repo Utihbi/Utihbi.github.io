@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-23T06:49:40.432Z</updated>
+  <updated>2016-07-23T07:01:34.790Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://utihbi.github.io/2016/07/23/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
     <id>https://utihbi.github.io/2016/07/23/工厂模式/</id>
     <published>2016-07-23T06:28:06.000Z</published>
-    <updated>2016-07-23T06:49:40.432Z</updated>
+    <updated>2016-07-23T07:01:34.790Z</updated>
     
     <content type="html">&lt;h2 id=&quot;基本知识&quot;&gt;&lt;a href=&quot;#基本知识&quot; class=&quot;headerlink&quot; title=&quot;基本知识&quot;&gt;&lt;/a&gt;基本知识&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;开闭原则（Open Close Principle）:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;对扩展开放，对修改关闭。&lt;/p&gt;
@@ -38,9 +38,7 @@
 提高了程序的可维护性和低耦合性。
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;简单工厂模式（创建型模式）&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;定义了一种工厂，该工厂负责所有的子类对象的创建，如果说我们的工厂要求能够满足增加新的对象时，我们必须修改工厂
-
-代码
+&lt;pre&gt;&lt;code&gt;定义了一种工厂，该工厂负责所有的子类对象的创建，如果说我们的工厂要求能够满足增加新的对象时，我们必须修改工厂代码
 
 应用场景：适合对象类型不多，并且不会经常新增的情况下。
 
