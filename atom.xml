@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-23T07:01:34.790Z</updated>
+  <updated>2016-07-23T10:04:02.944Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -14,6 +14,177 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>细说UML核心模型</title>
+    <link href="https://utihbi.github.io/2016/07/23/%E7%BB%86%E8%AF%B4UML%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://utihbi.github.io/2016/07/23/细说UML核心模型/</id>
+    <published>2016-07-23T09:51:06.000Z</published>
+    <updated>2016-07-23T10:04:02.944Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;模型就是一堆有意义的静态图和动态图组合在一起，表达了一个有意义的中心思想。&lt;/p&gt;
+&lt;p&gt;简言之，一个模型提出了论点，静态图是论据，动态图是论证。建模就是采用论据来论证论点的过程。&lt;/p&gt;
+&lt;h2 id=&quot;用例模型&quot;&gt;&lt;a href=&quot;#用例模型&quot; class=&quot;headerlink&quot; title=&quot;用例模型&quot;&gt;&lt;/a&gt;用例模型&lt;/h2&gt;&lt;h3 id=&quot;业务用例模型&quot;&gt;&lt;a href=&quot;#业务用例模型&quot; class=&quot;headerlink&quot; title=&quot;业务用例模型&quot;&gt;&lt;/a&gt;业务用例模型&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;用于识别和规定业务需求，描述的是业务范围
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;什么时候使用业务用例模型？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;软件规模较大&lt;/li&gt;
+&lt;li&gt;问题领域有复杂的组织结构&lt;/li&gt;
+&lt;li&gt;业务流程繁杂&lt;/li&gt;
+&lt;li&gt;开发人员对于这个行业知之甚少&lt;/li&gt;
+&lt;li&gt;希望做行业标准&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;概念用例模型&quot;&gt;&lt;a href=&quot;#概念用例模型&quot; class=&quot;headerlink&quot; title=&quot;概念用例模型&quot;&gt;&lt;/a&gt;概念用例模型&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;用来分析和确认业务需求，抽象出的概念用例通过包含、泛化、扩展关系连接到基本业务用例
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;什么时候使用概念用例模型？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;业务用例粒度较大，不易过渡到粒度较小的系统用例&lt;/li&gt;
+&lt;li&gt;业务场景过于复杂，步骤和分支过多&lt;/li&gt;
+&lt;li&gt;有7+个泳道存在&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;系统-用例模型&quot;&gt;&lt;a href=&quot;#系统-用例模型&quot; class=&quot;headerlink&quot; title=&quot;[系统]用例模型&quot;&gt;&lt;/a&gt;[系统]用例模型&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;用来规定系统开发需求，描述的是系统范围(需求范围)
+
+在RUP中，系统的功能性需求完全由用例模型来表达。简言之，用例模型就是“需求规格说明书”
+
+在用例模型中用例使用精化关系来连接到业务用例(如果没有业务建模就不需要)
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;主要内容&quot;&gt;&lt;a href=&quot;#主要内容&quot; class=&quot;headerlink&quot; title=&quot;主要内容&quot;&gt;&lt;/a&gt;主要内容&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;用例视图&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;包括参与者与用例，是系统功能性需求的高层视图
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;用例规约&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;描述参与者如何启动和终止用例，如何使用用例完成目标，执行的事件流，相应的规则等
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;补充规约&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;描述与用例相关的非功能性需求。Eg:响应时间、可靠性、可用性等。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;业务规则&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;描述客户执行业务必须遵守的各种规定，亦或是操作规范、约束机制等。采用计算机语言表达，如伪代码编写，IF(条件)THEN(执行)。
+
+业务规则应当被引用到用例规约中。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;用例实现&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;用例的一种实现方式，通常代表不同的应用环境。如之前提到的缴费用例。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;用例场景&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;描述参与者如何与计算机之间交互一达成其目的，可采用交互图来描述。
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;获取用例&quot;&gt;&lt;a href=&quot;#获取用例&quot; class=&quot;headerlink&quot; title=&quot;获取用例&quot;&gt;&lt;/a&gt;获取用例&lt;/h4&gt;&lt;p&gt;基本方法：&lt;/p&gt;
+&lt;p&gt;分析业务用例场景，尤其是活动图。因为活动图中包含泳道，方便观察业务主角和业务工人的职责(活动)。一开始，可以简单&lt;br&gt;地把每个泳道中的活动都作为一个用例，已泳道为参与者，把它们绘制出来。然后考虑下面问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;排除用例&lt;/p&gt;
+&lt;p&gt;  如果参与者不使用计算机来使用这个用例，或者计算机条件不允许，则与客户沟通后，排除。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;合并用例&lt;/p&gt;
+&lt;p&gt;  用例可能有不同名字，但它们结果相同或相似，可以合并。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;抽象用例 &lt;/p&gt;
+&lt;p&gt;  分析参与者使用它们的方式，使用方式可从用例场景中归纳。如果有这样情况，就抽象用例：结果虽然不同，但使用过程相同，则应当抽象出一个描述行为的用例。&lt;/p&gt;
+&lt;p&gt;  Eg:查询报表A和查询报表B是两个不同的目的，有不同结果，但查询条件的过程一致，则抽象一个设置查询条件的用例，查询A和查询B都包含这个用例。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;补充用例&lt;/p&gt;
+&lt;p&gt;  想系统加入那些与业务无关，但对系统运行必须的非业务需求。Eg:管理用户账号、备份系统数据等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;领域模型&quot;&gt;&lt;a href=&quot;#领域模型&quot; class=&quot;headerlink&quot; title=&quot;领域模型&quot;&gt;&lt;/a&gt;领域模型&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;采用业务对象建立起来的一种模型。
+
+是从所有业务用例场景对象交互模型当中抽象出来的更高级别的业务对象模型；它表示了业务对象结构和交互的一般规律，揭示了业务
+运行的“本质”和“核心”。
+
+可以帮助我们理解问题领域中的关键概念和关键对象。Eg:网上交易中，安全是一个重要课题，那么我们可以专门为安全解决方案建立
+领域模型。
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;分析模型&quot;&gt;&lt;a href=&quot;#分析模型&quot; class=&quot;headerlink&quot; title=&quot;分析模型&quot;&gt;&lt;/a&gt;分析模型&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;使用分析类来建立系统原型，MVC模式的经典应用
+
+在系统用例模型建立之后，设计模型建立之前，建立分析模型。
+
+分析模型是设计模型的抽象或泛化关系。
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;软件架构和框架模型&quot;&gt;&lt;a href=&quot;#软件架构和框架模型&quot; class=&quot;headerlink&quot; title=&quot;软件架构和框架模型&quot;&gt;&lt;/a&gt;软件架构和框架模型&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;RUP是以架构为中心的开发模式。
+&lt;/code&gt;&lt;/pre&gt;&lt;font color=&quot;red&quot;&gt;&lt;br&gt;框架和架构：&lt;br&gt;    框架：解决方案，是加速和提高系统质量的半成品。&lt;br&gt;    架构：系统蓝图，是对系统高层次的定义和描述。&lt;br&gt;&lt;/font&gt;
+
+&lt;h3 id=&quot;软件架构&quot;&gt;&lt;a href=&quot;#软件架构&quot; class=&quot;headerlink&quot; title=&quot;软件架构&quot;&gt;&lt;/a&gt;软件架构&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;业务架构&lt;/p&gt;
+&lt;p&gt;  业务领域的理解&lt;/p&gt;
+&lt;p&gt;  在先启(RUP四个阶段：先启、精化、构建、产品化)阶段建立，精化阶段改进。&lt;/p&gt;
+&lt;p&gt;  目标：为业务领域建立一个维护和扩展的逻辑结构，描述业务的构成。&lt;/p&gt;
+&lt;p&gt;  来源：业务用例和领域模型&lt;/p&gt;
+&lt;p&gt;  使用领域包和组织结构包来表示业务主要领域和组织结构关系。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;软件架构&lt;/p&gt;
+&lt;p&gt;  系统领域的理解&lt;/p&gt;
+&lt;p&gt;  视角&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;*   广度视角
+
+    常见的软件层次结构，关注软件的分层，规定每一层的职责以及层之间的通信标准。
+
+    一般使用层包来绘制。
+
+*   深度视角
+
+    广度视角中每一层的详细说明，关注每一层以及每个部分的具体实现架构。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  在业务架构的基础上引入计算机环境，说明业务架构如何分布在计算机环境中，并得以执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;*   硬件环境：网络拓扑结构、服务器及其他设备
+
+*   软件环境：操作系统、应用服务器、中间件、DB及其他第三方支持软件。
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;软件框架&quot;&gt;&lt;a href=&quot;#软件框架&quot; class=&quot;headerlink&quot; title=&quot;软件框架&quot;&gt;&lt;/a&gt;软件框架&lt;/h3&gt;&lt;p&gt;略&lt;/p&gt;
+&lt;h3 id=&quot;何时使用？&quot;&gt;&lt;a href=&quot;#何时使用？&quot; class=&quot;headerlink&quot; title=&quot;何时使用？&quot;&gt;&lt;/a&gt;何时使用？&lt;/h3&gt;&lt;p&gt;架构可选，框架必须&lt;/p&gt;
+&lt;h2 id=&quot;设计模型&quot;&gt;&lt;a href=&quot;#设计模型&quot; class=&quot;headerlink&quot; title=&quot;设计模型&quot;&gt;&lt;/a&gt;设计模型&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;我们通常说的详细设计。
+
+采用设计类来实现用例的
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;从分析模型映射到设计模型&quot;&gt;&lt;a href=&quot;#从分析模型映射到设计模型&quot; class=&quot;headerlink&quot; title=&quot;从分析模型映射到设计模型&quot;&gt;&lt;/a&gt;从分析模型映射到设计模型&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;* 分析类代表设计元素的实例所承担的角色；
+
+* 这些角色可由1+个设计模型元素来实现；
+
+* 单个设计元素也可以实现多个角色。
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;方法&quot;&gt;&lt;a href=&quot;#方法&quot; class=&quot;headerlink&quot; title=&quot;方法&quot;&gt;&lt;/a&gt;方法&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;一个分析类对应一个设计类&lt;/li&gt;
+&lt;li&gt;一个分析类对应一个设立类的一部分&lt;/li&gt;
+&lt;li&gt;一个分析类设计成为设计模型的一个聚合类关系&lt;/li&gt;
+&lt;li&gt;一个分析类设计成为设计模型中从同一个类继承而来的一组类&lt;/li&gt;
+&lt;li&gt;一个分析类设计成为设计模型的中一组功能相关的类&lt;/li&gt;
+&lt;li&gt;一个分析类对应一个设计模型的包&lt;/li&gt;
+&lt;li&gt;一个分析类对应一个设计模型的关系&lt;/li&gt;
+&lt;li&gt;分析类间的关系可以成为一个设计类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;组件模型&quot;&gt;&lt;a href=&quot;#组件模型&quot; class=&quot;headerlink&quot; title=&quot;组件模型&quot;&gt;&lt;/a&gt;组件模型&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;组件总是用来容纳分析类和设计类的 。
+
+简言之，组件是一种特殊的“包”，普通包起到组织和容纳作用，而组件的组织行为却有着特别的目标：这些分析类或设计类被组织起来
+完成一组特定的功能。
+
+组件与架构密不可分：
+
+        架构是组件的设计规范，是组件的安装平台，是组件的运行环境，组件的管理环境。       
+        Eg：J2EE架构和EJB组件、.NET架构和COM组件、SOA架构和SCA组件。
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;何时使用？-1&quot;&gt;&lt;a href=&quot;#何时使用？-1&quot; class=&quot;headerlink&quot; title=&quot;何时使用？&quot;&gt;&lt;/a&gt;何时使用？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;分布式系统要考虑使用组件&lt;/li&gt;
+&lt;li&gt;需要第三方提供支持服务&lt;/li&gt;
+&lt;li&gt;没有采用架构开发&lt;/li&gt;
+&lt;li&gt;与现存的第三方系统集成&lt;/li&gt;
+&lt;li&gt;项目将某部分业务功能单独抽去出来，形成一个可复用的单元&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;广义组件&quot;&gt;&lt;a href=&quot;#广义组件&quot; class=&quot;headerlink&quot; title=&quot;广义组件&quot;&gt;&lt;/a&gt;广义组件&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;抛弃组件的特性（完备、独立、逻辑、透明），就是对物理代码进行组织的一个“包”
+
+子系统、模块、类库、可执行程序等都是广义组件
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;实施模型&quot;&gt;&lt;a href=&quot;#实施模型&quot; class=&quot;headerlink&quot; title=&quot;实施模型&quot;&gt;&lt;/a&gt;实施模型&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;由配置节点(用节点元素绘制)和组件构成
+
+用来描述系统硬件的物理拓扑结构
+
+通常在分布式系统中使用
+
+一个节点表示一个计算单元，通常是硬件,Eg:一台主机
+
+组件代表可执行的物理代码模块，Eg:一个可执行程序
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;何时使用？-2&quot;&gt;&lt;a href=&quot;#何时使用？-2&quot; class=&quot;headerlink&quot; title=&quot;何时使用？&quot;&gt;&lt;/a&gt;何时使用？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;分布式系统&lt;/li&gt;
+&lt;li&gt;需要多方模块参与&lt;/li&gt;
+&lt;li&gt;多个硬件设备&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;模型就是一堆有意义的静态图和动态图组合在一起，表达了一个有意义的中心思想。&lt;/p&gt;
+&lt;p&gt;简言之，一个模型提出了论点，静态图是论据，动态图是
+    
+    </summary>
+    
+      <category term="UML" scheme="https://utihbi.github.io/categories/UML/"/>
+    
+    
+      <category term="UML" scheme="https://utihbi.github.io/tags/UML/"/>
+    
+  </entry>
   
   <entry>
     <title>工厂模式</title>
