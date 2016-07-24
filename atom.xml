@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-23T10:07:22.753Z</updated>
+  <updated>2016-07-24T04:30:01.689Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -14,6 +14,116 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库基本概念</title>
+    <link href="https://utihbi.github.io/2016/07/24/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
+    <id>https://utihbi.github.io/2016/07/24/关系数据库基本概念/</id>
+    <published>2016-07-24T02:23:06.000Z</published>
+    <updated>2016-07-24T04:30:01.689Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;范式&quot;&gt;&lt;a href=&quot;#范式&quot; class=&quot;headerlink&quot; title=&quot;范式&quot;&gt;&lt;/a&gt;范式&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;符合某一种级别的关系模式的集合
+
+构造数据库必须遵循一定的规则，在关系数据库中，这种规则就是范式
+
+目前关系数据库有六种范式
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;第一范式（1NF）无重复的列&lt;/p&gt;
+&lt;p&gt;  1NF是对&lt;font color=&quot;red&quot;&gt;属性原子性&lt;/font&gt;约束，要求属性具有原子性，不可再分解&lt;/p&gt;
+&lt;p&gt;  简言之，不能有重复的属性，消除重复的属性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第二范式（2NF）属性完全依赖于主键&lt;/p&gt;
+&lt;p&gt;  2NF是对记录的惟一性约束，要求记录有惟一标识(主键)，即&lt;font color=&quot;red&quot;&gt;实体惟一性&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;完全依赖&lt;/font&gt;：不能存在仅依赖主关键字一部分的属性(联合主键情况)，如果存在，那么这个属性和主关键字的这一部分应该分离出来形成一个新的实体，新实体与原实体之间是一对多的关系。&lt;/p&gt;
+&lt;p&gt;  简言之，消除部分函数依赖&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第三范式（3NF）属性不依赖于其它非主属性&lt;/p&gt;
+&lt;p&gt;  3NF是对字段冗余性的约束，即任何字段不能由其他字段派生出来，它要求字段没有冗余,即&lt;font color=&quot;red&quot;&gt;字段冗余性&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;  简言之，一个数据库表中不包含已在其它表中已包含的非主关键字信息，消除传递依赖&lt;/p&gt;
+&lt;p&gt;  Eg:人员ID、人员姓名、部门ID、部门名称。该表不因有“部门名称”的冗余信息，该字段通过部门ID即可找到。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;模式结构&quot;&gt;&lt;a href=&quot;#模式结构&quot; class=&quot;headerlink&quot; title=&quot;模式结构&quot;&gt;&lt;/a&gt;模式结构&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;外模式（用户级）&lt;/p&gt;
+&lt;p&gt;  别名：子模式、用户模式&lt;/p&gt;
+&lt;p&gt;  一个DB可以有&lt;font color=&quot;blue&quot;&gt;多个外模式&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;  由模式导出，给出了每个用户的局部描述（用户数据库）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;模式（概念级）&lt;/p&gt;
+&lt;p&gt;  别名：逻辑模式&lt;/p&gt;
+&lt;p&gt;  一个DB只有&lt;font color=&quot;blue&quot;&gt;1个模式&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;  给出了系统全局的数据描述&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;内模式（物理级）&lt;/p&gt;
+&lt;p&gt;  别名：存储模式&lt;/p&gt;
+&lt;p&gt;  一个DB只有&lt;font color=&quot;blue&quot;&gt;1个内模式&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;  给出了DB物理存储结构和物理存取方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;事务&quot;&gt;&lt;a href=&quot;#事务&quot; class=&quot;headerlink&quot; title=&quot;事务&quot;&gt;&lt;/a&gt;事务&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;由一系列数据库操作组成的一个完整的逻辑过程
+
+Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额，这两个数据库操作的总和，构成一个完整的逻辑过程，不可拆分
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;ACID&quot;&gt;&lt;a href=&quot;#ACID&quot; class=&quot;headerlink&quot; title=&quot;ACID&quot;&gt;&lt;/a&gt;ACID&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;数据库事务正确执行的四个基本要素的缩写
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原子性（Atomicity）&lt;/p&gt;
+&lt;p&gt;  一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一致性（Consistency）&lt;/p&gt;
+&lt;p&gt;  在事务开始之前和事务结束以后，数据库的完整性没有被破坏。这表示写入的资料必须完全符合所有的预设规则，这包含资料的精确度、串联性以及后续数据库可以自发性地完成预定的工作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;隔离性（Isolation）&lt;/p&gt;
+&lt;p&gt;  数据库允许多个并发事务同时对其数据进行读写和修改，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;持久性（Durability）&lt;/p&gt;
+&lt;p&gt;  事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;事务隔离级别&quot;&gt;&lt;a href=&quot;#事务隔离级别&quot; class=&quot;headerlink&quot; title=&quot;事务隔离级别&quot;&gt;&lt;/a&gt;事务隔离级别&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;用来限定事务内外的哪些改变是可见的，哪些是不可见的。低级别的隔离级一般支持更高的并发处理，并拥有更低的系统开销。
+
+隔离的简单定义：一个事务只能看见已经提交事务所做的改变。
+
+解决问题：脏读、不可重复读、幻读
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;读未提交（Read uncommitted）&lt;/p&gt;
+&lt;p&gt;  所有事务都可以看到其他未提交事务的执行结果。&lt;/p&gt;
+&lt;p&gt;  本隔离级别很少用于实际应用，因为它的性能也不比其他级别好多少。读取未提交的数据，也被称之为&lt;font color=&quot;red&quot;&gt;脏读（Dirty Read）&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;读提交（read committed）&lt;/p&gt;
+&lt;p&gt;  &lt;font color=&quot;red&quot;&gt;大多数数据库系统的默认隔离级别&lt;/font&gt;，满足了隔离的简单定义&lt;/p&gt;
+&lt;p&gt;  支持&lt;font color=&quot;blue&quot; size=&quot;4&quot;&gt;不可重复读（Nonrepeatable Read）&lt;/font&gt;，因为&lt;font color=&quot;blue&quot; size=&quot;4&quot;&gt;同一事务的其他实例在该实例&lt;/font&gt;处理其间可能会有新的commit，所以同一select可能返回不同结果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;blue&quot; size=&quot;4&quot;&gt;可重复读（repeatable read）&lt;/font&gt;
+
+&lt;p&gt;  &lt;font color=&quot;red&quot;&gt;MySQL的默认事务隔离级别&lt;/font&gt;，它确保&lt;font color=&quot;blue&quot; size=&quot;4&quot;&gt;同一事务的多个实例&lt;/font&gt;在并发读取数据时，会看到同样的数据行。&lt;/p&gt;
+&lt;p&gt;  理论上，会导致&lt;font color=&quot;blue&quot; size=&quot;4&quot;&gt;&lt;strong&gt;幻读（Phantom Read）&lt;/strong&gt;&lt;/font&gt;：当用户读取某一范围的数据行时，&lt;font color=&quot;blue&quot; size=&quot;4&quot;&gt;另一个事务&lt;/font&gt;又在该范围内插入了新行，当用户再读取该范围的数据行时，会发现有新的“幻影” 行。InnoDB和Falcon存储引擎通过多版本并发控制（MVCC，Multiversion Concurrency Control）机制解决了该问题&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;串行化（Serializable）&lt;/p&gt;
+&lt;p&gt;  最高的隔离级别，它通过强制事务排序，使之不可能相互冲突，从而解决幻读问题。&lt;/p&gt;
+&lt;p&gt;  简言之，它是在每个读的数据行上加上共享锁。在这个级别，可能导致大量的超时现象和锁竞争。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;不可重复读和幻读比较&quot;&gt;&lt;a href=&quot;#不可重复读和幻读比较&quot; class=&quot;headerlink&quot; title=&quot;不可重复读和幻读比较&quot;&gt;&lt;/a&gt;不可重复读和幻读比较&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;不可重复读：在一个事务中不同时间段查询出现不同的结果，可能被更新可能被删除。
+
+幻读:在一个事务中不同时间段查询，记录数不同。
+    与不可重复读的区别是：在幻读中，已经读取的数据不会改变，只是与以前相比，会有更多的数据满足查询条件。
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;范式&quot;&gt;&lt;a href=&quot;#范式&quot; class=&quot;headerlink&quot; title=&quot;范式&quot;&gt;&lt;/a&gt;范式&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;符合某一种级别的关系模式的集合
+
+构造数据库必须遵循一定的规则，在关系数据库中，这种规则就是范式
+
+目前关系数据库有六种范式
+    
+    </summary>
+    
+      <category term="DB" scheme="https://utihbi.github.io/categories/DB/"/>
+    
+    
+      <category term="DB" scheme="https://utihbi.github.io/tags/DB/"/>
+    
+  </entry>
   
   <entry>
     <title>细说UML核心模型</title>
