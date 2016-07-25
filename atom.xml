@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-25T09:07:36.313Z</updated>
+  <updated>2016-07-25T09:10:04.906Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -20,9 +20,11 @@
     <link href="https://utihbi.github.io/2016/07/25/FourNums(LeetCode)%20/"/>
     <id>https://utihbi.github.io/2016/07/25/FourNums(LeetCode) /</id>
     <published>2016-07-25T09:05:06.000Z</published>
-    <updated>2016-07-25T09:07:36.313Z</updated>
+    <updated>2016-07-25T09:10:04.906Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;Question-4Sum&quot;&gt;&lt;a href=&quot;#Question-4Sum&quot; class=&quot;headerlink&quot; title=&quot;Question:4Sum&quot;&gt;&lt;/a&gt;Question:&lt;a href=&quot;https://leetcode.com/problems/4sum/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;4Sum&lt;/a&gt;&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? 
+    <content type="html">&lt;h2 id=&quot;Question-4Sum&quot;&gt;&lt;a href=&quot;#Question-4Sum&quot; class=&quot;headerlink&quot; title=&quot;Question:4Sum&quot;&gt;&lt;/a&gt;Question:&lt;a href=&quot;https://leetcode.com/problems/4sum/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;4Sum&lt;/a&gt;&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Given an array S of n integers, are there elements a, b, c, and d in S such that 
+
+a + b + c + d = target? 
 
 Find all unique quadruplets in the array which gives the sum of target.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/p&gt;
