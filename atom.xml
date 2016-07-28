@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-07-25T09:10:04.906Z</updated>
+  <updated>2016-07-28T13:24:02.343Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>word转PDF遇到的图片问题</title>
+    <link href="https://utihbi.github.io/2016/07/28/word%E8%BD%ACPDF%E9%81%87%E5%88%B0%E7%9A%84%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98/"/>
+    <id>https://utihbi.github.io/2016/07/28/word转PDF遇到的图片问题/</id>
+    <published>2016-07-28T13:09:06.000Z</published>
+    <updated>2016-07-28T13:24:02.343Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;笔者用rose画了个活动图，粘贴到word中，直接保存为PDF，打开之后，我的活动图就
+
+光芒万丈了。上图：
+
+word：
+![word图](http://oald9ve1g.bkt.clouddn.com/hexo/img/word.png)
+PDF:
+![PDF图](http://oald9ve1g.bkt.clouddn.com/hexo/img/pdf.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;解决方法：&quot;&gt;&lt;a href=&quot;#解决方法：&quot; class=&quot;headerlink&quot; title=&quot;解决方法：&quot;&gt;&lt;/a&gt;解决方法：&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. 下载
+
+![4款免费PDF](http://www.huacolor.com/article/29720.html)
+
+2. print
+
+![cutepdf](http://www.cutepdf-editor.com/support/writer.asp)
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;笔者用rose画了个活动图，粘贴到word中，直接保存为PDF，打开之后，我的活动图就
+
+光芒万丈了。上图：
+
+word：
+
+    
+    </summary>
+    
+      <category term="7788" scheme="https://utihbi.github.io/categories/7788/"/>
+    
+    
+      <category term="7788" scheme="https://utihbi.github.io/tags/7788/"/>
+    
+  </entry>
   
   <entry>
     <title>FourNums(LeetCode)</title>
