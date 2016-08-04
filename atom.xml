@@ -745,7 +745,7 @@ Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额�
     <link href="https://utihbi.github.io/2016/07/22/%E4%B8%8D%E5%90%8C%E5%B9%B3%E5%8F%B0%E9%80%A0%E6%88%90%E7%9A%84%E6%96%87%E6%9C%AC%E6%8D%A2%E8%A1%8C%E7%AC%A6%E5%B7%AE%E5%BC%82(CRLF)/"/>
     <id>https://utihbi.github.io/2016/07/22/不同平台造成的文本换行符差异(CRLF)/</id>
     <published>2016-07-22T02:40:06.000Z</published>
-    <updated>2016-07-22T02:59:54.548Z</updated>
+    <updated>2016-08-04T13:27:36.329Z</updated>
     
     <content type="html">&lt;h2 id=&quot;问题背景&quot;&gt;&lt;a href=&quot;#问题背景&quot; class=&quot;headerlink&quot; title=&quot;问题背景&quot;&gt;&lt;/a&gt;问题背景&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;还记得自己之前提交代码(win-&amp;gt;linux),提交完后系统就奔溃了，笔者当时就懵逼了。到服务器上一看代码，每行代码末尾无端的了多了&lt;font color=&quot;red&quot;&gt; ^M  &lt;/font&gt;的字符。&lt;/p&gt;
@@ -798,7 +798,7 @@ Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额�
       <category term="linux" scheme="https://utihbi.github.io/categories/linux/"/>
     
     
-      <category term="CRLF" scheme="https://utihbi.github.io/tags/CRLF/"/>
+      <category term="linux" scheme="https://utihbi.github.io/tags/linux/"/>
     
   </entry>
   

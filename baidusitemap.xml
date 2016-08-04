@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://utihbi.github.io/2016/07/22/%E4%B8%8D%E5%90%8C%E5%B9%B3%E5%8F%B0%E9%80%A0%E6%88%90%E7%9A%84%E6%96%87%E6%9C%AC%E6%8D%A2%E8%A1%8C%E7%AC%A6%E5%B7%AE%E5%BC%82(CRLF)/</loc>
+    <lastmod>2016-08-04T13:27:36.329Z</lastmod>
+    <data>
+        <display>
+        <title>不同平台造成的文本换行符差异(CRLF)</title>
+        <pubTime>2016-07-22T02:40:06.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="https://utihbi.github.io/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://utihbi.github.io/2016/07/18/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2016-08-04T13:21:32.799Z</lastmod>
     <data>
@@ -217,26 +237,6 @@
            
              
               <breadCrumb title="UML" url="https://utihbi.github.io/categories/UML/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://utihbi.github.io/2016/07/22/%E4%B8%8D%E5%90%8C%E5%B9%B3%E5%8F%B0%E9%80%A0%E6%88%90%E7%9A%84%E6%96%87%E6%9C%AC%E6%8D%A2%E8%A1%8C%E7%AC%A6%E5%B7%AE%E5%BC%82(CRLF)/</loc>
-    <lastmod>2016-07-22T02:59:54.548Z</lastmod>
-    <data>
-        <display>
-        <title>不同平台造成的文本换行符差异(CRLF)</title>
-        <pubTime>2016-07-22T02:40:06.000Z</pubTime>
-        
-        <tag>CRLF</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="https://utihbi.github.io/categories/linux/"/>
           
         </display>
     </data>
