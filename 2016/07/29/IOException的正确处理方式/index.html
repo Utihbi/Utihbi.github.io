@@ -4,53 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>漫谈接口和抽象类 | 菜鸟生活</title>
+    <title>IOException的正确处理方式 | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="接口和抽象类接口的意义：- 规范
-
-    接口是用来规范类的，它可以避免类在设计上的不一致，这在多人合作的开发中犹为重要；
-
-    它是一种标准，每一个实现它的类都要遵守这个接口定义的规则，标准。
-
-- 扩展(解耦)
-
-    最大程度的解耦，方便以后项目扩展 
-
-        Eg:OOP的思想，底层定义了规范，上层来负责实现，打个比方说，jdbc中就是定义了数据库操作的接口，然后不同的数">
+    <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546/*IO	字节流：			InputStream,OutputStream		字符流：			Reader,Writer			IO所有操作都有IOException*/import java.io.*;class FileWriterDe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="漫谈接口和抽象类">
-<meta property="og:url" content="https://utihbi.github.io/2016/07/21/漫谈接口和抽象类/index.html">
+<meta property="og:title" content="IOException的正确处理方式">
+<meta property="og:url" content="https://utihbi.github.io/2016/07/29/IOException的正确处理方式/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="接口和抽象类接口的意义：- 规范
-
-    接口是用来规范类的，它可以避免类在设计上的不一致，这在多人合作的开发中犹为重要；
-
-    它是一种标准，每一个实现它的类都要遵守这个接口定义的规则，标准。
-
-- 扩展(解耦)
-
-    最大程度的解耦，方便以后项目扩展 
-
-        Eg:OOP的思想，底层定义了规范，上层来负责实现，打个比方说，jdbc中就是定义了数据库操作的接口，然后不同的数">
-<meta property="og:updated_time" content="2016-07-21T06:51:43.177Z">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546/*IO	字节流：			InputStream,OutputStream		字符流：			Reader,Writer			IO所有操作都有IOException*/import java.io.*;class FileWriterDe">
+<meta property="og:updated_time" content="2016-07-30T02:48:59.150Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="漫谈接口和抽象类">
-<meta name="twitter:description" content="接口和抽象类接口的意义：- 规范
-
-    接口是用来规范类的，它可以避免类在设计上的不一致，这在多人合作的开发中犹为重要；
-
-    它是一种标准，每一个实现它的类都要遵守这个接口定义的规则，标准。
-
-- 扩展(解耦)
-
-    最大程度的解耦，方便以后项目扩展 
-
-        Eg:OOP的思想，底层定义了规范，上层来负责实现，打个比方说，jdbc中就是定义了数据库操作的接口，然后不同的数">
+<meta name="twitter:title" content="IOException的正确处理方式">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546/*IO	字节流：			InputStream,OutputStream		字符流：			Reader,Writer			IO所有操作都有IOException*/import java.io.*;class FileWriterDe">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -110,14 +80,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/21/漫谈接口和抽象类/" title="漫谈接口和抽象类" itemprop="url">漫谈接口和抽象类</a>
+      <a href="/2016/07/29/IOException的正确处理方式/" title="IOException的正确处理方式" itemprop="url">IOException的正确处理方式</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-21T06:05:06.000Z" itemprop="datePublished"> 发表于 2016-07-21</time>
+    <time datetime="2016-07-29T02:35:06.000Z" itemprop="datePublished"> 发表于 2016-07-29</time>
     
   </p>
 </header>
@@ -126,78 +96,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#接口和抽象类"><span class="toc-number">1.</span> <span class="toc-text">接口和抽象类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口的意义："><span class="toc-number">1.1.</span> <span class="toc-text">接口的意义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类的意义："><span class="toc-number">1.2.</span> <span class="toc-text">抽象类的意义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口和抽象类对比"><span class="toc-number">1.3.</span> <span class="toc-text">接口和抽象类对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附加知识点："><span class="toc-number">2.</span> <span class="toc-text">附加知识点：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象：就是抽去像的部分"><span class="toc-number">2.1.</span> <span class="toc-text">抽象：就是抽去像的部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开闭原则："><span class="toc-number">2.2.</span> <span class="toc-text">开闭原则：</span></a></li></ol></li></ol>
+			
 		
 		</div>
 		
-		<h2 id="接口和抽象类"><a href="#接口和抽象类" class="headerlink" title="接口和抽象类"></a>接口和抽象类</h2><h3 id="接口的意义："><a href="#接口的意义：" class="headerlink" title="接口的意义："></a>接口的意义：</h3><pre><code>- 规范
-
-    接口是用来规范类的，它可以避免类在设计上的不一致，这在多人合作的开发中犹为重要；
-
-    它是一种标准，每一个实现它的类都要遵守这个接口定义的规则，标准。
-
-- 扩展(解耦)
-
-    最大程度的解耦，方便以后项目扩展 
-
-        Eg:OOP的思想，底层定义了规范，上层来负责实现，打个比方说，jdbc中就是定义了数据库操作的接口，然后不同的数据
-
-        库服务厂商实现不同的数据库操作。
-
-- 回调(参见下一篇文章)
-</code></pre><h3 id="抽象类的意义："><a href="#抽象类的意义：" class="headerlink" title="抽象类的意义："></a>抽象类的意义：</h3><pre><code>- 为其子类提供一个公共的类型；
-
-- 封装子类中的重复内容；
-
-- 定义了抽象方法，子类虽然有不同的实现，但定义是一致的。抽象类设计出来就是为了继承，实现多态。
-</code></pre><h3 id="接口和抽象类对比"><a href="#接口和抽象类对比" class="headerlink" title="接口和抽象类对比"></a>接口和抽象类对比</h3><ul>
-<li><p>接口用来定义两个对象间通信的契约；</p>
-<p>  抽象类用来封装对象间公用的行为；</p>
-</li>
-<li><p>接口适合为不相关的类提供通用功能；</p>
-<p>  抽象类主要应用于关系密切的对象间；</p>
-</li>
-<li><p>实际编程中：</p>
-<ol>
-<li><p>我们关心do what，但不关心 how to do，我们可以用接口；</p>
-<p>我们既关心 what，又关心 how时，选用抽象类，但对象间对于某个what 时，how 却表现各异；当然，另一个what，</p>
-<p>又how的一致；</p>
-</li>
-<li><p>将来想加个通用方法，抽象类中直接添加即可，继承的subClass无需任何更改；【模板式设计】接口如果添加，那所</p>
-<p>有实现的类都需更改；【辐射式设计】</p>
-</li>
-<li><p>我们可能现有一堆类，后面才慢慢抽象出类的共同的方法，更多是重构产生的【自下而上】；接口是一开始就定义好</p>
-<p>的一些规范【自上而下】</p>
-</li>
-<li><p>从继承角度来讲，如果类已经继承了一个父类，那此时就应该把这部分功能定义接口，实现多个接口是没有问题的，</p>
-<p>但只能单继承；(java中)</p>
-</li>
-<li><p>扩展功能：将来某些具体类想扩展一项功能，如果直接在抽象类中添加该功能，那继承了该抽象类的另外一些具体类</p>
-<p>是不想要这些功能的，由于继承，却也给这些类这个功能；</p>
-<p>如果使用接口定义，哪些类想扩展功能，哪些类就实现接口即可；</p>
-<p>好的接口定义应该是具有专一功能性的，而不是多功能的，否则造成接口污染。（如果一个类只是实现了这个接口的</p>
-<p>中一个功能，而不得不去实现接口中的其他方法，就叫接口污染）   </p>
-<p> Eg:java中的 比较接口</p>
-</li>
-<li><p>对一类事物进行抽象用抽象类，对行为进行抽象时用接口。</p>
-</li>
-<li><p>java8中接口中方法可以有方法体，前提是 方法是 static；</p>
-</li>
-</ol>
-</li>
-</ul>
-<p>接口中 ：</p>
-<pre><code>变量默认是 public static final
-
-方法默认是 public abstract
-</code></pre><font color="red"><br>    注：默认可以省略，但不能改变；具体看代码：<br></font>
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* </div><div class="line">* 接口的中的变量是所有实现类共有的，既然共有，肯定是不变的东西，因为变化的东西也不能够算共有。所以变量是不可变(final)类型，</div><div class="line">* 也就是常量了。</div><div class="line">*/</div><div class="line">interface TestIntf&#123;</div><div class="line">    public static final int a =2;</div><div class="line">    public abstract void getName();</div><div class="line">&#125;</div><div class="line">//这两段代码一致，我们平时为书写方便，多书写下面（懒，习惯少写）</div><div class="line">interface TestIntf&#123;</div><div class="line">    int a =2;</div><div class="line">    void getName();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="附加知识点："><a href="#附加知识点：" class="headerlink" title="附加知识点："></a>附加知识点：</h2><h3 id="抽象：就是抽去像的部分"><a href="#抽象：就是抽去像的部分" class="headerlink" title="抽象：就是抽去像的部分"></a>抽象：就是抽去像的部分</h3><h3 id="开闭原则："><a href="#开闭原则：" class="headerlink" title="开闭原则："></a>开闭原则：</h3><p>对修改关闭，对扩展开放；</p>
-<p>通俗的讲，你认为是要变化的东西，就放在你自己的实现中，不能放在接口中去，接口只是对一类事物的属性和行为更高层</p>
-<p>次的抽象。对修改关闭，对扩展（不同的实现 implements）开放，接口是对开闭原则的一种体现。</p>
-  
+		<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"></div><div class="line">IO</div><div class="line"></div><div class="line">	字节流：</div><div class="line">			InputStream,OutputStream</div><div class="line">	</div><div class="line">	字符流：</div><div class="line">			Reader,Writer</div><div class="line"></div><div class="line">			</div><div class="line">IO所有操作都有IOException</div><div class="line">*/</div><div class="line">import java.io.*;</div><div class="line">class FileWriterDemo&#123;</div><div class="line">	public static void main(String [] args)&#123;</div><div class="line">		</div><div class="line">		//定义在外面，否则finally 中的fw 找不到</div><div class="line">		FileWriter fw  = null;</div><div class="line">		</div><div class="line">		try&#123;</div><div class="line">			//创建文件,若文件已存在，会干掉</div><div class="line">			fw = new FileWriter(&quot;FileWriterDemo.txt&quot;);</div><div class="line">			</div><div class="line">			//创建文件,若文件已存在，末尾追加内容</div><div class="line">			//fw = new FileWriter(&quot;FileWriterDemo.txt&quot;,true);</div><div class="line">			</div><div class="line">			fw.write(&quot;aabc&quot;);</div><div class="line">		&#125;catch(IOException e)&#123;</div><div class="line">			System.out.println(e.toString());</div><div class="line">		&#125;finally&#123;</div><div class="line">			try&#123;</div><div class="line">				if(null != fw)&#123;</div><div class="line">					fw.close();</div><div class="line">					/*</div><div class="line">					关闭资源一定要执行，放在finally中(外层);</div><div class="line">					关闭操作有IOException：故 try&#123;&#125;catch&#123;&#125;</div><div class="line">					创建文件就抛出异常，fw==null ；故需判断</div><div class="line">					*/ </div><div class="line">				&#125;</div><div class="line">			&#125;catch(IOException e)&#123;</div><div class="line">				System.out.println(e.toString());</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -219,7 +122,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/07/21/漫谈接口和抽象类/" data-title="漫谈接口和抽象类 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/07/29/IOException的正确处理方式/" data-title="IOException的正确处理方式 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -233,18 +136,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/07/22/不同平台造成的文本换行符差异(CRLF)/" title="不同平台造成的文本换行符差异(CRLF)">
+ <a href="/2016/08/04/快速排序 /" title="快速排序">
   <strong>上一篇：</strong><br/>
   <span>
-  不同平台造成的文本换行符差异(CRLF)</span>
+  快速排序</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/07/21/接口回调和向上转型/"  title="接口回调和向上转型">
+<a href="/2016/07/28/word转PDF遇到的图片问题/"  title="word转PDF遇到的图片问题">
  <strong>下一篇：</strong><br/> 
- <span>接口回调和向上转型
+ <span>word转PDF遇到的图片问题
 </span>
 </a>
 </div>
@@ -253,7 +156,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/21/漫谈接口和抽象类/" data-title="漫谈接口和抽象类" data-url="https://utihbi.github.io/2016/07/21/漫谈接口和抽象类/"></div>
+	<div class="ds-thread" data-thread-key="2016/07/29/IOException的正确处理方式/" data-title="IOException的正确处理方式" data-url="https://utihbi.github.io/2016/07/29/IOException的正确处理方式/"></div>
 </section>
 
 
@@ -263,7 +166,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#接口和抽象类"><span class="toc-number">1.</span> <span class="toc-text">接口和抽象类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口的意义："><span class="toc-number">1.1.</span> <span class="toc-text">接口的意义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类的意义："><span class="toc-number">1.2.</span> <span class="toc-text">抽象类的意义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口和抽象类对比"><span class="toc-number">1.3.</span> <span class="toc-text">接口和抽象类对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附加知识点："><span class="toc-number">2.</span> <span class="toc-text">附加知识点：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象：就是抽去像的部分"><span class="toc-number">2.1.</span> <span class="toc-text">抽象：就是抽去像的部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开闭原则："><span class="toc-number">2.2.</span> <span class="toc-text">开闭原则：</span></a></li></ol></li></ol>
+ 
  
   </div>
 
