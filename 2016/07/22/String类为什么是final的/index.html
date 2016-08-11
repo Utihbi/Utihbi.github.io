@@ -11,31 +11,34 @@
     
 
     
-    <meta name="description" content="安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。
+    <meta name="description" content="final 优点
+安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。
 
 同步和并发问题：线程安全因此没有同步问题；
 
 缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设
-  计的。换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实例">
+  计的。换言之，Stirng可以改变，那一个引用改变了值，那">
 <meta property="og:type" content="article">
 <meta property="og:title" content="String类为什么是final的">
 <meta property="og:url" content="https://utihbi.github.io/2016/07/22/String类为什么是final的/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。
+<meta property="og:description" content="final 优点
+安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。
 
 同步和并发问题：线程安全因此没有同步问题；
 
 缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设
-  计的。换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实例">
-<meta property="og:updated_time" content="2016-07-22T09:33:48.259Z">
+  计的。换言之，Stirng可以改变，那一个引用改变了值，那">
+<meta property="og:updated_time" content="2016-08-11T12:50:04.491Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String类为什么是final的">
-<meta name="twitter:description" content="安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。
+<meta name="twitter:description" content="final 优点
+安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。
 
 同步和并发问题：线程安全因此没有同步问题；
 
 缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设
-  计的。换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实例">
+  计的。换言之，Stirng可以改变，那一个引用改变了值，那">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -111,11 +114,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#final-优点"><span class="toc-number">1.</span> <span class="toc-text">final 优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final-缺点"><span class="toc-number">2.</span> <span class="toc-text">final 缺点</span></a></li></ol>
 		
 		</div>
 		
-		<ul>
+		<h2 id="final-优点"><a href="#final-优点" class="headerlink" title="final 优点"></a>final 优点</h2><ul>
 <li><p>安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。</p>
 </li>
 <li><p>同步和并发问题：线程安全因此没有同步问题；</p>
@@ -130,6 +133,9 @@
 <li><p>长度：长度是确定的，不会改变的。</p>
 </li>
 </ul>
+<h2 id="final-缺点"><a href="#final-缺点" class="headerlink" title="final 缺点"></a>final 缺点</h2><p>考虑这样一个问题：“为什么在JAVA的密码管理中，更倾向去使用char[]而不是String？”更具体一些的问法是：为什么在JAVA Swing中的密码输入框方法是：getPassword(return char[]), 而不是getText(return String)</p>
+<p>毫无意外的，这里是一个安全问题。因为String 是不可变的，这意味着你一旦创建了它则无法修改。同样也意味着在GC前你无法彻底的删除掉它。在某些情况下，如果有人黑进了你的内存，那么被保存成String的密码则可以被人获取的。</p>
+<p>这就是为什么 你需要使用字符数组。你可以在使用完后显式的清除它，或者你也可以用其他的别的东西去覆盖它。这样敏感的信息就不会在系统的其他地方出现，即使此时GC还没有启动。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -196,7 +202,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#final-优点"><span class="toc-number">1.</span> <span class="toc-text">final 优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final-缺点"><span class="toc-number">2.</span> <span class="toc-text">final 缺点</span></a></li></ol>
  
   </div>
 
