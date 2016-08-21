@@ -597,10 +597,11 @@ Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额�
     <link href="https://utihbi.github.io/2016/07/22/String%E7%B1%BB%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AFfinal%E7%9A%84/"/>
     <id>https://utihbi.github.io/2016/07/22/String类为什么是final的/</id>
     <published>2016-07-22T09:28:06.000Z</published>
-    <updated>2016-08-11T12:50:04.491Z</updated>
+    <updated>2016-08-11T13:24:31.664Z</updated>
     
     <content type="html">&lt;h2 id=&quot;final-优点&quot;&gt;&lt;a href=&quot;#final-优点&quot; class=&quot;headerlink&quot; title=&quot;final 优点&quot;&gt;&lt;/a&gt;final 优点&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值很容易别人改掉；网络连接，DB连接中很容易被攻击。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值&lt;/p&gt;
+&lt;p&gt;  很容易别人改掉；网络连接，DB连接中很容易被攻击。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;同步和并发问题：线程安全因此没有同步问题；&lt;/p&gt;
 &lt;/li&gt;
@@ -614,9 +615,12 @@ Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额�
 &lt;li&gt;&lt;p&gt;长度：长度是确定的，不会改变的。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;final-缺点&quot;&gt;&lt;a href=&quot;#final-缺点&quot; class=&quot;headerlink&quot; title=&quot;final 缺点&quot;&gt;&lt;/a&gt;final 缺点&lt;/h2&gt;&lt;p&gt;考虑这样一个问题：“为什么在JAVA的密码管理中，更倾向去使用char[]而不是String？”更具体一些的问法是：为什么在JAVA Swing中的密码输入框方法是：getPassword(return char[]), 而不是getText(return String)&lt;/p&gt;
-&lt;p&gt;毫无意外的，这里是一个安全问题。因为String 是不可变的，这意味着你一旦创建了它则无法修改。同样也意味着在GC前你无法彻底的删除掉它。在某些情况下，如果有人黑进了你的内存，那么被保存成String的密码则可以被人获取的。&lt;/p&gt;
-&lt;p&gt;这就是为什么 你需要使用字符数组。你可以在使用完后显式的清除它，或者你也可以用其他的别的东西去覆盖它。这样敏感的信息就不会在系统的其他地方出现，即使此时GC还没有启动。&lt;/p&gt;
+&lt;h2 id=&quot;final-缺点&quot;&gt;&lt;a href=&quot;#final-缺点&quot; class=&quot;headerlink&quot; title=&quot;final 缺点&quot;&gt;&lt;/a&gt;final 缺点&lt;/h2&gt;&lt;p&gt;考虑这样一个问题：为什么在JAVA的密码管理中，更倾向去使用char[]而不是String？&lt;/p&gt;
+&lt;p&gt;更具体一些的问法是：为什么在JAVA Swing中的密码输入框方法是：getPassword(return char[]), 而不是getText(return String)?&lt;/p&gt;
+&lt;p&gt;毫无意外的，这里是一个安全问题。因为String 是不可变的，这意味着你一旦创建了它则无法修改。同样也意味着在GC前你&lt;/p&gt;
+&lt;p&gt;无法彻底的删除掉它。在某些情况下，如果有人黑进了你的内存，那么被保存成String的密码则可以被人获取的。&lt;/p&gt;
+&lt;p&gt;这就是为什么 你需要使用字符数组。你可以在使用完后显式的清除它，或者你也可以用其他的别的东西去覆盖它。这样敏感&lt;/p&gt;
+&lt;p&gt;的信息就不会在系统的其他地方出现，即使此时GC还没有启动。&lt;/p&gt;
 </content>
     
     <summary type="html">
