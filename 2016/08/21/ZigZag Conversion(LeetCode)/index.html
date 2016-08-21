@@ -4,44 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>String类为什么是final的 | 菜鸟生活</title>
+    <title>ZigZag Conversion(LeetCode) | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="final 优点
-安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值
-  很容易别人改掉；网络连接，DB连接中很容易被攻击。
+    <meta name="description" content="Question:ZigZag ConversionThe string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows 
 
-同步和并发问题：线程安全因此没有同步问题；
-
-缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设
-  计的。换言之，Stirng可以改变，那一个引用改变了">
+like this: (you may want to display this pattern in a fixed font for better l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="String类为什么是final的">
-<meta property="og:url" content="https://utihbi.github.io/2016/07/22/String类为什么是final的/index.html">
+<meta property="og:title" content="ZigZag Conversion(LeetCode)">
+<meta property="og:url" content="https://utihbi.github.io/2016/08/21/ZigZag Conversion(LeetCode)/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="final 优点
-安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值
-  很容易别人改掉；网络连接，DB连接中很容易被攻击。
+<meta property="og:description" content="Question:ZigZag ConversionThe string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows 
 
-同步和并发问题：线程安全因此没有同步问题；
-
-缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设
-  计的。换言之，Stirng可以改变，那一个引用改变了">
-<meta property="og:updated_time" content="2016-08-11T13:24:31.664Z">
+like this: (you may want to display this pattern in a fixed font for better l">
+<meta property="og:updated_time" content="2016-08-21T14:28:27.986Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="String类为什么是final的">
-<meta name="twitter:description" content="final 优点
-安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值
-  很容易别人改掉；网络连接，DB连接中很容易被攻击。
+<meta name="twitter:title" content="ZigZag Conversion(LeetCode)">
+<meta name="twitter:description" content="Question:ZigZag ConversionThe string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows 
 
-同步和并发问题：线程安全因此没有同步问题；
-
-缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设
-  计的。换言之，Stirng可以改变，那一个引用改变了">
+like this: (you may want to display this pattern in a fixed font for better l">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -107,14 +92,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/22/String类为什么是final的/" title="String类为什么是final的" itemprop="url">String类为什么是final的</a>
+      <a href="/2016/08/21/ZigZag Conversion(LeetCode)/" title="ZigZag Conversion(LeetCode)" itemprop="url">ZigZag Conversion(LeetCode)</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-22T09:28:06.000Z" itemprop="datePublished"> 发表于 2016-07-22</time>
+    <time datetime="2016-08-21T14:22:06.000Z" itemprop="datePublished"> 发表于 2016-08-21</time>
     
   </p>
 </header>
@@ -123,46 +108,40 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#final-优点"><span class="toc-number">1.</span> <span class="toc-text">final 优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final-缺点"><span class="toc-number">2.</span> <span class="toc-text">final 缺点</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-ZigZag-Conversion"><span class="toc-number">1.</span> <span class="toc-text">Question:ZigZag Conversion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SourceCode"><span class="toc-number">2.</span> <span class="toc-text">SourceCode:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#s1"><span class="toc-number">2.1.</span> <span class="toc-text">s1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#s2"><span class="toc-number">2.2.</span> <span class="toc-text">s2</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h2 id="final-优点"><a href="#final-优点" class="headerlink" title="final 优点"></a>final 优点</h2><ul>
-<li><p>安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值</p>
-<p>  很容易别人改掉；网络连接，DB连接中很容易被攻击。</p>
-</li>
-<li><p>同步和并发问题：线程安全因此没有同步问题；</p>
-</li>
-<li><p>缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设</p>
-<p>  计的。换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实例的引用的值也改变了。</p>
-</li>
-<li><p>类加载：String被用作类加载的参数，如果可以改变，那将加载错误的类或加载不到类。</p>
-</li>
-<li><p>Hask Key：不可变实例非常适合做hash表的key。否则，hash表的值会出现丢失情况。</p>
-</li>
-<li><p>长度：长度是确定的，不会改变的。</p>
-</li>
-</ul>
-<h2 id="final-缺点"><a href="#final-缺点" class="headerlink" title="final 缺点"></a>final 缺点</h2><p>考虑这样一个问题：为什么在JAVA的密码管理中，更倾向去使用char[]而不是String？</p>
-<p>更具体一些的问法是：为什么在JAVA Swing中的密码输入框方法是：getPassword(return char[]), 而不是getText(return String)?</p>
-<p>毫无意外的，这里是一个安全问题。因为String 是不可变的，这意味着你一旦创建了它则无法修改。同样也意味着在GC前你</p>
-<p>无法彻底的删除掉它。在某些情况下，如果有人黑进了你的内存，那么被保存成String的密码则可以被人获取的。</p>
-<p>这就是为什么 你需要使用字符数组。你可以在使用完后显式的清除它，或者你也可以用其他的别的东西去覆盖它。这样敏感</p>
-<p>的信息就不会在系统的其他地方出现，即使此时GC还没有启动。</p>
-  
+		<h2 id="Question-ZigZag-Conversion"><a href="#Question-ZigZag-Conversion" class="headerlink" title="Question:ZigZag Conversion"></a>Question:<a href="https://leetcode.com/problems/zigzag-conversion/" target="_blank" rel="external">ZigZag Conversion</a></h2><pre><code>The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows 
+
+like this: (you may want to display this pattern in a fixed font for better legibility)
+
+P   A   H   N
+A P L S I I G
+Y   I   R
+
+And then read line by line: &quot;PAHNAPLSIIGYIR&quot;
+
+Write the code that will take a string and make this conversion given a number of rows:
+
+string convert(string text, int nRows);
+
+convert(&quot;PAYPALISHIRING&quot;, 3) should return &quot;PAHNAPLSIIGYIR&quot;.
+</code></pre><h2 id="SourceCode"><a href="#SourceCode" class="headerlink" title="SourceCode:"></a>SourceCode:</h2><h3 id="s1"><a href="#s1" class="headerlink" title="s1"></a>s1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">//笔者提交版本；耗时：6ms；</div><div class="line">public class Solution &#123;</div><div class="line">    public String convert(String s, int numRows) &#123;</div><div class="line">        </div><div class="line">        if(null == s)&#123;return &quot;&quot;;&#125;</div><div class="line">        </div><div class="line">        int len = s.length();</div><div class="line">        </div><div class="line">        //边界控制要仔细啊，numRows &lt;=1 </div><div class="line">        if(numRows &gt;= len||numRows &lt;=1)&#123;return s;&#125;</div><div class="line">        </div><div class="line">        StringBuilder result = new StringBuilder(len);</div><div class="line">        int step = numRows - 2 + numRows;</div><div class="line">        int lastLineNum = numRows -1 ;</div><div class="line">        </div><div class="line">        for(int i= 0 ; i&lt; numRows ;i++)&#123;</div><div class="line">            //第一行和最后一行</div><div class="line">            if(i==0 || i == lastLineNum)&#123;</div><div class="line">                int j = i;</div><div class="line">                while(j&lt;len)&#123;</div><div class="line">                    result.append(s.charAt(j));</div><div class="line">                    j += step;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            //中间行处理</div><div class="line">            else&#123;</div><div class="line">                int tmpStep = (lastLineNum-i)*2;</div><div class="line">                //成对处理</div><div class="line">                int j = i;</div><div class="line">                int k = j + tmpStep;</div><div class="line">                while(j&lt;len)&#123;</div><div class="line">                    result.append(s.charAt(j));</div><div class="line">                    j += step;</div><div class="line">                    if(k&lt;len)&#123;</div><div class="line">                        result.append(s.charAt(k));</div><div class="line">                        k += step;</div><div class="line">                    &#125;</div><div class="line">                    </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return result.toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="s2"><a href="#s2" class="headerlink" title="s2"></a>s2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//该版本参考了Discuss,还没看Discuss；耗时：ms；</div><div class="line">//待写</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+  <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/JAVA/">JAVA</a>
+  <span></span> <a href="/tags/LeetCode/">LeetCode</a>
   </div>
 
 </div>
@@ -171,7 +150,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/07/22/String类为什么是final的/" data-title="String类为什么是final的 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/08/21/ZigZag Conversion(LeetCode)/" data-title="ZigZag Conversion(LeetCode) | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -184,19 +163,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/07/23/工厂模式/" title="工厂模式">
-  <strong>上一篇：</strong><br/>
-  <span>
-  工厂模式</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/07/22/细说UML核心视图/"  title="细说UML核心视图">
+<a href="/2016/08/06/Java获取Class类型引用的比较/"  title="Java获取Class类型引用的比较">
  <strong>下一篇：</strong><br/> 
- <span>细说UML核心视图
+ <span>Java获取Class类型引用的比较
 </span>
 </a>
 </div>
@@ -205,7 +176,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/22/String类为什么是final的/" data-title="String类为什么是final的" data-url="https://utihbi.github.io/2016/07/22/String类为什么是final的/"></div>
+	<div class="ds-thread" data-thread-key="2016/08/21/ZigZag Conversion(LeetCode)/" data-title="ZigZag Conversion(LeetCode)" data-url="https://utihbi.github.io/2016/08/21/ZigZag Conversion(LeetCode)/"></div>
 </section>
 
 
@@ -215,7 +186,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#final-优点"><span class="toc-number">1.</span> <span class="toc-text">final 优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final-缺点"><span class="toc-number">2.</span> <span class="toc-text">final 缺点</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-ZigZag-Conversion"><span class="toc-number">1.</span> <span class="toc-text">Question:ZigZag Conversion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SourceCode"><span class="toc-number">2.</span> <span class="toc-text">SourceCode:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#s1"><span class="toc-number">2.1.</span> <span class="toc-text">s1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#s2"><span class="toc-number">2.2.</span> <span class="toc-text">s2</span></a></li></ol></li></ol>
  
   </div>
 

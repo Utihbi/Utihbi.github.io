@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-08-06T01:25:08.144Z</updated>
+  <updated>2016-08-21T14:28:27.986Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ZigZag Conversion(LeetCode)</title>
+    <link href="https://utihbi.github.io/2016/08/21/ZigZag%20Conversion(LeetCode)/"/>
+    <id>https://utihbi.github.io/2016/08/21/ZigZag Conversion(LeetCode)/</id>
+    <published>2016-08-21T14:22:06.000Z</published>
+    <updated>2016-08-21T14:28:27.986Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Question-ZigZag-Conversion&quot;&gt;&lt;a href=&quot;#Question-ZigZag-Conversion&quot; class=&quot;headerlink&quot; title=&quot;Question:ZigZag Conversion&quot;&gt;&lt;/a&gt;Question:&lt;a href=&quot;https://leetcode.com/problems/zigzag-conversion/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ZigZag Conversion&lt;/a&gt;&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;The string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows 
+
+like this: (you may want to display this pattern in a fixed font for better legibility)
+
+P   A   H   N
+A P L S I I G
+Y   I   R
+
+And then read line by line: &amp;quot;PAHNAPLSIIGYIR&amp;quot;
+
+Write the code that will take a string and make this conversion given a number of rows:
+
+string convert(string text, int nRows);
+
+convert(&amp;quot;PAYPALISHIRING&amp;quot;, 3) should return &amp;quot;PAHNAPLSIIGYIR&amp;quot;.
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;SourceCode&quot;&gt;&lt;a href=&quot;#SourceCode&quot; class=&quot;headerlink&quot; title=&quot;SourceCode:&quot;&gt;&lt;/a&gt;SourceCode:&lt;/h2&gt;&lt;h3 id=&quot;s1&quot;&gt;&lt;a href=&quot;#s1&quot; class=&quot;headerlink&quot; title=&quot;s1&quot;&gt;&lt;/a&gt;s1&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;45&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;//笔者提交版本；耗时：6ms；&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;public class Solution &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    public String convert(String s, int numRows) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if(null == s)&amp;#123;return &amp;quot;&amp;quot;;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int len = s.length();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //边界控制要仔细啊，numRows &amp;lt;=1 &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if(numRows &amp;gt;= len||numRows &amp;lt;=1)&amp;#123;return s;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        StringBuilder result = new StringBuilder(len);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int step = numRows - 2 + numRows;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int lastLineNum = numRows -1 ;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        for(int i= 0 ; i&amp;lt; numRows ;i++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            //第一行和最后一行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            if(i==0 || i == lastLineNum)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                int j = i;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                while(j&amp;lt;len)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    result.append(s.charAt(j));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    j += step;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            //中间行处理&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            else&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                int tmpStep = (lastLineNum-i)*2;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                //成对处理&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                int j = i;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                int k = j + tmpStep;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                while(j&amp;lt;len)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    result.append(s.charAt(j));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    j += step;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    if(k&amp;lt;len)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                        result.append(s.charAt(k));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                        k += step;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        return result.toString();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;s2&quot;&gt;&lt;a href=&quot;#s2&quot; class=&quot;headerlink&quot; title=&quot;s2&quot;&gt;&lt;/a&gt;s2&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;//该版本参考了Discuss,还没看Discuss；耗时：ms；&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//待写&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Question-ZigZag-Conversion&quot;&gt;&lt;a href=&quot;#Question-ZigZag-Conversion&quot; class=&quot;headerlink&quot; title=&quot;Question:ZigZag Conversion&quot;&gt;&lt;/a&gt;Question
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://utihbi.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://utihbi.github.io/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>Java获取Class类型引用的比较</title>
