@@ -4,44 +4,35 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>String类为什么是final的 | 菜鸟生活</title>
+    <title>String to Integer(LeetCode) | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="final 优点
-安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值
-  很容易别人改掉；网络连接，DB连接中很容易被攻击。
+    <meta name="description" content="Question:String to IntegerImplement atoi to convert a string to an integer.
 
-同步和并发问题：线程安全因此没有同步问题；
+Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below 
 
-缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设
-  计的。换言之，Stirng可以改变，那一个引用改变了">
+and ask yourself what">
 <meta property="og:type" content="article">
-<meta property="og:title" content="String类为什么是final的">
-<meta property="og:url" content="https://utihbi.github.io/2016/07/22/String类为什么是final的/index.html">
+<meta property="og:title" content="String to Integer(LeetCode)">
+<meta property="og:url" content="https://utihbi.github.io/2016/08/22/String to Integer(LeetCode)/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="final 优点
-安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值
-  很容易别人改掉；网络连接，DB连接中很容易被攻击。
+<meta property="og:description" content="Question:String to IntegerImplement atoi to convert a string to an integer.
 
-同步和并发问题：线程安全因此没有同步问题；
+Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below 
 
-缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设
-  计的。换言之，Stirng可以改变，那一个引用改变了">
-<meta property="og:updated_time" content="2016-08-11T13:24:31.664Z">
+and ask yourself what">
+<meta property="og:updated_time" content="2016-08-22T08:39:55.088Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="String类为什么是final的">
-<meta name="twitter:description" content="final 优点
-安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值
-  很容易别人改掉；网络连接，DB连接中很容易被攻击。
+<meta name="twitter:title" content="String to Integer(LeetCode)">
+<meta name="twitter:description" content="Question:String to IntegerImplement atoi to convert a string to an integer.
 
-同步和并发问题：线程安全因此没有同步问题；
+Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below 
 
-缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设
-  计的。换言之，Stirng可以改变，那一个引用改变了">
+and ask yourself what">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -107,14 +98,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/22/String类为什么是final的/" title="String类为什么是final的" itemprop="url">String类为什么是final的</a>
+      <a href="/2016/08/22/String to Integer(LeetCode)/" title="String to Integer(LeetCode)" itemprop="url">String to Integer(LeetCode)</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-22T09:28:06.000Z" itemprop="datePublished"> 发表于 2016-07-22</time>
+    <time datetime="2016-08-22T08:39:40.000Z" itemprop="datePublished"> 发表于 2016-08-22</time>
     
   </p>
 </header>
@@ -123,46 +114,56 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#final-优点"><span class="toc-number">1.</span> <span class="toc-text">final 优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final-缺点"><span class="toc-number">2.</span> <span class="toc-text">final 缺点</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-String-to-Integer"><span class="toc-number">1.</span> <span class="toc-text">Question:String to Integer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SourceCode"><span class="toc-number">2.</span> <span class="toc-text">SourceCode:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#s1"><span class="toc-number">2.1.</span> <span class="toc-text">s1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#s2"><span class="toc-number">2.2.</span> <span class="toc-text">s2</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h2 id="final-优点"><a href="#final-优点" class="headerlink" title="final 优点"></a>final 优点</h2><ul>
-<li><p>安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值</p>
-<p>  很容易别人改掉；网络连接，DB连接中很容易被攻击。</p>
-</li>
-<li><p>同步和并发问题：线程安全因此没有同步问题；</p>
-</li>
-<li><p>缓存：当编译优化时，如果两个实例值一样，那就可以new一个对象，让两个引用都指向同一个实例。JVM底层就这样设</p>
-<p>  计的。换言之，Stirng可以改变，那一个引用改变了值，那其他指向这个实例的引用的值也改变了。</p>
-</li>
-<li><p>类加载：String被用作类加载的参数，如果可以改变，那将加载错误的类或加载不到类。</p>
-</li>
-<li><p>Hask Key：不可变实例非常适合做hash表的key。否则，hash表的值会出现丢失情况。</p>
-</li>
-<li><p>长度：长度是确定的，不会改变的。</p>
-</li>
-</ul>
-<h2 id="final-缺点"><a href="#final-缺点" class="headerlink" title="final 缺点"></a>final 缺点</h2><p>考虑这样一个问题：为什么在JAVA的密码管理中，更倾向去使用char[]而不是String？</p>
-<p>更具体一些的问法是：为什么在JAVA Swing中的密码输入框方法是：getPassword(return char[]), 而不是getText(return String)?</p>
-<p>毫无意外的，这里是一个安全问题。因为String 是不可变的，这意味着你一旦创建了它则无法修改。同样也意味着在GC前你</p>
-<p>无法彻底的删除掉它。在某些情况下，如果有人黑进了你的内存，那么被保存成String的密码则可以被人获取的。</p>
-<p>这就是为什么 你需要使用字符数组。你可以在使用完后显式的清除它，或者你也可以用其他的别的东西去覆盖它。这样敏感</p>
-<p>的信息就不会在系统的其他地方出现，即使此时GC还没有启动。</p>
-  
+		<h2 id="Question-String-to-Integer"><a href="#Question-String-to-Integer" class="headerlink" title="Question:String to Integer"></a>Question:<a href="https://leetcode.com/problems/string-to-integer-atoi/" target="_blank" rel="external">String to Integer</a></h2><pre><code>Implement atoi to convert a string to an integer.
+
+Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below 
+
+and ask yourself what are the possible input cases.
+</code></pre><p><b>Note:</b></p>
+<pre><code>It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible 
+
+to gather all the input requirements up front.
+
+Requirements for atoi:
+
+The function first discards as many whitespace characters as necessary until the first non-whitespace 
+
+character is found. Then, starting from this character, takes an optional initial plus or minus sign 
+
+followed by as many numerical digits as possible, and interprets them as a numerical value.
+
+The string can contain additional characters after those that form the integral number, which are 
+
+ignored and have no effect on the behavior of this function.
+
+If the first sequence of non-whitespace characters in str is not a valid integral number, or if no 
+
+such sequence exists because either str is empty or it contains only whitespace characters, no 
+
+conversion is performed.
+
+If no valid conversion could be performed, a zero value is returned. If the correct value is out of
+
+the range of representable values, INT_MAX (2147483647) or INT_MIN (-2147483648) is returned.
+</code></pre><h2 id="SourceCode"><a href="#SourceCode" class="headerlink" title="SourceCode:"></a>SourceCode:</h2><h3 id="s1"><a href="#s1" class="headerlink" title="s1"></a>s1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">//笔者提交版本；耗时：8ms；</div><div class="line">public class Solution &#123;</div><div class="line">    public int myAtoi(String str) &#123;</div><div class="line">        </div><div class="line">        if(null == str || str.isEmpty() || &quot;&quot; == str||&quot;+&quot;.equals(str)||&quot;-&quot;.equals(str))&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //&quot;  -0012a42&quot;</div><div class="line">        String tmpStr = str.trim();</div><div class="line">        int index = 0;//第一个不不符合数字格式的坐标，</div><div class="line">        int len = tmpStr.length();</div><div class="line">        //遍历确定index</div><div class="line">        for(int i = 0 ; i&lt;len ;i++)&#123;</div><div class="line">            char ch = tmpStr.charAt(i);</div><div class="line">            index = i+1;</div><div class="line">            if(&apos;-&apos; == ch || &apos;+&apos; == ch)&#123;</div><div class="line">                if(i == 0)&#123;</div><div class="line">                    continue;</div><div class="line">                &#125;else&#123;</div><div class="line">                    index = i;</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            if(ch &lt;&apos;0&apos; || ch &gt;&apos;9&apos;)&#123;</div><div class="line">                 index = i;</div><div class="line">                 break;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //&quot;      -11919730356x&quot;</div><div class="line">        index = index &gt; 12 ? 12 :index;</div><div class="line">        //数字位数超出Int 直接截断；截断是注意保留的剩余部分绝对值要大于int。int位数加符号“+（-）”一共11位，取12 防止最高位是1或者2</div><div class="line">        String tmpResult = tmpStr.substring(0,index);</div><div class="line">        </div><div class="line">        long result = 0;</div><div class="line">        </div><div class="line">        try&#123;</div><div class="line">            //用long转满足 大于或小于int_max_value ,取最值；</div><div class="line">            result = Long.parseLong(tmpResult);</div><div class="line">        &#125;catch(Exception e)&#123;//捕获 &quot;+&quot; &quot;-&quot;的异常//eg:input : &quot;+-2&quot;</div><div class="line">            result = 0;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        </div><div class="line">         //result = Long.parseLong(tmpResult);</div><div class="line">        </div><div class="line">        if(result &gt; Integer.MAX_VALUE)&#123;</div><div class="line">            return Integer.MAX_VALUE;</div><div class="line">        &#125;</div><div class="line">        if(result &lt; Integer.MIN_VALUE)&#123;</div><div class="line">            return Integer.MIN_VALUE;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return (int)result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="s2"><a href="#s2" class="headerlink" title="s2"></a>s2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//该版本参考了Discuss,还没看Discuss；耗时：ms；</div><div class="line">//待写</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+  <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/JAVA/">JAVA</a>
+  <span></span> <a href="/tags/LeetCode/">LeetCode</a>
   </div>
 
 </div>
@@ -171,7 +172,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/07/22/String类为什么是final的/" data-title="String类为什么是final的 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/08/22/String to Integer(LeetCode)/" data-title="String to Integer(LeetCode) | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -184,19 +185,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/07/23/工厂模式/" title="工厂模式">
-  <strong>上一篇：</strong><br/>
-  <span>
-  工厂模式</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/07/22/细说UML核心视图/"  title="细说UML核心视图">
+<a href="/2016/08/22/Reverse Integer(LeetCode)/"  title="Reverse Integer(LeetCode)">
  <strong>下一篇：</strong><br/> 
- <span>细说UML核心视图
+ <span>Reverse Integer(LeetCode)
 </span>
 </a>
 </div>
@@ -205,7 +198,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/22/String类为什么是final的/" data-title="String类为什么是final的" data-url="https://utihbi.github.io/2016/07/22/String类为什么是final的/"></div>
+	<div class="ds-thread" data-thread-key="2016/08/22/String to Integer(LeetCode)/" data-title="String to Integer(LeetCode)" data-url="https://utihbi.github.io/2016/08/22/String to Integer(LeetCode)/"></div>
 </section>
 
 
@@ -215,7 +208,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#final-优点"><span class="toc-number">1.</span> <span class="toc-text">final 优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final-缺点"><span class="toc-number">2.</span> <span class="toc-text">final 缺点</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-String-to-Integer"><span class="toc-number">1.</span> <span class="toc-text">Question:String to Integer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SourceCode"><span class="toc-number">2.</span> <span class="toc-text">SourceCode:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#s1"><span class="toc-number">2.1.</span> <span class="toc-text">s1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#s2"><span class="toc-number">2.2.</span> <span class="toc-text">s2</span></a></li></ol></li></ol>
  
   </div>
 

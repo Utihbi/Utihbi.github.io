@@ -5,11 +5,51 @@
     
   <url>
     <loc>https://utihbi.github.io/2016/08/21/ZigZag%20Conversion(LeetCode)/</loc>
-    <lastmod>2016-08-21T14:28:27.986Z</lastmod>
+    <lastmod>2016-08-22T08:41:53.548Z</lastmod>
     <data>
         <display>
         <title>ZigZag Conversion(LeetCode)</title>
         <pubTime>2016-08-21T14:22:06.000Z</pubTime>
+        
+        <tag>LeetCode</tag>
+         
+         
+           
+             
+              <breadCrumb title="LeetCode" url="https://utihbi.github.io/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://utihbi.github.io/2016/08/22/String%20to%20Integer(LeetCode)/</loc>
+    <lastmod>2016-08-22T08:39:55.088Z</lastmod>
+    <data>
+        <display>
+        <title>String to Integer(LeetCode)</title>
+        <pubTime>2016-08-22T08:39:40.000Z</pubTime>
+        
+        <tag>LeetCode</tag>
+         
+         
+           
+             
+              <breadCrumb title="LeetCode" url="https://utihbi.github.io/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://utihbi.github.io/2016/08/22/Reverse%20Integer(LeetCode)/</loc>
+    <lastmod>2016-08-22T05:27:29.187Z</lastmod>
+    <data>
+        <display>
+        <title>Reverse Integer(LeetCode)</title>
+        <pubTime>2016-08-22T05:23:40.000Z</pubTime>
         
         <tag>LeetCode</tag>
          
