@@ -4,59 +4,35 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>数据库基本概念 | 菜鸟生活</title>
+    <title>Longest Substring Without Repeating Characters(LeetCode) | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="范式符合某一种级别的关系模式的集合
+    <meta name="description" content="Question:Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.
 
-构造数据库必须遵循一定的规则，在关系数据库中，这种规则就是范式
+Examples:
 
-目前关系数据库有六种范式
-
-第一范式（1NF）无重复的列
-  1NF是对属性原子性约束，要求属性具有原子性，不可再分解
-  简言之，不能有重复的属性，消除重复的属性
-
-第二范式（2NF）属性完全依赖于主键
-  2NF是对记录的惟一性约束，要求记录有惟一标识(主键)，即实体惟一性
-  完全依赖：不">
+Given &amp;quot;abcabcbb&amp;quot;, the answer is &amp;quo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库基本概念">
-<meta property="og:url" content="https://utihbi.github.io/2016/07/24/关系数据库基本概念/index.html">
+<meta property="og:title" content="Longest Substring Without Repeating Characters(LeetCode)">
+<meta property="og:url" content="https://utihbi.github.io/2016/08/22/Longest Substring Without Repeating Characters(LeetCode)/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="范式符合某一种级别的关系模式的集合
+<meta property="og:description" content="Question:Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.
 
-构造数据库必须遵循一定的规则，在关系数据库中，这种规则就是范式
+Examples:
 
-目前关系数据库有六种范式
-
-第一范式（1NF）无重复的列
-  1NF是对属性原子性约束，要求属性具有原子性，不可再分解
-  简言之，不能有重复的属性，消除重复的属性
-
-第二范式（2NF）属性完全依赖于主键
-  2NF是对记录的惟一性约束，要求记录有惟一标识(主键)，即实体惟一性
-  完全依赖：不">
-<meta property="og:updated_time" content="2016-07-24T04:30:01.689Z">
+Given &amp;quot;abcabcbb&amp;quot;, the answer is &amp;quo">
+<meta property="og:updated_time" content="2016-08-22T13:13:53.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库基本概念">
-<meta name="twitter:description" content="范式符合某一种级别的关系模式的集合
+<meta name="twitter:title" content="Longest Substring Without Repeating Characters(LeetCode)">
+<meta name="twitter:description" content="Question:Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.
 
-构造数据库必须遵循一定的规则，在关系数据库中，这种规则就是范式
+Examples:
 
-目前关系数据库有六种范式
-
-第一范式（1NF）无重复的列
-  1NF是对属性原子性约束，要求属性具有原子性，不可再分解
-  简言之，不能有重复的属性，消除重复的属性
-
-第二范式（2NF）属性完全依赖于主键
-  2NF是对记录的惟一性约束，要求记录有惟一标识(主键)，即实体惟一性
-  完全依赖：不">
+Given &amp;quot;abcabcbb&amp;quot;, the answer is &amp;quo">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -122,14 +98,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/24/关系数据库基本概念/" title="数据库基本概念" itemprop="url">数据库基本概念</a>
+      <a href="/2016/08/22/Longest Substring Without Repeating Characters(LeetCode)/" title="Longest Substring Without Repeating Characters(LeetCode)" itemprop="url">Longest Substring Without Repeating Characters(LeetCode)</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-24T02:23:06.000Z" itemprop="datePublished"> 发表于 2016-07-24</time>
+    <time datetime="2016-08-22T13:11:10.000Z" itemprop="datePublished"> 发表于 2016-08-22</time>
     
   </p>
 </header>
@@ -138,108 +114,36 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#范式"><span class="toc-number">1.</span> <span class="toc-text">范式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模式结构"><span class="toc-number">2.</span> <span class="toc-text">模式结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务"><span class="toc-number">3.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACID"><span class="toc-number">4.</span> <span class="toc-text">ACID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务隔离级别"><span class="toc-number">5.</span> <span class="toc-text">事务隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不可重复读和幻读比较"><span class="toc-number">5.1.</span> <span class="toc-text">不可重复读和幻读比较</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-Longest-Substring-Without-Repeating-Characters"><span class="toc-number">1.</span> <span class="toc-text">Question:Longest Substring Without Repeating Characters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SourceCode"><span class="toc-number">2.</span> <span class="toc-text">SourceCode:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#s1"><span class="toc-number">2.1.</span> <span class="toc-text">s1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#s2"><span class="toc-number">2.2.</span> <span class="toc-text">s2</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><pre><code>符合某一种级别的关系模式的集合
+		<h2 id="Question-Longest-Substring-Without-Repeating-Characters"><a href="#Question-Longest-Substring-Without-Repeating-Characters" class="headerlink" title="Question:Longest Substring Without Repeating Characters"></a>Question:<a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="external">Longest Substring Without Repeating Characters</a></h2><pre><code>Given a string, find the length of the longest substring without repeating characters.
 
-构造数据库必须遵循一定的规则，在关系数据库中，这种规则就是范式
+Examples:
 
-目前关系数据库有六种范式
-</code></pre><ul>
-<li><p>第一范式（1NF）无重复的列</p>
-<p>  1NF是对<font color="red">属性原子性</font>约束，要求属性具有原子性，不可再分解</p>
-<p>  简言之，不能有重复的属性，消除重复的属性</p>
-</li>
-<li><p>第二范式（2NF）属性完全依赖于主键</p>
-<p>  2NF是对记录的惟一性约束，要求记录有惟一标识(主键)，即<font color="red">实体惟一性</font></p>
-<p>  <font color="blue">完全依赖</font>：不能存在仅依赖主关键字一部分的属性(联合主键情况)，如果存在，那么这个属性和主关键字的这一部分应该分离出来形成一个新的实体，新实体与原实体之间是一对多的关系。</p>
-<p>  简言之，消除部分函数依赖</p>
-</li>
-<li><p>第三范式（3NF）属性不依赖于其它非主属性</p>
-<p>  3NF是对字段冗余性的约束，即任何字段不能由其他字段派生出来，它要求字段没有冗余,即<font color="red">字段冗余性</font></p>
-<p>  简言之，一个数据库表中不包含已在其它表中已包含的非主关键字信息，消除传递依赖</p>
-<p>  Eg:人员ID、人员姓名、部门ID、部门名称。该表不因有“部门名称”的冗余信息，该字段通过部门ID即可找到。</p>
-</li>
-</ul>
-<h2 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h2><ul>
-<li><p>外模式（用户级）</p>
-<p>  别名：子模式、用户模式</p>
-<p>  一个DB可以有<font color="blue">多个外模式</font></p>
-<p>  由模式导出，给出了每个用户的局部描述（用户数据库）</p>
-</li>
-<li><p>模式（概念级）</p>
-<p>  别名：逻辑模式</p>
-<p>  一个DB只有<font color="blue">1个模式</font></p>
-<p>  给出了系统全局的数据描述</p>
-</li>
-<li><p>内模式（物理级）</p>
-<p>  别名：存储模式</p>
-<p>  一个DB只有<font color="blue">1个内模式</font></p>
-<p>  给出了DB物理存储结构和物理存取方法</p>
-</li>
-</ul>
-<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><pre><code>由一系列数据库操作组成的一个完整的逻辑过程
+Given &quot;abcabcbb&quot;, the answer is &quot;abc&quot;, which the length is 3.
 
-Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额，这两个数据库操作的总和，构成一个完整的逻辑过程，不可拆分
-</code></pre><h2 id="ACID"><a href="#ACID" class="headerlink" title="ACID"></a>ACID</h2><pre><code>数据库事务正确执行的四个基本要素的缩写
-</code></pre><ul>
-<li><p>原子性（Atomicity）</p>
-<p>  一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样</p>
-</li>
-<li><p>一致性（Consistency）</p>
-<p>  在事务开始之前和事务结束以后，数据库的完整性没有被破坏。这表示写入的资料必须完全符合所有的预设规则，这包含资料的精确度、串联性以及后续数据库可以自发性地完成预定的工作。</p>
-</li>
-<li><p>隔离性（Isolation）</p>
-<p>  数据库允许多个并发事务同时对其数据进行读写和修改，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。</p>
-</li>
-<li><p>持久性（Durability）</p>
-<p>  事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失。</p>
-</li>
-</ul>
-<h2 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h2><pre><code>用来限定事务内外的哪些改变是可见的，哪些是不可见的。低级别的隔离级一般支持更高的并发处理，并拥有更低的系统开销。
+Given &quot;bbbbb&quot;, the answer is &quot;b&quot;, with the length of 1.
 
-隔离的简单定义：一个事务只能看见已经提交事务所做的改变。
+Given &quot;pwwkew&quot;, the answer is &quot;wke&quot;, with the length of 3. Note that the answer must be a substring, 
 
-解决问题：脏读、不可重复读、幻读
-</code></pre><ul>
-<li><p>读未提交（Read uncommitted）</p>
-<p>  所有事务都可以看到其他未提交事务的执行结果。</p>
-<p>  本隔离级别很少用于实际应用，因为它的性能也不比其他级别好多少。读取未提交的数据，也被称之为<font color="red">脏读（Dirty Read）</font></p>
-</li>
-<li><p>读提交（read committed）</p>
-<p>  <font color="red">大多数数据库系统的默认隔离级别</font>，满足了隔离的简单定义</p>
-<p>  支持<font color="blue" size="4">不可重复读（Nonrepeatable Read）</font>，因为<font color="blue" size="4">同一事务的其他实例在该实例</font>处理其间可能会有新的commit，所以同一select可能返回不同结果。</p>
-</li>
-<li><font color="blue" size="4">可重复读（repeatable read）</font>
-
-<p>  <font color="red">MySQL的默认事务隔离级别</font>，它确保<font color="blue" size="4">同一事务的多个实例</font>在并发读取数据时，会看到同样的数据行。</p>
-<p>  理论上，会导致<font color="blue" size="4"><strong>幻读（Phantom Read）</strong></font>：当用户读取某一范围的数据行时，<font color="blue" size="4">另一个事务</font>又在该范围内插入了新行，当用户再读取该范围的数据行时，会发现有新的“幻影” 行。InnoDB和Falcon存储引擎通过多版本并发控制（MVCC，Multiversion Concurrency Control）机制解决了该问题</p>
-</li>
-<li><p>串行化（Serializable）</p>
-<p>  最高的隔离级别，它通过强制事务排序，使之不可能相互冲突，从而解决幻读问题。</p>
-<p>  简言之，它是在每个读的数据行上加上共享锁。在这个级别，可能导致大量的超时现象和锁竞争。</p>
-</li>
-</ul>
-<h3 id="不可重复读和幻读比较"><a href="#不可重复读和幻读比较" class="headerlink" title="不可重复读和幻读比较"></a>不可重复读和幻读比较</h3><pre><code>不可重复读：在一个事务中不同时间段查询出现不同的结果，可能被更新可能被删除。
-
-幻读:在一个事务中不同时间段查询，记录数不同。
-    与不可重复读的区别是：在幻读中，已经读取的数据不会改变，只是与以前相比，会有更多的数据满足查询条件。
-</code></pre>  
+&quot;pwke&quot; is a subsequence and not a substring.
+</code></pre><h2 id="SourceCode"><a href="#SourceCode" class="headerlink" title="SourceCode:"></a>SourceCode:</h2><h3 id="s1"><a href="#s1" class="headerlink" title="s1"></a>s1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">//笔者提交版本；耗时：14ms；</div><div class="line">public class Solution &#123;</div><div class="line">    public int lengthOfLongestSubstring(String s) &#123;</div><div class="line">        int len = 0;</div><div class="line">        //边界控制</div><div class="line">        if(null == s||s.isEmpty()||&quot;&quot;.equals(s))&#123;</div><div class="line">            return len;</div><div class="line">        &#125;</div><div class="line">        if(1 == (len = s.length()))&#123;</div><div class="line">            return len;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //可以走到这里说明最少有一个子串，用result存放最大长度</div><div class="line">        int result = 1;</div><div class="line">        //用来存放最长子串</div><div class="line">        StringBuilder sb = new StringBuilder(len);</div><div class="line">        sb.append(s.charAt(0));</div><div class="line">        </div><div class="line">        //遍历s，与最长子串比较</div><div class="line">        for(int i = 1; i&lt;len ;i++)&#123;</div><div class="line">            char obj = s.charAt(i);</div><div class="line">            int sbLen = sb.length();</div><div class="line">            int j = sbLen-1;</div><div class="line">            //用obj 检查 最长子串中是否已存在 字符 obj，如果存在，那么此时的子串已经到头了，可以结束了</div><div class="line">            //我们要开始寻找下一个子串了，故需要把重复的字符obj和其之前的的字符都删除。</div><div class="line">            for(;j&gt;=0;j--)&#123;</div><div class="line">                if(obj == sb.charAt(j))&#123;</div><div class="line">                    sb.delete(0,j+1);</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            //刚遍历的字符obj 加入到sb中；</div><div class="line">            sb.append(obj);</div><div class="line">            sbLen = sb.length();</div><div class="line">            result = result &lt; sbLen ? sbLen : result;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="s2"><a href="#s2" class="headerlink" title="s2"></a>s2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//该版本参考了Discuss,还没看Discuss；耗时：ms；</div><div class="line">//待写</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/DB/">DB</a>
+  <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/DB/">DB</a>
+  <span></span> <a href="/tags/LeetCode/">LeetCode</a>
   </div>
 
 </div>
@@ -248,7 +152,7 @@ Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额�
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/07/24/关系数据库基本概念/" data-title="数据库基本概念 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/08/22/Longest Substring Without Repeating Characters(LeetCode)/" data-title="Longest Substring Without Repeating Characters(LeetCode) | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -262,18 +166,18 @@ Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额�
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/07/25/ThreeNums(LeetCode)/" title="ThreeNums(LeetCode)">
+ <a href="/2016/08/24/Longest Palindromic Substring(LeetCode)/" title="Longest Palindromic Substring(LeetCode)">
   <strong>上一篇：</strong><br/>
   <span>
-  ThreeNums(LeetCode)</span>
+  Longest Palindromic Substring(LeetCode)</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/07/23/细说UML核心模型/"  title="细说UML核心模型">
+<a href="/2016/08/22/String to Integer(LeetCode)/"  title="String to Integer(LeetCode)">
  <strong>下一篇：</strong><br/> 
- <span>细说UML核心模型
+ <span>String to Integer(LeetCode)
 </span>
 </a>
 </div>
@@ -282,7 +186,7 @@ Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额�
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/24/关系数据库基本概念/" data-title="数据库基本概念" data-url="https://utihbi.github.io/2016/07/24/关系数据库基本概念/"></div>
+	<div class="ds-thread" data-thread-key="2016/08/22/Longest Substring Without Repeating Characters(LeetCode)/" data-title="Longest Substring Without Repeating Characters(LeetCode)" data-url="https://utihbi.github.io/2016/08/22/Longest Substring Without Repeating Characters(LeetCode)/"></div>
 </section>
 
 
@@ -292,7 +196,7 @@ Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额�
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#范式"><span class="toc-number">1.</span> <span class="toc-text">范式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模式结构"><span class="toc-number">2.</span> <span class="toc-text">模式结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务"><span class="toc-number">3.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACID"><span class="toc-number">4.</span> <span class="toc-text">ACID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务隔离级别"><span class="toc-number">5.</span> <span class="toc-text">事务隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不可重复读和幻读比较"><span class="toc-number">5.1.</span> <span class="toc-text">不可重复读和幻读比较</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-Longest-Substring-Without-Repeating-Characters"><span class="toc-number">1.</span> <span class="toc-text">Question:Longest Substring Without Repeating Characters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SourceCode"><span class="toc-number">2.</span> <span class="toc-text">SourceCode:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#s1"><span class="toc-number">2.1.</span> <span class="toc-text">s1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#s2"><span class="toc-number">2.2.</span> <span class="toc-text">s2</span></a></li></ol></li></ol>
  
   </div>
 

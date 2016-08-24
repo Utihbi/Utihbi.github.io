@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-08-22T08:39:55.088Z</updated>
+  <updated>2016-08-24T13:42:49.518Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -16,17 +16,81 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Longest Palindromic Substring(LeetCode)</title>
+    <link href="https://utihbi.github.io/2016/08/24/Longest%20Palindromic%20Substring(LeetCode)/"/>
+    <id>https://utihbi.github.io/2016/08/24/Longest Palindromic Substring(LeetCode)/</id>
+    <published>2016-08-24T08:38:34.000Z</published>
+    <updated>2016-08-24T13:42:49.518Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Question-Longest-Palindromic-Substring&quot;&gt;&lt;a href=&quot;#Question-Longest-Palindromic-Substring&quot; class=&quot;headerlink&quot; title=&quot;Question:Longest Palindromic Substring&quot;&gt;&lt;/a&gt;Question:&lt;a href=&quot;https://leetcode.com/problems/longest-palindromic-substring/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Longest Palindromic Substring&lt;/a&gt;&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Given a string S, find the longest palindromic substring（最长回文子串） in S. 
+
+You may assume that the maximum length of S is 1000, and there exists one unique 
+
+longest palindromic substring.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;br&gt;    Make sure you understand what a palindrome means. A palindrome is a string which reads the same in both directions. &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;For example, &amp;quot;aba&amp;quot; is a palindome, &amp;quot;abc&amp;quot; is not.
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;SourceCode&quot;&gt;&lt;a href=&quot;#SourceCode&quot; class=&quot;headerlink&quot; title=&quot;SourceCode:&quot;&gt;&lt;/a&gt;SourceCode:&lt;/h2&gt;&lt;h3 id=&quot;s1&quot;&gt;&lt;a href=&quot;#s1&quot; class=&quot;headerlink&quot; title=&quot;s1&quot;&gt;&lt;/a&gt;s1&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;45&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;46&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;47&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;48&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;49&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;50&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;52&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;53&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;54&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;55&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;56&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;57&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;58&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;59&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;60&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;61&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;62&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;63&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;64&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;65&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;66&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;67&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;68&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;69&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;70&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;71&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;72&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;73&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;74&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;//笔者提交版本；耗时：75ms；&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;public class Solution &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    public String longestPalindrome(String s) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //1.边界控制&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if(null == s || s.isEmpty())&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            return &amp;quot;&amp;quot;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int len = s.length();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if(1 == len)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            return s;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //2.logic&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //2.1 构造形如“#a#a#” 的字符串&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int oriArrLen = len*2+1;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        StringBuilder oriArr = new StringBuilder(oriArrLen);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        for(int i = 0 ;i&amp;lt;len;i++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            oriArr.append(&amp;apos;#&amp;apos;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            oriArr.append(s.charAt(i));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        oriArr.append(&amp;apos;#&amp;apos;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //debug&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //System.out.println(oriArr);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int maxLen = 0;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int start = 0,end = 0;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //2.2从头开始遍历&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        for(int mid = 2;mid &amp;lt; oriArrLen; mid++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            //debug&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            //System.out.println(&amp;quot;mid&amp;quot;+mid);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            int curLen = 1;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            int i=mid-1,j=mid+1;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            for(;i&amp;gt;=0&amp;amp;&amp;amp;j&amp;lt;oriArrLen;i--,j++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                if(oriArr.charAt(i) == oriArr.charAt(j))&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    curLen += 2;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;#125;else&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    break;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            if(maxLen &amp;lt; curLen)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                maxLen = curLen;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                start = i+1;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                end = j-1;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //debug&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //System.out.println(start+&amp;quot; &amp;quot;+end);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if(oriArr.charAt(start)==&amp;apos;#&amp;apos;)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            start++;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            end--;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        StringBuilder result = new StringBuilder(len);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //debug&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //System.out.println(start+&amp;quot; &amp;quot;+end);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        for(int i = start;i&amp;lt;=end;i +=2)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            result.append(oriArr.charAt(i));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        return result.toString();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;s2&quot;&gt;&lt;a href=&quot;#s2&quot; class=&quot;headerlink&quot; title=&quot;s2&quot;&gt;&lt;/a&gt;s2&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;45&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;46&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;47&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;48&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;49&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;50&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;52&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;53&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;54&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;55&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;56&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;57&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;58&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;59&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;60&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;61&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;62&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;63&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;64&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;65&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;66&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;67&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;68&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;69&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;70&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;71&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;72&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;73&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;74&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;75&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;76&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;77&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;78&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;79&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;80&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;81&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;82&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;83&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;84&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;85&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;86&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;87&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;//该版本参考了Solution,采用DP；耗时：104ms；&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/*&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;To improve over the brute force solution, we first observe how we can avoid unnecessary re-computation while validating palindromes. &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Consider the case &amp;apos;&amp;apos;ababa&amp;apos;&amp;apos;. If we already knew that &amp;apos;&amp;apos;bab&amp;apos;&amp;apos; is a palindrome, it is obvious that &amp;apos;&amp;apos;ababa&amp;apos;&amp;apos; must be a palindrome &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;since the two left and right end letters are the same.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;We define P(i,j)P(i,j) as following:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;P(i,j)= | true,if the substring Si…Sj is a palindrome&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		| false,otherwise.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;P(i,j)=&amp;#123;true,if the substring Si…Sj is a palindrome;false,otherwise. &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	Therefore,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	P(i, j) = ( P(i+1, j-1) &amp;amp;&amp;amp; S_i == S_j )&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;The base cases are:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	P(i, i) = true P(i,i)=true&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	P(i, i+1) = ( S_i == S_&amp;#123;i+1&amp;#125; ) &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;This yields a straight forward DP solution, which we first initialize the one and two letters palindromes, and work our way up finding all three letters palindromes, and so on...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Complexity Analysis&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Time complexity : O(n^2)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Space complexity : O(n^2)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;*/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;public class Solution &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    public String longestPalindrome(String s) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //1.边界控制&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if(null == s || s.isEmpty())&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            return &amp;quot;&amp;quot;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int len = s.length();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if(1 == len)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            return s;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //2.logic&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //[i][j]代表从字符串位置i到j是否满足条件&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        boolean[][] dpTab = new boolean[len][len];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //int max = 1;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int start = 0,end =0;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        for(int i = 0 ;i&amp;lt;len;i++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            dpTab[i][i] = true;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            if(i!=len-1)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                dpTab[i][i+1] = s.charAt(i) == s.charAt(i+1);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                if(dpTab[i][i+1])&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    //max = 2;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    start = i;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    end = i+1;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //最长回文统计step为长度&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        for(int step=3 ; step &amp;lt;= len;step++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            //i &amp;lt; len-step+1 注意边界&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            for(int i = 0;i &amp;lt; len-step+1;i++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                int j = i+step-1;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                dpTab[i][j] = dpTab[i+1][j-1] &amp;amp;&amp;amp; (s.charAt(i) == s.charAt(j));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                if(dpTab[i][j])&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    //max = step;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    start = i;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    end = j;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        return s.substring(start,end+1);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Question-Longest-Palindromic-Substring&quot;&gt;&lt;a href=&quot;#Question-Longest-Palindromic-Substring&quot; class=&quot;headerlink&quot; title=&quot;Question:Longest
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://utihbi.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://utihbi.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Longest Substring Without Repeating Characters(LeetCode)</title>
+    <link href="https://utihbi.github.io/2016/08/22/Longest%20Substring%20Without%20Repeating%20Characters(LeetCode)/"/>
+    <id>https://utihbi.github.io/2016/08/22/Longest Substring Without Repeating Characters(LeetCode)/</id>
+    <published>2016-08-22T13:11:10.000Z</published>
+    <updated>2016-08-22T13:13:53.125Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Question-Longest-Substring-Without-Repeating-Characters&quot;&gt;&lt;a href=&quot;#Question-Longest-Substring-Without-Repeating-Characters&quot; class=&quot;headerlink&quot; title=&quot;Question:Longest Substring Without Repeating Characters&quot;&gt;&lt;/a&gt;Question:&lt;a href=&quot;https://leetcode.com/problems/longest-substring-without-repeating-characters/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Longest Substring Without Repeating Characters&lt;/a&gt;&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Given a string, find the length of the longest substring without repeating characters.
+
+Examples:
+
+Given &amp;quot;abcabcbb&amp;quot;, the answer is &amp;quot;abc&amp;quot;, which the length is 3.
+
+Given &amp;quot;bbbbb&amp;quot;, the answer is &amp;quot;b&amp;quot;, with the length of 1.
+
+Given &amp;quot;pwwkew&amp;quot;, the answer is &amp;quot;wke&amp;quot;, with the length of 3. Note that the answer must be a substring, 
+
+&amp;quot;pwke&amp;quot; is a subsequence and not a substring.
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;SourceCode&quot;&gt;&lt;a href=&quot;#SourceCode&quot; class=&quot;headerlink&quot; title=&quot;SourceCode:&quot;&gt;&lt;/a&gt;SourceCode:&lt;/h2&gt;&lt;h3 id=&quot;s1&quot;&gt;&lt;a href=&quot;#s1&quot; class=&quot;headerlink&quot; title=&quot;s1&quot;&gt;&lt;/a&gt;s1&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;//笔者提交版本；耗时：14ms；&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;public class Solution &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    public int lengthOfLongestSubstring(String s) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int len = 0;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //边界控制&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if(null == s||s.isEmpty()||&amp;quot;&amp;quot;.equals(s))&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            return len;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if(1 == (len = s.length()))&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            return len;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //可以走到这里说明最少有一个子串，用result存放最大长度&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int result = 1;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //用来存放最长子串&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        StringBuilder sb = new StringBuilder(len);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        sb.append(s.charAt(0));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        //遍历s，与最长子串比较&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        for(int i = 1; i&amp;lt;len ;i++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            char obj = s.charAt(i);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            int sbLen = sb.length();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            int j = sbLen-1;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            //用obj 检查 最长子串中是否已存在 字符 obj，如果存在，那么此时的子串已经到头了，可以结束了&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            //我们要开始寻找下一个子串了，故需要把重复的字符obj和其之前的的字符都删除。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            for(;j&amp;gt;=0;j--)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                if(obj == sb.charAt(j))&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    sb.delete(0,j+1);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    break;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            //刚遍历的字符obj 加入到sb中；&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            sb.append(obj);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            sbLen = sb.length();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            result = result &amp;lt; sbLen ? sbLen : result;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        return result;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;s2&quot;&gt;&lt;a href=&quot;#s2&quot; class=&quot;headerlink&quot; title=&quot;s2&quot;&gt;&lt;/a&gt;s2&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;//该版本参考了Discuss,还没看Discuss；耗时：ms；&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//待写&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Question-Longest-Substring-Without-Repeating-Characters&quot;&gt;&lt;a href=&quot;#Question-Longest-Substring-Without-Repeating-Characters&quot; class=&quot;h
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://utihbi.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://utihbi.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>String to Integer(LeetCode)</title>
     <link href="https://utihbi.github.io/2016/08/22/String%20to%20Integer(LeetCode)/"/>
     <id>https://utihbi.github.io/2016/08/22/String to Integer(LeetCode)/</id>
     <published>2016-08-22T08:39:40.000Z</published>
-    <updated>2016-08-22T08:39:55.088Z</updated>
+    <updated>2016-08-22T08:46:25.571Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Question-String-to-Integer&quot;&gt;&lt;a href=&quot;#Question-String-to-Integer&quot; class=&quot;headerlink&quot; title=&quot;Question:String to Integer&quot;&gt;&lt;/a&gt;Question:&lt;a href=&quot;https://leetcode.com/problems/string-to-integer-atoi/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;String to Integer&lt;/a&gt;&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Implement atoi to convert a string to an integer.
 
-Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below 
+Hint: Carefully consider all possible input cases. If you want a challenge, please 
 
-and ask yourself what are the possible input cases.
+do not see below and ask yourself what are the possible input cases.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible 
 
@@ -1141,255 +1205,6 @@ $描述子系统间导入依赖关系的图解。
     
     
       <category term="UML" scheme="https://utihbi.github.io/tags/UML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>细说UML核心元素</title>
-    <link href="https://utihbi.github.io/2016/07/20/%E7%BB%86%E8%AF%B4UML%E6%A0%B8%E5%BF%83%E5%85%83%E7%B4%A0/"/>
-    <id>https://utihbi.github.io/2016/07/20/细说UML核心元素/</id>
-    <published>2016-07-20T01:48:06.000Z</published>
-    <updated>2016-08-11T13:17:22.643Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;基本知识&quot;&gt;&lt;a href=&quot;#基本知识&quot; class=&quot;headerlink&quot; title=&quot;基本知识&quot;&gt;&lt;/a&gt;基本知识&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;功能性需求、非功能性需求&lt;/p&gt;
-&lt;p&gt;功能性需求：一定有参与者(主角)&lt;br&gt;非功能性需求：找不到参与者&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;涉众、参与者、用户&lt;/p&gt;
-&lt;p&gt;涉众：与要建设的这个系统有利益相关的一切人和事。&lt;/p&gt;
-&lt;p&gt;参与者是涉众的代表，用户是参与者的代表；&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;角色：&lt;/p&gt;
-&lt;p&gt;参与者的职责，从众多参与者职责中抽象出相同的那部分，将其命名。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;用例&quot;&gt;&lt;a href=&quot;#用例&quot; class=&quot;headerlink&quot; title=&quot;用例&quot;&gt;&lt;/a&gt;用例&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;特征：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;相对独立，即不需要与其他用例交互而独自完成参与者的目的；
-执行结果对参与者来说有意义，可观测。Eg：登陆系统&amp;lt;-&amp;gt;填写密码;
-参与者发起；
-动宾短语；
-一个用例就是一个需求单、分析单元、设计单元、开发单元、测试单元、部署单元。【用例驱动】
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;粒度：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;业务建模阶段：可以说明一件完整的 事情 为宜；
-用例分析阶段(概念建模阶段)：可以描述一个完整的 事件流 为宜。
-                        简言之，可以描述一个完整业务中的一个 步骤；
-系统建模阶段：因视角是针对计算机的，故能够描述操作者与计算机的一次交互为宜；
-              简言之，一个操作界面或一个页面流。
-&lt;/code&gt;&lt;/pre&gt;&lt;font color=&quot;red&quot;&gt;                      &lt;/font&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;用例和功能区别：&lt;br&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;用例：从人的角度；面向对象
-
-功能：从计算机角度；面向过程；其描述缺乏上下文环境，一些功能根本没有人会用到；
-
-对于不存在的事物，我们无法从结构和功能上描述，只能用使用者的观点来描述；
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;总结：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;功能是脱离使用者愿望而存在的；
-
-功能是孤立的，给一个输入，通过计算就有一固定的输出；用例是系统性的工作，即谁在什么情况下通过什么方式做什么，
-结果(愿望)是什么；
-
-用例可以看成是 一系列功能组合来完成一个特定的目标，针对不同场景，组合方式不同。
-
-Eg：电视
-          功能：能开关，能显示，能调频道，调声音；
-          用例：我要看电视节目，要完成这个愿望：
-                                          1、开电视；
-                                          2、调频道；
-                                          3、声音不合适，可以调声音；
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;业务用例：&quot;&gt;&lt;a href=&quot;#业务用例：&quot; class=&quot;headerlink&quot; title=&quot;业务用例：&quot;&gt;&lt;/a&gt;业务用例：&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;用于需求阶段的业务建模。(客户业务视角)&lt;h3 id=&quot;业务用例实现-业务用例实例-：&quot;&gt;&lt;a href=&quot;#业务用例实现-业务用例实例-：&quot; class=&quot;headerlink&quot; title=&quot;业务用例实现(业务用例实例)：&quot;&gt;&lt;/a&gt;业务用例实现(业务用例实例)：&lt;/h3&gt;&lt;/li&gt;
-&lt;li&gt;业务用例的一种实现方式。 类比于编程中类和接口的关系，同一个接口可以有多个实现类。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;概念用例：&quot;&gt;&lt;a href=&quot;#概念用例：&quot; class=&quot;headerlink&quot; title=&quot;概念用例：&quot;&gt;&lt;/a&gt;概念用例：&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;概念用例用来获取业务用例中的核心业务逻辑。&lt;/li&gt;
-&lt;li&gt;概念用例是业务用例到系统用例（即我们天天挂在嘴边的用例）过渡时非常重要的指导。&lt;h3 id=&quot;系统-用例：&quot;&gt;&lt;a href=&quot;#系统-用例：&quot; class=&quot;headerlink&quot; title=&quot;[系统]用例：&quot;&gt;&lt;/a&gt;[系统]用例：&lt;/h3&gt;&lt;/li&gt;
-&lt;li&gt;即我们天天挂在嘴边的用例;&lt;/li&gt;
-&lt;li&gt;用来定义系统范围，获取功能需求的；&lt;/li&gt;
-&lt;li&gt;简言之，软件系统开发的全部范围，我们得到的最终需求。(系统视角)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;系统-用例实现：&quot;&gt;&lt;a href=&quot;#系统-用例实现：&quot; class=&quot;headerlink&quot; title=&quot;[系统]用例实现：&quot;&gt;&lt;/a&gt;[系统]用例实现：&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;参照上面“业务用例实现”&lt;/li&gt;
-&lt;li&gt;连接起用例模型和系统实现之间的桥梁。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;业务实体&quot;&gt;&lt;a href=&quot;#业务实体&quot; class=&quot;headerlink&quot; title=&quot;业务实体&quot;&gt;&lt;/a&gt;业务实体&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;来自现实世界的；&lt;/li&gt;
-&lt;li&gt;业务用例场景中使用的事物；&lt;/li&gt;
-&lt;li&gt;类的版型，具有对象所有性质。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;业务实体属性：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;面向对象方法中抽象视角的体现
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;业务实体方法：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;面向对象方法中抽象视角的体现，
-简言之，属性，方法很多，我们只关心特殊场景(用例)下与这个场景直接关联的属性和方法。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;font color=&quot;red&quot;&gt;&lt;br&gt;&lt;strong&gt;简言之，参与者代表人，用例代表事，业务实例代表物；&lt;/strong&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&quot;包&quot;&gt;&lt;a href=&quot;#包&quot; class=&quot;headerlink&quot; title=&quot;包&quot;&gt;&lt;/a&gt;包&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;一种容器，如文件夹，将信息分类，形成逻辑单元。&lt;/li&gt;
-&lt;li&gt;可以容纳任何UML元素；&lt;br&gt;Eg:用例、业务实体、类图、子包；&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;分包的好(高内聚低耦合)坏(双向依赖和循环依赖)评判标准是包之间的依赖关系；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;包之间的关系也只有依赖关系；&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;领域包&quot;&gt;&lt;a href=&quot;#领域包&quot; class=&quot;headerlink&quot; title=&quot;领域包&quot;&gt;&lt;/a&gt;领域包&lt;/h3&gt;&lt;p&gt;分类业务领域内的业务单元，每个包代表一个领域&lt;/p&gt;
-&lt;h3 id=&quot;子系统&quot;&gt;&lt;a href=&quot;#子系统&quot; class=&quot;headerlink&quot; title=&quot;子系统&quot;&gt;&lt;/a&gt;子系统&lt;/h3&gt;&lt;p&gt;分类系统内逻辑对象并形成子系统&lt;/p&gt;
-&lt;h3 id=&quot;组织结构&quot;&gt;&lt;a href=&quot;#组织结构&quot; class=&quot;headerlink&quot; title=&quot;组织结构&quot;&gt;&lt;/a&gt;组织结构&lt;/h3&gt;&lt;p&gt;分类业务领域中组织结构&lt;/p&gt;
-&lt;h3 id=&quot;层&quot;&gt;&lt;a href=&quot;#层&quot; class=&quot;headerlink&quot; title=&quot;层&quot;&gt;&lt;/a&gt;层&lt;/h3&gt;&lt;p&gt;分类软件中的层次&lt;/p&gt;
-&lt;h2 id=&quot;分析类-架构角度&quot;&gt;&lt;a href=&quot;#分析类-架构角度&quot; class=&quot;headerlink&quot; title=&quot;分析类(架构角度)&quot;&gt;&lt;/a&gt;分析类(架构角度)&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;分析类代表系统中主要“职责簇”。简言之，是从功能性需求向计算机实现转化过程中的“第一个关口“&lt;/li&gt;
-&lt;li&gt;可以产生系统的设计类和子系统。简言之，系统可以通过某种途径“产生出来”，不是拍脑袋拍出来的。&lt;/li&gt;
-&lt;li&gt;简言之，跨越需求阶段到设计实现的桥梁。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;特点：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;高于设计实现：&lt;br&gt;不理会复杂的设计要求，Eg:设计模式、框架；&lt;/li&gt;
-&lt;li&gt;高于语言实现：&lt;br&gt;不理会编程语言；&lt;/li&gt;
-&lt;li&gt;高于实现方式：&lt;br&gt;不理会具体实现方式，Eg:安全认证，实现方式有：LDAP,CA,JAAC等。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;边界类&quot;&gt;&lt;a href=&quot;#边界类&quot; class=&quot;headerlink&quot; title=&quot;边界类&quot;&gt;&lt;/a&gt;边界类&lt;/h3&gt;&lt;p&gt;用于展现层(架构角度)&lt;/p&gt;
-&lt;h3 id=&quot;控制类&quot;&gt;&lt;a href=&quot;#控制类&quot; class=&quot;headerlink&quot; title=&quot;控制类&quot;&gt;&lt;/a&gt;控制类&lt;/h3&gt;&lt;p&gt;用于业务逻辑层(架构角度)&lt;/p&gt;
-&lt;h3 id=&quot;实体类&quot;&gt;&lt;a href=&quot;#实体类&quot; class=&quot;headerlink&quot; title=&quot;实体类&quot;&gt;&lt;/a&gt;实体类&lt;/h3&gt;&lt;p&gt;用于持久层(架构角度)&lt;/p&gt;
-&lt;h2 id=&quot;设计类&quot;&gt;&lt;a href=&quot;#设计类&quot; class=&quot;headerlink&quot; title=&quot;设计类&quot;&gt;&lt;/a&gt;设计类&lt;/h2&gt;&lt;p&gt;对应的对象取决于编程语言；&lt;br&gt;简言之，就是编程语言中具体的类；&lt;/p&gt;
-&lt;h2 id=&quot;关系&quot;&gt;&lt;a href=&quot;#关系&quot; class=&quot;headerlink&quot; title=&quot;关系&quot;&gt;&lt;/a&gt;关系&lt;/h2&gt;&lt;h3 id=&quot;关联&quot;&gt;&lt;a href=&quot;#关联&quot; class=&quot;headerlink&quot; title=&quot;关联&quot;&gt;&lt;/a&gt;关联&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;静态关系，由“常识”、“规则”、“法律”等因素决定&lt;/li&gt;
-&lt;li&gt;A————————B，双方都知道对方的存在&lt;/li&gt;
-&lt;li&gt;特别的，用例模型中，参与者——&amp;gt;用例&lt;/li&gt;
-&lt;li&gt;体现在代码里：实例变量(成员变量)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;依赖&quot;&gt;&lt;a href=&quot;#依赖&quot; class=&quot;headerlink&quot; title=&quot;依赖&quot;&gt;&lt;/a&gt;依赖&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;临时，动态关系&lt;/li&gt;
-&lt;li&gt;A- - - - -&amp;gt;B  (A依赖于B)&lt;/li&gt;
-&lt;li&gt;体现在代码里：类构造方法、类方法等的传入参数；&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;扩展&quot;&gt;&lt;a href=&quot;#扩展&quot; class=&quot;headerlink&quot; title=&quot;扩展&quot;&gt;&lt;/a&gt;扩展&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;A– – – – – – – - -&amp;gt;B  ( A扩展出B)&lt;/li&gt;
-&lt;li&gt;用于在用例中项目基本用例中的某个扩展点插入扩展用例；&lt;/li&gt;
-&lt;li&gt;可选；&lt;/li&gt;
-&lt;li&gt;特定条件下发生；&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;包含&quot;&gt;&lt;a href=&quot;#包含&quot; class=&quot;headerlink&quot; title=&quot;包含&quot;&gt;&lt;/a&gt;包含&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;&amp;lt;include&amp;gt;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;A– – — – – – – -&amp;gt;B  ( A包含B)&lt;/li&gt;
-&lt;li&gt;分解出两个或更多个用例共有的行为。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;扩展，包含区别：&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;* 扩展“可选”，包含“必须”；
-* 没有扩展用例，基本用例完整；
-* 没有包含用例，基本用例不完整；
-* 没有基本用例，扩展用例和包含用例均不能单独存在；
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; title=&quot;实现&quot;&gt;&lt;/a&gt;实现&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;A– – – – – –▷B (A实现B)&lt;/li&gt;
-&lt;li&gt;用例和用例实现间用这种关系；&lt;br&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/relizeRelationUml.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;精化&quot;&gt;&lt;a href=&quot;#精化&quot; class=&quot;headerlink&quot; title=&quot;精化&quot;&gt;&lt;/a&gt;精化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;&amp;lt;refine&amp;gt;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;A– – – – – – – –&amp;gt;B  ( A精化了B)&lt;/li&gt;
-&lt;li&gt;设计类精化了分析类&lt;/li&gt;
-&lt;li&gt;基本用例可以分解出许多更小的关键精化用例，这些精化用例更细致展现了基本用例的核心业务；&lt;br&gt;&lt;img src=&quot;http://oald9ve1g.bkt.clouddn.com/hexo/img/refineRelationUml.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;泛化&quot;&gt;&lt;a href=&quot;#泛化&quot; class=&quot;headerlink&quot; title=&quot;泛化&quot;&gt;&lt;/a&gt;泛化&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;A————————▷B  ( A继承了B)&lt;/li&gt;
-&lt;li&gt;建模过程中任意阶段均可使用；&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;精化、泛化区别：&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;* 精化表示由基本对象可以分解为更精确、精细的对象，这些子对象没有增加、减少、改变基本对象的行为和属性，只是更加细致和
-明确了；
-
-* 泛化表示由基本对象泛化的子对象继承了基本对象的所有特征，且可以增加、改变基本对象的行为和属性；
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;聚合&quot;&gt;&lt;a href=&quot;#聚合&quot; class=&quot;headerlink&quot; title=&quot;聚合&quot;&gt;&lt;/a&gt;聚合&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;A————————♢B  ( A聚合到B,B由A组成)&lt;/li&gt;
-&lt;li&gt;用于类图，特别表示实体对象间关系；&lt;/li&gt;
-&lt;li&gt;表达整体由部分构成&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;组合&quot;&gt;&lt;a href=&quot;#组合&quot; class=&quot;headerlink&quot; title=&quot;组合&quot;&gt;&lt;/a&gt;组合&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;A————————♦B  ( A组合成B，B由A构成)&lt;/li&gt;
-&lt;li&gt;用于类图，特别表示实体对象间关系；&lt;/li&gt;
-&lt;li&gt;表达整体拥有部分&lt;/li&gt;
-&lt;li&gt;特别强调：Rose中用   &amp;lt;——————◇   表示；&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;聚合、组合区别：&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;* 聚合：整体部分 “弱依赖”，整体不存在了，部分仍然存在；Eg:部门撤销后，人员依然存在；
-* 组合，整体部分 “强依赖”，整体不存在了，部分将消亡  ；Eg:母公司解体，子公司也破产；
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;组件&quot;&gt;&lt;a href=&quot;#组件&quot; class=&quot;headerlink&quot; title=&quot;组件&quot;&gt;&lt;/a&gt;组件&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;组件是系统中实际存在可更换的部分，它实现特定的功能，符合一套接口标准并实现一组接口;&lt;/li&gt;
-&lt;li&gt;代表系统中一部分物理实施，包括软件代码(源代码、二进制代码)或其等价物(脚本或命令文件);&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;特征&quot;&gt;&lt;a href=&quot;#特征&quot; class=&quot;headerlink&quot; title=&quot;特征&quot;&gt;&lt;/a&gt;特征&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;完备性&lt;/p&gt;
-&lt;p&gt;  包含的一些类和接口，一个组件能独立完成一项特定的业务目标；&lt;br&gt;  从调用者观点出发：不需调用多个组件来完成一个业务请求；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;独立性&lt;/p&gt;
-&lt;p&gt;  组件间是松耦合的；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;逻辑性&lt;/p&gt;
-&lt;p&gt;  从软件构件设计的观点来定义的，并非从需求中可直接导出；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;透明性&lt;/p&gt;
-&lt;p&gt;  组件的修改应当涉及组件的定义以及组件中包含类的重新指定，而不应该导致类的修改；&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;节点&quot;&gt;&lt;a href=&quot;#节点&quot; class=&quot;headerlink&quot; title=&quot;节点&quot;&gt;&lt;/a&gt;节点&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;至少有一个处理器、内存以及可能还带有其他设备的处理元素；&lt;/li&gt;
-&lt;li&gt;实际生活中，服务器、工作站、客户机都可以作为节点；&lt;/li&gt;
-&lt;li&gt;应用于部署视图&lt;/li&gt;
-&lt;li&gt;应用：分布式应用环境、多设备应用环境&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;参考资料：《Thinking in UML》(大象书)&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;基本知识&quot;&gt;&lt;a href=&quot;#基本知识&quot; class=&quot;headerlink&quot; title=&quot;基本知识&quot;&gt;&lt;/a&gt;基本知识&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;功能性需求、非功能性需求&lt;/p&gt;
-&lt;p&gt;功能性需求：一定有参与者(主角)&lt;br&gt;非功能性需求：找不到参与者
-    
-    </summary>
-    
-      <category term="UML" scheme="https://utihbi.github.io/categories/UML/"/>
-    
-    
-      <category term="UML" scheme="https://utihbi.github.io/tags/UML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>插入排序</title>
-    <link href="https://utihbi.github.io/2016/07/18/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
-    <id>https://utihbi.github.io/2016/07/18/插入排序/</id>
-    <published>2016-07-18T09:40:19.180Z</published>
-    <updated>2016-08-04T13:21:32.799Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;插入排序&quot;&gt;&lt;a href=&quot;#插入排序&quot; class=&quot;headerlink&quot; title=&quot;插入排序&quot;&gt;&lt;/a&gt;插入排序&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思想&lt;/strong&gt;：一堆数据，前面部分有序，后面无序；遍历无序的这部分数据，并在前面有序数据中寻找合适的位置插入，并将插入点后的数据后移，使插入后的前面数据仍然有序；&lt;br&gt;应用场景：适用于少量数据排序，是&lt;font color=&quot;red&quot;&gt;原址排序&lt;/font&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;原址排序：如果排序数组中仅有常数个元素需要在排序过程中存储在数组之外，则称排序算法是原址的。除了插入排序 ，还有堆排序和快排。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;直接插入排序&lt;/li&gt;
-&lt;li&gt;折半插入排序&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;情景     时间复杂度&lt;br&gt;  理想     O(n)&lt;br&gt;  最坏     O(n^2)&lt;/p&gt;
-&lt;p&gt;稳定排序&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;45&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;46&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;47&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;48&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;49&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;50&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;52&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;53&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//java code&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;insertSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] array)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; len = array.length;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; ;j&amp;lt;len;j++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; key = array[j];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;comment&quot;&gt;//比较一个，移动一个&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;( i &amp;gt;=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &amp;amp;&amp;amp; key&amp;lt;array[i])&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;			   &lt;span class=&quot;comment&quot;&gt;// key&amp;lt;array[i] &amp;amp;&amp;amp; i &amp;gt;=0  数组会越界抛异常&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;			   array[i+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = array[i--];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;comment&quot;&gt;//插入（当一个for或while循环按通常的方式[即由于循环头中的测试]退出时，执行测试的次数比执行循环体的次数多1，故插入点为array[i+1]）&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   array[i+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = key;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//比较次数减少，移动次数不变&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;binaryInsertSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] array)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; len = array.length;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; ; j&amp;lt;len; j++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; key = array[j];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;comment&quot;&gt;//location 是 key 刚好 &amp;gt;= value的地方&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; location = binarySearch(array,&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,i,key);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;comment&quot;&gt;//通过二分查找找到插入点，将插入点后数据整体移动；&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(;i&amp;gt;=location;i--)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;			   array[i+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = array[i];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		   array[i+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = key;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;binarySearch&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] array,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; start,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; end,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; obj)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; left = start;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; right = end;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; mid = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(left &amp;lt;= right)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   	    mid = (left + right )/&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   	   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(obj &amp;gt;= array[mid])&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            left = mid + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            right = mid - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; left;&lt;span class=&quot;comment&quot;&gt;//注意返回left，寻找的&amp;lt;=obj的位置；&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;插入排序&quot;&gt;&lt;a href=&quot;#插入排序&quot; class=&quot;headerlink&quot; title=&quot;插入排序&quot;&gt;&lt;/a&gt;插入排序&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思想&lt;/strong&gt;：一堆数据，前面部分有序，后面无序；遍历无序的这部分数据，并在前面有序数据中寻找合适的
-    
-    </summary>
-    
-      <category term="算法" scheme="https://utihbi.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="排序" scheme="https://utihbi.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
