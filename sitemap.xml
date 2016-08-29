@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://utihbi.github.io/2016/08/29/Memory%20Leak/</loc>
-    
-    <lastmod>2016-08-29T08:51:50.863Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://utihbi.github.io/2016/08/29/HashTable%20vs%20HashMap%20vs%20TreeMap/</loc>
     
-    <lastmod>2016-08-29T07:28:55.065Z</lastmod>
+    <lastmod>2016-08-29T09:29:34.702Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://utihbi.github.io/2016/08/29/How%20to%20initialize%20a%20staticimmutable%20Map/</loc>
     
-    <lastmod>2016-08-29T07:08:12.793Z</lastmod>
+    <lastmod>2016-08-29T09:28:36.878Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://utihbi.github.io/2016/08/29/Memory%20Leak/</loc>
+    
+    <lastmod>2016-08-29T08:51:50.863Z</lastmod>
     
   </url>
   

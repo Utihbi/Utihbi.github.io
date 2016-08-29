@@ -53,16 +53,21 @@
     <link href="https://utihbi.github.io/2016/08/29/HashTable%20vs%20HashMap%20vs%20TreeMap/"/>
     <id>https://utihbi.github.io/2016/08/29/HashTable vs HashMap vs TreeMap/</id>
     <published>2016-08-29T07:16:53.000Z</published>
-    <updated>2016-08-29T07:28:55.065Z</updated>
+    <updated>2016-08-29T09:29:34.702Z</updated>
     
-    <content type="html">&lt;pre&gt;&lt;code&gt;HashMap | HashTable | TreeMap
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;顺序         no        |    no        |    yes&lt;br&gt;null(k-v)   yes-yes    |    no-no    |    no—yes&lt;br&gt;同步        no        |    yes        |    no&lt;br&gt;效率        O(1)    |    O(1)    |    O(lgN)&lt;br&gt;实现方式    buckets    |    buckets    |    红黑树&lt;/p&gt;
-</content>
+    <content type="html">&lt;pre&gt;&lt;code&gt;        HashMap | HashTable | TreeMap
+顺序         no        |    no        |    yes
+null(k-v)   yes-yes    |    no-no    |    no—yes
+同步        no        |    yes        |    no
+效率        O(1)    |    O(1)    |    O(lgN)
+实现方式    buckets    |    buckets    |    红黑树
+&lt;/code&gt;&lt;/pre&gt;</content>
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code&gt;HashMap | HashTable | TreeMap
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;顺序         no        |    no        |    yes&lt;br&gt;null(k-v)   yes-yes    |    no-no  
+      &lt;pre&gt;&lt;code&gt;        HashMap | HashTable | TreeMap
+顺序         no        |    no        |    yes
+null(k-v)   yes-yes    |    no-no    |    no—y
     
     </summary>
     
@@ -78,16 +83,15 @@
     <link href="https://utihbi.github.io/2016/08/29/How%20to%20initialize%20a%20staticimmutable%20Map/"/>
     <id>https://utihbi.github.io/2016/08/29/How to initialize a staticimmutable Map/</id>
     <published>2016-08-29T03:25:34.000Z</published>
-    <updated>2016-08-29T07:08:12.793Z</updated>
+    <updated>2016-08-29T09:28:36.878Z</updated>
     
-    <content type="html">&lt;p&gt;初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,&lt;br&gt;然而事实是初始化过后，我们人然可以继续操作该map，比如&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;所以，这样的方法并没有真正的达到我们的要求。&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;//code 1&lt;br&gt;public class Test {&lt;br&gt;    private static final Map map;&lt;br&gt;    static {&lt;br&gt;        map = new HashMap();&lt;br&gt;        map.put(1, “one”);&lt;br&gt;        map.put(2, “two”);&lt;br&gt;    }&lt;br&gt;}&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;下面的代码在初始化最后用```Collections.unmodifiableMap()```来处理，如果此时试图添加元素会抛出&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;“UnsupportedOperationException”异常。&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;//code 2&lt;br&gt;public class Test {&lt;br&gt;    private static final Map map;&lt;br&gt;    static {&lt;br&gt;        Map aMap = new HashMap();&lt;br&gt;        aMap.put(1, “one”);&lt;br&gt;        aMap.put(2, “two”);&lt;br&gt;        map = Collections.unmodifiableMap(aMap);&lt;br&gt;    }&lt;br&gt;}&lt;br&gt;```&lt;/p&gt;
-</content>
+    <content type="html">&lt;p&gt;初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,&lt;br&gt;然而事实是初始化过后，我们人然可以继续操作该map，比如：Test.map.put(3,”Three”);&lt;br&gt;所以，这样的方法并没有真正的达到我们的要求。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;//code 1 &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;public class Test &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	private static final Map map;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	static &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		map = new HashMap();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		map.put(1, &amp;quot;one&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		map.put(2, &amp;quot;two&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;下面的代码在初始化最后用：Collections.unmodifiableMap() 来处理，如果此时试图添加元素会抛出&lt;br&gt;“UnsupportedOperationException”异常。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;//code 2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;public class Test &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	private static final Map map;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	static &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		Map aMap = new HashMap();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		aMap.put(1, &amp;quot;one&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		aMap.put(2, &amp;quot;two&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		map = Collections.unmodifiableMap(aMap);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
     
     <summary type="html">
     
-      &lt;p&gt;初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,&lt;br&gt;然而事实是初始化过后，我们人然可以继续操作该map，比如&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutte
+      &lt;p&gt;初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,&lt;br&gt;然而事实是初始化过后，我们人然可以继续操作该map，比如：Test.map.put(3,”Three”);&lt;br&gt;所以，这样的方法并没有真正的达到我们的要求。&lt;br&gt;&lt;fig
     
     </summary>
     

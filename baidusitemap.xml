@@ -4,28 +4,8 @@
 
     
   <url>
-    <loc>https://utihbi.github.io/2016/08/29/Memory%20Leak/</loc>
-    <lastmod>2016-08-29T08:51:50.863Z</lastmod>
-    <data>
-        <display>
-        <title>Memory Leaks</title>
-        <pubTime>2016-08-29T08:38:21.000Z</pubTime>
-        
-        <tag>JAVA</tag>
-         
-         
-           
-             
-              <breadCrumb title="JAVA" url="https://utihbi.github.io/categories/JAVA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://utihbi.github.io/2016/08/29/HashTable%20vs%20HashMap%20vs%20TreeMap/</loc>
-    <lastmod>2016-08-29T07:28:55.065Z</lastmod>
+    <lastmod>2016-08-29T09:29:34.702Z</lastmod>
     <data>
         <display>
         <title>HashTable vs HashMap vs TreeMap</title>
@@ -45,11 +25,31 @@
     
   <url>
     <loc>https://utihbi.github.io/2016/08/29/How%20to%20initialize%20a%20staticimmutable%20Map/</loc>
-    <lastmod>2016-08-29T07:08:12.793Z</lastmod>
+    <lastmod>2016-08-29T09:28:36.878Z</lastmod>
     <data>
         <display>
         <title>怎样初始化得到一不可变map？</title>
         <pubTime>2016-08-29T03:25:34.000Z</pubTime>
+        
+        <tag>JAVA</tag>
+         
+         
+           
+             
+              <breadCrumb title="JAVA" url="https://utihbi.github.io/categories/JAVA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://utihbi.github.io/2016/08/29/Memory%20Leak/</loc>
+    <lastmod>2016-08-29T08:51:50.863Z</lastmod>
+    <data>
+        <display>
+        <title>Memory Leaks</title>
+        <pubTime>2016-08-29T08:38:21.000Z</pubTime>
         
         <tag>JAVA</tag>
          

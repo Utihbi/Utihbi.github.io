@@ -110,7 +110,9 @@
     
      
            <p itemprop="description" >HashMap | HashTable | TreeMap
-顺序         no        |    no        |    yesnull(k-v)   yes-yes    |    no-no    |    no—yes同步        no      </p>
+顺序         no        |    no        |    yes
+null(k-v)   yes-yes    |    no-no    |    no—yes
+同步        no    </p>
         
     
     <time datetime="2016-08-29T07:16:53.000Z" itemprop="datePublished">2016-08-29</time>
@@ -130,8 +132,7 @@
     <h1 itemprop="name">怎样初始化得到一不可变map？</h1>
     
      
-           <p itemprop="description" >初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,然而事实是初始化过后，我们人然可以继续操作该map，比如1所以，这样的方法并没有真正的达到我们的要求。
-//code 1public class Test {    private sta</p>
+           <p itemprop="description" >初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,然而事实是初始化过后，我们人然可以继续操作该map，比如：Test.map.put(3,”Three”);所以，这样的方法并没有真正的达到我们的要求。123456789//code 1 p</p>
         
     
     <time datetime="2016-08-29T03:25:34.000Z" itemprop="datePublished">2016-08-29</time>
