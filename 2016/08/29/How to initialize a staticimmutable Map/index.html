@@ -4,44 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>快速排序 | 菜鸟生活</title>
+    <title>怎样初始化得到一不可变map？ | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="快速排序思想：分治思想：
-- 分解：数组A[p..r]被划分为两个(可能为空)子数组A[p..q-1]和A[q+1..r]，使得A[p..q-1]中的每一个元素都 &amp;lt;=A[q]，
-
-        而A[q+1..r]中的每一个元素都都 &amp;gt;=A[q]。其中，计算下标q 也是划分过程的一部分。
-
-- 解决：通过递归调用，对子数组A[p..q-1]和A[q+1..r]进行排序。
-
-- 合并">
+    <meta name="description" content="初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,然而事实是初始化过后，我们人然可以继续操作该map，比如1所以，这样的方法并没有真正的达到我们的要求。
+//code 1public class Test {    private static final Map map;    static {        map = new HashMap();">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速排序">
-<meta property="og:url" content="https://utihbi.github.io/2016/08/04/快速排序 /index.html">
+<meta property="og:title" content="怎样初始化得到一不可变map？">
+<meta property="og:url" content="https://utihbi.github.io/2016/08/29/How to initialize a staticimmutable Map/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="快速排序思想：分治思想：
-- 分解：数组A[p..r]被划分为两个(可能为空)子数组A[p..q-1]和A[q+1..r]，使得A[p..q-1]中的每一个元素都 &amp;lt;=A[q]，
-
-        而A[q+1..r]中的每一个元素都都 &amp;gt;=A[q]。其中，计算下标q 也是划分过程的一部分。
-
-- 解决：通过递归调用，对子数组A[p..q-1]和A[q+1..r]进行排序。
-
-- 合并">
-<meta property="og:updated_time" content="2016-08-04T14:08:45.754Z">
+<meta property="og:description" content="初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,然而事实是初始化过后，我们人然可以继续操作该map，比如1所以，这样的方法并没有真正的达到我们的要求。
+//code 1public class Test {    private static final Map map;    static {        map = new HashMap();">
+<meta property="og:updated_time" content="2016-08-29T07:08:12.793Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快速排序">
-<meta name="twitter:description" content="快速排序思想：分治思想：
-- 分解：数组A[p..r]被划分为两个(可能为空)子数组A[p..q-1]和A[q+1..r]，使得A[p..q-1]中的每一个元素都 &amp;lt;=A[q]，
-
-        而A[q+1..r]中的每一个元素都都 &amp;gt;=A[q]。其中，计算下标q 也是划分过程的一部分。
-
-- 解决：通过递归调用，对子数组A[p..q-1]和A[q+1..r]进行排序。
-
-- 合并">
+<meta name="twitter:title" content="怎样初始化得到一不可变map？">
+<meta name="twitter:description" content="初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,然而事实是初始化过后，我们人然可以继续操作该map，比如1所以，这样的方法并没有真正的达到我们的要求。
+//code 1public class Test {    private static final Map map;    static {        map = new HashMap();">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -107,14 +89,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/08/04/快速排序 /" title="快速排序" itemprop="url">快速排序</a>
+      <a href="/2016/08/29/How to initialize a staticimmutable Map/" title="怎样初始化得到一不可变map？" itemprop="url">怎样初始化得到一不可变map？</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-04T11:58:13.463Z" itemprop="datePublished"> 发表于 2016-08-04</time>
+    <time datetime="2016-08-29T03:25:34.000Z" itemprop="datePublished"> 发表于 2016-08-29</time>
     
   </p>
 </header>
@@ -123,37 +105,27 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#快速排序"><span class="toc-number">1.</span> <span class="toc-text">快速排序</span></a></li></ol>
+			
 		
 		</div>
 		
-		<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p><strong>思想</strong>：分治思想：</p>
-<pre><code>- 分解：数组A[p..r]被划分为两个(可能为空)子数组A[p..q-1]和A[q+1..r]，使得A[p..q-1]中的每一个元素都 &lt;=A[q]，
-
-        而A[q+1..r]中的每一个元素都都 &gt;=A[q]。其中，计算下标q 也是划分过程的一部分。
-
-- 解决：通过递归调用，对子数组A[p..q-1]和A[q+1..r]进行排序。
-
-- 合并：子数组是原址排序的，所有不需要合并操作：数组A[p..r]已经有序。
-</code></pre><p>应用场景：适用于大量数据排序，是<font color="red">原址排序</font>。譬如找一堆数据的第K大(小)元素。</p>
-<blockquote>
-<p>情景     时间复杂度    备注<br>  理想     O(nlgn)        <font color="green">划分平衡(划分是常数比例的)</font><br>  最坏     O(n^2)        划分非平衡</p>
-<p>不稳定排序</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//java code</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] array,<span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span>&#123;</div><div class="line">	   <span class="keyword">if</span>(start &lt; end)&#123;</div><div class="line">			<span class="comment">//r位置元素是最终元素的位置；</span></div><div class="line">			<span class="keyword">int</span> r = partition(array,start,end);</div><div class="line">			quickSort(array,start,r-<span class="number">1</span>);</div><div class="line">			quickSort(array,r+<span class="number">1</span>,end);</div><div class="line">	   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//实现对A[p..r]原址排序</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] array,<span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span>&#123;</div><div class="line">	   <span class="comment">//选一个基准元素作为比较的元素，为方便，我们选最后一个元素；</span></div><div class="line">	   <span class="keyword">int</span> x = array[end];</div><div class="line">	   </div><div class="line">	   <span class="comment">/*</span></div><div class="line">	   * 将数组划分为3段：</div><div class="line">	   * start~i：元素 &lt;= x;</div><div class="line">	   * i~j: 元素 &gt; x;</div><div class="line">	   * j~end：待处理的元素</div><div class="line">	   */</div><div class="line">	   <span class="keyword">int</span> i = start - <span class="number">1</span>;</div><div class="line">	   <span class="keyword">for</span>(<span class="keyword">int</span> j = start; j &lt; end; j++)&#123;</div><div class="line">			<span class="keyword">if</span>(array[j] &lt;= x)&#123;</div><div class="line">				swap(array,++i,j);</div><div class="line">			&#125;</div><div class="line">	   &#125;</div><div class="line">	   </div><div class="line">	   <span class="comment">//将基准元素放到自己的位置上；</span></div><div class="line">	   swap(array,++i,end);</div><div class="line">	   </div><div class="line">	   <span class="keyword">return</span> i;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] array,<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</div><div class="line">		<span class="comment">//异或交换注意 i！= j;否则 自己异或 将使结果为 0</span></div><div class="line">		<span class="keyword">if</span>(i == j)&#123;<span class="keyword">return</span>;&#125;</div><div class="line"></div><div class="line">		array[i] ^= array[j];</div><div class="line">		array[j] ^= array[i];</div><div class="line">		array[i] ^= array[j];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">	  <span class="keyword">int</span>[] array  = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">2</span>,<span class="number">8</span>,<span class="number">45</span>,<span class="number">0</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">99</span>&#125;;</div><div class="line">	  quickSort(array,<span class="number">0</span>,array.length-<span class="number">1</span>);</div><div class="line">	  </div><div class="line">	  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i&lt;array.length ;i++)&#123;</div><div class="line">		  System.out.println(array[i]);</div><div class="line">	  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<p>初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,<br>然而事实是初始化过后，我们人然可以继续操作该map，比如<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">所以，这样的方法并没有真正的达到我们的要求。</div></pre></td></tr></table></figure></p>
+<p>//code 1<br>public class Test {<br>    private static final Map map;<br>    static {<br>        map = new HashMap();<br>        map.put(1, “one”);<br>        map.put(2, “two”);<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">下面的代码在初始化最后用```Collections.unmodifiableMap()```来处理，如果此时试图添加元素会抛出</div><div class="line">“UnsupportedOperationException”异常。</div></pre></td></tr></table></figure></p>
+<p>//code 2<br>public class Test {<br>    private static final Map map;<br>    static {<br>        Map aMap = new HashMap();<br>        aMap.put(1, “one”);<br>        aMap.put(2, “two”);<br>        map = Collections.unmodifiableMap(aMap);<br>    }<br>}<br>```</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/算法/">算法</a>
+  <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/排序/">排序</a>
+  <span></span> <a href="/tags/JAVA/">JAVA</a>
   </div>
 
 </div>
@@ -162,7 +134,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/08/04/快速排序 /" data-title="快速排序 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/08/29/How to initialize a staticimmutable Map/" data-title="怎样初始化得到一不可变map？ | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -176,18 +148,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/08/06/Java获取Class类型引用的比较/" title="Java获取Class类型引用的比较">
+ <a href="/2016/08/29/HashTable vs HashMap vs TreeMap/" title="HashTable vs HashMap vs TreeMap">
   <strong>上一篇：</strong><br/>
   <span>
-  Java获取Class类型引用的比较</span>
+  HashTable vs HashMap vs TreeMap</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/07/29/IOException的正确处理方式/"  title="IOException的正确处理方式">
+<a href="/2016/08/28/questions of Java Strings/"  title="questions of Java Strings">
  <strong>下一篇：</strong><br/> 
- <span>IOException的正确处理方式
+ <span>questions of Java Strings
 </span>
 </a>
 </div>
@@ -196,7 +168,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/08/04/快速排序 /" data-title="快速排序" data-url="https://utihbi.github.io/2016/08/04/快速排序 /"></div>
+	<div class="ds-thread" data-thread-key="2016/08/29/How to initialize a staticimmutable Map/" data-title="怎样初始化得到一不可变map？" data-url="https://utihbi.github.io/2016/08/29/How to initialize a staticimmutable Map/"></div>
 </section>
 
 
@@ -206,7 +178,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#快速排序"><span class="toc-number">1.</span> <span class="toc-text">快速排序</span></a></li></ol>
+ 
  
   </div>
 
