@@ -4,38 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Memory Leaks | 菜鸟生活</title>
+    <title>Main()如何启动的？ | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="什么是内存泄露？一些对象不再被应用程序使用了，但是GC却不能回收它们，因为还有引用指向它们。
-为啥会发生？当生命周期长的对象(假设叫A)持有一个生命周期短的对象(假设叫B)引用，B没有用时却不能被及时销毁。
-如何避免？
-注意集合类的使用：HashMap, ArrayList等。当它们被申明为static时，它们的生命周期和应用程序一样长。
-
-注意事件监听和回调。当监听器被注册后，没有用时却没有注销">
+    <meta name="description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Memory Leaks">
-<meta property="og:url" content="https://utihbi.github.io/2016/08/29/Memory Leak/index.html">
+<meta property="og:title" content="Main()如何启动的？">
+<meta property="og:url" content="https://utihbi.github.io/2016/08/30/Main()如何启动的？/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="什么是内存泄露？一些对象不再被应用程序使用了，但是GC却不能回收它们，因为还有引用指向它们。
-为啥会发生？当生命周期长的对象(假设叫A)持有一个生命周期短的对象(假设叫B)引用，B没有用时却不能被及时销毁。
-如何避免？
-注意集合类的使用：HashMap, ArrayList等。当它们被申明为static时，它们的生命周期和应用程序一样长。
-
-注意事件监听和回调。当监听器被注册后，没有用时却没有注销">
-<meta property="og:updated_time" content="2016-08-29T08:51:50.863Z">
+<meta property="og:description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
+<meta property="og:updated_time" content="2016-08-30T08:48:00.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Memory Leaks">
-<meta name="twitter:description" content="什么是内存泄露？一些对象不再被应用程序使用了，但是GC却不能回收它们，因为还有引用指向它们。
-为啥会发生？当生命周期长的对象(假设叫A)持有一个生命周期短的对象(假设叫B)引用，B没有用时却不能被及时销毁。
-如何避免？
-注意集合类的使用：HashMap, ArrayList等。当它们被申明为static时，它们的生命周期和应用程序一样长。
-
-注意事件监听和回调。当监听器被注册后，没有用时却没有注销">
+<meta name="twitter:title" content="Main()如何启动的？">
+<meta name="twitter:description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -101,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/08/29/Memory Leak/" title="Memory Leaks" itemprop="url">Memory Leaks</a>
+      <a href="/2016/08/30/Main()如何启动的？/" title="Main()如何启动的？" itemprop="url">Main()如何启动的？</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-29T08:38:21.000Z" itemprop="datePublished"> 发表于 2016-08-29</time>
+    <time datetime="2016-08-30T08:18:03.000Z" itemprop="datePublished"> 发表于 2016-08-30</time>
     
   </p>
 </header>
@@ -117,21 +102,40 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是内存泄露？"><span class="toc-number">1.</span> <span class="toc-text">什么是内存泄露？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为啥会发生？"><span class="toc-number">2.</span> <span class="toc-text">为啥会发生？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何避免？"><span class="toc-number">3.</span> <span class="toc-text">如何避免？</span></a></li></ol>
+			
 		
 		</div>
 		
-		<h2 id="什么是内存泄露？"><a href="#什么是内存泄露？" class="headerlink" title="什么是内存泄露？"></a>什么是内存泄露？</h2><p>一些对象不再被应用程序使用了，但是GC却不能回收它们，因为还有引用指向它们。</p>
-<h2 id="为啥会发生？"><a href="#为啥会发生？" class="headerlink" title="为啥会发生？"></a>为啥会发生？</h2><p>当生命周期长的对象(假设叫A)持有一个生命周期短的对象(假设叫B)引用，B没有用时却不能被及时销毁。</p>
-<h2 id="如何避免？"><a href="#如何避免？" class="headerlink" title="如何避免？"></a>如何避免？</h2><ul>
-<li><p>注意集合类的使用：HashMap, ArrayList等。当它们被申明为static时，它们的生命周期和应用程序一样长。</p>
-</li>
-<li><p>注意事件监听和回调。当监听器被注册后，没有用时却没有注销监听器，导致监听器一直存在。</p>
-</li>
-<li><p>类自己管理内存时，编程者要有内存泄露意识。一个对象的成员变量指向其他对象的引用要置null。</p>
-</li>
-</ul>
-  
+		<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class HelloWorld &#123;</div><div class="line">	/**</div><div class="line">	* @param args</div><div class="line">	*/</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line">		System.out.println(&quot;Hello World&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>main()方法被触发前，JVM需要做以下一些事情：
+
+* load
+* link
+* initialize the class
+
+load： 把对应类字节码加载进JVM中；
+link： 链接包含所需的二进制类型的数据以便JVM使用。该环节包含3步：
+
+    1. verification
+        确保类(接口)结构类型正确；
+    2. preparation
+        涉及类(接口)的内存分配；
+    3. optional resolution
+        解决符号引用；
+
+initialize the class：类中成员变量初始化；
+
+加载工作是有类加载器来完成的。当JVM启动时，3个类加载器被使用：
+* 启动类(Bootstrap class loader):加载java核心类库，即位于 /jre/lib 下的类。它们JVM的核心部分，用本地代码编写的。
+* 扩展类(Extensions class loader)：加载在扩展目录下的类。Eg:/jre/lib/ext
+* 系统类(System class loader)：加载 CLASSPATH 下的类。
+
+
+
+因此，HelloWorld类将被系统类加载器来加载。当main()方法被执行时，它将触发它所依赖的那些类的load、link和initialize。
+之后，main()栈帧被push进JVM栈中。PC(program counter) 根据情况设置。将 println()栈帧push进JVM栈中，当执行完成后，JVM栈将
+依次POP。
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -153,7 +157,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/08/29/Memory Leak/" data-title="Memory Leaks | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/08/30/Main()如何启动的？/" data-title="Main()如何启动的？ | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -166,19 +170,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/08/30/Main()如何启动的？/" title="Main()如何启动的？">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Main()如何启动的？</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/08/29/HashTable vs HashMap vs TreeMap/"  title="HashTable vs HashMap vs TreeMap">
+<a href="/2016/08/29/Memory Leak/"  title="Memory Leaks">
  <strong>下一篇：</strong><br/> 
- <span>HashTable vs HashMap vs TreeMap
+ <span>Memory Leaks
 </span>
 </a>
 </div>
@@ -187,7 +183,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/08/29/Memory Leak/" data-title="Memory Leaks" data-url="https://utihbi.github.io/2016/08/29/Memory Leak/"></div>
+	<div class="ds-thread" data-thread-key="2016/08/30/Main()如何启动的？/" data-title="Main()如何启动的？" data-url="https://utihbi.github.io/2016/08/30/Main()如何启动的？/"></div>
 </section>
 
 
@@ -197,7 +193,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是内存泄露？"><span class="toc-number">1.</span> <span class="toc-text">什么是内存泄露？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为啥会发生？"><span class="toc-number">2.</span> <span class="toc-text">为啥会发生？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何避免？"><span class="toc-number">3.</span> <span class="toc-text">如何避免？</span></a></li></ol>
+ 
  
   </div>
 

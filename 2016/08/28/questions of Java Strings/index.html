@@ -11,25 +11,19 @@
     
 
     
-    <meta name="description" content="Can we use string for switch statement?
-
-Yes to version 7. From JDK 7, we can use string as switch condition. Before version 6, we can not use string as switch condition.
-123456789// java 7 only!swit">
+    <meta name="description" content="Can we use string for switch statement?Yes to version 7. From JDK 7, we can use string as switch condition. Before version 6, we can not use string as switch condition.
+123456789// java 7 only!switch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="questions of Java Strings">
 <meta property="og:url" content="https://utihbi.github.io/2016/08/28/questions of Java Strings/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="Can we use string for switch statement?
-
-Yes to version 7. From JDK 7, we can use string as switch condition. Before version 6, we can not use string as switch condition.
-123456789// java 7 only!swit">
-<meta property="og:updated_time" content="2016-08-28T09:36:15.631Z">
+<meta property="og:description" content="Can we use string for switch statement?Yes to version 7. From JDK 7, we can use string as switch condition. Before version 6, we can not use string as switch condition.
+123456789// java 7 only!switch">
+<meta property="og:updated_time" content="2016-08-30T09:10:46.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="questions of Java Strings">
-<meta name="twitter:description" content="Can we use string for switch statement?
-
-Yes to version 7. From JDK 7, we can use string as switch condition. Before version 6, we can not use string as switch condition.
-123456789// java 7 only!swit">
+<meta name="twitter:description" content="Can we use string for switch statement?Yes to version 7. From JDK 7, we can use string as switch condition. Before version 6, we can not use string as switch condition.
+123456789// java 7 only!switch">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -116,37 +110,31 @@ Yes to version 7. From JDK 7, we can use string as switch condition. Before vers
 		</div>
 		
 		<ol>
-<li>Can we use string for switch statement?</li>
-</ol>
-<p>Yes to version 7. From JDK 7, we can use string as switch condition. Before version 6, we can not use string as switch condition.</p>
+<li><p>Can we use string for switch statement?<br>Yes to version 7. From JDK 7, we can use string as switch condition. Before version 6, we can not use string as switch condition.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// java 7 only!</div><div class="line">switch (str.toLowerCase()) &#123;</div><div class="line">      case &quot;a&quot;:</div><div class="line">           value = 1;</div><div class="line">           break;</div><div class="line">      case &quot;b&quot;:</div><div class="line">           value = 2;</div><div class="line">           break;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
+</li>
 <li><p>How to split a string with white space characters?</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String[] strArray = aString.split(&quot;\\s+&quot;);</div></pre></td></tr></table></figure>
 </li>
 <li><p>What substring() method really does?<br>In JDK 6, the substring() method gives a window to an array of chars which represents the existing String, but do not create a new one. To create a new string represented by a new char array, you can do add an empty string like the following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str.substring(m, n) + &quot;&quot;</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str.substring(m, n) + &quot;&quot;</div></pre></td></tr></table></figure>
 <p>This will create a new char array that represents the new string. The above approach sometimes can make your code faster, because Garbage Collector can collect the unused large string and keep only the sub string.</p>
 <p>In Oracle JDK 7, substring() creates a new char array, not uses the existing one. </p>
 <ol>
-<li>How to repeat a string?</li>
-</ol>
-<p>we can use the repeat() method of StringUtils from Apache Commons Lang package.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">String str = &quot;abcd&quot;;</div><div class="line">String repeated = StringUtils.repeat(str,3);</div><div class="line">//abcdabcdabcd</div></pre></td></tr></table></figure></p>
-<ol>
+<li><p>How to repeat a string?<br>we can use the repeat() method of StringUtils from Apache Commons Lang package.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">String str = &quot;abcd&quot;;</div><div class="line">String repeated = StringUtils.repeat(str,3);</div><div class="line">//abcdabcdabcd</div></pre></td></tr></table></figure>
+</li>
 <li><p>How to convert string to date?</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">String str = &quot;Sep 17, 2013&quot;;</div><div class="line">Date date = new SimpleDateFormat(&quot;MMMM d, yy&quot;, Locale.ENGLISH).parse(str);</div><div class="line">System.out.println(date);</div><div class="line">//Tue Sep 17 00:00:00 EDT 2013</div></pre></td></tr></table></figure>
 </li>
-<li><p>How to count # of occurrences of a character in a string?</p>
+<li><p>How to count ‘#’ of occurrences of a character in a string?<br>Use StringUtils from apache commons lang.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int n = StringUtils.countMatches(&quot;11112222&quot;, &quot;1&quot;);</div><div class="line">System.out.println(n);</div></pre></td></tr></table></figure>
+</li>
+<li><p>How to detect if a string contains only uppercase letter?<br>Use java.lang.Character<br>isUpperCase() and isLetter() ;</p>
 </li>
 </ol>
-<p>Use StringUtils from apache commons lang.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int n = StringUtils.countMatches(&quot;11112222&quot;, &quot;1&quot;);</div><div class="line">System.out.println(n);</div></pre></td></tr></table></figure>
-<ol>
-<li>How to detect if a string contains only uppercase letter?</li>
-</ol>
-<p>Use java.lang.Character<br>isUpperCase() and isLetter() ;</p>
   
 	</div>
 		<footer class="article-footer clearfix">
