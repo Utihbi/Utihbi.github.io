@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-08-30T08:48:00.469Z</updated>
+  <updated>2016-08-30T12:26:26.638Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -20,38 +20,31 @@
     <link href="https://utihbi.github.io/2016/08/30/Main()%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E7%9A%84%EF%BC%9F/"/>
     <id>https://utihbi.github.io/2016/08/30/Main()如何启动的？/</id>
     <published>2016-08-30T08:18:03.000Z</published>
-    <updated>2016-08-30T08:48:00.469Z</updated>
+    <updated>2016-08-30T12:26:26.638Z</updated>
     
     <content type="html">&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;public class HelloWorld &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	/**&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	* @param args&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	*/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	public static void main(String[] args) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		// TODO Auto-generated method stub&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		System.out.println(&amp;quot;Hello World&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;pre&gt;&lt;code&gt;main()方法被触发前，JVM需要做以下一些事情：
-
-* load
-* link
-* initialize the class
-
-load： 把对应类字节码加载进JVM中；
-link： 链接包含所需的二进制类型的数据以便JVM使用。该环节包含3步：
-
-    1. verification
-        确保类(接口)结构类型正确；
-    2. preparation
-        涉及类(接口)的内存分配；
-    3. optional resolution
-        解决符号引用；
-
-initialize the class：类中成员变量初始化；
-
-加载工作是有类加载器来完成的。当JVM启动时，3个类加载器被使用：
-* 启动类(Bootstrap class loader):加载java核心类库，即位于 /jre/lib 下的类。它们JVM的核心部分，用本地代码编写的。
-* 扩展类(Extensions class loader)：加载在扩展目录下的类。Eg:/jre/lib/ext
-* 系统类(System class loader)：加载 CLASSPATH 下的类。
-
-
-
-因此，HelloWorld类将被系统类加载器来加载。当main()方法被执行时，它将触发它所依赖的那些类的load、link和initialize。
-之后，main()栈帧被push进JVM栈中。PC(program counter) 根据情况设置。将 println()栈帧push进JVM栈中，当执行完成后，JVM栈将
-依次POP。
-&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;p&gt;main()方法被触发前，JVM需要做以下一些事情：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;load&lt;/li&gt;
+&lt;li&gt;link&lt;/li&gt;
+&lt;li&gt;initialize the class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;load： 把对应类字节码加载进JVM中；&lt;br&gt;link： 链接包含所需的二进制类型的数据以便JVM使用。该环节包含3步：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1. verification
+    确保类(接口)结构类型正确；
+2. preparation
+    涉及类(接口)的内存分配；
+3. optional resolution
+    解决符号引用；
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;initialize the class：类中成员变量初始化；&lt;/p&gt;
+&lt;p&gt;加载工作是有类加载器来完成的。当JVM启动时，3个类加载器被使用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;启动类(Bootstrap class loader):加载java核心类库，即位于 /jre/lib 下的类。它们JVM的核心部分，用本地代码编写的。&lt;/li&gt;
+&lt;li&gt;扩展类(Extensions class loader)：加载在扩展目录下的类。Eg:/jre/lib/ext&lt;/li&gt;
+&lt;li&gt;系统类(System class loader)：加载 CLASSPATH 下的类。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，HelloWorld类将被系统类加载器来加载。当main()方法被执行时，它将触发它所依赖的那些类的load、link和initialize。&lt;br&gt;之后，main()栈帧被push进JVM栈中。PC(program counter) 根据情况设置。将 println()栈帧push进JVM栈中，当执行完成后，JVM栈将&lt;br&gt;依次POP。&lt;/p&gt;
+</content>
     
     <summary type="html">
     

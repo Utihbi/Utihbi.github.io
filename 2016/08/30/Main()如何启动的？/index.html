@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://utihbi.github.io/2016/08/30/Main()如何启动的？/index.html">
 <meta property="og:site_name" content="菜鸟生活">
 <meta property="og:description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
-<meta property="og:updated_time" content="2016-08-30T08:48:00.469Z">
+<meta property="og:updated_time" content="2016-08-30T12:26:26.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Main()如何启动的？">
 <meta name="twitter:description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
@@ -107,35 +107,28 @@
 		</div>
 		
 		<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class HelloWorld &#123;</div><div class="line">	/**</div><div class="line">	* @param args</div><div class="line">	*/</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line">		System.out.println(&quot;Hello World&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>main()方法被触发前，JVM需要做以下一些事情：
-
-* load
-* link
-* initialize the class
-
-load： 把对应类字节码加载进JVM中；
-link： 链接包含所需的二进制类型的数据以便JVM使用。该环节包含3步：
-
-    1. verification
-        确保类(接口)结构类型正确；
-    2. preparation
-        涉及类(接口)的内存分配；
-    3. optional resolution
-        解决符号引用；
-
-initialize the class：类中成员变量初始化；
-
-加载工作是有类加载器来完成的。当JVM启动时，3个类加载器被使用：
-* 启动类(Bootstrap class loader):加载java核心类库，即位于 /jre/lib 下的类。它们JVM的核心部分，用本地代码编写的。
-* 扩展类(Extensions class loader)：加载在扩展目录下的类。Eg:/jre/lib/ext
-* 系统类(System class loader)：加载 CLASSPATH 下的类。
-
-
-
-因此，HelloWorld类将被系统类加载器来加载。当main()方法被执行时，它将触发它所依赖的那些类的load、link和initialize。
-之后，main()栈帧被push进JVM栈中。PC(program counter) 根据情况设置。将 println()栈帧push进JVM栈中，当执行完成后，JVM栈将
-依次POP。
-</code></pre>  
+<p>main()方法被触发前，JVM需要做以下一些事情：</p>
+<ul>
+<li>load</li>
+<li>link</li>
+<li>initialize the class</li>
+</ul>
+<p>load： 把对应类字节码加载进JVM中；<br>link： 链接包含所需的二进制类型的数据以便JVM使用。该环节包含3步：</p>
+<pre><code>1. verification
+    确保类(接口)结构类型正确；
+2. preparation
+    涉及类(接口)的内存分配；
+3. optional resolution
+    解决符号引用；
+</code></pre><p>initialize the class：类中成员变量初始化；</p>
+<p>加载工作是有类加载器来完成的。当JVM启动时，3个类加载器被使用：</p>
+<ul>
+<li>启动类(Bootstrap class loader):加载java核心类库，即位于 /jre/lib 下的类。它们JVM的核心部分，用本地代码编写的。</li>
+<li>扩展类(Extensions class loader)：加载在扩展目录下的类。Eg:/jre/lib/ext</li>
+<li>系统类(System class loader)：加载 CLASSPATH 下的类。</li>
+</ul>
+<p>因此，HelloWorld类将被系统类加载器来加载。当main()方法被执行时，它将触发它所依赖的那些类的load、link和initialize。<br>之后，main()栈帧被push进JVM栈中。PC(program counter) 根据情况设置。将 println()栈帧push进JVM栈中，当执行完成后，JVM栈将<br>依次POP。</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
