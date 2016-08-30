@@ -104,23 +104,14 @@ initialize the class：类中成员变量初始化；
     <link href="https://utihbi.github.io/2016/08/29/HashTable%20vs%20HashMap%20vs%20TreeMap/"/>
     <id>https://utihbi.github.io/2016/08/29/HashTable vs HashMap vs TreeMap/</id>
     <published>2016-08-29T07:16:53.000Z</published>
-    <updated>2016-08-30T12:20:09.584Z</updated>
+    <updated>2016-08-30T12:24:17.270Z</updated>
     
-    <content type="html">&lt;pre&gt;&lt;code&gt;            ||HashMap | HashTable | TreeMap|
-            |——|——|——|——|
-|顺序         |no        |    no        |    yes       |
-|null(k-v)  | yes-yes    |    no-no    |    no—yes|
-|同步        |no        |    yes        |    no        |
-|效率        |O(1)    |    O(1)    |    O(lgN)    |
-|实现方式    |buckets    |    buckets    |    红黑树|
-&lt;/code&gt;&lt;/pre&gt;</content>
+    <content type="html">&lt;p&gt;||HashMap | HashTable | TreeMap|&lt;br&gt;|——|——|——|——|&lt;br&gt;|顺序         |no        |    no        |    yes       |&lt;br&gt;|null(k-v)  | yes-yes    |    no-no    |    no—yes|&lt;br&gt;|同步        |no        |    yes        |    no        |&lt;br&gt;|效率        |O(1)    |    O(1)    |    O(lgN)    |&lt;br&gt;|实现方式    |buckets    |    buckets    |    红黑树|&lt;/p&gt;
+</content>
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code&gt;            ||HashMap | HashTable | TreeMap|
-            |——|——|——|——|
-|顺序         |no        |    no        |    yes       |
-|nu
+      &lt;p&gt;||HashMap | HashTable | TreeMap|&lt;br&gt;|——|——|——|——|&lt;br&gt;|顺序         |no        |    no        |    yes       |&lt;br&gt;|null(k-v)  | yes-yes    |
     
     </summary>
     
