@@ -4,23 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Main()如何启动的？ | 菜鸟生活</title>
+    <title>泛型通配符？ 和 原生类型区别 | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
+    <meta name="description" content="java泛型通配符?未限定使用时和原生类型都可以表示任意类型，区别何在？关于 Set&amp;lt;?&amp;gt; 的事实：
+
+1. 因为集合被 ?  标注，故Set&amp;lt;?&amp;gt; 可容纳任意类型；
+1234567891011121314//Legal Codepublic static void main(String[] args) &amp;#123;	HashSet&amp;lt;Integer&amp;gt; s1 =">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Main()如何启动的？">
-<meta property="og:url" content="https://utihbi.github.io/2016/08/30/Main()如何启动的？/index.html">
+<meta property="og:title" content="泛型通配符？ 和 原生类型区别">
+<meta property="og:url" content="https://utihbi.github.io/2016/08/31/泛型通配符？ 和 原生类型区别/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
-<meta property="og:updated_time" content="2016-08-30T12:26:26.638Z">
+<meta property="og:description" content="java泛型通配符?未限定使用时和原生类型都可以表示任意类型，区别何在？关于 Set&amp;lt;?&amp;gt; 的事实：
+
+1. 因为集合被 ?  标注，故Set&amp;lt;?&amp;gt; 可容纳任意类型；
+1234567891011121314//Legal Codepublic static void main(String[] args) &amp;#123;	HashSet&amp;lt;Integer&amp;gt; s1 =">
+<meta property="og:updated_time" content="2016-08-31T03:09:11.701Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Main()如何启动的？">
-<meta name="twitter:description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
+<meta name="twitter:title" content="泛型通配符？ 和 原生类型区别">
+<meta name="twitter:description" content="java泛型通配符?未限定使用时和原生类型都可以表示任意类型，区别何在？关于 Set&amp;lt;?&amp;gt; 的事实：
+
+1. 因为集合被 ?  标注，故Set&amp;lt;?&amp;gt; 可容纳任意类型；
+1234567891011121314//Legal Codepublic static void main(String[] args) &amp;#123;	HashSet&amp;lt;Integer&amp;gt; s1 =">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -86,14 +95,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/08/30/Main()如何启动的？/" title="Main()如何启动的？" itemprop="url">Main()如何启动的？</a>
+      <a href="/2016/08/31/泛型通配符？ 和 原生类型区别/" title="泛型通配符？ 和 原生类型区别" itemprop="url">泛型通配符？ 和 原生类型区别</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-30T08:18:03.000Z" itemprop="datePublished"> 发表于 2016-08-30</time>
+    <time datetime="2016-08-31T02:56:32.000Z" itemprop="datePublished"> 发表于 2016-08-31</time>
     
   </p>
 </header>
@@ -102,32 +111,17 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#java泛型通配符-未限定使用时和原生类型都可以表示任意类型，区别何在？"><span class="toc-number">1.</span> <span class="toc-text">java泛型通配符?未限定使用时和原生类型都可以表示任意类型，区别何在？</span></a></li></ol>
 		
 		</div>
 		
-		<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class HelloWorld &#123;</div><div class="line">	/**</div><div class="line">	* @param args</div><div class="line">	*/</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line">		System.out.println(&quot;Hello World&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>main()方法被触发前，JVM需要做以下一些事情：</p>
-<ul>
-<li>load</li>
-<li>link</li>
-<li>initialize the class</li>
-</ul>
-<p>load： 把对应类字节码加载进JVM中；<br>link： 链接包含所需的二进制类型的数据以便JVM使用。该环节包含3步：</p>
-<pre><code>1. verification
-    确保类(接口)结构类型正确；
-2. preparation
-    涉及类(接口)的内存分配；
-3. optional resolution
-    解决符号引用；
-</code></pre><p>initialize the class：类中成员变量初始化；</p>
-<p>加载工作是有类加载器来完成的。当JVM启动时，3个类加载器被使用：</p>
-<ul>
-<li>启动类(Bootstrap class loader):加载java核心类库，即位于 /jre/lib 下的类。它们JVM的核心部分，用本地代码编写的。</li>
-<li>扩展类(Extensions class loader)：加载在扩展目录下的类。Eg:/jre/lib/ext</li>
-<li>系统类(System class loader)：加载 CLASSPATH 下的类。</li>
-</ul>
-<p>因此，HelloWorld类将被系统类加载器来加载。当main()方法被执行时，它将触发它所依赖的那些类的load、link和initialize。<br>之后，main()栈帧被push进JVM栈中。PC(program counter) 根据情况设置。将 println()栈帧push进JVM栈中，当执行完成后，JVM栈将<br>依次POP。</p>
+		<h2 id="java泛型通配符-未限定使用时和原生类型都可以表示任意类型，区别何在？"><a href="#java泛型通配符-未限定使用时和原生类型都可以表示任意类型，区别何在？" class="headerlink" title="java泛型通配符?未限定使用时和原生类型都可以表示任意类型，区别何在？"></a>java泛型通配符?未限定使用时和原生类型都可以表示任意类型，区别何在？</h2><pre><code>关于 Set&lt;?&gt; 的事实：
+
+1. 因为集合被 ?  标注，故Set&lt;?&gt; 可容纳任意类型；
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//Legal Code</div><div class="line">public static void main(String[] args) &#123;</div><div class="line">	HashSet&lt;Integer&gt; s1 = new HashSet&lt;Integer&gt;(Arrays.asList(1, 2, 3));</div><div class="line">	printSet(s1);</div><div class="line"> </div><div class="line">	HashSet&lt;String&gt; s2 = new HashSet&lt;String&gt;(Arrays.asList(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;));</div><div class="line">	printSet(s2);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">public static void printSet(Set&lt;?&gt; s) &#123;</div><div class="line">	for (Object o : s) &#123;</div><div class="line">		System.out.println(o);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>2. 因为不知道 ？代表那种类型，所有我们不能往 Set&lt;?&gt; 中添加任何元素(除了null)；
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//Illegal Code</div><div class="line">public static void printSet(Set&lt;?&gt; s) &#123;</div><div class="line">	s.add(10);//this line is illegal </div><div class="line">	for (Object o : s) &#123;</div><div class="line">		System.out.println(o);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">//legal Code</div><div class="line">public static void printSet(Set s) &#123;</div><div class="line">	s.add(&quot;2&quot;);</div><div class="line">	for (Object o : s) &#123;</div><div class="line">		System.out.println(o);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">//Illegal Code</div><div class="line">Set&lt;?&gt; set = new HashSet&lt;?&gt;();</div></pre></td></tr></table></figure>
+<p>综上：都可以代表任意元素，但添加动作仅限于原生类型，通配符限定一般用于形参。使用泛型可以保证类型安全，原生类型无法保证；</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -150,7 +144,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/08/30/Main()如何启动的？/" data-title="Main()如何启动的？ | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/08/31/泛型通配符？ 和 原生类型区别/" data-title="泛型通配符？ 和 原生类型区别 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -164,18 +158,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/08/30/日期处理/" title="日期处理">
+ <a href="/2016/08/31/convert between int[] and List/" title="convert between int[] and List">
   <strong>上一篇：</strong><br/>
   <span>
-  日期处理</span>
+  convert between int[] and List</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/08/29/Memory Leak/"  title="Memory Leaks">
+<a href="/2016/08/30/日期处理/"  title="日期处理">
  <strong>下一篇：</strong><br/> 
- <span>Memory Leaks
+ <span>日期处理
 </span>
 </a>
 </div>
@@ -184,7 +178,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/08/30/Main()如何启动的？/" data-title="Main()如何启动的？" data-url="https://utihbi.github.io/2016/08/30/Main()如何启动的？/"></div>
+	<div class="ds-thread" data-thread-key="2016/08/31/泛型通配符？ 和 原生类型区别/" data-title="泛型通配符？ 和 原生类型区别" data-url="https://utihbi.github.io/2016/08/31/泛型通配符？ 和 原生类型区别/"></div>
 </section>
 
 
@@ -194,7 +188,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#java泛型通配符-未限定使用时和原生类型都可以表示任意类型，区别何在？"><span class="toc-number">1.</span> <span class="toc-text">java泛型通配符?未限定使用时和原生类型都可以表示任意类型，区别何在？</span></a></li></ol>
  
   </div>
 

@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Main()如何启动的？ | 菜鸟生活</title>
+    <title>过滤集合Collection | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
+    <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465//1.0 直接遍历过滤	Iterator&amp;lt;Integer&amp;gt; itr = list.iterator();	while(itr.hasNext()">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Main()如何启动的？">
-<meta property="og:url" content="https://utihbi.github.io/2016/08/30/Main()如何启动的？/index.html">
+<meta property="og:title" content="过滤集合Collection">
+<meta property="og:url" content="https://utihbi.github.io/2016/08/31/过滤集合Collection/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
-<meta property="og:updated_time" content="2016-08-30T12:26:26.638Z">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465//1.0 直接遍历过滤	Iterator&amp;lt;Integer&amp;gt; itr = list.iterator();	while(itr.hasNext()">
+<meta property="og:updated_time" content="2016-08-31T09:27:27.285Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Main()如何启动的？">
-<meta name="twitter:description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
+<meta name="twitter:title" content="过滤集合Collection">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465//1.0 直接遍历过滤	Iterator&amp;lt;Integer&amp;gt; itr = list.iterator();	while(itr.hasNext()">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -86,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/08/30/Main()如何启动的？/" title="Main()如何启动的？" itemprop="url">Main()如何启动的？</a>
+      <a href="/2016/08/31/过滤集合Collection/" title="过滤集合Collection" itemprop="url">过滤集合Collection</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-30T08:18:03.000Z" itemprop="datePublished"> 发表于 2016-08-30</time>
+    <time datetime="2016-08-31T09:20:07.000Z" itemprop="datePublished"> 发表于 2016-08-31</time>
     
   </p>
 </header>
@@ -106,29 +106,7 @@
 		
 		</div>
 		
-		<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class HelloWorld &#123;</div><div class="line">	/**</div><div class="line">	* @param args</div><div class="line">	*/</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line">		System.out.println(&quot;Hello World&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>main()方法被触发前，JVM需要做以下一些事情：</p>
-<ul>
-<li>load</li>
-<li>link</li>
-<li>initialize the class</li>
-</ul>
-<p>load： 把对应类字节码加载进JVM中；<br>link： 链接包含所需的二进制类型的数据以便JVM使用。该环节包含3步：</p>
-<pre><code>1. verification
-    确保类(接口)结构类型正确；
-2. preparation
-    涉及类(接口)的内存分配；
-3. optional resolution
-    解决符号引用；
-</code></pre><p>initialize the class：类中成员变量初始化；</p>
-<p>加载工作是有类加载器来完成的。当JVM启动时，3个类加载器被使用：</p>
-<ul>
-<li>启动类(Bootstrap class loader):加载java核心类库，即位于 /jre/lib 下的类。它们JVM的核心部分，用本地代码编写的。</li>
-<li>扩展类(Extensions class loader)：加载在扩展目录下的类。Eg:/jre/lib/ext</li>
-<li>系统类(System class loader)：加载 CLASSPATH 下的类。</li>
-</ul>
-<p>因此，HelloWorld类将被系统类加载器来加载。当main()方法被执行时，它将触发它所依赖的那些类的load、link和initialize。<br>之后，main()栈帧被push进JVM栈中。PC(program counter) 根据情况设置。将 println()栈帧push进JVM栈中，当执行完成后，JVM栈将<br>依次POP。</p>
-  
+		<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">//1.0 直接遍历过滤</div><div class="line">	Iterator&lt;Integer&gt; itr = list.iterator();</div><div class="line">	while(itr.hasNext()) &#123;</div><div class="line">		int i = itr.next();</div><div class="line">		if (i &gt; 5) &#123; // filter all ints bigger than 5</div><div class="line">			itr.remove();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">//2.0通用方法</div><div class="line">// filter</div><div class="line">interface Predicate&lt;T&gt;&#123;</div><div class="line">	boolean test(T o);</div><div class="line">&#125;</div><div class="line">class Filter&#123;</div><div class="line">	public static &lt;T&gt; void filter(Collection&lt;T&gt; c,Predicate&lt;T&gt; p) &#123;</div><div class="line">		if(null != c &amp;&amp; null != p)&#123;</div><div class="line">			Iterator&lt;T&gt; itr = c.iterator();</div><div class="line">			while(itr.hasNext())&#123;</div><div class="line">				T obj = itr.next();</div><div class="line">				if(!p.test(obj))&#123;</div><div class="line">					itr.remove();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">public class SimpleTest &#123;</div><div class="line"></div><div class="line">	/**</div><div class="line">	 * @param args</div><div class="line">	 */</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line">		SimpleTest sdt = new SimpleTest();</div><div class="line">		</div><div class="line">		sdt.filterCollection();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	private void filterCollection() &#123;</div><div class="line">		Integer[] iarr = &#123;1,2,3,8&#125;;</div><div class="line">		List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;(Arrays.asList(iarr));</div><div class="line">		Filter.filter(list , new Predicate&lt;Integer&gt;() &#123;</div><div class="line"></div><div class="line">			@Override</div><div class="line">			public boolean test(Integer o) &#123;</div><div class="line">				// TODO Auto-generated method stub</div><div class="line">				return o.intValue() &lt;= 5;</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">		System.out.println(Arrays.toString(iarr));</div><div class="line">		System.out.println(list);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	/*</div><div class="line">	* output:</div><div class="line">	* [1, 2, 3, 8]</div><div class="line">	* [1, 2, 3]</div><div class="line">	*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -150,7 +128,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/08/30/Main()如何启动的？/" data-title="Main()如何启动的？ | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/08/31/过滤集合Collection/" data-title="过滤集合Collection | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -163,19 +141,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/08/30/日期处理/" title="日期处理">
-  <strong>上一篇：</strong><br/>
-  <span>
-  日期处理</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/08/29/Memory Leak/"  title="Memory Leaks">
+<a href="/2016/08/31/convert between int[] and List/"  title="convert between int[] and List">
  <strong>下一篇：</strong><br/> 
- <span>Memory Leaks
+ <span>convert between int[] and List
 </span>
 </a>
 </div>
@@ -184,7 +154,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/08/30/Main()如何启动的？/" data-title="Main()如何启动的？" data-url="https://utihbi.github.io/2016/08/30/Main()如何启动的？/"></div>
+	<div class="ds-thread" data-thread-key="2016/08/31/过滤集合Collection/" data-title="过滤集合Collection" data-url="https://utihbi.github.io/2016/08/31/过滤集合Collection/"></div>
 </section>
 
 

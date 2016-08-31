@@ -4,19 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>菜鸟生活</title>
+    <title>日期处理 | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="菜鸟生活">
-<meta property="og:url" content="https://utihbi.github.io/index.html">
+    <meta name="description" content="12345// String -&amp;gt; DateSimpleDateFormat.parse(String);// Date -&amp;gt; StringSimpleDateFormat.format(date);
+|Letter    |Description    |Examples||——|——|——||y |Year|    2013||M |Month| in year    |July,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日期处理">
+<meta property="og:url" content="https://utihbi.github.io/2016/08/30/日期处理/index.html">
 <meta property="og:site_name" content="菜鸟生活">
+<meta property="og:description" content="12345// String -&amp;gt; DateSimpleDateFormat.parse(String);// Date -&amp;gt; StringSimpleDateFormat.format(date);
+|Letter    |Description    |Examples||——|——|——||y |Year|    2013||M |Month| in year    |July,">
+<meta property="og:updated_time" content="2016-08-30T12:35:20.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="菜鸟生活">
+<meta name="twitter:title" content="日期处理">
+<meta name="twitter:description" content="12345// String -&amp;gt; DateSimpleDateFormat.parse(String);// Date -&amp;gt; StringSimpleDateFormat.format(date);
+|Letter    |Description    |Examples||——|——|——||y |Year|    2013||M |Month| in year    |July,">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -76,224 +83,103 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
+      <div id="main" class="post" itemscope itemprop="blogPost">
   
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/08/31/过滤集合Collection/" title="过滤集合Collection" itemprop="url">
-  
-    <h1 itemprop="name">过滤集合Collection</h1>
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-     
-           <p itemprop="description" >1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465//1.0 直接遍历过滤	Iterat</p>
-        
+      <a href="/2016/08/30/日期处理/" title="日期处理" itemprop="url">日期处理</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-30T12:10:10.000Z" itemprop="datePublished"> 发表于 2016-08-30</time>
     
-    <time datetime="2016-08-31T09:20:07.000Z" itemprop="datePublished">2016-08-31</time>
-  </a>
-</section>
-
-
-
-
-
-
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			
+		
+		</div>
+		
+		<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// String -&gt; Date</div><div class="line">SimpleDateFormat.parse(String);</div><div class="line"></div><div class="line">// Date -&gt; String</div><div class="line">SimpleDateFormat.format(date);</div></pre></td></tr></table></figure>
+<p>|Letter    |Description    |Examples|<br>|——|——|——|<br>|y |Year|    2013|<br>|M |Month| in year    |July, 07, |<br>|d |Day  | in month    |1-31|<br>|E |Day  |name in week    |Friday, Sunday|<br>|a |Am/pm marker    |AM, PM|<br>|H |Hour in day    |0-23<br>|h |Hour in am/pm    |1-12|<br>|m |Minute in hour    |0-60|<br>|s |Second in minute    |0-60|</p>
   
-<section class="post" itemscope itemprop="blogitem">
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+</div>
+
+
+  <div class="article-tags">
   
-    <a href="/2016/08/31/convert between int[] and List/" title="convert between int[] and List" itemprop="url">
-  
-    <h1 itemprop="name">convert between int[] and List</h1>
-    
-     
-           <p itemprop="description" >How to convert List to int[]?123456789//The easiest way might be using ArrayUtils in Apache Commons Lang library.int[] array = ArrayUtils.to</p>
-        
-    
-    <time datetime="2016-08-31T08:34:15.000Z" itemprop="datePublished">2016-08-31</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/08/31/泛型通配符？ 和 原生类型区别/" title="泛型通配符？ 和 原生类型区别" itemprop="url">
-  
-    <h1 itemprop="name">泛型通配符？ 和 原生类型区别</h1>
-    
-     
-           <p itemprop="description" >java泛型通配符?未限定使用时和原生类型都可以表示任意类型，区别何在？关于 Set&amp;lt;?&amp;gt; 的事实：
-
-1. 因为集合被 ?  标注，故Set&amp;lt;?&amp;gt; 可容纳任意类型；
-1234567891011121314//Legal Codepublic static</p>
-        
-    
-    <time datetime="2016-08-31T02:56:32.000Z" itemprop="datePublished">2016-08-31</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/08/30/日期处理/" title="日期处理" itemprop="url">
-  
-    <h1 itemprop="name">日期处理</h1>
-    
-     
-           <p itemprop="description" >12345// String -&amp;gt; DateSimpleDateFormat.parse(String);// Date -&amp;gt; StringSimpleDateFormat.format(date);
-|Letter    |Description    |Examp</p>
-        
-    
-    <time datetime="2016-08-30T12:10:10.000Z" itemprop="datePublished">2016-08-30</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/08/30/Main()如何启动的？/" title="Main()如何启动的？" itemprop="url">
-  
-    <h1 itemprop="name">Main()如何启动的？</h1>
-    
-     
-           <p itemprop="description" >12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method </p>
-        
-    
-    <time datetime="2016-08-30T08:18:03.000Z" itemprop="datePublished">2016-08-30</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/08/29/Memory Leak/" title="Memory Leaks" itemprop="url">
-  
-    <h1 itemprop="name">Memory Leaks</h1>
-    
-     
-           <p itemprop="description" >什么是内存泄露？一些对象不再被应用程序使用了，但是GC却不能回收它们，因为还有引用指向它们。
-为啥会发生？当生命周期长的对象(假设叫A)持有一个生命周期短的对象(假设叫B)引用，B没有用时却不能被及时销毁。
-如何避免？
-注意集合类的使用：HashMap, ArrayList等。当</p>
-        
-    
-    <time datetime="2016-08-29T08:38:21.000Z" itemprop="datePublished">2016-08-29</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/08/29/HashTable vs HashMap vs TreeMap/" title="HashTable vs HashMap vs TreeMap" itemprop="url">
-  
-    <h1 itemprop="name">HashTable vs HashMap vs TreeMap</h1>
-    
-     
-           <p itemprop="description" >||HashMap | HashTable | TreeMap||——|——|——|——||顺序         |no        |    no        |    yes       ||null(k-v)  | yes-yes    |    no-no    | </p>
-        
-    
-    <time datetime="2016-08-29T07:16:53.000Z" itemprop="datePublished">2016-08-29</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/08/29/How to initialize a staticimmutable Map/" title="怎样初始化得到一不可变map？" itemprop="url">
-  
-    <h1 itemprop="name">怎样初始化得到一不可变map？</h1>
-    
-     
-           <p itemprop="description" >初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,然而事实是初始化过后，我们人然可以继续操作该map，比如：Test.map.put(3,”Three”);所以，这样的方法并没有真正的达到我们的要求。123456789//code 1 p</p>
-        
-    
-    <time datetime="2016-08-29T03:25:34.000Z" itemprop="datePublished">2016-08-29</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/08/28/questions of Java Strings/" title="questions of Java Strings" itemprop="url">
-  
-    <h1 itemprop="name">questions of Java Strings</h1>
-    
-     
-           <p itemprop="description" >Can we use string for switch statement?Yes to version 7. From JDK 7, we can use string as switch condition. Before version 6, we can not use</p>
-        
-    
-    <time datetime="2016-08-28T09:25:30.000Z" itemprop="datePublished">2016-08-28</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/08/24/Longest Palindromic Substring(LeetCode)/" title="Longest Palindromic Substring(LeetCode)" itemprop="url">
-  
-    <h1 itemprop="name">Longest Palindromic Substring(LeetCode)</h1>
-    
-     
-           <p itemprop="description" >Question:Longest Palindromic SubstringGiven a string S, find the longest palindromic substring(最长回文子串)in S. 
-
-You may assume that the maximu</p>
-        
-    
-    <time datetime="2016-08-24T08:38:34.000Z" itemprop="datePublished">2016-08-24</time>
-  </a>
-</section>
-
-
-
-
-
-
-
-  <nav id="page-nav" class="clearfix unexpand">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
-  </nav>
+  <span></span> <a href="/tags/JAVA/">JAVA</a>
+  </div>
 
 </div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="https://utihbi.github.io/2016/08/30/日期处理/" data-title="日期处理 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/08/31/泛型通配符？ 和 原生类型区别/" title="泛型通配符？ 和 原生类型区别">
+  <strong>上一篇：</strong><br/>
+  <span>
+  泛型通配符？ 和 原生类型区别</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/08/30/Main()如何启动的？/"  title="Main()如何启动的？">
+ <strong>下一篇：</strong><br/> 
+ <span>Main()如何启动的？
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/08/30/日期处理/" data-title="日期处理" data-url="https://utihbi.github.io/2016/08/30/日期处理/"></div>
+</section>
+
+
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ 
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -476,14 +362,103 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
 
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"utihbi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
 
 
@@ -563,4 +538,4 @@ var _hmt = _hmt || [];
 </script>
 
   </body>
- </html>
+</html>
