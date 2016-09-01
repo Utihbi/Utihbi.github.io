@@ -26,7 +26,7 @@
 无限期等待（Waiting）：处于这种状态的线程不会被分配CPU时间，它们要等待被其他线程显示地唤醒。以下方法会让线程陷入无限期的等待状态：
 没有设置Timeout参数">
 <meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/ThreadStatus.png">
-<meta property="og:updated_time" content="2016-09-01T15:11:09.024Z">
+<meta property="og:updated_time" content="2016-09-01T15:15:10.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线程状态">
 <meta name="twitter:description" content="5种状态
@@ -123,21 +123,22 @@
 		<h2 id="5种状态"><a href="#5种状态" class="headerlink" title="5种状态"></a>5种状态</h2><ul>
 <li>新建（New）：创建后尚未启动的线程处于这种状态；</li>
 <li>运行（Runnable）:Runnable包括了OS线程状态中的Running和Ready，也就是处于次状态的线程有可能正在执行，也有可能正等着CPU为它分配执行时间。</li>
-<li>无限期等待（Waiting）：处于这种状态的线程不会被分配CPU时间，它们要等待被其他线程显示地唤醒。以下方法会让线程陷入无限期的等待状态：<ul>
+<li>无限期等待（Waiting）：处于这种状态的线程不会被分配CPU时间，它们要等待被其他线程显示地唤醒。以下方法会让线程陷入无限期的等待状态：<ol>
 <li>没有设置Timeout参数的Object.wait()方法；</li>
 <li>没有设置Timeout参数的Object.join()方法；</li>
 <li>LockSupport.park()方法；</li>
-</ul>
+</ol>
 </li>
-<li>限期等待（Timed Waitting）:处于这种状态的线程也不会被分配CPU执行时间，它们在一定时间后会由系统自行唤醒。以下方法会使线程进入限期等待状态:<ul>
+<li>限期等待（Timed Waitting）:处于这种状态的线程也不会被分配CPU执行时间，它们在一定时间后会由系统自行唤醒。以下方法会使线程进入限期等待状态:<ol>
 <li>Thread.sleep()方法；</li>
 <li>设置Timeout参数的Object.wait()方法；</li>
 <li>设置Timeout参数的Object.join()方法；</li>
 <li>LockSupport.parkNaons()方法；</li>
 <li>LockSupport.parkUntil()方法；</li>
-</ul>
+</ol>
 </li>
-<li>阻塞（Blocked）：在程序等待进入同步区域的时候，线程将进入这种状态。<pre><code>“阻塞”与“等待”区别：“阻塞”在等待着获取到一个排它锁，这个事件将在另外一个线程放弃这个锁的时候发生；而“等待”则是在等待一段时间或者唤醒动作的发生。
+<li>阻塞（Blocked）：在程序等待进入同步区域的时候，线程将进入这种状态。<pre><code>“阻塞”与“等待”区别：“阻塞”在等待着获取到一个排它锁，这个事件将在另外一个线程放弃这个锁的时候发生；而“等待”则是在等
+待一段时间或者唤醒动作的发生。
 </code></pre></li>
 <li>结束（Terminated）：已经终止线程的状态，线程已经结束执行。</li>
 </ul>
