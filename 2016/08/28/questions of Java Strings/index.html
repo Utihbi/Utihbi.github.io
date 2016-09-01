@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="菜鸟生活">
 <meta property="og:description" content="Can we use string for switch statement?Yes to version 7. From JDK 7, we can use string as switch condition. Before version 6, we can not use string as switch condition.
 123456789// java 7 only!switch">
-<meta property="og:updated_time" content="2016-08-30T09:10:46.495Z">
+<meta property="og:updated_time" content="2016-08-31T16:12:32.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="questions of Java Strings">
 <meta name="twitter:description" content="Can we use string for switch statement?Yes to version 7. From JDK 7, we can use string as switch condition. Before version 6, we can not use string as switch condition.
@@ -118,11 +118,9 @@
 </li>
 <li><p>What substring() method really does?<br>In JDK 6, the substring() method gives a window to an array of chars which represents the existing String, but do not create a new one. To create a new string represented by a new char array, you can do add an empty string like the following:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str.substring(m, n) + &quot;&quot;</div></pre></td></tr></table></figure>
+<p> This will create a new char array that represents the new string. The above approach sometimes can make your code faster, because Garbage Collector can collect the unused large string and keep only the sub string.</p>
+<p> In Oracle JDK 7, substring() creates a new char array, not uses the existing one. </p>
 </li>
-</ol>
-<p>This will create a new char array that represents the new string. The above approach sometimes can make your code faster, because Garbage Collector can collect the unused large string and keep only the sub string.</p>
-<p>In Oracle JDK 7, substring() creates a new char array, not uses the existing one. </p>
-<ol>
 <li><p>How to repeat a string?<br>we can use the repeat() method of StringUtils from Apache Commons Lang package.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">String str = &quot;abcd&quot;;</div><div class="line">String repeated = StringUtils.repeat(str,3);</div><div class="line">//abcdabcdabcd</div></pre></td></tr></table></figure>
 </li>

@@ -4,23 +4,37 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>过滤集合Collection | 菜鸟生活</title>
+    <title>线程状态 | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465//1.0 直接遍历过滤	Iterator&amp;lt;Integer&amp;gt; itr = list.iterator();	while(itr.hasNext()">
+    <meta name="description" content="5种状态
+新建（New）：创建后尚未启动的线程处于这种状态；
+运行（Runnable）:Runnable包括了OS线程状态中的Running和Ready，也就是处于次状态的线程有可能正在执行，也有可能正等着CPU为它分配执行时间。
+无限期等待（Waiting）：处于这种状态的线程不会被分配CPU时间，它们要等待被其他线程显示地唤醒。以下方法会让线程陷入无限期的等待状态：
+没有设置Timeout参数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="过滤集合Collection">
-<meta property="og:url" content="https://utihbi.github.io/2016/08/31/过滤集合Collection/index.html">
+<meta property="og:title" content="线程状态">
+<meta property="og:url" content="https://utihbi.github.io/2016/09/01/线程状态/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465//1.0 直接遍历过滤	Iterator&amp;lt;Integer&amp;gt; itr = list.iterator();	while(itr.hasNext()">
-<meta property="og:updated_time" content="2016-08-31T09:27:27.285Z">
+<meta property="og:description" content="5种状态
+新建（New）：创建后尚未启动的线程处于这种状态；
+运行（Runnable）:Runnable包括了OS线程状态中的Running和Ready，也就是处于次状态的线程有可能正在执行，也有可能正等着CPU为它分配执行时间。
+无限期等待（Waiting）：处于这种状态的线程不会被分配CPU时间，它们要等待被其他线程显示地唤醒。以下方法会让线程陷入无限期的等待状态：
+没有设置Timeout参数">
+<meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/ThreadStatus.png">
+<meta property="og:updated_time" content="2016-09-01T15:11:09.024Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="过滤集合Collection">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465//1.0 直接遍历过滤	Iterator&amp;lt;Integer&amp;gt; itr = list.iterator();	while(itr.hasNext()">
+<meta name="twitter:title" content="线程状态">
+<meta name="twitter:description" content="5种状态
+新建（New）：创建后尚未启动的线程处于这种状态；
+运行（Runnable）:Runnable包括了OS线程状态中的Running和Ready，也就是处于次状态的线程有可能正在执行，也有可能正等着CPU为它分配执行时间。
+无限期等待（Waiting）：处于这种状态的线程不会被分配CPU时间，它们要等待被其他线程显示地唤醒。以下方法会让线程陷入无限期的等待状态：
+没有设置Timeout参数">
+<meta name="twitter:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/ThreadStatus.png">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -86,14 +100,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/08/31/过滤集合Collection/" title="过滤集合Collection" itemprop="url">过滤集合Collection</a>
+      <a href="/2016/09/01/线程状态/" title="线程状态" itemprop="url">线程状态</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-31T09:20:07.000Z" itemprop="datePublished"> 发表于 2016-08-31</time>
+    <time datetime="2016-09-01T14:26:34.000Z" itemprop="datePublished"> 发表于 2016-09-01</time>
     
   </p>
 </header>
@@ -102,11 +116,33 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#5种状态"><span class="toc-number">1.</span> <span class="toc-text">5种状态</span></a></li></ol>
 		
 		</div>
 		
-		<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">//1.0 直接遍历过滤</div><div class="line">	Iterator&lt;Integer&gt; itr = list.iterator();</div><div class="line">	while(itr.hasNext()) &#123;</div><div class="line">		int i = itr.next();</div><div class="line">		if (i &gt; 5) &#123; // filter all ints bigger than 5</div><div class="line">			itr.remove();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">//2.0通用方法</div><div class="line">// filter</div><div class="line">interface Predicate&lt;T&gt;&#123;</div><div class="line">	boolean test(T o);</div><div class="line">&#125;</div><div class="line">class Filter&#123;</div><div class="line">	public static &lt;T&gt; void filter(Collection&lt;T&gt; c,Predicate&lt;T&gt; p) &#123;</div><div class="line">		if(null != c &amp;&amp; null != p)&#123;</div><div class="line">			Iterator&lt;T&gt; itr = c.iterator();</div><div class="line">			while(itr.hasNext())&#123;</div><div class="line">				T obj = itr.next();</div><div class="line">				if(!p.test(obj))&#123;</div><div class="line">					itr.remove();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">public class SimpleTest &#123;</div><div class="line"></div><div class="line">	/**</div><div class="line">	 * @param args</div><div class="line">	 */</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line">		SimpleTest sdt = new SimpleTest();</div><div class="line">		</div><div class="line">		sdt.filterCollection();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	private void filterCollection() &#123;</div><div class="line">		Integer[] iarr = &#123;1,2,3,8&#125;;</div><div class="line">		List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;(Arrays.asList(iarr));</div><div class="line">		Filter.filter(list , new Predicate&lt;Integer&gt;() &#123;</div><div class="line"></div><div class="line">			@Override</div><div class="line">			public boolean test(Integer o) &#123;</div><div class="line">				// TODO Auto-generated method stub</div><div class="line">				return o.intValue() &lt;= 5;</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">		System.out.println(Arrays.toString(iarr));</div><div class="line">		System.out.println(list);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	/*</div><div class="line">	* output:</div><div class="line">	* [1, 2, 3, 8]</div><div class="line">	* [1, 2, 3]</div><div class="line">	*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h2 id="5种状态"><a href="#5种状态" class="headerlink" title="5种状态"></a>5种状态</h2><ul>
+<li>新建（New）：创建后尚未启动的线程处于这种状态；</li>
+<li>运行（Runnable）:Runnable包括了OS线程状态中的Running和Ready，也就是处于次状态的线程有可能正在执行，也有可能正等着CPU为它分配执行时间。</li>
+<li>无限期等待（Waiting）：处于这种状态的线程不会被分配CPU时间，它们要等待被其他线程显示地唤醒。以下方法会让线程陷入无限期的等待状态：<ul>
+<li>没有设置Timeout参数的Object.wait()方法；</li>
+<li>没有设置Timeout参数的Object.join()方法；</li>
+<li>LockSupport.park()方法；</li>
+</ul>
+</li>
+<li>限期等待（Timed Waitting）:处于这种状态的线程也不会被分配CPU执行时间，它们在一定时间后会由系统自行唤醒。以下方法会使线程进入限期等待状态:<ul>
+<li>Thread.sleep()方法；</li>
+<li>设置Timeout参数的Object.wait()方法；</li>
+<li>设置Timeout参数的Object.join()方法；</li>
+<li>LockSupport.parkNaons()方法；</li>
+<li>LockSupport.parkUntil()方法；</li>
+</ul>
+</li>
+<li>阻塞（Blocked）：在程序等待进入同步区域的时候，线程将进入这种状态。<pre><code>“阻塞”与“等待”区别：“阻塞”在等待着获取到一个排它锁，这个事件将在另外一个线程放弃这个锁的时候发生；而“等待”则是在等待一段时间或者唤醒动作的发生。
+</code></pre></li>
+<li>结束（Terminated）：已经终止线程的状态，线程已经结束执行。</li>
+</ul>
+<p><img src="http://oald9ve1g.bkt.clouddn.com/hexo/img/ThreadStatus.png" alt="status图"></p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -128,7 +164,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/08/31/过滤集合Collection/" data-title="过滤集合Collection | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/09/01/线程状态/" data-title="线程状态 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -141,19 +177,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/09/01/线程状态/" title="线程状态">
-  <strong>上一篇：</strong><br/>
-  <span>
-  线程状态</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/08/31/convert between int[] and List/"  title="convert between int[] and List">
+<a href="/2016/08/31/过滤集合Collection/"  title="过滤集合Collection">
  <strong>下一篇：</strong><br/> 
- <span>convert between int[] and List
+ <span>过滤集合Collection
 </span>
 </a>
 </div>
@@ -162,7 +190,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/08/31/过滤集合Collection/" data-title="过滤集合Collection" data-url="https://utihbi.github.io/2016/08/31/过滤集合Collection/"></div>
+	<div class="ds-thread" data-thread-key="2016/09/01/线程状态/" data-title="线程状态" data-url="https://utihbi.github.io/2016/09/01/线程状态/"></div>
 </section>
 
 
@@ -172,7 +200,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#5种状态"><span class="toc-number">1.</span> <span class="toc-text">5种状态</span></a></li></ol>
  
   </div>
 
