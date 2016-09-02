@@ -4,19 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>菜鸟生活</title>
+    <title>java properties file | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="菜鸟生活">
-<meta property="og:url" content="https://utihbi.github.io/page/3/index.html">
+    <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435package com.loogeoustc.test;import java.io.IOException;import java.util.Properties;/** * @author Emerson * * @date 2016年9月2日 下午11:45:09 */p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java properties file">
+<meta property="og:url" content="https://utihbi.github.io/2016/09/02/java properties file/index.html">
 <meta property="og:site_name" content="菜鸟生活">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435package com.loogeoustc.test;import java.io.IOException;import java.util.Properties;/** * @author Emerson * * @date 2016年9月2日 下午11:45:09 */p">
+<meta property="og:updated_time" content="2016-09-02T15:55:11.752Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="菜鸟生活">
+<meta name="twitter:title" content="java properties file">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435package com.loogeoustc.test;import java.io.IOException;import java.util.Properties;/** * @author Emerson * * @date 2016年9月2日 下午11:45:09 */p">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -76,276 +80,94 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
+      <div id="main" class="post" itemscope itemprop="blogPost">
   
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/07/25/FourNums(LeetCode) /" title="FourNums(LeetCode)" itemprop="url">
-  
-    <h1 itemprop="name">FourNums(LeetCode)</h1>
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-     
-           <p itemprop="description" >Question:4SumGiven an array S of n integers, are there elements a, b, c, and d in S such that 
-
-a + b + c + d = target? 
-
-Find all unique qu</p>
-        
+      <a href="/2016/09/02/java properties file/" title="java properties file" itemprop="url">java properties file</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-02T15:54:31.000Z" itemprop="datePublished"> 发表于 2016-09-02</time>
     
-    <time datetime="2016-07-25T09:05:06.000Z" itemprop="datePublished">2016-07-25</time>
-  </a>
-</section>
-
-
-
-
-
-
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			
+		
+		</div>
+		
+		<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">package com.loogeoustc.test;</div><div class="line"></div><div class="line">import java.io.IOException;</div><div class="line">import java.util.Properties;</div><div class="line"></div><div class="line">/**</div><div class="line"> * @author Emerson</div><div class="line"> *</div><div class="line"> * @date 2016年9月2日 下午11:45:09</div><div class="line"> */</div><div class="line">public class PropertiesTest &#123;</div><div class="line"></div><div class="line">	/**</div><div class="line">	 * @param args</div><div class="line">	 */</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line">		loadProperties(&quot;config.properties&quot;);</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	private static void loadProperties(String ConfigFileName) &#123;</div><div class="line">		Properties configFile = new Properties();</div><div class="line">		try &#123;</div><div class="line">			configFile.load(Test.class.getClassLoader().getResourceAsStream(ConfigFileName));</div><div class="line">			String name = configFile.getProperty(&quot;name&quot;);</div><div class="line">			System.out.println(name);</div><div class="line">		&#125; catch (IOException e) &#123;</div><div class="line">			// TODO: handle exception</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
   
-<section class="post" itemscope itemprop="blogitem">
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+</div>
+
+
+  <div class="article-tags">
   
-    <a href="/2016/07/25/ThreeNums(LeetCode)/" title="ThreeNums(LeetCode)" itemprop="url">
-  
-    <h1 itemprop="name">ThreeNums(LeetCode)</h1>
-    
-     
-           <p itemprop="description" >Question:3SumGiven an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? 
-
-Find all unique triplets in the arra</p>
-        
-    
-    <time datetime="2016-07-25T03:20:06.000Z" itemprop="datePublished">2016-07-25</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/07/24/关系数据库基本概念/" title="数据库基本概念" itemprop="url">
-  
-    <h1 itemprop="name">数据库基本概念</h1>
-    
-     
-           <p itemprop="description" >范式符合某一种级别的关系模式的集合
-
-构造数据库必须遵循一定的规则，在关系数据库中，这种规则就是范式
-
-目前关系数据库有六种范式
-
-第一范式（1NF）无重复的列
-  1NF是对属性原子性约束，要求属性具有原子性，不可再分解
-  简言之，不能有重复的属性，消除重复的属性
-
-第二范式</p>
-        
-    
-    <time datetime="2016-07-24T02:23:06.000Z" itemprop="datePublished">2016-07-24</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/07/23/细说UML核心模型/" title="细说UML核心模型" itemprop="url">
-  
-    <h1 itemprop="name">细说UML核心模型</h1>
-    
-     
-           <p itemprop="description" >前言模型就是一堆有意义的静态图和动态图组合在一起，表达了一个有意义的中心思想。
-简言之，一个模型提出了论点，静态图是论据，动态图是论证。建模就是采用论据来论证论点的过程。
-用例模型业务用例模型用于识别和规定业务需求，描述的是业务范围
-什么时候使用业务用例模型？
-
-软件规模较大
-问</p>
-        
-    
-    <time datetime="2016-07-23T09:51:06.000Z" itemprop="datePublished">2016-07-23</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/07/23/工厂模式/" title="工厂模式" itemprop="url">
-  
-    <h1 itemprop="name">工厂模式</h1>
-    
-     
-           <p itemprop="description" >基本知识开闭原则（Open Close Principle）:
-对扩展开放，对修改关闭。
-在程序需要进行拓展的时候，不能去修改原有的代码，实现一个热插拔的效果。
-简言之，是为了使程序的扩展性好，易于维护和升级。想要达到这样的效果，我们需要使用接口和抽象类，后面的具体设计中我们会提</p>
-        
-    
-    <time datetime="2016-07-23T06:28:06.000Z" itemprop="datePublished">2016-07-23</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/07/22/String类为什么是final的/" title="String类为什么是final的" itemprop="url">
-  
-    <h1 itemprop="name">String类为什么是final的</h1>
-    
-     
-           <p itemprop="description" >final 优点
-安全性： 在网络、DB连接中，参数类型是String,还有用户名密码等。如果String 可变，那这些参数值
-  很容易别人改掉；网络连接，DB连接中很容易被攻击。
-
-同步和并发问题：线程安全因此没有同步问题；
-
-缓存：当编译优化时，如果两个实例值一样，那就可以</p>
-        
-    
-    <time datetime="2016-07-22T09:28:06.000Z" itemprop="datePublished">2016-07-22</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/07/22/细说UML核心视图/" title="细说UML核心视图" itemprop="url">
-  
-    <h1 itemprop="name">细说UML核心视图</h1>
-    
-     
-           <p itemprop="description" >前言描述软件和现实一样，都需要描述
-
-系统的结构性特征(系统能做什么)———–静态视图
-
-系统运行时特征(系统怎么做)——–动态视图
-
-
-UML视图分类
-静态视图：用例图、类图、包图等
-
-动态视图：活动图、状态图、时序图、协作图等
-  注：动态视图不能独立存在，必须特指一个静态视</p>
-        
-    
-    <time datetime="2016-07-22T06:52:06.000Z" itemprop="datePublished">2016-07-22</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/07/22/不同平台造成的文本换行符差异(CRLF)/" title="不同平台造成的文本换行符差异(CRLF)" itemprop="url">
-  
-    <h1 itemprop="name">不同平台造成的文本换行符差异(CRLF)</h1>
-    
-     
-           <p itemprop="description" >问题背景
-还记得自己之前提交代码(win-&amp;gt;linux),提交完后系统就奔溃了，笔者当时就懵逼了。到服务器上一看代码，每行代码末尾无端的了多了 ^M  的字符。
-
-今天往Git上提交时，又遇到了
-1warning: LF will be replaced by CRLF i</p>
-        
-    
-    <time datetime="2016-07-22T02:40:06.000Z" itemprop="datePublished">2016-07-22</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/07/21/漫谈接口和抽象类/" title="漫谈接口和抽象类" itemprop="url">
-  
-    <h1 itemprop="name">漫谈接口和抽象类</h1>
-    
-     
-           <p itemprop="description" >接口和抽象类接口的意义：- 规范
-
-    接口是用来规范类的，它可以避免类在设计上的不一致，这在多人合作的开发中犹为重要；
-
-    它是一种标准，每一个实现它的类都要遵守这个接口定义的规则，标准。
-
-- 扩展(解耦)
-
-    最大程度的解耦，方便以后项目扩展 
-
-     </p>
-        
-    
-    <time datetime="2016-07-21T06:05:06.000Z" itemprop="datePublished">2016-07-21</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/07/21/接口回调和向上转型/" title="接口回调和向上转型" itemprop="url">
-  
-    <h1 itemprop="name">接口回调和向上转型</h1>
-    
-     
-           <p itemprop="description" >接口回调把implements某一接口的类创建的对象的引用赋给该接口声明的接口变量，那么该接口变量就可以调用被类实现
-
-的接口的方法。实际上，当接口变量调用被类实现的接口中的方法时，就是通知相应的对象调用接口的方法，这一过程
-
-称为对象功能的接口回调。
-1234567891011</p>
-        
-    
-    <time datetime="2016-07-21T06:03:06.000Z" itemprop="datePublished">2016-07-21</time>
-  </a>
-</section>
-
-
-
-
-
-
-
-  <nav id="page-nav" class="clearfix unexpand">
-    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
-  </nav>
+  <span></span> <a href="/tags/JAVA/">JAVA</a>
+  </div>
 
 </div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="https://utihbi.github.io/2016/09/02/java properties file/" data-title="java properties file | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/09/01/线程状态/"  title="线程状态">
+ <strong>下一篇：</strong><br/> 
+ <span>线程状态
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/09/02/java properties file/" data-title="java properties file" data-url="https://utihbi.github.io/2016/09/02/java properties file/"></div>
+</section>
+
+
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ 
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -528,14 +350,103 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
 
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"utihbi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
 
 
@@ -615,4 +526,4 @@ var _hmt = _hmt || [];
 </script>
 
   </body>
- </html>
+</html>

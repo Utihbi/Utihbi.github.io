@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://utihbi.github.io/2016/08/30/Main()如何启动的？/index.html">
 <meta property="og:site_name" content="菜鸟生活">
 <meta property="og:description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
-<meta property="og:updated_time" content="2016-08-30T12:26:26.638Z">
+<meta property="og:updated_time" content="2016-09-02T02:36:17.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Main()如何启动的？">
 <meta name="twitter:description" content="12345678910public class HelloWorld &amp;#123;	/**	* @param args	*/	public static void main(String[] args) &amp;#123;		// TODO Auto-generated method stub		System.out.println(&amp;quot;Hello World&amp;quot;);	&amp;#125;&amp;#1">
@@ -127,7 +127,7 @@
 <li>扩展类(Extensions class loader)：加载在扩展目录下的类。Eg:/jre/lib/ext</li>
 <li>系统类(System class loader)：加载 CLASSPATH 下的类。</li>
 </ul>
-<p>因此，HelloWorld类将被系统类加载器来加载。当main()方法被执行时，它将触发它所依赖的那些类的load、link和initialize。<br>之后，main()栈帧被push进JVM栈中。PC(program counter) 根据情况设置。将 println()栈帧push进JVM栈中，当执行完成后，JVM栈将<br>依次POP。</p>
+<p>因此，HelloWorld类将被系统类加载器来加载。当main()方法被执行时，它将触发它所依赖的那些类的load、link和initialize。<br>之后，main()栈帧被push进JVM栈中。PC(program counter) 根据情况设置。将 println()栈帧push进JVM栈中，当执行完成后，JVM栈将依次POP。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
