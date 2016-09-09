@@ -11,22 +11,28 @@
     
 
     
-    <meta name="description" content="IQuestion:Word Ladder IGiven two words (beginWord and endWord), and a dictionary&amp;apos;s word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
+    <meta name="description" content="IQuestion:Word Ladder IGiven two words (beginWord and endWord), and a dictionary&amp;apos;s word list, find the 
 
-Only one l">
+length of shortest transformation sequence from beginWord to endWord, such that:
+
+Only one">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Word Ladder I II (LeetCode)">
 <meta property="og:url" content="https://utihbi.github.io/2016/09/09/Word Ladder I II /index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="IQuestion:Word Ladder IGiven two words (beginWord and endWord), and a dictionary&amp;apos;s word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
+<meta property="og:description" content="IQuestion:Word Ladder IGiven two words (beginWord and endWord), and a dictionary&amp;apos;s word list, find the 
 
-Only one l">
-<meta property="og:updated_time" content="2016-09-09T14:30:44.782Z">
+length of shortest transformation sequence from beginWord to endWord, such that:
+
+Only one">
+<meta property="og:updated_time" content="2016-09-09T14:37:08.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Word Ladder I II (LeetCode)">
-<meta name="twitter:description" content="IQuestion:Word Ladder IGiven two words (beginWord and endWord), and a dictionary&amp;apos;s word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
+<meta name="twitter:description" content="IQuestion:Word Ladder IGiven two words (beginWord and endWord), and a dictionary&amp;apos;s word list, find the 
 
-Only one l">
+length of shortest transformation sequence from beginWord to endWord, such that:
+
+Only one">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -112,9 +118,13 @@ Only one l">
 		
 		</div>
 		
-		<h1 id="I"><a href="#I" class="headerlink" title="I"></a>I</h1><h2 id="Question-Word-Ladder-I"><a href="#Question-Word-Ladder-I" class="headerlink" title="Question:Word Ladder I"></a>Question:<a href="https://leetcode.com/problems/word-ladder/" target="_blank" rel="external">Word Ladder I</a></h2><pre><code>Given two words (beginWord and endWord), and a dictionary&apos;s word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
+		<h1 id="I"><a href="#I" class="headerlink" title="I"></a>I</h1><h2 id="Question-Word-Ladder-I"><a href="#Question-Word-Ladder-I" class="headerlink" title="Question:Word Ladder I"></a>Question:<a href="https://leetcode.com/problems/word-ladder/" target="_blank" rel="external">Word Ladder I</a></h2><pre><code>Given two words (beginWord and endWord), and a dictionary&apos;s word list, find the 
 
-Only one letter can be changed at a time;Each intermediate word must exist in the word list
+length of shortest transformation sequence from beginWord to endWord, such that:
+
+Only one letter can be changed at a time;Each intermediate word must exist in the 
+
+word list
 
 For example,
 
@@ -128,18 +138,21 @@ return its length 5.
 <pre><code>Return 0 if there is no such transformation sequence.
 All words have the same length.
 All words contain only lowercase alphabetic characters.    
-</code></pre><h2 id="SourceCode"><a href="#SourceCode" class="headerlink" title="SourceCode:"></a>SourceCode:</h2><h3 id="s1"><a href="#s1" class="headerlink" title="s1"></a>s1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">//笔者提交版本；耗时：14ms；</div><div class="line">//BFS</div><div class="line">//So we quickly realize that this is a search problem, and breath-first search guarantees the optimal //solution.</div><div class="line">public class Solution &#123;</div><div class="line">    public int ladderLength(String beginWord, String endWord, Set&lt;String&gt; wordList) &#123;</div><div class="line">        return  solution(beginWord, endWord, wordList);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    class wordNode&#123;</div><div class="line">		int numSteps;</div><div class="line">		String word;</div><div class="line">		public wordNode(int numSteps,String word)&#123;</div><div class="line">			this.numSteps = numSteps;</div><div class="line">			this.word = word;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	private int solution(String beginWord, String endWord, Set&lt;String&gt; wordList) &#123;</div><div class="line">		LinkedList&lt;wordNode&gt; queue = new LinkedList&lt;&gt;();</div><div class="line">		queue.add(new wordNode(1, beginWord));</div><div class="line">		wordList.add(endWord);</div><div class="line">		</div><div class="line">		while(!queue.isEmpty())&#123;</div><div class="line">			wordNode tmpWordNode = queue.remove();</div><div class="line">			</div><div class="line">			if(endWord.equals(tmpWordNode.word))&#123;</div><div class="line">				return tmpWordNode.numSteps;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			char[] wordChars = tmpWordNode.word.toCharArray();</div><div class="line">			for(int i = 0 ; i &lt; wordChars.length;i++)&#123;</div><div class="line">				char tmpChar = wordChars[i];</div><div class="line">				for(char c = &apos;a&apos;;c &lt;= &apos;z&apos;;c++)&#123;</div><div class="line">					wordChars[i] = c;</div><div class="line">					</div><div class="line">					String comWord = new String(wordChars);</div><div class="line">					if(wordList.contains(comWord))&#123;</div><div class="line">						queue.add(new wordNode(tmpWordNode.numSteps+1,comWord ));</div><div class="line">						wordList.remove(comWord);</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">				</div><div class="line">				wordChars[i] = tmpChar;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">    </div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h2 id="SourceCode"><a href="#SourceCode" class="headerlink" title="SourceCode:"></a>SourceCode:</h2><h3 id="s1"><a href="#s1" class="headerlink" title="s1"></a>s1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">//笔者提交版本；耗时：ms；</div><div class="line">//BFS</div><div class="line">//So we quickly realize that this is a search problem, and breath-first search guarantees the optimal //solution.</div><div class="line">public class Solution &#123;</div><div class="line">    public int ladderLength(String beginWord, String endWord, Set&lt;String&gt; wordList) &#123;</div><div class="line">        return  solution(beginWord, endWord, wordList);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    class wordNode&#123;</div><div class="line">		int numSteps;</div><div class="line">		String word;</div><div class="line">		public wordNode(int numSteps,String word)&#123;</div><div class="line">			this.numSteps = numSteps;</div><div class="line">			this.word = word;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	private int solution(String beginWord, String endWord, Set&lt;String&gt; wordList) &#123;</div><div class="line">		LinkedList&lt;wordNode&gt; queue = new LinkedList&lt;&gt;();</div><div class="line">		queue.add(new wordNode(1, beginWord));</div><div class="line">		wordList.add(endWord);</div><div class="line">		</div><div class="line">		while(!queue.isEmpty())&#123;</div><div class="line">			wordNode tmpWordNode = queue.remove();</div><div class="line">			</div><div class="line">			if(endWord.equals(tmpWordNode.word))&#123;</div><div class="line">				return tmpWordNode.numSteps;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			char[] wordChars = tmpWordNode.word.toCharArray();</div><div class="line">			for(int i = 0 ; i &lt; wordChars.length;i++)&#123;</div><div class="line">				char tmpChar = wordChars[i];</div><div class="line">				for(char c = &apos;a&apos;;c &lt;= &apos;z&apos;;c++)&#123;</div><div class="line">					wordChars[i] = c;</div><div class="line">					</div><div class="line">					String comWord = new String(wordChars);</div><div class="line">					if(wordList.contains(comWord))&#123;</div><div class="line">						queue.add(new wordNode(tmpWordNode.numSteps+1,comWord ));</div><div class="line">						wordList.remove(comWord);</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">				</div><div class="line">				wordChars[i] = tmpChar;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">    </div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="s2"><a href="#s2" class="headerlink" title="s2"></a>s2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//该版本参考了Discuss,还没看Discuss；耗时：ms；</div><div class="line">//待写</div></pre></td></tr></table></figure>
-<h1 id="II"><a href="#II" class="headerlink" title="II"></a>II</h1><h2 id="Question-Word-Ladder-II"><a href="#Question-Word-Ladder-II" class="headerlink" title="Question:Word Ladder II"></a>Question:<a href="https://leetcode.com/problems/word-ladder-ii/" target="_blank" rel="external">Word Ladder II</a></h2><pre><code>Given two words (beginWord and endWord), and a dictionary&apos;s word list, find all shortest transformation sequence(s) from beginWord to endWord, such that:
+<h1 id="II"><a href="#II" class="headerlink" title="II"></a>II</h1><h2 id="Question-Word-Ladder-II"><a href="#Question-Word-Ladder-II" class="headerlink" title="Question:Word Ladder II"></a>Question:<a href="https://leetcode.com/problems/word-ladder-ii/" target="_blank" rel="external">Word Ladder II</a></h2><pre><code>Given two words (beginWord and endWord), and a dictionary&apos;s word list, find all shortest transformation 
+
+sequence(s) from beginWord to endWord, such that:
 
 Only one letter can be changed at a time
 Each intermediate word must exist in the word list
-For example,
 
+For example,
 Given:
 beginWord = &quot;hit&quot;
 endWord = &quot;cog&quot;
 wordList = [&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;lot&quot;,&quot;log&quot;]
+
 Return
 [
 [&quot;hit&quot;,&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;cog&quot;],
