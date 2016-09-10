@@ -11,37 +11,43 @@
     
 
     
-    <meta name="description" content="注解理解可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定的。在代码中使用注解，就相当于把一部分元数据从XML文件移到了代码本身之中，在一个地方管理和维护。
+    <meta name="description" content="注解理解可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定
+
+的。在代码中使用注解，就相当于把一部分元数据从XML文件移到了代码本身之中，在一个地方管理和维护。
 注解分类标记注解:简单的声明即可 ；
 
 Eg:@Override
 
 非标记注解：需待参数；
 
-Eg: @SupressWarnings({&amp;quot;uncheck&amp;quot;, &amp;qu">
+Eg: @SupressWarnings({&amp;quot;uncheck&amp;quot;, &amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="注解">
 <meta property="og:url" content="https://utihbi.github.io/2016/09/10/注解/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="注解理解可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定的。在代码中使用注解，就相当于把一部分元数据从XML文件移到了代码本身之中，在一个地方管理和维护。
+<meta property="og:description" content="注解理解可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定
+
+的。在代码中使用注解，就相当于把一部分元数据从XML文件移到了代码本身之中，在一个地方管理和维护。
 注解分类标记注解:简单的声明即可 ；
 
 Eg:@Override
 
 非标记注解：需待参数；
 
-Eg: @SupressWarnings({&amp;quot;uncheck&amp;quot;, &amp;qu">
-<meta property="og:updated_time" content="2016-09-10T09:24:00.771Z">
+Eg: @SupressWarnings({&amp;quot;uncheck&amp;quot;, &amp;">
+<meta property="og:updated_time" content="2016-09-10T14:02:59.275Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="注解">
-<meta name="twitter:description" content="注解理解可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定的。在代码中使用注解，就相当于把一部分元数据从XML文件移到了代码本身之中，在一个地方管理和维护。
+<meta name="twitter:description" content="注解理解可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定
+
+的。在代码中使用注解，就相当于把一部分元数据从XML文件移到了代码本身之中，在一个地方管理和维护。
 注解分类标记注解:简单的声明即可 ；
 
 Eg:@Override
 
 非标记注解：需待参数；
 
-Eg: @SupressWarnings({&amp;quot;uncheck&amp;quot;, &amp;qu">
+Eg: @SupressWarnings({&amp;quot;uncheck&amp;quot;, &amp;">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -127,7 +133,9 @@ Eg: @SupressWarnings({&amp;quot;uncheck&amp;quot;, &amp;qu">
 		
 		</div>
 		
-		<h2 id="注解理解"><a href="#注解理解" class="headerlink" title="注解理解"></a>注解理解</h2><pre><code>可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定的。在代码中使用注解，就相当于把一部分元数据从XML文件移到了代码本身之中，在一个地方管理和维护。
+		<h2 id="注解理解"><a href="#注解理解" class="headerlink" title="注解理解"></a>注解理解</h2><pre><code>可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定
+
+的。在代码中使用注解，就相当于把一部分元数据从XML文件移到了代码本身之中，在一个地方管理和维护。
 </code></pre><h2 id="注解分类"><a href="#注解分类" class="headerlink" title="注解分类"></a>注解分类</h2><pre><code>标记注解:简单的声明即可 ；
 
 Eg:@Override
@@ -135,14 +143,18 @@ Eg:@Override
 非标记注解：需待参数；
 
 Eg: @SupressWarnings({&quot;uncheck&quot;, &quot;unused&quot;})
+
 @Table(name = &quot;Customer&quot;, schema = &quot;APP&quot;)
+
 采用键值对来表示，{}表示数组；当域只有一个配置参数时，参数名称默认是value，可以省略，如上；
 </code></pre><h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><pre><code>元注解：用来声明注解本身的行为；
 
-@Retention：声明注解的保留策略，有CLASS、RUNTIME和SOURCE这三种，分别表示注解保存在类文件、JVM运行时刻和源代码中。只有当声明为RUNTIME的时候，才能够在运行时刻通过反射API来获取到注解的信息。
+@Retention：声明注解的保留策略，有CLASS、RUNTIME和SOURCE这三种，分别表示注解保存在类文件、JVM运行时刻和源代码中。只
+
+有当声明为RUNTIME的时候，才能够在运行时刻通过反射API来获取到注解的信息。
 
 @Target：声明注解可以被添加在哪些类型的元素上，如类型、方法和域等。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//@interface用来声明一个注解，其中的每一个方法实际上是声明了一个配置参数。方法的名称就是参数的名称，返回值类型就是参数的类型。可以通过default来声明参数的默认值。</div><div class="line"></div><div class="line"></div><div class="line">@Retention(RetentionPolicy.RUNTIME)</div><div class="line">@Target(ElementType.TYPE)</div><div class="line">public @interface Assignment &#123;</div><div class="line">    String assignee();</div><div class="line">    int effort();</div><div class="line">    double finished() default 0;</div><div class="line">&#125; </div><div class="line"></div><div class="line"></div><div class="line">@Retention(RetentionPolicy.RUNTIME)</div><div class="line">@Target(ElementType.METHOD)</div><div class="line">public @interface RequiredRoles &#123;</div><div class="line">    String[] value();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//@interface用来声明一个注解，其中的每一个方法实际上是声明了一个配置参数。</div><div class="line">//方法的名称就是参数的名称，返回值类型就是参数的类型。可以通过default来声明参数的默认值。</div><div class="line"></div><div class="line"></div><div class="line">@Retention(RetentionPolicy.RUNTIME)</div><div class="line">@Target(ElementType.TYPE)</div><div class="line">public @interface Assignment &#123;</div><div class="line">    String assignee();</div><div class="line">    int effort();</div><div class="line">    double finished() default 0;</div><div class="line">&#125; </div><div class="line"></div><div class="line"></div><div class="line">@Retention(RetentionPolicy.RUNTIME)</div><div class="line">@Target(ElementType.METHOD)</div><div class="line">public @interface RequiredRoles &#123;</div><div class="line">    String[] value();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">

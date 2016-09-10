@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-09-10T09:24:00.771Z</updated>
+  <updated>2016-09-10T14:02:59.275Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -20,9 +20,11 @@
     <link href="https://utihbi.github.io/2016/09/10/%E6%B3%A8%E8%A7%A3/"/>
     <id>https://utihbi.github.io/2016/09/10/注解/</id>
     <published>2016-09-10T09:08:23.000Z</published>
-    <updated>2016-09-10T09:24:00.771Z</updated>
+    <updated>2016-09-10T14:02:59.275Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;注解理解&quot;&gt;&lt;a href=&quot;#注解理解&quot; class=&quot;headerlink&quot; title=&quot;注解理解&quot;&gt;&lt;/a&gt;注解理解&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定的。在代码中使用注解，就相当于把一部分元数据从XML文件移到了代码本身之中，在一个地方管理和维护。
+    <content type="html">&lt;h2 id=&quot;注解理解&quot;&gt;&lt;a href=&quot;#注解理解&quot; class=&quot;headerlink&quot; title=&quot;注解理解&quot;&gt;&lt;/a&gt;注解理解&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定
+
+的。在代码中使用注解，就相当于把一部分元数据从XML文件移到了代码本身之中，在一个地方管理和维护。
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;注解分类&quot;&gt;&lt;a href=&quot;#注解分类&quot; class=&quot;headerlink&quot; title=&quot;注解分类&quot;&gt;&lt;/a&gt;注解分类&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;标记注解:简单的声明即可 ；
 
 Eg:@Override
@@ -30,19 +32,24 @@ Eg:@Override
 非标记注解：需待参数；
 
 Eg: @SupressWarnings({&amp;quot;uncheck&amp;quot;, &amp;quot;unused&amp;quot;})
+
 @Table(name = &amp;quot;Customer&amp;quot;, schema = &amp;quot;APP&amp;quot;)
+
 采用键值对来表示，{}表示数组；当域只有一个配置参数时，参数名称默认是value，可以省略，如上；
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;自定义注解&quot;&gt;&lt;a href=&quot;#自定义注解&quot; class=&quot;headerlink&quot; title=&quot;自定义注解&quot;&gt;&lt;/a&gt;自定义注解&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;元注解：用来声明注解本身的行为；
 
-@Retention：声明注解的保留策略，有CLASS、RUNTIME和SOURCE这三种，分别表示注解保存在类文件、JVM运行时刻和源代码中。只有当声明为RUNTIME的时候，才能够在运行时刻通过反射API来获取到注解的信息。
+@Retention：声明注解的保留策略，有CLASS、RUNTIME和SOURCE这三种，分别表示注解保存在类文件、JVM运行时刻和源代码中。只
+
+有当声明为RUNTIME的时候，才能够在运行时刻通过反射API来获取到注解的信息。
 
 @Target：声明注解可以被添加在哪些类型的元素上，如类型、方法和域等。
-&lt;/code&gt;&lt;/pre&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;//@interface用来声明一个注解，其中的每一个方法实际上是声明了一个配置参数。方法的名称就是参数的名称，返回值类型就是参数的类型。可以通过default来声明参数的默认值。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@Retention(RetentionPolicy.RUNTIME)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@Target(ElementType.TYPE)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;public @interface Assignment &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    String assignee();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    int effort();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    double finished() default 0;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@Retention(RetentionPolicy.RUNTIME)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@Target(ElementType.METHOD)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;public @interface RequiredRoles &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    String[] value();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;//@interface用来声明一个注解，其中的每一个方法实际上是声明了一个配置参数。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//方法的名称就是参数的名称，返回值类型就是参数的类型。可以通过default来声明参数的默认值。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@Retention(RetentionPolicy.RUNTIME)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@Target(ElementType.TYPE)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;public @interface Assignment &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    String assignee();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    int effort();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    double finished() default 0;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@Retention(RetentionPolicy.RUNTIME)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@Target(ElementType.METHOD)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;public @interface RequiredRoles &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    String[] value();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;注解理解&quot;&gt;&lt;a href=&quot;#注解理解&quot; class=&quot;headerlink&quot; title=&quot;注解理解&quot;&gt;&lt;/a&gt;注解理解&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定的
+      &lt;h2 id=&quot;注解理解&quot;&gt;&lt;a href=&quot;#注解理解&quot; class=&quot;headerlink&quot; title=&quot;注解理解&quot;&gt;&lt;/a&gt;注解理解&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定
+
     
     </summary>
     
