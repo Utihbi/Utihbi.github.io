@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://utihbi.github.io/"/>
-  <updated>2016-09-11T14:03:16.938Z</updated>
+  <updated>2016-09-11T14:07:26.712Z</updated>
   <id>https://utihbi.github.io/</id>
   
   <author>
@@ -20,11 +20,10 @@
     <link href="https://utihbi.github.io/2016/09/11/Memcached/"/>
     <id>https://utihbi.github.io/2016/09/11/Memcached/</id>
     <published>2016-09-11T13:13:35.000Z</published>
-    <updated>2016-09-11T14:03:16.938Z</updated>
+    <updated>2016-09-11T14:07:26.712Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Memcached&quot;&gt;&lt;a href=&quot;#Memcached&quot; class=&quot;headerlink&quot; title=&quot;Memcached&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://www.memcached.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Memcached&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Memcached是一款免费且开源、高性能、分布式内存对象缓存系统。旨在通过减轻数据库负载压力来加速动态Web应用。&lt;/p&gt;
-&lt;p&gt;Memcached将“键值对”形式的数据存储在内存中，“键值对”可以是任意的小的数据，比如strings 和 Object,这些数据来自数据库调&lt;/p&gt;
-&lt;p&gt;用、API调用或者页面传送的数据。&lt;/p&gt;
+&lt;p&gt;Memcached将“键值对”形式的数据存储在内存中，“键值对”可以是任意的小的数据，比如strings 和 Object,这些数据来自数据库调用、API调用或者页面传送的数据。&lt;/p&gt;
 &lt;p&gt;Memcached非常强大，它的设计是基于快速部署、容易开发和解决面对海量数据缓存所出现的问题。它的API对于大部分编程语言都可适用。&lt;/p&gt;
 &lt;h2 id=&quot;构成&quot;&gt;&lt;a href=&quot;#构成&quot; class=&quot;headerlink&quot; title=&quot;构成&quot;&gt;&lt;/a&gt;构成&lt;/h2&gt;&lt;p&gt;Memcached是一个开发工具，不是一个“代码加速器”，也不是一个数据库中间件。&lt;/p&gt;
 &lt;p&gt;它由以下部分构成:&lt;/p&gt;
