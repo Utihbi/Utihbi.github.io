@@ -4,50 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Java获取Class类型引用的比较 | 菜鸟生活</title>
+    <title>Memcached | 菜鸟生活</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Emerson">
     
 
     
-    <meta name="description" content="Class类型引用获取方式 无论何时，只要你想在运行时使用类型信息，就必须首先获得对恰当的Class对象的引用；
- Class.forName();
- 通过实例对象的getClass();
- 类字面常量：Initable.class；
-类字面常量说明
-类字面常量不会自动初始化该Class对象。为了使用类需要做的准备工作包括以下3个方面：
-
-- 加载 由类加载器执行
-
-- 链接 验证字节码，为静态域">
+    <meta name="description" content="MemcachedMemcached是一款免费且开源、高性能、分布式内存对象缓存系统。旨在通过减轻数据库负载压力来加速动态Web应用。
+Memcached将“键值对”形式的数据存储在内存中，“键值对”可以是任意的小的数据，比如strings 和 Object,这些数据来自数据库调
+用、API调用或者页面传送的数据。
+Memcached非常强大，它的设计是基于快速部署、容易开发和解决面对海量数据缓存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java获取Class类型引用的比较">
-<meta property="og:url" content="https://utihbi.github.io/2016/08/06/Java获取Class类型引用的比较/index.html">
+<meta property="og:title" content="Memcached">
+<meta property="og:url" content="https://utihbi.github.io/2016/09/11/Memcached/index.html">
 <meta property="og:site_name" content="菜鸟生活">
-<meta property="og:description" content="Class类型引用获取方式 无论何时，只要你想在运行时使用类型信息，就必须首先获得对恰当的Class对象的引用；
- Class.forName();
- 通过实例对象的getClass();
- 类字面常量：Initable.class；
-类字面常量说明
-类字面常量不会自动初始化该Class对象。为了使用类需要做的准备工作包括以下3个方面：
-
-- 加载 由类加载器执行
-
-- 链接 验证字节码，为静态域">
-<meta property="og:updated_time" content="2016-08-06T01:25:08.144Z">
+<meta property="og:description" content="MemcachedMemcached是一款免费且开源、高性能、分布式内存对象缓存系统。旨在通过减轻数据库负载压力来加速动态Web应用。
+Memcached将“键值对”形式的数据存储在内存中，“键值对”可以是任意的小的数据，比如strings 和 Object,这些数据来自数据库调
+用、API调用或者页面传送的数据。
+Memcached非常强大，它的设计是基于快速部署、容易开发和解决面对海量数据缓存">
+<meta property="og:updated_time" content="2016-09-11T14:03:16.938Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java获取Class类型引用的比较">
-<meta name="twitter:description" content="Class类型引用获取方式 无论何时，只要你想在运行时使用类型信息，就必须首先获得对恰当的Class对象的引用；
- Class.forName();
- 通过实例对象的getClass();
- 类字面常量：Initable.class；
-类字面常量说明
-类字面常量不会自动初始化该Class对象。为了使用类需要做的准备工作包括以下3个方面：
-
-- 加载 由类加载器执行
-
-- 链接 验证字节码，为静态域">
+<meta name="twitter:title" content="Memcached">
+<meta name="twitter:description" content="MemcachedMemcached是一款免费且开源、高性能、分布式内存对象缓存系统。旨在通过减轻数据库负载压力来加速动态Web应用。
+Memcached将“键值对”形式的数据存储在内存中，“键值对”可以是任意的小的数据，比如strings 和 Object,这些数据来自数据库调
+用、API调用或者页面传送的数据。
+Memcached非常强大，它的设计是基于快速部署、容易开发和解决面对海量数据缓存">
 
     
     <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
@@ -113,14 +95,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/08/06/Java获取Class类型引用的比较/" title="Java获取Class类型引用的比较" itemprop="url">Java获取Class类型引用的比较</a>
+      <a href="/2016/09/11/Memcached/" title="Memcached" itemprop="url">Memcached</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-06T00:35:06.000Z" itemprop="datePublished"> 发表于 2016-08-06</time>
+    <time datetime="2016-09-11T13:13:35.000Z" itemprop="datePublished"> 发表于 2016-09-11</time>
     
   </p>
 </header>
@@ -129,30 +111,39 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Class类型引用获取方式"><span class="toc-number">1.</span> <span class="toc-text">Class类型引用获取方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类字面常量说明"><span class="toc-number">2.</span> <span class="toc-text">类字面常量说明</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Memcached"><span class="toc-number">1.</span> <span class="toc-text">Memcached</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构成"><span class="toc-number">2.</span> <span class="toc-text">构成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计理念"><span class="toc-number">3.</span> <span class="toc-text">设计理念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单的键值对存储"><span class="toc-number">3.1.</span> <span class="toc-text">简单的键值对存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一半-一半"><span class="toc-number">3.2.</span> <span class="toc-text">一半/一半</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器间无关联"><span class="toc-number">3.3.</span> <span class="toc-text">服务器间无关联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存无效"><span class="toc-number">3.4.</span> <span class="toc-text">缓存无效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖"><span class="toc-number">3.5.</span> <span class="toc-text">依赖</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h2 id="Class类型引用获取方式"><a href="#Class类型引用获取方式" class="headerlink" title="Class类型引用获取方式"></a>Class类型引用获取方式</h2><p> 无论何时，只要你想在运行时使用类型信息，就必须首先获得对恰当的Class对象的引用；</p>
-<p> Class.forName();</p>
-<p> 通过实例对象的getClass();</p>
-<p> 类字面常量：Initable.class；</p>
-<h2 id="类字面常量说明"><a href="#类字面常量说明" class="headerlink" title="类字面常量说明"></a>类字面常量说明</h2><blockquote>
-<p>类字面常量不会自动初始化该Class对象。为了使用类需要做的准备工作包括以下3个方面：</p>
-</blockquote>
-<pre><code>- 加载 由类加载器执行
-
-- 链接 验证字节码，为静态域分配空间，并且如果必须的话，将解析这个类创建的对其他类的所有引用
-
-- 初始化 如果该类具有超类，则对其初始化，执行静态初始化器和静态初始化块。
-</code></pre><font color="red">初始化被延迟到了对静态方法(构造器隐式地是静态的)或者非常数静态域进行首先引用时才执行</font>
-
-<blockquote>
-<p>类字面常量初始化有效的实现了尽可能的“惰性”。详见代码：</p>
-<p>仅使用.class来获取类的引用时不会引发初始化；但Class.forName()却立即进行了初始化</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line">import java.util.Random;</div><div class="line"></div><div class="line">class Initable&#123;</div><div class="line">    static final int staticFinal = 47;</div><div class="line">    static final int staticFinal2 = ClassInitialization.rand.nextInt(1000);// the value is between 0 and 1000 which is returned ;</div><div class="line">    static&#123;</div><div class="line">        System.out.println(&quot;Initializing Initable&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">class Initable2&#123;</div><div class="line">    static int staticNonFinal = 147;</div><div class="line">    static&#123;</div><div class="line">        System.out.println(&quot;Initializing Initable2&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Initable3&#123;</div><div class="line">    static int staticNonFinal = 74;</div><div class="line">    static&#123;</div><div class="line">        System.out.println(&quot;Initializing Initable3&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public class ClassInitialization&#123;</div><div class="line">    public static Random rand = new Random(47);// Random(long seed);</div><div class="line">    public static void main (String[] args) throws Exception&#123;</div><div class="line">        Class initable = Initable.class; //不会引发类初始化;</div><div class="line">        </div><div class="line">        splitLine(&quot;Initable&quot;);</div><div class="line">        </div><div class="line">        System.out.println(Initable.staticFinal);//编译期常量，不需对Initable类进行初始化就可以读取</div><div class="line">        //splitLine();</div><div class="line">        </div><div class="line">        System.out.println(Initable.staticFinal2);//非编译期常量，强制对Initable类进行初始化</div><div class="line">        splitLine(null);</div><div class="line">        </div><div class="line">        System.out.println(Initable2.staticNonFinal);</div><div class="line">        //访问一个非final的static域，在读取之前，要求先进行链接(为这个域分配存储空间)和初始化(初始化该存储空间)</div><div class="line">        splitLine(&quot;Initable2&quot;);</div><div class="line">        </div><div class="line">        Class initable3 = Class.forName(&quot;Initable3&quot;);</div><div class="line">        splitLine(&quot;Initable3&quot;);</div><div class="line">        System.out.println(Initable3.staticNonFinal);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public static void splitLine(String desc)&#123;</div><div class="line">        if(null!= desc) System.out.println(&quot;After creating &quot;+desc+&quot; ref&quot;);</div><div class="line">        System.out.println(&quot;------------------------------------&quot;);</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">	</div><div class="line">	</div><div class="line">	/*</div><div class="line">	*            output:</div><div class="line">	*</div><div class="line">	* After creating Initable ref</div><div class="line">	* ------------------------------------</div><div class="line">	* 47</div><div class="line">	* Initializing Initable</div><div class="line">	* 258</div><div class="line">	* ------------------------------------</div><div class="line">	* Initializing Initable2</div><div class="line">	* 147</div><div class="line">	* After creating Initable2 ref</div><div class="line">	* ------------------------------------</div><div class="line">	* Initializing Initable3</div><div class="line">	* After creating Initable3 ref</div><div class="line">	* ------------------------------------</div><div class="line">	* 74</div><div class="line">	*/</div><div class="line">		</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>参考资料：Thinking in Java</p>
+		<h2 id="Memcached"><a href="#Memcached" class="headerlink" title="Memcached"></a><a href="http://www.memcached.org/" target="_blank" rel="external">Memcached</a></h2><p>Memcached是一款免费且开源、高性能、分布式内存对象缓存系统。旨在通过减轻数据库负载压力来加速动态Web应用。</p>
+<p>Memcached将“键值对”形式的数据存储在内存中，“键值对”可以是任意的小的数据，比如strings 和 Object,这些数据来自数据库调</p>
+<p>用、API调用或者页面传送的数据。</p>
+<p>Memcached非常强大，它的设计是基于快速部署、容易开发和解决面对海量数据缓存所出现的问题。它的API对于大部分编程语言都可适用。</p>
+<h2 id="构成"><a href="#构成" class="headerlink" title="构成"></a>构成</h2><p>Memcached是一个开发工具，不是一个“代码加速器”，也不是一个数据库中间件。</p>
+<p>它由以下部分构成:</p>
+<ul>
+<li><p>客户端软件：提供了一个可用的Memcached服务器的列表；</p>
+</li>
+<li><p>基于Hash算法的客服端：根据“key”来选择服务器；</p>
+</li>
+<li><p>服务端软件：将“键值对”存储在内部的一个hash表中；</p>
+</li>
+<li><p>LRU：决定何时丢弃旧数据；</p>
+</li>
+</ul>
+<h2 id="设计理念"><a href="#设计理念" class="headerlink" title="设计理念"></a>设计理念</h2><h3 id="简单的键值对存储"><a href="#简单的键值对存储" class="headerlink" title="简单的键值对存储"></a>简单的键值对存储</h3><p>服务端并不关心你的数据是怎样的。一个记录由：key、过期时间、选项标志、和元素数据构成。</p>
+<p>它不关心数据结构，你必须存储那些序列化的数据。</p>
+<p>一些简单的指令（incr/decr）用来操作底层数据。</p>
+<h3 id="一半-一半"><a href="#一半-一半" class="headerlink" title="一半/一半"></a>一半/一半</h3><p>Memcached 的实现分为两部分：客户端和服务端。</p>
+<p>客户端负责选取哪台服务器来进行数据的读写；当无法连接服务器时应该做什么。</p>
+<p>服务器端负责怎样存储和提取数据；如何丢弃数据和重用内存。</p>
+<h3 id="服务器间无关联"><a href="#服务器间无关联" class="headerlink" title="服务器间无关联"></a>服务器间无关联</h3><p>所有Memcached服务器节点间没有任何通信。它们不会同步，不会广播、不会复制。增加服务器即可增加可用内存。</p>
+<p>缓存无效也非常简单：客户端删除数据或者直接覆盖原数据。</p>
+<h3 id="缓存无效"><a href="#缓存无效" class="headerlink" title="缓存无效"></a>缓存无效</h3><p>不是向所有服务器广播数据无效，客户端直接定位到存储数据的服务器来使数据失效。</p>
+<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><ul>
+<li><a href="http://www.monkey.org/~provos/libevent/" target="_blank" rel="external">libevent</a> (libevent-dev)</li>
+</ul>
+<p>参考资料：<a href="https://github.com/memcached/memcached/wiki" target="_blank" rel="external">https://github.com/memcached/memcached/wiki</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -160,13 +151,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+  <a class="article-category-link" href="/categories/DataBase/">DataBase</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/JAVA/">JAVA</a>
+  <span></span> <a href="/tags/NoSQL/">NoSQL</a>
   </div>
 
 </div>
@@ -175,7 +166,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://utihbi.github.io/2016/08/06/Java获取Class类型引用的比较/" data-title="Java获取Class类型引用的比较 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  <div data-url="https://utihbi.github.io/2016/09/11/Memcached/" data-title="Memcached | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -188,19 +179,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/08/21/ZigZag Conversion(LeetCode)/" title="ZigZag Conversion(LeetCode)">
-  <strong>上一篇：</strong><br/>
-  <span>
-  ZigZag Conversion(LeetCode)</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/08/04/快速排序 /"  title="快速排序">
+<a href="/2016/09/10/注解/"  title="注解">
  <strong>下一篇：</strong><br/> 
- <span>快速排序
+ <span>注解
 </span>
 </a>
 </div>
@@ -209,7 +192,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/08/06/Java获取Class类型引用的比较/" data-title="Java获取Class类型引用的比较" data-url="https://utihbi.github.io/2016/08/06/Java获取Class类型引用的比较/"></div>
+	<div class="ds-thread" data-thread-key="2016/09/11/Memcached/" data-title="Memcached" data-url="https://utihbi.github.io/2016/09/11/Memcached/"></div>
 </section>
 
 
@@ -219,7 +202,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Class类型引用获取方式"><span class="toc-number">1.</span> <span class="toc-text">Class类型引用获取方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类字面常量说明"><span class="toc-number">2.</span> <span class="toc-text">类字面常量说明</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Memcached"><span class="toc-number">1.</span> <span class="toc-text">Memcached</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构成"><span class="toc-number">2.</span> <span class="toc-text">构成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计理念"><span class="toc-number">3.</span> <span class="toc-text">设计理念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单的键值对存储"><span class="toc-number">3.1.</span> <span class="toc-text">简单的键值对存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一半-一半"><span class="toc-number">3.2.</span> <span class="toc-text">一半/一半</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器间无关联"><span class="toc-number">3.3.</span> <span class="toc-text">服务器间无关联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存无效"><span class="toc-number">3.4.</span> <span class="toc-text">缓存无效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖"><span class="toc-number">3.5.</span> <span class="toc-text">依赖</span></a></li></ol></li></ol>
  
   </div>
 
