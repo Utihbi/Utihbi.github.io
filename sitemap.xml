@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://utihbi.github.io/2016/07/24/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</loc>
+    
+    <lastmod>2016-09-12T01:40:18.444Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://utihbi.github.io/2016/09/11/Memcached/</loc>
     
     <lastmod>2016-09-11T14:07:26.712Z</lastmod>
@@ -236,13 +243,6 @@
     <loc>https://utihbi.github.io/2016/07/25/ThreeNums(LeetCode)/</loc>
     
     <lastmod>2016-07-25T03:49:05.199Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://utihbi.github.io/2016/07/24/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</loc>
-    
-    <lastmod>2016-07-24T04:30:01.689Z</lastmod>
     
   </url>
   

@@ -41,7 +41,7 @@
 第二范式（2NF）属性完全依赖于主键
   2NF是对记录的惟一性约束，要求记录有惟一标识(主键)，即实体惟一性
   完全依赖：不">
-<meta property="og:updated_time" content="2016-07-24T04:30:01.689Z">
+<meta property="og:updated_time" content="2016-09-12T01:40:18.444Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库基本概念">
 <meta name="twitter:description" content="范式符合某一种级别的关系模式的集合
@@ -138,7 +138,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#范式"><span class="toc-number">1.</span> <span class="toc-text">范式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模式结构"><span class="toc-number">2.</span> <span class="toc-text">模式结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务"><span class="toc-number">3.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACID"><span class="toc-number">4.</span> <span class="toc-text">ACID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务隔离级别"><span class="toc-number">5.</span> <span class="toc-text">事务隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不可重复读和幻读比较"><span class="toc-number">5.1.</span> <span class="toc-text">不可重复读和幻读比较</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#范式"><span class="toc-number">1.</span> <span class="toc-text">范式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模式结构"><span class="toc-number">2.</span> <span class="toc-text">模式结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务"><span class="toc-number">3.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACID"><span class="toc-number">4.</span> <span class="toc-text">ACID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务隔离级别"><span class="toc-number">5.</span> <span class="toc-text">事务隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不可重复读和幻读比较"><span class="toc-number">5.1.</span> <span class="toc-text">不可重复读和幻读比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DDL-DML-DCL-DQL-TCL"><span class="toc-number">6.</span> <span class="toc-text">DDL/DML/DCL/DQL/TCL</span></a></li></ol>
 		
 		</div>
 		
@@ -226,20 +226,42 @@ Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额�
 
 幻读:在一个事务中不同时间段查询，记录数不同。
     与不可重复读的区别是：在幻读中，已经读取的数据不会改变，只是与以前相比，会有更多的数据满足查询条件。
-</code></pre>  
+</code></pre><h2 id="DDL-DML-DCL-DQL-TCL"><a href="#DDL-DML-DCL-DQL-TCL" class="headerlink" title="DDL/DML/DCL/DQL/TCL"></a>DDL/DML/DCL/DQL/TCL</h2><ul>
+<li><p>DDL（Data Definition Language 数据定义语言）</p>
+<p>  用于操作对象和对象的属性，这种对象包括数据库本身，以及数据库对象，像：表、视图等</p>
+<p>  该语言不需要commit</p>
+<p>  create, alter, drop，truncate(截断表)， comment（备注）</p>
+</li>
+<li><p>DML（Data Manipulation Language 数据操控语言）</p>
+<p>  用于操作数据库对象中包含的数据，也就是说操作的单位是记录。</p>
+<p>  该语言需要commit</p>
+<p>  insert, update, delete，call（调用一个PL/SQL或Java子程序），explain plan（ 解析分析数据访问路径）</p>
+</li>
+<li><p>DQL（Data Query Language 数据操控语言）</p>
+<p>  select</p>
+</li>
+<li><p>DCL（Data Control Language 数据控制语句）</p>
+<p>  用于操作数据库对象的权限，这些操作的确定使数据更加的安全，操作对象；用户</p>
+<p>  grant, revoke</p>
+</li>
+<li><p>TCL（Transaction Control Language 事务控制语言）</p>
+<p>  commit，rollback，savepoint(事务中设置断点，可以回滚至此处)，set transaction（改变事务选项）</p>
+</li>
+</ul>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/DB/">DB</a>
+  <a class="article-category-link" href="/categories/DataBase/">DataBase</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/DB/">DB</a>
+  <span></span> <a href="/tags/DataBase/">DataBase</a>
   </div>
 
 </div>
@@ -292,7 +314,7 @@ Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额�
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#范式"><span class="toc-number">1.</span> <span class="toc-text">范式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模式结构"><span class="toc-number">2.</span> <span class="toc-text">模式结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务"><span class="toc-number">3.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACID"><span class="toc-number">4.</span> <span class="toc-text">ACID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务隔离级别"><span class="toc-number">5.</span> <span class="toc-text">事务隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不可重复读和幻读比较"><span class="toc-number">5.1.</span> <span class="toc-text">不可重复读和幻读比较</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#范式"><span class="toc-number">1.</span> <span class="toc-text">范式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模式结构"><span class="toc-number">2.</span> <span class="toc-text">模式结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务"><span class="toc-number">3.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACID"><span class="toc-number">4.</span> <span class="toc-text">ACID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务隔离级别"><span class="toc-number">5.</span> <span class="toc-text">事务隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不可重复读和幻读比较"><span class="toc-number">5.1.</span> <span class="toc-text">不可重复读和幻读比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DDL-DML-DCL-DQL-TCL"><span class="toc-number">6.</span> <span class="toc-text">DDL/DML/DCL/DQL/TCL</span></a></li></ol>
  
   </div>
 
@@ -304,7 +326,7 @@ Eg:银行转帐，从原账户扣除金额，以及向目标账户添加金额�
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/7788/" style="font-size: 10px;">7788</a> <a href="/tags/DB/" style="font-size: 10px;">DB</a> <a href="/tags/JAVA/" style="font-size: 20px;">JAVA</a> <a href="/tags/LeetCode/" style="font-size: 17.5px;">LeetCode</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/UML/" style="font-size: 15px;">UML</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/排序/" style="font-size: 12.5px;">排序</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a>
+       <a href="/tags/7788/" style="font-size: 10px;">7788</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/JAVA/" style="font-size: 20px;">JAVA</a> <a href="/tags/LeetCode/" style="font-size: 17.5px;">LeetCode</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/UML/" style="font-size: 15px;">UML</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/排序/" style="font-size: 12.5px;">排序</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a>
     </div>
   </div>
 
