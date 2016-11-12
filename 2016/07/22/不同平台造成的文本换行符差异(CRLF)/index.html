@@ -36,7 +36,7 @@
 <meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/notepad.png">
 <meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/beyond.png">
 <meta property="og:image" content="http://oald9ve1g.bkt.clouddn.com/hexo/img/gitbash_CTLF.png">
-<meta property="og:updated_time" content="2016-08-04T13:27:36.329Z">
+<meta property="og:updated_time" content="2016-11-12T07:27:45.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不同平台造成的文本换行符差异(CRLF)">
 <meta name="twitter:description" content="问题背景
@@ -90,8 +90,6 @@
 					 
 						<li><a href="/">主页|Home</a></li>
 					
-						<li><a href="/tool/">工具|Tool</a></li>
-					
 						<li><a href="/about/">简介|About</a></li>
 					
 					<li>
@@ -138,15 +136,15 @@
 <li><p>还记得自己之前提交代码(win-&gt;linux),提交完后系统就奔溃了，笔者当时就懵逼了。到服务器上一看代码，每行代码末尾无端的了多了<font color="red"> ^M  </font>的字符。</p>
 </li>
 <li><p>今天往Git上提交时，又遇到了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">warning: LF will be replaced by CRLF in stuManager1/GitTest.txt.</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">warning: LF will be replaced by CRLF <span class="keyword">in</span> stuManager1/GitTest.txt.</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>当然，对于warning，您完全可以置之不理。</p>
 <p>好了，到这里，我们可以说说上面问题的本质原因了。</p>
 <h2 id="涉及知识"><a href="#涉及知识" class="headerlink" title="涉及知识"></a>涉及知识</h2><p>对于文本处理，不同平台使用的换行操作符是不一样的。这也就是上述问题产生的原因了。</p>
-<p>实际编程中，大家应该写过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">\r\n</div><div class="line">//或者</div><div class="line">\n</div></pre></td></tr></table></figure></p>
+<p>实际编程中，大家应该写过<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">\r\n</div><div class="line">//或者</div><div class="line">\n</div></pre></td></tr></table></figure></p>
 <p>我们给这俩字符起个名字：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">\r //CR(Carriage Return,回车)</div><div class="line">\n //LF(Line Feed，换行)</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">\r //CR(Carriage Return,回车)</div><div class="line">\n //LF(Line Feed，换行)</div></pre></td></tr></table></figure>
 <ul>
 <li><p>Dos和Windows采用回车+换行CRLF表示下一行</p>
 </li>
@@ -158,7 +156,7 @@
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ul>
 <li><strong>命令式</strong></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/******************vi 中编辑：******************/</div><div class="line">:set fileformat=unix</div><div class="line">:set fileformat=dos</div><div class="line">:set fileformat=mac</div><div class="line">//上面3个命令按需设置；</div><div class="line"></div><div class="line">/*******************linux/unix******************/</div><div class="line">dos2unix filename</div><div class="line">unix2dos filename</div><div class="line">//不啰嗦，一目了然</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/******************vi 中编辑：******************/</div><div class="line">:<span class="built_in">set</span> fileformat=unix</div><div class="line">:<span class="built_in">set</span> fileformat=dos</div><div class="line">:<span class="built_in">set</span> fileformat=mac</div><div class="line">//上面3个命令按需设置；</div><div class="line"></div><div class="line">/*******************linux/unix******************/</div><div class="line">dos2unix filename</div><div class="line">unix2dos filename</div><div class="line">//不啰嗦，一目了然</div></pre></td></tr></table></figure>
 <ul>
 <li><strong>工具式</strong></li>
 </ul>

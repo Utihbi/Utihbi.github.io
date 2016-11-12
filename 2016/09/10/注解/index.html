@@ -35,7 +35,7 @@ Eg:@Override
 非标记注解：需待参数；
 
 Eg: @SupressWarnings({&amp;quot;uncheck&amp;quot;, &amp;">
-<meta property="og:updated_time" content="2016-09-10T14:02:59.275Z">
+<meta property="og:updated_time" content="2016-11-12T07:18:59.499Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="注解">
 <meta name="twitter:description" content="注解理解可以把注解看成是一个XML元素，该元素可以有不同的预定义的属性。而属性的值是可以在声明该元素的时候自行指定
@@ -88,8 +88,6 @@ Eg: @SupressWarnings({&amp;quot;uncheck&amp;quot;, &amp;">
 					
 					 
 						<li><a href="/">主页|Home</a></li>
-					
-						<li><a href="/tool/">工具|Tool</a></li>
 					
 						<li><a href="/about/">简介|About</a></li>
 					
@@ -154,7 +152,7 @@ Eg: @SupressWarnings({&quot;uncheck&quot;, &quot;unused&quot;})
 有当声明为RUNTIME的时候，才能够在运行时刻通过反射API来获取到注解的信息。
 
 @Target：声明注解可以被添加在哪些类型的元素上，如类型、方法和域等。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//@interface用来声明一个注解，其中的每一个方法实际上是声明了一个配置参数。</div><div class="line">//方法的名称就是参数的名称，返回值类型就是参数的类型。可以通过default来声明参数的默认值。</div><div class="line"></div><div class="line"></div><div class="line">@Retention(RetentionPolicy.RUNTIME)</div><div class="line">@Target(ElementType.TYPE)</div><div class="line">public @interface Assignment &#123;</div><div class="line">    String assignee();</div><div class="line">    int effort();</div><div class="line">    double finished() default 0;</div><div class="line">&#125; </div><div class="line"></div><div class="line"></div><div class="line">@Retention(RetentionPolicy.RUNTIME)</div><div class="line">@Target(ElementType.METHOD)</div><div class="line">public @interface RequiredRoles &#123;</div><div class="line">    String[] value();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//@interface用来声明一个注解，其中的每一个方法实际上是声明了一个配置参数。</span></div><div class="line"><span class="comment">//方法的名称就是参数的名称，返回值类型就是参数的类型。可以通过default来声明参数的默认值。</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="meta">@Target</span>(ElementType.TYPE)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Assignment &#123;</div><div class="line">    <span class="function">String <span class="title">assignee</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">effort</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">double</span> <span class="title">finished</span><span class="params">()</span> <span class="keyword">default</span> 0</span>;</div><div class="line">&#125; </div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="meta">@Target</span>(ElementType.METHOD)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> RequiredRoles &#123;</div><div class="line">    String[] value();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">

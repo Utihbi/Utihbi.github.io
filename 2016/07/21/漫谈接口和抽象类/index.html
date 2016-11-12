@@ -37,7 +37,7 @@
     最大程度的解耦，方便以后项目扩展 
 
         Eg:OOP的思想，底层定义了规范，上层来负责实现，打个比方说，jdbc中就是定义了数据库操作的接口，然后不同的数">
-<meta property="og:updated_time" content="2016-07-21T06:51:43.177Z">
+<meta property="og:updated_time" content="2016-11-12T07:30:14.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="漫谈接口和抽象类">
 <meta name="twitter:description" content="接口和抽象类接口的意义：- 规范
@@ -91,8 +91,6 @@
 					
 					 
 						<li><a href="/">主页|Home</a></li>
-					
-						<li><a href="/tool/">工具|Tool</a></li>
 					
 						<li><a href="/about/">简介|About</a></li>
 					
@@ -199,7 +197,7 @@
 </code></pre><font color="red"><br>    注：默认可以省略，但不能改变；具体看代码：<br></font>
 
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* </div><div class="line">* 接口的中的变量是所有实现类共有的，既然共有，肯定是不变的东西，因为变化的东西也不能够算共有。所以变量是不可变(final)类型，</div><div class="line">* 也就是常量了。</div><div class="line">*/</div><div class="line">interface TestIntf&#123;</div><div class="line">    public static final int a =2;</div><div class="line">    public abstract void getName();</div><div class="line">&#125;</div><div class="line">//这两段代码一致，我们平时为书写方便，多书写下面（懒，习惯少写）</div><div class="line">interface TestIntf&#123;</div><div class="line">    int a =2;</div><div class="line">    void getName();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">* </div><div class="line">* 接口的中的变量是所有实现类共有的，既然共有，肯定是不变的东西，因为变化的东西也不能够算共有。所以变量是不可变(final)类型，</div><div class="line">* 也就是常量了。</div><div class="line">*/</div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">TestIntf</span></span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> a =<span class="number">2</span>;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">getName</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//这两段代码一致，我们平时为书写方便，多书写下面（懒，习惯少写）</span></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">TestIntf</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> a =<span class="number">2</span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">getName</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="附加知识点："><a href="#附加知识点：" class="headerlink" title="附加知识点："></a>附加知识点：</h2><h3 id="抽象：就是抽去像的部分"><a href="#抽象：就是抽去像的部分" class="headerlink" title="抽象：就是抽去像的部分"></a>抽象：就是抽去像的部分</h3><h3 id="开闭原则："><a href="#开闭原则：" class="headerlink" title="开闭原则："></a>开闭原则：</h3><p>对修改关闭，对扩展开放；</p>
 <p>通俗的讲，你认为是要变化的东西，就放在你自己的实现中，不能放在接口中去，接口只是对一类事物的属性和行为更高层</p>
 <p>次的抽象。对修改关闭，对扩展（不同的实现 implements）开放，接口是对开闭原则的一种体现。</p>

@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://utihbi.github.io/2016/09/12/Callable vs Runnable interface in Java/index.html">
 <meta property="og:site_name" content="菜鸟生活">
 <meta property="og:description" content="Callable vs Runnable interface in Java123456789101112131415new Runnable() &amp;#123;			public void run() &amp;#123;							&amp;#125;		&amp;#125;;		new Callable&amp;lt;String&amp;gt;() &amp;#123;	@Override	public String call() th">
-<meta property="og:updated_time" content="2016-09-12T06:17:30.410Z">
+<meta property="og:updated_time" content="2016-11-12T07:17:55.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Callable vs Runnable interface in Java">
 <meta name="twitter:description" content="Callable vs Runnable interface in Java123456789101112131415new Runnable() &amp;#123;			public void run() &amp;#123;							&amp;#125;		&amp;#125;;		new Callable&amp;lt;String&amp;gt;() &amp;#123;	@Override	public String call() th">
@@ -62,8 +62,6 @@
 					 
 						<li><a href="/">主页|Home</a></li>
 					
-						<li><a href="/tool/">工具|Tool</a></li>
-					
 						<li><a href="/about/">简介|About</a></li>
 					
 					<li>
@@ -106,7 +104,7 @@
 		
 		</div>
 		
-		<h2 id="Callable-vs-Runnable-interface-in-Java"><a href="#Callable-vs-Runnable-interface-in-Java" class="headerlink" title="Callable vs Runnable interface in Java"></a>Callable vs Runnable interface in Java</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">new Runnable() &#123;</div><div class="line">			public void run() &#123;</div><div class="line">				</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line">		</div><div class="line">new Callable&lt;String&gt;() &#123;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public String call() throws Exception &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line">		return null;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+		<h2 id="Callable-vs-Runnable-interface-in-Java"><a href="#Callable-vs-Runnable-interface-in-Java" class="headerlink" title="Callable vs Runnable interface in Java"></a>Callable vs Runnable interface in Java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">new</span> Runnable() &#123;</div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">				</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line">		</div><div class="line"><span class="keyword">new</span> Callable&lt;String&gt;() &#123;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <ul>
 <li><p>Runnable 自JDK 1.0就有；Callable JDK 5.0</p>
 </li>
@@ -155,10 +153,10 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/09/12/竟态条件/" title="竟态条件">
+ <a href="/2016/09/12/竟态条件/" title="竞态条件">
   <strong>上一篇：</strong><br/>
   <span>
-  竟态条件</span>
+  竞态条件</span>
 </a>
 </div>
 

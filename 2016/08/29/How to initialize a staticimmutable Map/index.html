@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://utihbi.github.io/2016/08/29/How to initialize a staticimmutable Map/index.html">
 <meta property="og:site_name" content="菜鸟生活">
 <meta property="og:description" content="初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,然而事实是初始化过后，我们人然可以继续操作该map，比如：Test.map.put(3,”Three”);所以，这样的方法并没有真正的达到我们的要求。123456789//code 1 public class Test &amp;#123;	private static final Map map;	static">
-<meta property="og:updated_time" content="2016-08-29T09:28:36.878Z">
+<meta property="og:updated_time" content="2016-11-12T07:23:27.123Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="怎样初始化得到一不可变map？">
 <meta name="twitter:description" content="初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,然而事实是初始化过后，我们人然可以继续操作该map，比如：Test.map.put(3,”Three”);所以，这样的方法并没有真正的达到我们的要求。123456789//code 1 public class Test &amp;#123;	private static final Map map;	static">
@@ -62,8 +62,6 @@
 					 
 						<li><a href="/">主页|Home</a></li>
 					
-						<li><a href="/tool/">工具|Tool</a></li>
-					
 						<li><a href="/about/">简介|About</a></li>
 					
 					<li>
@@ -106,9 +104,9 @@
 		
 		</div>
 		
-		<p>初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,<br>然而事实是初始化过后，我们人然可以继续操作该map，比如：Test.map.put(3,”Three”);<br>所以，这样的方法并没有真正的达到我们的要求。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//code 1 </div><div class="line">public class Test &#123;</div><div class="line">	private static final Map map;</div><div class="line">	static &#123;</div><div class="line">		map = new HashMap();</div><div class="line">		map.put(1, &quot;one&quot;);</div><div class="line">		map.put(2, &quot;two&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+		<p>初始化一个不可变map，我们常常的做法是用修饰符“static final”；如下代码所示,<br>然而事实是初始化过后，我们人然可以继续操作该map，比如：Test.map.put(3,”Three”);<br>所以，这样的方法并没有真正的达到我们的要求。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//code 1 </span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map map;</div><div class="line">	<span class="keyword">static</span> &#123;</div><div class="line">		map = <span class="keyword">new</span> HashMap();</div><div class="line">		map.put(<span class="number">1</span>, <span class="string">"one"</span>);</div><div class="line">		map.put(<span class="number">2</span>, <span class="string">"two"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>下面的代码在初始化最后用：Collections.unmodifiableMap() 来处理，如果此时试图添加元素会抛出<br>“UnsupportedOperationException”异常。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//code 2</div><div class="line">public class Test &#123;</div><div class="line">	private static final Map map;</div><div class="line">	static &#123;</div><div class="line">		Map aMap = new HashMap();</div><div class="line">		aMap.put(1, &quot;one&quot;);</div><div class="line">		aMap.put(2, &quot;two&quot;);</div><div class="line">		map = Collections.unmodifiableMap(aMap);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//code 2</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map map;</div><div class="line">	<span class="keyword">static</span> &#123;</div><div class="line">		Map aMap = <span class="keyword">new</span> HashMap();</div><div class="line">		aMap.put(<span class="number">1</span>, <span class="string">"one"</span>);</div><div class="line">		aMap.put(<span class="number">2</span>, <span class="string">"two"</span>);</div><div class="line">		map = Collections.unmodifiableMap(aMap);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
