@@ -1,0 +1,615 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Spring基础 | 菜鸟生活</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Emerson">
+    
+
+    
+    <meta name="description" content="Spring优点
+低侵入式设计，代码污染低；
+独立于各种应用服务器，真正实现Write Once，Run Anywhere；
+IOC降低了业务对象替换的复杂性，降低了组件间的耦合度；
+AOP允许将一些通用任务（Eg:安全，事务，日志）进行集中式管理，方便复用；
+ORM和DAO提供了与第三方持久层框架的良好整合，简化DB访问；
+开发性，开发者可自由选择框架的部分或全部；
+
+
+Spring核心机制——">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring基础">
+<meta property="og:url" content="https://utihbi.github.io/2016/11/14/Spring基础/index.html">
+<meta property="og:site_name" content="菜鸟生活">
+<meta property="og:description" content="Spring优点
+低侵入式设计，代码污染低；
+独立于各种应用服务器，真正实现Write Once，Run Anywhere；
+IOC降低了业务对象替换的复杂性，降低了组件间的耦合度；
+AOP允许将一些通用任务（Eg:安全，事务，日志）进行集中式管理，方便复用；
+ORM和DAO提供了与第三方持久层框架的良好整合，简化DB访问；
+开发性，开发者可自由选择框架的部分或全部；
+
+
+Spring核心机制——">
+<meta property="og:image" content="http://img.kuqin.com/upimg/allimg/150720/22134QQ0-1.png">
+<meta property="og:updated_time" content="2016-11-18T04:26:11.542Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring基础">
+<meta name="twitter:description" content="Spring优点
+低侵入式设计，代码污染低；
+独立于各种应用服务器，真正实现Write Once，Run Anywhere；
+IOC降低了业务对象替换的复杂性，降低了组件间的耦合度；
+AOP允许将一些通用任务（Eg:安全，事务，日志）进行集中式管理，方便复用；
+ORM和DAO提供了与第三方持久层框架的良好整合，简化DB访问；
+开发性，开发者可自由选择框架的部分或全部；
+
+
+Spring核心机制——">
+<meta name="twitter:image" content="http://img.kuqin.com/upimg/allimg/150720/22134QQ0-1.png">
+
+    
+    <link rel="alternative" href="/atom.xml" title="菜鸟生活" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="菜鸟生活" title="菜鸟生活"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="菜鸟生活">菜鸟生活</a></h1>
+				<h2 class="blog-motto">菜鸟也有梦想！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					
+					<li>
+					<!--lp add 2016-8-21 18:49:24-->
+						<a href="http://xyz.freelogs.com/stats/l/loogeoustc/" target="_top"><img border="0" alt="free web hit counter" src="http://xyz.freelogs.com/counter/index.php?u=loogeoustc&s=7seg" ALIGN="middle" HSPACE="4" VSPACE="2"></a><script src=http://xyz.freelogs.com/counter/script.php?u=loogeoustc></script>
+					</li>
+					
+					 
+						<li><a href="/">主页|Home</a></li>
+					
+						<li><a href="/about/">简介|About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Google Search</label>
+						<input type="search" id="search" name="q" autocomplete="on" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:utihbi.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/11/14/Spring基础/" title="Spring基础" itemprop="url">Spring基础</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
+		
+  <p class="article-time">
+    <time datetime="2016-11-14T07:36:42.000Z" itemprop="datePublished"> 发表于 2016-11-14</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring优点"><span class="toc-number">1.</span> <span class="toc-text">Spring优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring核心机制————管理Bean"><span class="toc-number">2.</span> <span class="toc-text">Spring核心机制————管理Bean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DI"><span class="toc-number">3.</span> <span class="toc-text">DI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-核心功能："><span class="toc-number">3.1.</span> <span class="toc-text">Spring 核心功能：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DI-两种方式"><span class="toc-number">3.2.</span> <span class="toc-text">DI 两种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DI两种方式优缺点"><span class="toc-number">3.2.1.</span> <span class="toc-text">DI两种方式优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#设值注入"><span class="toc-number">3.2.1.1.</span> <span class="toc-text">设值注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#构造注入"><span class="toc-number">3.2.1.2.</span> <span class="toc-text">构造注入</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bean作用域"><span class="toc-number">3.3.</span> <span class="toc-text">Bean作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动注入"><span class="toc-number">3.4.</span> <span class="toc-text">自动注入</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h2 id="Spring优点"><a href="#Spring优点" class="headerlink" title="Spring优点"></a>Spring优点</h2><ul>
+<li>低侵入式设计，代码污染低；</li>
+<li>独立于各种应用服务器，真正实现Write Once，Run Anywhere；</li>
+<li>IOC降低了业务对象替换的复杂性，降低了组件间的耦合度；</li>
+<li>AOP允许将一些通用任务（Eg:安全，事务，日志）进行集中式管理，方便复用；</li>
+<li>ORM和DAO提供了与第三方持久层框架的良好整合，简化DB访问；</li>
+<li>开发性，开发者可自由选择框架的部分或全部；</li>
+</ul>
+<p><img src="http://img.kuqin.com/upimg/allimg/150720/22134QQ0-1.png" alt="Spring框架组成视图"></p>
+<h2 id="Spring核心机制————管理Bean"><a href="#Spring核心机制————管理Bean" class="headerlink" title="Spring核心机制————管理Bean"></a>Spring核心机制————管理Bean</h2><p>应用程序通过Spring容器来访问容器中的Bean，ApplicationContext是Spring容器常用的接口，该接口用来创建Spring容器，该接口有两个实现类：</p>
+<ul>
+<li>ClassPathXmlApplicationContext:从类加载路径下搜索配置文件；</li>
+<li>FileSystemXmlApplicationContext:从文件系统的相对路径会绝对路径下搜索配置文件；</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BeanTest</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">		ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"bean.xml"</span>);</div><div class="line">		Person p = (Person)ctx.getBean(<span class="string">"person"</span>,Person.class);</div><div class="line">		p.say();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="DI"><a href="#DI" class="headerlink" title="DI"></a>DI</h2><h3 id="Spring-核心功能："><a href="#Spring-核心功能：" class="headerlink" title="Spring 核心功能："></a>Spring 核心功能：</h3><ul>
+<li>负责创建、管理所有Bean；</li>
+<li>通过DI管理Bean直接依赖关系</li>
+</ul>
+<h3 id="DI-两种方式"><a href="#DI-两种方式" class="headerlink" title="DI 两种方式"></a>DI 两种方式</h3><ul>
+<li>设值注入：setter();</li>
+<li>构造注入：构造器来设置依赖关系；简言之，Spring以反射执行带指定参数的构造器。<h4 id="DI两种方式优缺点"><a href="#DI两种方式优缺点" class="headerlink" title="DI两种方式优缺点"></a>DI两种方式优缺点</h4><h5 id="设值注入"><a href="#设值注入" class="headerlink" title="设值注入"></a>设值注入</h5></li>
+<li>易理解，简单，直观，自然；</li>
+<li>对于复杂依赖关系，若采用构造注入，会导致构造器臃肿；创建Bean实例时，需同时创建其依赖的全部实例，性能下降。</li>
+<li>当某些成员变量可选时，多参数构造器更显笨重；<h5 id="构造注入"><a href="#构造注入" class="headerlink" title="构造注入"></a>构造注入</h5></li>
+<li>在构造器中决定依赖关系的注入顺序；</li>
+<li>没有setter(),所有依赖关系在构造器内设定，无需担心后续代码破坏依赖关系；</li>
+<li>依赖关系只能由构造器设定，只有组件的创建者才能改变组件的依赖关系，更符合高内聚原则；</li>
+</ul>
+<p><em>Tips:</em> 设值注入为主，构造注入为辅；</p>
+<h3 id="Bean作用域"><a href="#Bean作用域" class="headerlink" title="Bean作用域"></a>Bean作用域</h3><ol>
+<li>Singleton（Spring默认作用域）：该域的Bean将值生成一个实例；</li>
+<li>Prototype：每次通过getBean()获取该域的实例时，都将获得一个新的实例；</li>
+<li>Request：同一次HTTP请求中，获得的总是同一个实例；</li>
+<li>Session：同一次HTTP会话中，获得的总是同一个实例；</li>
+<li>Global Session：每个全局的HTTP Session 对应一个Bean实例；</li>
+</ol>
+<p><font color="red">NOTES:</font> 3~5: 只在Web应用中有效；</p>
+<h3 id="自动注入"><a href="#自动注入" class="headerlink" title="自动注入"></a>自动注入</h3><p>由Spring容器检查XML配置文件内容，根据某种规则，为调用者Bean注入被依赖的Bean。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">&lt;!--1.对配置文件中所有的Bean起作用；--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">default-autowire</span>=<span class="string">/</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--2.只对该Bean起作用。--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">autowire</span>=<span class="string">/</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>参考：<a href="http://www.kuqin.com/shuoit/20150720/347139.html" target="_blank" rel="external">http://www.kuqin.com/shuoit/20150720/347139.html</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Spring/">Spring</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="https://utihbi.github.io/2016/11/14/Spring基础/" data-title="Spring基础 | 菜鸟生活" data-tsina="3165325583" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/11/17/SpringMVC-Config/" title="SpringMVC-Config">
+  <strong>上一篇：</strong><br/>
+  <span>
+  SpringMVC-Config</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/09/15/并发/"  title="并发">
+ <strong>下一篇：</strong><br/> 
+ <span>并发
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/11/14/Spring基础/" data-title="Spring基础" data-url="https://utihbi.github.io/2016/11/14/Spring基础/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring优点"><span class="toc-number">1.</span> <span class="toc-text">Spring优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring核心机制————管理Bean"><span class="toc-number">2.</span> <span class="toc-text">Spring核心机制————管理Bean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DI"><span class="toc-number">3.</span> <span class="toc-text">DI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-核心功能："><span class="toc-number">3.1.</span> <span class="toc-text">Spring 核心功能：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DI-两种方式"><span class="toc-number">3.2.</span> <span class="toc-text">DI 两种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DI两种方式优缺点"><span class="toc-number">3.2.1.</span> <span class="toc-text">DI两种方式优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#设值注入"><span class="toc-number">3.2.1.1.</span> <span class="toc-text">设值注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#构造注入"><span class="toc-number">3.2.1.2.</span> <span class="toc-text">构造注入</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bean作用域"><span class="toc-number">3.3.</span> <span class="toc-text">Bean作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动注入"><span class="toc-number">3.4.</span> <span class="toc-text">自动注入</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/7788/" style="font-size: 10px;">7788</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/DesignPattern/" style="font-size: 12px;">DesignPattern</a> <a href="/tags/JAVA/" style="font-size: 20px;">JAVA</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/LeetCode/" style="font-size: 18px;">LeetCode</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OO/" style="font-size: 10px;">OO</a> <a href="/tags/Spring/" style="font-size: 14px;">Spring</a> <a href="/tags/UML/" style="font-size: 16px;">UML</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/排序/" style="font-size: 12px;">排序</a>
+    </div>
+  </div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://stackoverflow.com" target="_blank" title="stackoverflow">stackoverflow</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.tutorialspoint.com/" target="_blank" title="tutorialspoint">tutorialspoint</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.importnew.com/" target="_blank" title="importNew">importNew</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://hashnode.com/" target="_blank" title="HashNode">HashNode</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://howtodoinjava.com/" target="_blank" title="HowToDoInJava">HowToDoInJava</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/xiaolingting" target="_blank" title="CSDN">CSDN</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.tuicool.com/" target="_blank" title="推酷">推酷</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.codeceo.com/" target="_blank" title="码农圈">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://bbs.lzqstd.net/" target="_blank" title="蓝之青">蓝之青</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://fstack.net/" target="_blank" title="全栈社区">全栈社区</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://toutiao.io" target="_blank" title="开发者头条">开发者头条</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://tech.meituan.com/" target="_blank" title="美团点评技术">美团点评技术</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 未来已经来临，只是尚未流行！ <br/>
+			Don’t worry if it doesn’t work right.  If everything did, you’d be out of a job.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/3165325583" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/Utihbi" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:loogeoustc@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Emerson">Emerson</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
+  
+  $(window).resize(function(){
+    getSize(); 
+
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"utihbi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259925950'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1259925950' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  </body>
+</html>
