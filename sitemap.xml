@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://utihbi.github.io/2016/11/23/%E8%B5%84%E6%BA%90%E6%90%9C%E8%97%8F/</loc>
+    
+    <lastmod>2016-11-25T15:51:37.957Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://utihbi.github.io/2016/09/12/Callable%20vs%20Runnable%20interface%20in%20Java/</loc>
     
     <lastmod>2016-11-25T04:44:00.898Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://utihbi.github.io/2016/11/17/SpringMVC-Config/</loc>
     
     <lastmod>2016-11-25T04:42:25.446Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://utihbi.github.io/2016/11/23/%E8%B5%84%E6%BA%90%E6%90%9C%E8%97%8F/</loc>
-    
-    <lastmod>2016-11-25T04:36:58.043Z</lastmod>
     
   </url>
   
