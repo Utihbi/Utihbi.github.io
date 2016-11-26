@@ -1,0 +1,645 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Mybatis | 攻城狮</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Emerson">
+    
+
+    
+    <meta name="description" content="基本概念MyBatis是个什么东西在使用MyBatis的项目里，日志中往往会出现很多拼接SQL语句的log，这其实说明了MyBatis底层还是使用JDBC来实现的。在JDBC的基础上，为了性能考虑，所有的语句都是基于SqlSession。顾名思义，维护这个类的实例其实就是维护了一个对于某个数据库的连接的会话，在这个会话里可以有缓存啊什么之类的。
+mapper接口是怎么映射成SQL语句的目前多数开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis">
+<meta property="og:url" content="https://utihbi.github.io/2016/11/26/Mybatis/index.html">
+<meta property="og:site_name" content="攻城狮">
+<meta property="og:description" content="基本概念MyBatis是个什么东西在使用MyBatis的项目里，日志中往往会出现很多拼接SQL语句的log，这其实说明了MyBatis底层还是使用JDBC来实现的。在JDBC的基础上，为了性能考虑，所有的语句都是基于SqlSession。顾名思义，维护这个类的实例其实就是维护了一个对于某个数据库的连接的会话，在这个会话里可以有缓存啊什么之类的。
+mapper接口是怎么映射成SQL语句的目前多数开发">
+<meta property="og:updated_time" content="2016-11-26T06:09:10.778Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mybatis">
+<meta name="twitter:description" content="基本概念MyBatis是个什么东西在使用MyBatis的项目里，日志中往往会出现很多拼接SQL语句的log，这其实说明了MyBatis底层还是使用JDBC来实现的。在JDBC的基础上，为了性能考虑，所有的语句都是基于SqlSession。顾名思义，维护这个类的实例其实就是维护了一个对于某个数据库的连接的会话，在这个会话里可以有缓存啊什么之类的。
+mapper接口是怎么映射成SQL语句的目前多数开发">
+
+    
+    <link rel="alternative" href="/atom.xml" title="攻城狮" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="攻城狮" title="攻城狮"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="攻城狮">攻城狮</a></h1>
+				<h2 class="blog-motto">JUST DO IT !</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					
+					<li>
+					<!--lp add 2016-8-21 18:49:24-->
+						<a href="http://xyz.freelogs.com/stats/l/loogeoustc/" target="_top"><img border="0" alt="free web hit counter" src="http://xyz.freelogs.com/counter/index.php?u=loogeoustc&s=7seg" ALIGN="middle" HSPACE="4" VSPACE="2"></a><script src=http://xyz.freelogs.com/counter/script.php?u=loogeoustc></script>
+					</li>
+					
+					 
+						<li><a href="/">主页|Home</a></li>
+					
+						<li><a href="/about/">简介|About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Google Search</label>
+						<input type="search" id="search" name="q" autocomplete="on" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:utihbi.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/11/26/Mybatis/" title="Mybatis" itemprop="url">Mybatis</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Emerson" target="_blank" itemprop="author">Emerson</a>
+		
+  <p class="article-time">
+    <time datetime="2016-11-26T05:26:10.000Z" itemprop="datePublished"> 发表于 2016-11-26</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MyBatis是个什么东西"><span class="toc-number">1.1.</span> <span class="toc-text">MyBatis是个什么东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mapper接口是怎么映射成SQL语句的"><span class="toc-number">1.2.</span> <span class="toc-text">mapper接口是怎么映射成SQL语句的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring环境中MyBatis的初始化过程"><span class="toc-number">1.3.</span> <span class="toc-text">Spring环境中MyBatis的初始化过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MyBatis相关内容"><span class="toc-number">2.</span> <span class="toc-text">MyBatis相关内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL映射"><span class="toc-number">3.</span> <span class="toc-text">SQL映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态SQL"><span class="toc-number">4.</span> <span class="toc-text">动态SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if"><span class="toc-number">4.1.</span> <span class="toc-text">if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#choose-嵌套when，otherwise"><span class="toc-number">4.2.</span> <span class="toc-text">choose (嵌套when，otherwise)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#trim-where，set"><span class="toc-number">4.3.</span> <span class="toc-text">trim (where，set)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#foreach"><span class="toc-number">4.4.</span> <span class="toc-text">foreach</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bind"><span class="toc-number">4.5.</span> <span class="toc-text">bind</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="MyBatis是个什么东西"><a href="#MyBatis是个什么东西" class="headerlink" title="MyBatis是个什么东西"></a>MyBatis是个什么东西</h3><p>在使用MyBatis的项目里，日志中往往会出现很多拼接SQL语句的log，这其实说明了MyBatis底层还是使用JDBC来实现的。在JDBC的基础上，为了性能考虑，所有的语句都是基于SqlSession。顾名思义，维护这个类的实例其实就是维护了一个对于某个数据库的连接的会话，在这个会话里可以有缓存啊什么之类的。</p>
+<h3 id="mapper接口是怎么映射成SQL语句的"><a href="#mapper接口是怎么映射成SQL语句的" class="headerlink" title="mapper接口是怎么映射成SQL语句的"></a>mapper接口是怎么映射成SQL语句的</h3><p>目前多数开发者还是会使用XML来进行MyBatis的配置，包括MyBatis的核心配置和SQL映射配置。其实和注解一样，XML本身只不过是一个元数据的载体，最终起作用的还是MyBatis的核心类。其中有这样几个比较重要的：</p>
+<ul>
+<li><p>SqlSessionFactoryBuilder，用来创建SqlSessionFactory的实例，之后就没有用了，其生命周期只是在初始化的时候有作用。</p>
+</li>
+<li><p>SqlSessionFactory，MyBatis最基础的类，用来创建会话（即SqlSession的实例），其生命周期与整个系统的生命周期相同，在系统运行的任何时候都可以使用它查询到当前数据库的配置信息等。</p>
+</li>
+<li><p>SqlSession，真正的和数据库之间的会话，线程不安全，所以其生命周期和使用它的线程相同。</p>
+</li>
+<li><p>各种Mapper，承载了实际的业务逻辑，其生命周期比较短，由SqlSession创建。</p>
+</li>
+</ul>
+<h3 id="Spring环境中MyBatis的初始化过程"><a href="#Spring环境中MyBatis的初始化过程" class="headerlink" title="Spring环境中MyBatis的初始化过程"></a>Spring环境中MyBatis的初始化过程</h3><p>实际情况中MyBatis往往是在Spring的环境中使用的，MyBatis本身并不依赖Spring，但是使用Spring可以极大的提高开发效率，由于Spring进行了控制反转，所以其中MyBatis的初始化过程和正常过程稍稍有些不同：</p>
+<ul>
+<li><p>Spring发现需要创建SqlSessionFactory实例，会在classpath下找到MyBatis的核心配置文件，使用它来初始化一个SqlSessionFactory实例。当然，这一步完全可以使用代码来完成，或者使用注解，就更加清晰明了。</p>
+</li>
+<li><p>往往mapper类也会作为bean注入到代码中去的，那么Spring会使用上一步中的SqlSessionFactory实例来创建SqlSession的实例。</p>
+</li>
+<li><p>使用SqlSession尝试创建各个mapper对象。</p>
+</li>
+<li><p>于此同时，MyBatis会扫描classpath下的mapper映射XML文件（此路径可以自定义），对于每一个mapper接口，它的「类全名」会作为命名空间，来和映射文件中的mapper标签进行匹配。</p>
+</li>
+<li><p>对于每一个映射文件中的一个执行语句标签（如select、delete），MyBatis会把他们映射到SqlSession的方法上，创建mapper接口的一个实现类。</p>
+</li>
+<li><p>如果mapper接口和其映射文件一一匹配，则bean创建成功。</p>
+</li>
+</ul>
+<h2 id="MyBatis相关内容"><a href="#MyBatis相关内容" class="headerlink" title="MyBatis相关内容"></a>MyBatis相关内容</h2><p>MyBatis本身就是一个简单的ORM框架，提供了SQL语句到方法、关系型数据表到对象的映射。实际使用中与开发者相关的有两个东西：</p>
+<ul>
+<li>MyBatis核心配置</li>
+</ul>
+<p>缓存、数据源、日志等关系到MyBatis其本身行为的一些配置。</p>
+<ul>
+<li>mapper接口的映射</li>
+</ul>
+<p>针对于具体业务逻辑的SQL映射。</p>
+<h2 id="SQL映射"><a href="#SQL映射" class="headerlink" title="SQL映射"></a>SQL映射</h2><p>MyBatis也可以使用注解来实现映射，对于简单的语句，使用注解可能会更加清晰简单，但是其真正强大的地方还是XML。</p>
+<ul>
+<li>select</li>
+</ul>
+<p>属性    描述</p>
+<p>id    此命名空间内的标识符</p>
+<p>parameterType    参数的类的全名或者alias，可选。默认为空。</p>
+<p>parameterMap    Deprecated</p>
+<p>resultType    返回结果的类型全名或alias，如果结果是集合，此类型表示的是集合的成员类型。</p>
+<p>resultMap    使用指定的resultMap来映射结果集。resultMap 和 resultType只能二选一。</p>
+<p>flushCache    如果为true，每次调用，一级缓存和二级缓存都会回写。select语句中默认为false。</p>
+<p>useCache    如果为true，结果将在二级缓存中缓存。select语句中默认为true</p>
+<p>timeout    设置超时，若超时则抛出异常。</p>
+<p>fetchSize    尝试在获取数据时分批获取。</p>
+<p>statementType    STATEMENT，PREPARED或者CALLABLE. 分别对应JDBC中的Statement，PreparedStatement和CallableStatement respectively。默认PREPARED。</p>
+<p>resultSetType    FORWARD_ONLY，SCROLL_SENSITIVE或者SCROLL_INSENSITIVE。默认为空。</p>
+<p>databaseId    使用特定的databaseIdProvider</p>
+<p>resultOrdered    嵌套查询时使用。</p>
+<p>resultSets    多返回集合时使用。</p>
+<ul>
+<li>修改语句（insert，update，DELETE）</li>
+</ul>
+<p>这3种语句的属性基本和上边select的一样，INSERT和UPDATE的语句有几个特殊的属性如下：</p>
+<p>属性    描述</p>
+<p>useGeneratedKeys    将使用JDBC的getGeneratedKeys方法来获取主键的值。默认为false。</p>
+<p>keyProperty    主键。MyBatis会将生成的主键赋给这个列。联合主键使用逗号隔开。</p>
+<p>keyColumn    特定数据库需要使用。</p>
+<ul>
+<li>SQl语句段（sql标签）</li>
+</ul>
+<p>标签可以定义一段sql语句段，可以在其他语句中引入使用。sql标签可以包含参数。示例如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"userColumns"</span>&gt;</span>$&#123;alias&#125;.id,$&#123;alias&#125;.username,$&#123;alias&#125;.password <span class="tag">&lt;/<span class="name">sql</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectUsers"</span> <span class="attr">resultType</span>=<span class="string">"map"</span>&gt;</span></div><div class="line">      select</div><div class="line">        <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"userColumns"</span>&gt;</span><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"alias"</span> <span class="attr">value</span>=<span class="string">"t1"</span>/&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span>,</div><div class="line">        <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"userColumns"</span>&gt;</span><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"alias"</span> <span class="attr">value</span>=<span class="string">"t2"</span>/&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span></div><div class="line">      from some_table t1</div><div class="line">        cross join some_table t2</div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>参数（property）也可以在refid或者include进来的sql中使用。示例如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"sometable"</span>&gt;</span></div><div class="line">      $&#123;prefix&#125;Table</div><div class="line"><span class="tag">&lt;/<span class="name">sql</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"someinclude"</span>&gt;</span></div><div class="line">      from</div><div class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"$&#123;include_target&#125;"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">sql</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"select"</span> <span class="attr">resultType</span>=<span class="string">"map"</span>&gt;</span></div><div class="line">  select</div><div class="line">    field1, field2, field3</div><div class="line">  <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"someinclude"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"prefix"</span> <span class="attr">value</span>=<span class="string">"Some"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"include_target"</span> <span class="attr">value</span>=<span class="string">"sometable"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">include</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>#{}和${}的区别</p>
+<ul>
+<li><p>#{}在底层实现上使用?做占位符来生成PreparedStatement，然后将参数传入，大多数情况都应使用这个，它更快、更安全。</p>
+</li>
+<li><p>${}将传入的数据直接显示生成在sql中。如：order by ${user_id}，如果传入的值是111,那么解析成sql时的值为order by 111, 如果传入的值是id，则解析成的sql为order by id。</p>
+</li>
+</ul>
+</li>
+<li><p>类型别名<br>可以让你少打很多字。</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">type</span>=<span class="string">"com.someapp.model.User"</span> <span class="attr">alias</span>=<span class="string">"User"</span>/&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>ResultMap<br>做的就是映射结果集。</li>
+</ul>
+<p>MyBatis底层使用JDBC，所以查询出来的结果是ResultSet，如果resultType是一个对象，MyBatis底层就会创建一个resultMap，并根据字段名一一对应上这个对象。如果你有一个查询，它的结果集非常复杂，可以使用resultMap来做映射。</p>
+<p>cache和cach-ref</p>
+<p>使用cache标签在映射文件内（某命名空间内）实现二级缓存，其所有属性都有缺省值，所以单单一个标签就可以生效。cach-ref可以在两个映射文件之间共享缓存</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">cache</span></span></div><div class="line">    <span class="attr">eviction</span>=<span class="string">"LRU"</span>//缓存移除策略</div><div class="line">    <span class="attr">flushInterval</span>=<span class="string">"60000"</span>//默认不设置，不定时刷新</div><div class="line">    <span class="attr">size</span>=<span class="string">"1024"</span></div><div class="line">    <span class="attr">readOnly</span>=<span class="string">"false"</span>/&gt;</div></pre></td></tr></table></figure>
+<h2 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h2><h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><p>条件判断，参数为test</p>
+<h3 id="choose-嵌套when，otherwise"><a href="#choose-嵌套when，otherwise" class="headerlink" title="choose (嵌套when，otherwise)"></a>choose (嵌套when，otherwise)</h3><p>多选一，参数为test</p>
+<h3 id="trim-where，set"><a href="#trim-where，set" class="headerlink" title="trim (where，set)"></a>trim (where，set)</h3><p>trim标签可以定制其他标签，并且去头去尾；</p>
+<p>where标签会自动生成where语句，并且可以去除头部的and或者or；</p>
+<p>set标签可以自动生成set语句，并且可以去除尾部的逗号。</p>
+<h3 id="foreach"><a href="#foreach" class="headerlink" title="foreach"></a>foreach</h3><p>循环集合输出，可以循环数组，Iterable对象，或者Map，如果是Map，则index会是key。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">foreach</span> <span class="attr">item</span>=<span class="string">"item"</span> <span class="attr">index</span>=<span class="string">"index"</span> <span class="attr">collection</span>=<span class="string">"list"</span> <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">close</span>=<span class="string">")"</span>&gt;</span></div><div class="line">    #&#123;item&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h3><p>声明一个使用OGNL表达式生成的变量，在sql语句中使用。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Mybatis/">Mybatis</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Mybatis/">Mybatis</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="https://utihbi.github.io/2016/11/26/Mybatis/" data-title="Mybatis | 攻城狮" data-tsina="3165325583" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/11/26/掌控人生的姑娘，从不活在PS里/" title="掌控人生的姑娘，从不活在PS里">
+  <strong>上一篇：</strong><br/>
+  <span>
+  掌控人生的姑娘，从不活在PS里</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/11/25/面向对象设计原则SOLID/"  title="面向对象设计原则SOLID">
+ <strong>下一篇：</strong><br/> 
+ <span>面向对象设计原则SOLID
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/11/26/Mybatis/" data-title="Mybatis" data-url="https://utihbi.github.io/2016/11/26/Mybatis/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MyBatis是个什么东西"><span class="toc-number">1.1.</span> <span class="toc-text">MyBatis是个什么东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mapper接口是怎么映射成SQL语句的"><span class="toc-number">1.2.</span> <span class="toc-text">mapper接口是怎么映射成SQL语句的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring环境中MyBatis的初始化过程"><span class="toc-number">1.3.</span> <span class="toc-text">Spring环境中MyBatis的初始化过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MyBatis相关内容"><span class="toc-number">2.</span> <span class="toc-text">MyBatis相关内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL映射"><span class="toc-number">3.</span> <span class="toc-text">SQL映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态SQL"><span class="toc-number">4.</span> <span class="toc-text">动态SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if"><span class="toc-number">4.1.</span> <span class="toc-text">if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#choose-嵌套when，otherwise"><span class="toc-number">4.2.</span> <span class="toc-text">choose (嵌套when，otherwise)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#trim-where，set"><span class="toc-number">4.3.</span> <span class="toc-text">trim (where，set)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#foreach"><span class="toc-number">4.4.</span> <span class="toc-text">foreach</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bind"><span class="toc-number">4.5.</span> <span class="toc-text">bind</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/7788/" style="font-size: 10px;">7788</a> <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/DesignPattern/" style="font-size: 12px;">DesignPattern</a> <a href="/tags/JAVA/" style="font-size: 20px;">JAVA</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/LeetCode/" style="font-size: 18px;">LeetCode</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OO/" style="font-size: 10px;">OO</a> <a href="/tags/Spring/" style="font-size: 14px;">Spring</a> <a href="/tags/UML/" style="font-size: 16px;">UML</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/思想聚焦/" style="font-size: 10px;">思想聚焦</a> <a href="/tags/排序/" style="font-size: 12px;">排序</a>
+    </div>
+  </div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://stackoverflow.com" target="_blank" title="stackoverflow">stackoverflow</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.tutorialspoint.com/" target="_blank" title="tutorialspoint">tutorialspoint</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.importnew.com/" target="_blank" title="importNew">importNew</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://hashnode.com/" target="_blank" title="HashNode">HashNode</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://howtodoinjava.com/" target="_blank" title="HowToDoInJava">HowToDoInJava</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/xiaolingting" target="_blank" title="CSDN">CSDN</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.tuicool.com/" target="_blank" title="推酷">推酷</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.codeceo.com/" target="_blank" title="码农圈">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://bbs.lzqstd.net/" target="_blank" title="蓝之青">蓝之青</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://fstack.net/" target="_blank" title="全栈社区">全栈社区</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://toutiao.io" target="_blank" title="开发者头条">开发者头条</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://tech.meituan.com/" target="_blank" title="美团点评技术">美团点评技术</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 未来已经来临，只是尚未流行！ <br/>
+			Don’t worry if it doesn’t work right.  If everything did, you’d be out of a job.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/3165325583" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/Utihbi" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:loogeoustc@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Emerson">Emerson</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
+  
+  $(window).resize(function(){
+    getSize(); 
+
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"utihbi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259925950'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1259925950' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  </body>
+</html>
