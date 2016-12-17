@@ -45,7 +45,7 @@
     <link href="https://utihbi.github.io/2016/12/14/Java%E6%8E%A8%E8%8D%90%E4%B9%A6%E7%B1%8D/"/>
     <id>https://utihbi.github.io/2016/12/14/Java推荐书籍/</id>
     <published>2016-12-14T09:54:56.000Z</published>
-    <updated>2016-12-15T02:14:41.655Z</updated>
+    <updated>2016-12-17T07:37:47.598Z</updated>
     
     <content type="html">&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;《 Java 编程思想 》， Java 业界神书，不建议入门阅读，相比较，《 Java 核心技术 I 》非常适合入门。《 Java 核心技术 I 》，如果不想啃《 Java 编程思想》，这本是绝佳的入门神器。&lt;/p&gt;
@@ -58,7 +58,13 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;《 Java 特种兵 》，淘宝谢宇所著，洋洋洒洒，也是进阶读物，不可入门，作为补充参考。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;《 深入理解 Java 虚拟机 》，周志明所著，国内业界良心之作，建议参考 ITeye 高级语言虚拟机专栏，也可与《 Java 性能优化权威指南》参考来看。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;《 深入理解 Java 虚拟机:JVM高级特性与最佳实践 》，周志明所著，国内业界良心之作，建议参考 ITeye 高级语言虚拟机专栏，也可与《 Java 性能优化权威指南》参考来看。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;《 HotSpot实战 》，我们平时使用的大多数JWM都是Sun公司的HotSpot，大家cmd进入命令行，使用”java -version”命令就可以看到了。如果希望在Java虚拟机规范的基础上更加深入地去理解虚拟机的一些细节是怎么实现的，就可以看一下《HotSpot实战》一书，作者是陈涛。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;《 Java多线程编程核心技术 》，作者高洪岩。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;《 深入分析 Java Web 技术内幕 》，淘宝工程师 许令波 所著，该书内容较全，HTTP、DNS、CDN、静态化、Jetty、Tomcat、Servlet、Spring、MyBatis等等，什么都有，涉及知识面非常广。 &lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;《 Java 性能优化权威指南 》，深入理解 Java 性能优化细节， James Gosling 力荐。&lt;/p&gt;
 &lt;/li&gt;
@@ -70,7 +76,15 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;《 计算机网络 》，网络基础入门必备。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;《 大型网站技术架构 》，简单实在，理解大型网站架构，学习 Hadoop 之后才看发现架构上很多相似之处。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;《 大型网站技术架构 核心原理与案例分析 》，原阿里巴巴技术专家 李智慧 所著。Java的大多数应用都是用在Web上的，现在只要稍微大型一点的Web应用，都一定是一个分布式系统，那么一个分布式系统用到了哪些技术？一个大型网站是如何从一个小型网站成长起来的？如何保证你的网站安全？分布式系统使用到了缓存，有哪些缓存？缓存的使用有哪些值得注意的事项？这些知识点，书中均有体现。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;《 大型网站系统与Java中间件实践 》淘宝技术总监 曾宪杰所著。本书要突出的重点是中间件三个字，中间件是分布式系统中一个非常重要的东西，其最重要的作用应该就是解耦，降低模块与模块之间的强依赖，不同的模块之间的依赖度降低，便可以各自独立地开发自己的功能，这也可以说是软件工程发展的目标和驱动力。因此，本书有一部分的内容就是基于中间件，详细讲解了中间件与JMS的各种知识，适合对分布式系统比较熟悉并且想要往中间件方面有一定研究的读者。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;《 MySQL5.6从零开始学 》作者刘增杰和李坤。  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;《 Spring源码深度解析 》作者郝佳。 &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;《 从Paxos到ZooKeeper分布式一致性原理与实践 》，阿里工程师 倪超 所著。该书属于分布式组件的范畴，属于有些深入的内容。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;《 Linux 内核设计与实现 》，抛开了 Linux 内核纷繁的源码，给出了关键的架构与实现，与《深入理解 Linux 内核》互补，重点推荐。&lt;/p&gt;
 &lt;/li&gt;
